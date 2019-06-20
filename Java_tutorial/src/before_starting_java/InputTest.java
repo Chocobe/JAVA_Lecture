@@ -25,8 +25,9 @@ public class InputTest {
 			// read()의 반환값은 아스키코드값이기 때문에, 정수형이지만 값은 정수의 원래값이 아니다.
 				// 그러므로, read()의 반환값에 -48(0의 아스키코드값)을 해 주면, 정수값으로 바꿀 수 있다.
 			num = System.in.read() - 48;
-			System.in.read();	// Enter 입력값을 버리기 위한 부분1
-			System.in.read();	// Enter 입력값을 버리기 위한 부분2
+			//System.in.read();	// Enter 입력값을 버리기 위한 부분1
+			//System.in.read();	// Enter 입력값을 버리기 위한 부분2
+			scanner.nextLine();	// Enter 입력값을 버리기 위한 부분(한줄을 버리게 된다.)
 			
 			System.out.print("이름 입력 : ");
 			name = scanner.nextLine();
@@ -44,7 +45,8 @@ public class InputTest {
 		// 문자열로 받은 데이터를 int형으로 형변환 하기
 		System.out.print("나이 : ");
 		String str_age = scanner.nextLine();
-		System.out.println("age : " + str_age);
+		int int_age = Integer.parseInt(str_age);
+		System.out.println("age : " + int_age);
 		
 		scanner.close();
 	}
