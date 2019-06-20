@@ -19,5 +19,8 @@ public class Hello {
 		int num2 = 100;
 		int res = num + num2;
 		System.out.println("res : " + res);
+		
+		res = num + num2 + 1;
+		System.out.println("res : " + res);
 	}
 }
