@@ -154,6 +154,7 @@ public class Test_if {
 		int sale_price = 0;
 		int profit = 0;
 		double rate = 0.0F;
+		int res = 0;
 		
 		System.out.print("재품의 원가 : ");
 		origin_price = scanner.nextInt();
@@ -162,20 +163,57 @@ public class Test_if {
 		
 		profit = sale_price - origin_price;
 		rate = ((double)profit / sale_price) * 100;
+		res = (int)rate;
 
 		System.out.println("판매가 : " + sale_price + ", 원가 : " + origin_price);
 		
 		System.out.print("수익평가 : ");
-		if(rate >= 30)
+		if(res >= 30)
 			System.out.println("최상이익");
 		
-		else if(rate >= 20) 			
+		else if(res >= 20)
 			System.out.println("좋은수익");
 		
 		else
 			System.out.println("보통수익");
 		
-		System.out.printf("비율 : %.2f\n", rate);
+		System.out.printf("비율 : %d\n", res);
+		System.out.println("---------------------------");
+		
+		
+		// 2과목의 점수, 공인점수 입력
+		// 평균 >= 70 이거나, 공인점수 >= 700이면 합격, not 불합격
+		int kor_score = 0;
+		int eng_score = 0;
+		
+		System.out.print("국어점수 : ");
+		kor_score = scanner.nextInt();
+		System.out.print("영어점수 : ");
+		eng_score = scanner.nextInt();
+		
+		if(kor_score >= 70 || eng_score >= 700)
+			System.out.println("합격");
+		
+		else
+			System.out.println("불합격");
+		
+		System.out.println("---------------------------");
+		
+		
+		// 평균이 70이고 성별이 "man"이면 "해외근무"
+		int work_score = 0;
+		String sex = "";
+		
+		System.out.print("고가점수 : ");
+		work_score = scanner.nextInt();
+		scanner.nextLine();		// 버퍼제거
+		
+		System.out.print("성별 : ");
+		sex = scanner.nextLine();
+		
+		if(work_score >= 70 && sex.equals("남"))
+			System.out.println("해외근무");
+		
 		System.out.println("---------------------------");
 		
 		

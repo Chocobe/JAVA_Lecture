@@ -45,6 +45,9 @@
 * [Test_if](#test_if)
 
 
+* [Test_if_1](#test_if_1)
+
+
 * [FlowEx2](#flowex2)
 
 ---
@@ -268,6 +271,15 @@ if(조건문) {
 	실행코드
 }
 ```
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Test_if_1
+
+Test_if의 연장
 
 :camel:[Top](#before-starting-java)
 
