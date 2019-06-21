@@ -3,7 +3,7 @@
 
 # before starting java ¸ñÂ÷
 
-[hello](#hello)
+* [hello](#hello)
 
 
 ---
