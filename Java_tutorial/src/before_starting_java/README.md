@@ -10,7 +10,7 @@
 * [ScannerTest](#scannertest)
 * [OpTest](#optest)
 * [Operatorex1](#operatorex1)
-* [peratorex23](#operatorex23)
+* [Operatorex23](#operatorex23)
 * [Operatorex24](#operatorex24)
 * [Operatorex25](#operatorex25)
 * [Operatorex26](#operatorex26)
