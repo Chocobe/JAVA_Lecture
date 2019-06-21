@@ -3,13 +3,15 @@
 
 # before starting java 목차
 
-* [hello](#hello)
-
+* [Hello](#hello)
+* [StringEx](#stringex)
+* [ScannerEx](#scannerex)
+* [InputTest](#inputtest)
 
 ---
 ---
 
-#### Hello
+### Hello
 
 문자열 출력과 자료형들
 
@@ -20,7 +22,7 @@ System.out.println("문자열");
 ---
 ---
 
-#### StringEx
+### StringEx
 
 화면 출력시, printf상에 사용하는 형식표현 방법
 		
@@ -37,7 +39,7 @@ System.out.println("문자열");
 ---
 ---
 
-#### ScannerEx
+### ScannerEx
 
 Scanner 클래스를 이용한 키보드의 입력값 받기
 
@@ -48,7 +50,7 @@ Scanner 클래스를 이용한 키보드의 입력값 받기
 ---
 ---
 		
-#### InputTest
+### InputTest
 
 입력 메서드 read()사용하기 - 1byte 값 읽어오기
 
@@ -82,7 +84,7 @@ String은 객체형 이기 때문에, (int) 형식으로 형변환이 안된다.
 ---
 ---
 
-#### ScannerTest
+### ScannerTest
 
 정수형 입력만을 받으면, 연속된 입력이 가능하다.
 
@@ -93,14 +95,14 @@ String은 객체형 이기 때문에, (int) 형식으로 형변환이 안된다.
 ---
 ---
 
-#### OpTest
+### OpTest
 
 boolean형의 부정값 : ``!변수명``
 
 ---
 ---
 
-#### OperatorEx1
+### OperatorEx1
 
 증감 연산자 (++, --)
 
@@ -111,7 +113,7 @@ boolean형의 부정값 : ``!변수명``
 ---
 ---
 
-#### OperatorEx23
+### OperatorEx23
 
 문자열 비교하기
 
@@ -134,7 +136,7 @@ str_1.equals(str_2)	// true값을 반환한다.
 ---
 ---
 
-#### OperatorEx24
+### OperatorEx24
 
 논리연산 ``&&`` 와 ``||``
 
@@ -143,7 +145,7 @@ str_1.equals(str_2)	// true값을 반환한다.
 ---
 ---
 
-#### OperatorEx25
+### OperatorEx25
 
 Java에서는 *한 문자 입력 기능*이 **없다**.
 
@@ -154,7 +156,7 @@ Java에서는 *한 문자 입력 기능*이 **없다**.
 ---
 ---
 
-#### OperatorEx26
+### OperatorEx26
 
 연산자의 우선순위에 따른 효율
 
@@ -165,14 +167,14 @@ Java에서는 *한 문자 입력 기능*이 **없다**.
 ---
 ---
 
-#### OperatorEx27
+### OperatorEx27
 
 ``!``연산자 - 논리값을 반전 시킨다.
 
 ---
 ---
 
-#### Condition_op
+### Condition_op
 
 조건 연산자
 
