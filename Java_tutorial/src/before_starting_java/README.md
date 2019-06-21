@@ -3,20 +3,48 @@
 
 # before starting java
 
-* [Hello](#hello)
-* [StringEx](#stringex)
+* [Hello](#hello) - 문자열 출력과 자료형들
+		
+		
+* [StringEx](#stringex) - printf상에 사용하는 형식표현 방법
+
+
 * [ScannerEx](#scannerex)
+
+
 * [InputTest](#inputtest)
+
+
 * [ScannerTest](#scannertest)
+
+
 * [OpTest](#optest)
+
+
 * [Operatorex1](#operatorex1)
+
+
 * [Operatorex23](#operatorex23)
+
+
 * [Operatorex24](#operatorex24)
+
+
 * [Operatorex25](#operatorex25)
+
+
 * [Operatorex26](#operatorex26)
+
+
 * [Operatorex27](#operatorex27)
+
+
 * [Condition_op](#condition_op)
+
+
 * [Test_if](#test_if)
+
+
 * [FlowEx2](#flowex2)
 
 ---
