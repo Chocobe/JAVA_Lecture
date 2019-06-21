@@ -3,24 +3,13 @@
 
 # before starting java 목차
 
-* [Hello](#hello)
-* [StringEx](#stringex)
-* [ScannerEx](#scannerex)
-* [InputTest](#inputtest)
-* [ScannerTest](#scannertest)
-* [OpTest.java](#optest)
-* [OperatorEx1](#operatorex1)
-* [OperatorEx23](#operatorex23)
-* [OperatorEx24](#operatorex24)
-* [OperatorEx25](#operatorex25)
-* [OperatorEx26](#operatorex26)
-* [OperatorEx27](#operatorex27)
-* [Condition_op](#condition_op)
+[hello](#hello)
+
 
 ---
 ---
 
-#### Hello	
+#### Hello
 
 문자열 출력과 자료형들
 
