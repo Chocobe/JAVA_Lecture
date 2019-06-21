@@ -97,19 +97,87 @@ public class Test_if {
 		rhs = scanner.nextInt();
 		
 		sum = lhs + rhs;
+		
+		if(lhs < rhs) {
+			int temp = lhs;
+			lhs = rhs;
+			rhs = temp;
+		}
+		
 		sub = lhs - rhs;
 		
 		if(sum > sub) {
 			System.out.println("합 > 차");
 			
-		} else if(sum < sub)
+		} else if(sum < sub) {
 			System.out.println("합 < 차");
 			
-		else
+		} else {
 			System.out.println("같다");
+		}
 		
 		System.out.println("합 : " + sum + ", 차 : " + sub);
+		System.out.println("---------------------------");
+		
+		// 입력 :
+		//		총 인원수 : xxx
+		//		총 식사비 : xxx
+		// 총 인원수가 4명 이상이면, "총 식사비 * 0.1"로 할인하여, 총 지불액을 계산한다.
+		//
+		int member = 0;
+		int cost = 0;
+		
+		System.out.print("총 인원수를 입력하세요 : ");
+		member = scanner.nextInt();
+		System.out.print("총 식사비를 입력하세요 : ");
+		cost = scanner.nextInt();
+		
+		if(member >= 4) {
+			cost = cost - (int)(cost * 0.1);
+		}
+		
+		System.out.println("총 인원수 : " + member);
+		System.out.println("총 식사비 : " + cost);
+		System.out.println("---------------------------");
+		
+		// 비율에 따라 30이상이면 "최상이익" 출력
+		// 20이상이면 "좋은수익",
+		// 10이상이면 "보통수익" 출력
+		//
+		// 입력형식 :
+		//			원가 : xxx
+		//			판매가 : xxx
+		//			이익 = 판매가 - 원가
+		//			비율 = 이익 / 판매가 * 100
+		//
+		int origin_price = 0;
+		int sale_price = 0;
+		int profit = 0;
+		double rate = 0.0F;
+		
+		System.out.print("재품의 원가 : ");
+		origin_price = scanner.nextInt();
+		System.out.print("재품의 판매가 : ");
+		sale_price = scanner.nextInt();
+		
+		profit = sale_price - origin_price;
+		rate = ((double)profit / sale_price) * 100;
 
+		System.out.println("판매가 : " + sale_price + ", 원가 : " + origin_price);
+		
+		System.out.print("수익평가 : ");
+		if(rate >= 30)
+			System.out.println("최상이익");
+		
+		else if(rate >= 20) 			
+			System.out.println("좋은수익");
+		
+		else
+			System.out.println("보통수익");
+		
+		System.out.printf("비율 : %.2f\n", rate);
+		System.out.println("---------------------------");
+		
 		
 		scanner.close();
 	}
