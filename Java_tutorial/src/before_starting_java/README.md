@@ -7,6 +7,15 @@
 * [StringEx](#stringex)
 * [ScannerEx](#scannerex)
 * [InputTest](#inputtest)
+* [ScannerTest](#scannertest)
+* [OpTest](#optest)
+* [Operatorex1](#operatorex1)
+* [peratorex23](#operatorex23)
+* [Operatorex24](#operatorex24)
+* [Operatorex25](#operatorex25)
+* [Operatorex26](#operatorex26)
+* [Operatorex27](#operatorex27)
+* [Condition_op](#condition_op)
 
 ---
 ---
