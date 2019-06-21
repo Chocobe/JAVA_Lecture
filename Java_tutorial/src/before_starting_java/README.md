@@ -1,7 +1,7 @@
 ---
 ---
 
-# before starting java 목차
+# before starting java
 
 * [Hello](#hello)
 * [StringEx](#stringex)
@@ -28,7 +28,7 @@
 System.out.println("문자열");
 ```
 
-[:camel:Top](#before-starting-java)
+:camel:[Top](#before-starting-java)
 
 ---
 ---
