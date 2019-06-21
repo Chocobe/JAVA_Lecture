@@ -57,6 +57,60 @@ public class Test_if {
 			System.out.println("조건 불일치");
 		System.out.println("---------------------------");
 		
+		
+		// 이름, 점수 입력
+		// 출력 :
+		//		이름 : 합격(70점 이상일 경우)
+		//		이름 : 불합격(70점 미만)
+		//
+		String name = "";
+		int score = 0;
+		
+		scanner.nextLine();	// 버퍼 비우기
+		
+		System.out.print("이름을 입력하세요 : ");
+		name = scanner.nextLine();
+		System.out.print("점수를 입력하세요 : ");
+		score = scanner.nextInt();
+		
+		System.out.print("이름 : " + name + ", ");
+		if(score < 70) 
+			System.out.println("불합격 점수 : " + score);
+		
+		else {
+			System.out.println("합격 점수 : " + score);
+		}
+		System.out.println("---------------------------");
+		
+		
+		// 두 정수를 입력하여, 합과 차를 비교하여 결과 출력
+		// 출력 :
+		//		"합 > 차" 또는 "합 < 차" "같다"
+		//		합 = xxx
+		//		차 = xxx
+		int lhs, rhs, sub = 0;
+		System.out.println("두 수를 입력하세요");
+		
+		System.out.print("좌측항 : ");
+		lhs = scanner.nextInt();
+		System.out.print("우측항 : ");
+		rhs = scanner.nextInt();
+		
+		sum = lhs + rhs;
+		sub = lhs - rhs;
+		
+		if(sum > sub) {
+			System.out.println("합 > 차");
+			
+		} else if(sum < sub)
+			System.out.println("합 < 차");
+			
+		else
+			System.out.println("같다");
+		
+		System.out.println("합 : " + sum + ", 차 : " + sub);
+				
+		
 		scanner.close();
 	}
 }
