@@ -109,7 +109,7 @@ public class Test_if {
 			System.out.println("같다");
 		
 		System.out.println("합 : " + sum + ", 차 : " + sub);
-				
+
 		
 		scanner.close();
 	}
