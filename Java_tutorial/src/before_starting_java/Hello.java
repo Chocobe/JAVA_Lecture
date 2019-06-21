@@ -43,7 +43,6 @@ public class Hello {
 		Date d = new Date();
 		System.out.println("³¯Â¥ : " + d);
 		
-		long l = 12345L;
 		float f = 123.456F;
 		System.out.println("f = " + f);
 		System.out.printf("f = %-5.2f", f);

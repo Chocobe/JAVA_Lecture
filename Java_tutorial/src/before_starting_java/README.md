@@ -3,10 +3,24 @@
 
 # before starting java 목차
 
+* [Hello](#hello)
+* [StringEx](#stringex)
+* [ScannerEx](#scannerex)
+* [InputTest](#inputtest)
+* [ScannerTest](#scannertest)
+* [OpTest.java](#optest)
+* [OperatorEx1](#operatorex1)
+* [OperatorEx23](#operatorex23)
+* [OperatorEx24](#operatorex24)
+* [OperatorEx25](#operatorex25)
+* [OperatorEx26](#operatorex26)
+* [OperatorEx27](#operatorex27)
+* [Condition_op](#condition_op)
+
 ---
 ---
 
-#### Hello.java	
+#### Hello	
 
 문자열 출력과 자료형들
 
@@ -17,7 +31,7 @@ System.out.println("문자열");
 ---
 ---
 
-#### StringEx.java
+#### StringEx
 
 화면 출력시, printf상에 사용하는 형식표현 방법
 		
@@ -34,7 +48,7 @@ System.out.println("문자열");
 ---
 ---
 
-#### ScannerEx.java
+#### ScannerEx
 
 Scanner 클래스를 이용한 키보드의 입력값 받기
 
@@ -45,7 +59,7 @@ Scanner 클래스를 이용한 키보드의 입력값 받기
 ---
 ---
 		
-#### InputTest.java
+#### InputTest
 
 입력 메서드 read()사용하기 - 1byte 값 읽어오기
 
@@ -79,7 +93,7 @@ String은 객체형 이기 때문에, (int) 형식으로 형변환이 안된다.
 ---
 ---
 
-#### ScannerTest.java
+#### ScannerTest
 
 정수형 입력만을 받으면, 연속된 입력이 가능하다.
 
@@ -90,7 +104,7 @@ String은 객체형 이기 때문에, (int) 형식으로 형변환이 안된다.
 ---
 ---
 
-#### OpTest.java
+#### OpTest
 
 boolean형의 부정값 : ``!변수명``
 
@@ -104,6 +118,29 @@ boolean형의 부정값 : ``!변수명``
 증감 연산자는 ``전위``와 ``후위`` 두가지가 있다.
 
 증감 연산자가 ``수식`` 이나 ``매개변수``에 사용될 시, 결과가 달라진다.
+
+---
+---
+
+#### OperatorEx23
+
+문자열 비교하기
+
+문자열은 String클래스의 개체이기 때문에, ``==``연산을 통한 비교시,
+
+문자열값이 아닌 주소값을 비교하게 된다.
+
+때문에, 동일한 값을 가진 두 문자열을 ``==``연산으로 비교하면, ``false``를 반환한다.
+
+그러므로, 동일한 값을 가지는 두 문자열을 비교할 때는 ``equals()``메서드를 사용하자.
+
+```java
+String str_1 = "abc";
+String str_2 = "abc";
+
+str_1 == str_2		// false값을 반환한다.
+str_1.equals(str_2)	// true값을 반환한다.
+```
 
 ---
 ---
@@ -125,6 +162,9 @@ Java에서는 *한 문자 입력 기능*이 **없다**.
 
 문자열을 입력받은 후, 첫번째 문자를 추출 하는 것으로 구현할 수 있다.
 
+---
+---
+
 #### OperatorEx26
 
 연산자의 우선순위에 따른 효율
@@ -133,9 +173,15 @@ Java에서는 *한 문자 입력 기능*이 **없다**.
 
 ``조건1 || 조건2`` 는 OR이기 때문에, ``조건1``dp true가 발생할 확률이 더 큰 것을 넣는것이 효율성이 높아진다.
 
+---
+---
+
 #### OperatorEx27
 
 ``!``연산자 - 논리값을 반전 시킨다.
+
+---
+---
 
 #### Condition_op
 
@@ -144,3 +190,6 @@ Java에서는 *한 문자 입력 기능*이 **없다**.
 if문을 대신해서 사용할 수 있다.
 
 가독성을 위해, 조건문을 ``( )`` 로 묶어주는게 좋다.
+
+---
+---

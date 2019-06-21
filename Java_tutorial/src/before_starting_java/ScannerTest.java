@@ -18,7 +18,6 @@ public class ScannerTest {
 		scanner.nextLine();
 		
 		System.out.print("비고 : ");
-		String bigo = scanner.nextLine();
 		
 		System.out.print("수학 : ");
 		int math = scanner.nextInt();
