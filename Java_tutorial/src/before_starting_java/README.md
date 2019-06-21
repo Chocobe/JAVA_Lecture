@@ -16,6 +16,7 @@
 * [Operatorex26](#operatorex26)
 * [Operatorex27](#operatorex27)
 * [Condition_op](#condition_op)
+* [Test_if](#test_if)
 
 ---
 ---
@@ -221,6 +222,32 @@ Java에서는 *한 문자 입력 기능* 이 **없다**.
 if문을 대신해서 사용할 수 있다.
 
 가독성을 위해, 조건문을 ``( )`` 로 묶어주는게 좋다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Test_if
+
+조건문 if
+
+```java
+if(조건문) {
+
+} else {
+
+}
+```
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### FlowEx2
+
+``if ~ else``문에서 ``else``대신 추가로 ``if``문을 사용하면 동일한 결과를 만들 수 있다.
 
 :camel:[Top](#before-starting-java)
 
