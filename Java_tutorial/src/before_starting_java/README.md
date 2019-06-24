@@ -65,6 +65,12 @@
 
 * [Random_Class](#random_class) - Random 클래스 사용하기
 
+
+* [Tenacity_number](#tenacity_number) - 고집수 구하기
+
+
+* [While_test](#while_test) - ``while``문 연습
+
 ---
 ---
 
@@ -371,6 +377,8 @@ for문의 동작 순서
 		3. 수행문 실행
 		4. 증감식 수행
 		
+:camel:[Top](#before-starting-java)
+
 ---
 ---
 
@@ -385,6 +393,28 @@ Random클래스는 Random 객체를 생성하여, 여러가지 메소드를 사용할 수 있다.
 Random클래스의 생성자 인수에는 Seed값을 넣을 수 있는데,
 
 ``System.currentTimeMillis()``를 인수로 사용하면, 현재 시간을 Seed값으로 이용할 수 있다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Tenacity_number
+
+고집수 구하기
+
+10의 자리 숫자 * 1의 자리 숫자가 다시 11이상의 값이 되는 경우,
+
+고집수 카운트가 1 증가하는 방식
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### While_test
+
+정수값 ``2000``은 ``2_000``으로도 표현할 수 있다.
 
 :camel:[Top](#before-starting-java)
 
