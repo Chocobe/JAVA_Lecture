@@ -50,6 +50,9 @@
 
 * [FlowEx2](#flowex2)
 
+
+* [Switch_Ex_1](#switch_ex_1) - ``switch ~ case`` 문 사용하기
+
 ---
 ---
 
@@ -289,6 +292,23 @@ Test_if의 연장
 ### FlowEx2
 
 ``if ~ else``문에서 ``else``대신 추가로 ``if``문을 사용하면 동일한 결과를 만들 수 있다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Switch_Ex_1
+
+``switch(조건문)`` 에서 조건문은 ``정수`` 또는 ``문자열``을 사용할 수 있다.
+
+---
+
+``case``의 값에도 ``상수`` 또는 ``문자열``을 사용할 수 있지만,
+
+주의할 점은 변수가 올 수 없다.
+
+다만, 리터럴인 변수(final)는 사용할 수 있다.
 
 :camel:[Top](#before-starting-java)
 
