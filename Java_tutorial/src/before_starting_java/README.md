@@ -63,7 +63,7 @@
 * [Test_for_1](#test_for_1) - for문 사용법
 
 
-* [Random_Class](#random_class)
+* [Random_Class](#random_class) - Random 클래스 사용하기
 
 ---
 ---

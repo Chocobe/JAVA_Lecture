@@ -1,6 +1,5 @@
 package before_starting_java;
 
-import java.util.Random;
 import java.util.Scanner;
 
 public class Test_for_1 {
@@ -25,24 +24,7 @@ public class Test_for_1 {
 		System.out.println("5의 배수의 총 합 : " + sum);		
 		System.out.println("-----------------------------");
 		
-		
-		// *를 이용한 직각삼각형 출력
-		//
-		Scanner scanner = new Scanner(System.in);
-		int height = 0;
-		
-		System.out.print("출력할 높이를 입력하세요 : ");
-		height = scanner.nextInt();
-		
-		for(int i = 1; i <= height; i++) {
-			for(int j = 1; j <= i; j++) {
-				System.out.print("* ");
-			}
-			System.out.println();
-		}
-		System.out.println("-----------------------------");
-		
-		
+
 		// 입력 :
 		//		첫번째 수
 		//		두번째 수
@@ -54,6 +36,8 @@ public class Test_for_1 {
 		int num_2 = 0;
 		int multiple = 0;
 		int multiple_sum = 0;
+		
+		Scanner scanner = new Scanner(System.in);
 		
 		System.out.print("첫번째 수 : ");
 		num_1 = scanner.nextInt();
@@ -74,43 +58,29 @@ public class Test_for_1 {
 			if(i % multiple == 0) 				
 				multiple_sum += i;
 		}
+		
 		System.out.println();
 		System.out.println("num_1 : " + num_1 + ", num_2 : " + num_2);
 		System.out.println(multiple + "배수의 총 합 : " + multiple_sum);
 		System.out.println("-----------------------------");
 		
 		
+		// *를 이용한 직각삼각형 출력
+		//
+		int height = 0;
+		
+		System.out.print("출력할 높이를 입력하세요 : ");
+		height = scanner.nextInt();
+		System.out.println();
+		
+		for(int i = 1; i <= height; i++) {
+			for(int j = 1; j <= i; j++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+		System.out.println("-----------------------------");
 		
 		scanner.close();
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
