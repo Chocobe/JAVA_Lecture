@@ -59,6 +59,12 @@
 
 * [FlowEx8](#flowex8) - ``switch ~ case`` 예제) 주민등록번호를 이용한 성별 구하기
 
+
+* [Test_for_1](#test_for_1) - for문 사용법
+
+
+* [Random_Class](#random_class)
+
 ---
 ---
 
@@ -348,6 +354,37 @@ Test_if의 연습
 ### FlowEx8
 
 연습) 주민등록번호를 이용한 성별 구하기
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Test_for_1
+
+``for(초기화; 조건식; 증감식){수행문}``
+
+for문의 동작 순서
+
+		1. 초기화
+		2. 조건식 검사
+		3. 수행문 실행
+		4. 증감식 수행
+		
+---
+---
+
+### Random_Class
+
+``Random random = new Random(System.currentTimeMillis());``
+
+``Math.random()``을 이용한 난수 구하기와 동일한 Random클래스가 있다.
+
+Random클래스는 Random 객체를 생성하여, 여러가지 메소드를 사용할 수 있다.
+
+Random클래스의 생성자 인수에는 Seed값을 넣을 수 있는데,
+
+``System.currentTimeMillis()``를 인수로 사용하면, 현재 시간을 Seed값으로 이용할 수 있다.
 
 :camel:[Top](#before-starting-java)
 
