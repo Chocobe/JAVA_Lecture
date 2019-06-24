@@ -9,52 +9,55 @@
 * [StringEx](#stringex) - printf상에 사용하는 형식표현 방법
 
 
-* [ScannerEx](#scannerex)
+* [ScannerEx](#scannerex) - Scanner 클래스를 이용한 키보드의 입력값 받기
 
 
-* [InputTest](#inputtest)
+* [InputTest](#inputtest) - 입력 메서드 read()사용하기 - 1byte 값 읽어오기
 
 
-* [ScannerTest](#scannertest)
+* [ScannerTest](#scannertest) - Scanner 이용시, 버퍼 비우기
 
 
-* [OpTest](#optest)
+* [OpTest](#optest) - boolean형의 부정값 : ``!변수명``
 
 
-* [Operatorex1](#operatorex1)
+* [Operatorex1](#operatorex1) - 증감 연산자 (++, --)
 
 
-* [Operatorex23](#operatorex23)
+* [Operatorex23](#operatorex23) - 문자열 비교하기  ``문자열.equals(문자열)``
 
 
-* [Operatorex24](#operatorex24)
+* [Operatorex24](#operatorex24) - 논리연산자(``&&``, ``||``)의 우선순위
 
 
-* [Operatorex25](#operatorex25)
+* [Operatorex25](#operatorex25) - 문자열에서 한 문자 추출하기
 
 
-* [Operatorex26](#operatorex26)
+* [Operatorex26](#operatorex26) - 연산자의 배치에 따른 효율
 
 
-* [Operatorex27](#operatorex27)
+* [Operatorex27](#operatorex27) - boolean형의 부정값 : ``!변수명``
 
 
-* [Condition_op](#condition_op)
+* [Condition_op](#condition_op) - 조건 연산자 ``변수 = 조건문 ? true : false;``
 
 
-* [Test_if](#test_if)
+* [Test_if](#test_if) - 조건문 if ``if(조건문){연산}``
 
 
-* [Test_if_1](#test_if_1)
+* [Test_if_1](#test_if_1) - Test_if의 연습
 
 
-* [FlowEx2](#flowex2)
+* [FlowEx2](#flowex2) - ``if ~ else`` 를 ``if``두개로 나누기
 
 
 * [Switch_Ex_1](#switch_ex_1) - ``switch ~ case`` 문 사용하기
 
 
 * [FlowEx7](#flowex7) - ``Math.random()``을 이용하여 가위, 바위, 보 게임 만들기
+
+
+* [FlowEx8](#flowex8) - ``switch ~ case`` 예제) 주민등록번호를 이용한 성별 구하기
 
 ---
 ---
@@ -220,6 +223,8 @@ Java에서는 *한 문자 입력 기능* 이 **없다**.
 
 문자열을 입력받은 후, 첫번째 문자를 추출 하는 것으로 구현할 수 있다.
 
+		문자열.charAt(인덱스번호);
+
 :camel:[Top](#before-starting-java)
 
 ---
@@ -285,7 +290,7 @@ if(조건문) {
 
 ### Test_if_1
 
-Test_if의 연장
+Test_if의 연습
 
 :camel:[Top](#before-starting-java)
 
@@ -335,6 +340,15 @@ Test_if의 연장
 		(int)(Math.random() * 6) + 1
 		생성되는 난수 : 1, 2, 3, 4, 5, 6
 		
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### FlowEx8
+
+연습) 주민등록번호를 이용한 성별 구하기
+
 :camel:[Top](#before-starting-java)
 
 ---
