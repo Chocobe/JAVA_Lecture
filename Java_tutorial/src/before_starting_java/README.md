@@ -53,6 +53,9 @@
 
 * [Switch_Ex_1](#switch_ex_1) - ``switch ~ case`` 문 사용하기
 
+
+* [FlowEx7](#flowex7) - ``Math.random()``을 이용하여 가위, 바위, 보 게임 만들기
+
 ---
 ---
 
@@ -310,6 +313,28 @@ Test_if의 연장
 
 다만, 리터럴인 변수(final)는 사용할 수 있다.
 
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### FlowEx7
+
+``Math.random()``의 반환값은, 0이상 에서 1 미만의 실수값이 나온다.
+
+즉, ``0 <= Math.random() < 1``으로 표현된다.
+
+---
+
+난수를 이용하여 원하는 값을 정하기 위해선,
+
+원하는 값의 최대값을 곱해주면 만들 수 있다.
+
+예)
+
+		(int)(Math.random() * 6) + 1
+		생성되는 난수 : 1, 2, 3, 4, 5, 6
+		
 :camel:[Top](#before-starting-java)
 
 ---
