@@ -77,6 +77,12 @@
 
 * [Named_loop](#named_loop) - 명명된 반복문 ``루프명 : for()``, ``루프명 : while()``
 
+
+* [WhileEx2](#whileex2) - Named loop 예제1)
+
+
+* [WhileEx3](#whileex3) - Named loop 예제2)
+
 ---
 ---
 
@@ -478,6 +484,23 @@ Test_loop : while(true) {
 ``Test_loop``안에 있는 내부 ``while(true)``문에서 ``i``값이 3을 넘게 되면,
 
 ``break Test_loop;``를 통해 해당 루프를 종료시킬 수 있다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### WhileEx2
+
+Named loop 예제1)
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+### WhileEx3
+
+Named loop 예제2)
 
 :camel:[Top](#before-starting-java)
 
