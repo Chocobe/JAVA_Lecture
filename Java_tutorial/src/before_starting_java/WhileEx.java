@@ -41,7 +41,27 @@ public class WhileEx {
 		System.out.println("최저 점수 : " + min_score);
 		System.out.println("평균 점수 : " + avg_score);
 		System.out.println("-------------------------------");
+		
+		
+		int mode = 0;
+		do {
+			System.out.println("[1.square], [2.square root], [3.log], [0.EXIT]");
+			System.out.print("모드 번호를 입력하세요 : ");
 			
+			mode = scanner.nextInt();
+			
+			switch(mode) {
+			case 0 : System.out.println("---프로그램을 종료합니다.---");	break;
+			case 1 : System.out.println("---square 모드---");			break;
+			case 2 : System.out.println("---square root 모드---");		break;
+			case 3 : System.out.println("---log 모드---");				break;
+			default: System.out.println("---잘못된 메뉴입니다.---");
+			}
+			
+			System.out.println("-------------------------------");
+		} while(mode != 0);
+		
+		
 		scanner.close();
 	}
 }

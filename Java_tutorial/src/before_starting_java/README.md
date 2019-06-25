@@ -74,6 +74,9 @@
 
 * [WhileEx](#whileex) - ``while``문 예제
 
+
+* [Named_loop](#named_loop) - 명명된 반복문 ``루프명 : for()``, ``루프명 : while()``
+
 ---
 ---
 
@@ -435,6 +438,46 @@ Random클래스의 생성자 인수에는 Seed값을 넣을 수 있는데,
 ``while()``문을 사용한 예제
 
 입력값의 최대값, 최소값, 평균값 구하기
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Named_loop
+
+``루프명 : for()`` 또는 ``루프명 : while()``형태로 반복문에 이름을 붙일 수 있다.
+
+루프에 이름을 붙이게 되면, ``break;``명령을 ``break 루프명;``의 형태로 지정할 수 있다.
+
+```java
+int i = 0;
+int j = 0;
+Test_loop : while(true) {
+	j = 0;
+	i++;
+	System.out.println("Hello Java");
+	
+	while(true) {		
+		j++;
+		System.out.println("j = " + j);
+		
+		if(j > 3) {
+			break;
+		}
+		
+		if(i > 3) {
+			break Test_loop;
+		}
+	}
+}
+```
+
+위의 코드에서 최상위 루프는 ``Test_loop``라는 이름을 가진 ``while(true)``이다.
+
+``Test_loop``안에 있는 내부 ``while(true)``문에서 ``i``값이 3을 넘게 되면,
+
+``break Test_loop;``를 통해 해당 루프를 종료시킬 수 있다.
 
 :camel:[Top](#before-starting-java)
 
