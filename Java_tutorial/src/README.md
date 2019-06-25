@@ -55,3 +55,10 @@
 1. 동적할당 메모리
 
 		사용자 전용 메모리 (배열, 멤버변수 등...)
+		
+1. Eclipse 인코딩 설정 바꾸기
+
+		Window -> Preperences
+		"encoding" 검색
+		"workspace, HTML, CSS, JSP" 부분의 encoding을 변경하면 된다.
+		(UTF-8 추천)

@@ -1,5 +1,6 @@
 package before_starting_java;
 
+import java.util.Random;
 import java.util.Scanner;
 
 public class While_test {
@@ -56,6 +57,32 @@ public class While_test {
 		}
 		System.out.println("총 합 : " + cur_sum);
 		System.out.println("------------------------------");
+		
+		
+		int num = 0;
+		int answer = 0;
+		int answer_cnt = 0;
+		Random random = new Random(System.currentTimeMillis());
+		
+		do {
+			System.out.print("1에서 100사이의 정수 입력 : ");
+			num = scanner.nextInt();
+			answer = random.nextInt(100) + 1;
+			
+			if(num > answer)
+				System.out.println("큽니다 - [유저 : " + num + "], [컴] : " + answer);
+			
+			else if(num < answer)
+				System.out.println("작습니다 - [유저 : " + num + "], [컴] : " + answer);
+			
+			answer_cnt++;
+			System.out.println("------------------------------");
+		} while(num != answer);
+		
+		System.out.println("루프 탈출 횟수 : " + answer_cnt);
+		System.out.println("------------------------------");
+		
+		
 		
 		
 		scanner.close();
