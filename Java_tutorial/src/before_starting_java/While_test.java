@@ -42,6 +42,20 @@ public class While_test {
 		System.out.println("------------------------------");
 		
 		
+		int input_num = 0;
+		int cur_sum = 0;
+		boolean flag = true;
+		
+		while(flag) {
+			System.out.print("합계를 구할 숫자(0은 종료) : ");
+			input_num = scanner.nextInt();
+			cur_sum += input_num;
+			if(input_num == 0) {
+				flag = false;
+			}
+		}
+		System.out.println("총 합 : " + cur_sum);
+		System.out.println("------------------------------");
 		
 		
 		scanner.close();

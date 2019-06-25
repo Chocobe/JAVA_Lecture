@@ -71,6 +71,9 @@
 
 * [While_test](#while_test) - ``while``문 연습
 
+
+* [WhileEx](#whileex) - ``while``문 예제
+
 ---
 ---
 
@@ -414,7 +417,24 @@ Random클래스의 생성자 인수에는 Seed값을 넣을 수 있는데,
 
 ### While_test
 
+``while(조건식){실행문}``의 형식으로 사용하며,
+
+조건식이 만족하면 반복 실행한다.
+
+---
+
 정수값 ``2000``은 ``2_000``으로도 표현할 수 있다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### WhileEx
+
+``while()``문을 사용한 예제
+
+입력값의 최대값, 최소값, 평균값 구하기
 
 :camel:[Top](#before-starting-java)
 

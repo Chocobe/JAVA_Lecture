@@ -12,11 +12,11 @@ public class Tenacity_number {
 		final int BEGIN_NUM = 10;	// 최소값
 		final int END_NUM = 100;	// 한계값
 		
-		int current_count = 0;	// 현재 대상값의 고집수 횟수
-		int current_val = 0;	// 현재 대상값
-		int total_count = 0;	// 조건을 만족하는 고집수 개수
-		int lhs = 0;			// 10의 자리 숫자
-		int rhs = 0;			// 1의 자리 숫자
+		int current_count = 0;		// 현재 대상값의 고집수 횟수
+		int current_val = 0;		// 현재 대상값
+		int total_count = 0;		// 조건을 만족하는 고집수 개수
+		int lhs = 0;				// 10의 자리 숫자
+		int rhs = 0;				// 1의 자리 숫자
 		
 		for(int i = BEGIN_NUM; i < END_NUM; i++) {
 			current_val = i;
