@@ -7,7 +7,7 @@ public class Method_Ex_3 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		int lhs = 10;
+		int lhs = 0;
 		int rhs = 0;
 		int min = 0;
 		
@@ -43,6 +43,8 @@ public class Method_Ex_3 {
 	// @return	:	N/A
 	public static void printLine() {
 		System.out.println("----------------");
+		
+		return;
 	}
 	
 	
@@ -66,8 +68,12 @@ public class Method_Ex_3 {
 	public static int getMin(int _lhs, int _rhs) {
 		int min = 0;
 		
-		if(_lhs > _rhs) { min = _rhs; }
-		else { min = _lhs; }
+		if(_lhs > _rhs) { 
+			min = _rhs; 
+		
+		} else { 
+			min = _lhs; 
+		}
 		
 		return min;
 	}

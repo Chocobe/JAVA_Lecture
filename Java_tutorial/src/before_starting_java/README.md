@@ -1,5 +1,8 @@
 # before starting java
 
+* [Ascii](#ascii) - 문자를 아스키코드 값으로 사용하기
+
+
 * [Hello](#hello) - 문자열 출력과 자료형들
 		
 		
@@ -21,7 +24,7 @@
 * [Operatorex1](#operatorex1) - 증감 연산자 (++, --)
 
 
-* [Operatorex23](#operatorex23) - 문자열 비교하기  ``문자열.equals(문자열)``
+* [Operatorex23](#operatorex23) - 문자열 비교하기 ``문자열.equals(문자열)``
 
 
 * [Operatorex24](#operatorex24) - 논리연산자(``&&``, ``||``)의 우선순위
@@ -79,6 +82,19 @@
 
 
 * [WhileEx3](#whileex3) - Named loop 예제2)
+
+---
+---
+
+### Ascii
+
+문자를 아스키 코드값으로 이용하는 방법이다.
+
+char형 변수에 있는 문자는 ``(int)``형변환으로 아스키값을 구할 수 있다.
+
+(String형은 변환할 수 없다)
+
+:camel:[Top](#before-starting-java)
 
 ---
 ---
