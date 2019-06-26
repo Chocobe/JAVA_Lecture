@@ -15,7 +15,7 @@ public class Count_char {
 		System.out.println("문제4] 문자열의 자음/모음 개수 구하기");
 
 		String input_data = "";
-		String single_string = "";
+		char single_string = ' ';
 		int length = 0;
 		
 		String continuity = "";
@@ -32,21 +32,28 @@ public class Count_char {
 			}
 			
 			for(int i = 0; i < length; i++) {
-				single_string = input_data.substring(i, i + 1);
+				single_string = input_data.charAt(i);
 
-				switch(single_string) {
-				case "a": case "e": case "i": case "o": case "u":
-					vowel++;
-					break;
+//				switch(single_string) {
+//				case "a": case "e": case "i": case "o": case "u":
+//					vowel++;
+//					break;
+//				
+//				case "0": case "1": case "2": case "3": case "4":
+//				case "5": case "6": case "7": case "8": case "9":
+//					digit++;
+//					break;
+//					
+//				default :
+//					consonant++;
+//				}
 				
-				case "0": case "1": case "2": case "3": case "4":
-				case "5": case "6": case "7": case "8": case "9":
-					digit++;
-					break;
-					
-				default :
-					consonant++;
-				}
+				
+				
+				// <--------아스키코드값으로 검사
+				
+				
+				
 			} // for(문자열 길이)
 			
 			System.out.println("입력문자 : " + input_data);
