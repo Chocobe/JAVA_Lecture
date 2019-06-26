@@ -92,6 +92,11 @@
 
 char형 변수에 있는 문자는 ``(int)``형변환으로 아스키값을 구할 수 있다.
 
+```java
+char char_temp = 'A';
+int int_temp = (int)char_temp;
+```
+
 (String형은 변환할 수 없다)
 
 :camel:[Top](#before-starting-java)
