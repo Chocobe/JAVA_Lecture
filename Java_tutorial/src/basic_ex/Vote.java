@@ -70,8 +70,8 @@ public class Vote {
 		second_rate = ((double)second_vote / total_vote) * 100;
 		
 		System.out.println("---------------------------------");
-		System.out.printf("첫번째 후보가 얻는 총득표수 %d이고 득표율은 %.1f이다\n", first_vote, first_rate);
-		System.out.printf("두번째 후보가 얻는 총듣표수 %d이고 득표율은 %.1f이다\n", second_vote, second_rate);
+		System.out.printf("첫번째 후보가 얻는 총득표수 %d이고 득표율은 %.1f%%이다\n", first_vote, first_rate);
+		System.out.printf("두번째 후보가 얻는 총듣표수 %d이고 득표율은 %.1f%%이다\n", second_vote, second_rate);
 		
 		scanner.close();
 	} // main
