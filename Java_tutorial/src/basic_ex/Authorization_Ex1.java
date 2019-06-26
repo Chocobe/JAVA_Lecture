@@ -40,8 +40,8 @@ public class Authorization_Ex1 {
 					break;
 				}
 			}
-		}
+		} // while(true)
 		
 		scanner.close();
-	}
+	} // main
 }

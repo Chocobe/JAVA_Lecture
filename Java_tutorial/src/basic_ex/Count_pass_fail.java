@@ -52,8 +52,8 @@ public class Count_pass_fail {
 				} else {
 					System.out.println("Error] 잘못 입력했습니다.");
 				}
-			}
-		}
+			} // while(true)
+		} // Main_loop
 		
 		System.out.println("----------------------");
 		System.out.println("총 학생수 : " + student_cnt);
@@ -62,5 +62,5 @@ public class Count_pass_fail {
 		System.out.println("----------------------");
 		
 		scanner.close();
-	}
+	} // main
 }

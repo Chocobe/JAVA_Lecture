@@ -1,6 +1,3 @@
----
----
-
 # before starting java
 
 * [Hello](#hello) - 문자열 출력과 자료형들
