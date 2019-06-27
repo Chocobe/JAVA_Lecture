@@ -4,6 +4,8 @@
 	
 		계층간 데이터를 교환하기 위한 Java Beans.
 
+---
+
 1. DAO (Data Access Object)
 	
 		domain logic을 persisttence machanism과 분리하기 위해 사용.
@@ -80,3 +82,17 @@
 
 
 * 스택 메모리는 수명이 짧지 만 힙 메모리는 응용 프로그램 실행의 시작부터 끝까지 존재한다.
+
+1. 프로젝트 디렉토리창(hierarchy) 선택하기
+
+* 현재 프로젝트의 디렉토리 계층을 볼 수 있는 창이다.
+기본값은 ``Package Explorer``이고, 현재 프로젝트의 파일들을 보여준다.
+
+* 목적 파일인  ``.class``파일들은 나타나지 않는데,
+``.class``파일들 까지 보고 싶다면, 다음과 같이 설정을 변경할 수 있다.
+
+		 Navigate(n) -> Show In -> Navigator
+		 
+* 프로젝트 디렉토리차(hierarchy)를 원래대로 설정 하려면,
+
+		Navigate(n) -> Show In -> Package Explorer

@@ -101,6 +101,16 @@
 
 * [Array_Money_Ex](#array_money_ex) - 배열 예제 5 (입력금액을 화폐단위로 환산)
 
+
+* [Array_DynamicArray]](#array_dynamicarray) - 배열의 동적할당 (배열크기를 유동적으로 만들기)
+
+
+* [Array_Ex_16](#array_ex_16) - main 메서드의 ``String[] args`` 매개변수 사용 방법
+
+
+* [Array_Ex_17](#array_ex_17) - main 메서드의 ``String[] args`` 매개변수 사용 예제 1
+
+
 ---
 ---
 
@@ -605,3 +615,52 @@ int[] 배열명 = new int[배열크기];
 입력받은 금액을 각 화폐 개수로 환산하기
 
 :camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_DynamicArray
+
+JAVA에서는 C와는 다르게 동적으로 배열의 크기를 정할 수 있다.
+
+배열 생성 즉시 크기를 정하지 않고, 크기값에 변수를 사용하여 유동적으로 생성할 수 있다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_16
+
+main메서드의 인수 ``String[] args`` 사용 방법
+
+``String[] args``는 프로그램의 실행시 입력된 값을 말한다.
+
+문자열 배열형인 ``String[] args``는 문자열이므로, 문자열 사용방식으로 쓸 수 있다.
+
+---
+
+main메서드의 인수 ``String[] args``에 값 넣는 방법
+
+Eclipse메뉴 중,
+
+		Run(r) -> Run Configurations(n)
+		를 실행 한다.
+		
+		항목중, Arguments를 선택하여 Program arguments 란에 값을 넣는다.
+		
+		Run 을 실행하면, 해당값이 String[] args 에 입력되어 실행된다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_17
+
+메인의 ``String[] args`` 매개변수 사용 예제
+
+:camel:[Top](#before-starting-java)
+
+---
+---
