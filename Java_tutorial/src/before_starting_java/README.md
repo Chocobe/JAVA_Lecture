@@ -95,6 +95,12 @@
 
 * [Array_Ex_7](#array_ex_7) - 배열 예제 3
 
+
+* [Array_Ex_Bubble_Sort](#array_ex_bubble_sort)
+
+
+* [Array_Money_Ex](#array_money_ex)
+
 ---
 ---
 
@@ -575,5 +581,27 @@ int[] 배열명 = new int[배열크기];
 ### Array_Ex_7
 
 배열 사용 예제 3
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_Bubble_Sort
+
+배열 사용 예제 4
+
+버블정렬 구현하기
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Money_Ex
+
+배열 사용 예제 5
+
+입력받은 금액을 각 화폐 개수로 환산하기
 
 :camel:[Top](#before-starting-java)
