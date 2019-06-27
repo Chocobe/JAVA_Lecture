@@ -7,8 +7,8 @@ public class Array_Ex_3 {
 		int[] score = {90, 89, 94, 100, 96};
 		
 		int sum = 0;
-		int max = -10000;
-		int min = 10000;
+		int max = score[0];
+		int min = score[0];
 		double avg = 0F;
 		
 		int len = score.length;

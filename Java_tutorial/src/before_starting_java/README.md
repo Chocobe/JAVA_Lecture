@@ -92,6 +92,9 @@
 
 * [Array_Ex_3](#array_ex_3) - 배열 예제 2
 
+
+* [Array_Ex_7](#array_ex_7) - 배열 예제 3
+
 ---
 ---
 
@@ -563,5 +566,14 @@ int[] 배열명 = new int[배열크기];
 배열 사용 예제 2
 
 배열을 사용하여 최대, 최소, 총합, 평균 구하기
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_7
+
+배열 사용 예제 3
 
 :camel:[Top](#before-starting-java)
