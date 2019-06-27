@@ -4,7 +4,6 @@
 	
 		계층간 데이터를 교환하기 위한 Java Beans.
 
----
 
 1. DAO (Data Access Object)
 	
