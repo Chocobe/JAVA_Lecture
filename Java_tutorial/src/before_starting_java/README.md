@@ -96,10 +96,10 @@
 * [Array_Ex_7](#array_ex_7) - 배열 예제 3
 
 
-* [Array_Ex_Bubble_Sort](#array_ex_bubble_sort) - 배열 예제 4(버블정렬 구현)
+* [Array_Ex_Bubble_Sort](#array_ex_bubble_sort) - 배열 예제 4 (버블정렬 구현)
 
 
-* [Array_Money_Ex](#array_money_ex) - 배열 예제 5(입력금액을 화폐단위로 환산)
+* [Array_Money_Ex](#array_money_ex) - 배열 예제 5 (입력금액을 화폐단위로 환산)
 
 ---
 ---
