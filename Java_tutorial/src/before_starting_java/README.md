@@ -78,10 +78,19 @@
 * [Named_loop](#named_loop) - 명명된 반복문 ``루프명 : for()``, ``루프명 : while()``
 
 
-* [WhileEx2](#whileex2) - Named loop 예제1)
+* [WhileEx2](#whileex2) - Named loop 예제1
 
 
-* [WhileEx3](#whileex3) - Named loop 예제2)
+* [WhileEx3](#whileex3) - Named loop 예제2
+
+
+* [Array_Ex_1](#array_ex_1) - 배열 생성하기
+
+
+* [Array_Ex_2](#array_ex_2) - 배열 예제 1
+
+
+* [Array_Ex_3](#array_ex_3) - 배열 예제 2
 
 ---
 ---
@@ -524,3 +533,35 @@ Named loop 예제2)
 
 ---
 ---
+
+### Array_Ex_1
+
+배열의 생성
+
+```java
+int[] 배열명 = new int[배열크기];
+```
+
+정수형 배열을 생성하면, 정수형의 default값인 0이 들어있다.
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_2
+
+배열 사용 예제 1
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_3
+
+배열 사용 예제 2
+
+배열을 사용하여 최대, 최소, 총합, 평균 구하기
+
+:camel:[Top](#before-starting-java)
