@@ -103,8 +103,21 @@ public class Array_Ex_Booking {
 	// @param	:	(Scanner) 객체
 	// @return	:	(int) 입력한 자리값
 	public static int input_sit_num(Scanner _sc) {
-		System.out.print("\t\t\t입력한 자리 : ");
-		int input_data = _sc.nextInt();
+		int input_data = 0;
+		
+		while(true) {
+			System.out.print("\t\t\t입력한 자리 : ");
+			input_data = _sc.nextInt();
+			
+			// 좌석번호 예외처리
+			if(input_data < 1 || input_data > SIT_SIZE) {
+				System.out.println("\t\t\t잘못된 입력입니다.");
+				continue;
+			}
+			
+			break;
+		}
+		
 		_sc.nextLine();
 		return input_data;
 	}
@@ -164,9 +177,11 @@ public class Array_Ex_Booking {
 	//			:	(boolean) 예약 가능 여부
 	// @return	:	N/A
 	public static void update_sit(int _sit, boolean _state) {
+		int sit_num = _sit - 1;
+		
 		if(_state) {
-			g_sit_state[_sit - 1] = false;
-			System.out.println("\t\t\t예약 되었습니다.");
+			g_sit_state[sit_num] = false;
+			System.out.println("\t\t   \"" + _sit + "\"번 자리가 예약 되었습니다.");
 			
 		} else { System.out.println("\t\t\t해당 자리가 없습니다."); }
 	}
