@@ -38,7 +38,7 @@ public class Array_Ex_Grade {
 		// 6. 출력
 		print_attribute();
 		print_result(arr_name, arr_score, arr_total_score, arr_avg_score, arr_rank);
-	}
+	} // main
 	
 	
 	// 속성명 출력
