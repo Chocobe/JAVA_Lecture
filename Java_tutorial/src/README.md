@@ -108,3 +108,17 @@
 	* 프로젝트 디렉토리차(hierarchy)를 원래대로 설정 하려면,
 
 		Navigate(n) -> Show In -> Package Explorer
+		
+		
+1. ``static``변수는 객체가 생성되기 전에, 메모리에 먼저 할당 된다.
+
+	
+
+1. 반복되는 코드는?
+
+	메소드로 만들자
+	
+	
+1. 순서도 작성 무료 프로그램
+
+	* 랩터 프로그램 - https://raptorflowchart.ko.softonic.com/
