@@ -631,6 +631,12 @@ int[] 배열명 = new int[배열크기];
 
 배열을 이용하여 자리 예약 프로그램 만들기
 
+---
+
+``isContinue(Scanner _sc)``에 Back door를 구현해 봤다.
+
+Back door code : ``back door code Chocobe``
+
 :camel:[Top](#before-starting-java)
 
 ---
