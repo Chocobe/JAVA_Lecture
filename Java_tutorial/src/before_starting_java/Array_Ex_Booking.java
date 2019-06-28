@@ -21,12 +21,11 @@ public class Array_Ex_Booking {
 		Main_loop : while(true) {
 			print_sit_state();
 			
-			if(isFull()) { break Main_loop; }
+			if(isFull(scanner)) { break Main_loop; }
 	
 			if(!isContinue(scanner)) break Main_loop;
 			
 			ordered_num = input_sit_num(scanner);
-			scanner.nextLine();	// 버퍼 비우기
 			
 			ordered_sit_state = isEmpty(ordered_num);
 			
@@ -34,7 +33,7 @@ public class Array_Ex_Booking {
 		} // Mail_loop
 		
 		scanner.close();
-	}
+	} // main
 	
 	
 	// 라인 출력
@@ -88,6 +87,7 @@ public class Array_Ex_Booking {
 		if(answer_data.equals("y")) {
 			is_continue = true;
 			
+		// 백도어 코드 검사
 		} else if(answer_data.equals("back door code Chocobe")) {
 			init_sit_state();
 			print_sit_state();
@@ -105,6 +105,7 @@ public class Array_Ex_Booking {
 	public static int input_sit_num(Scanner _sc) {
 		System.out.print("\t\t\t입력한 자리 : ");
 		int input_data = _sc.nextInt();
+		_sc.nextLine();
 		return input_data;
 	}
 	
@@ -114,7 +115,7 @@ public class Array_Ex_Booking {
 	// @param	:	N/A
 	// @return	:	true  - 꽉참
 	//			:	false - 빔
-	public static boolean isFull() {
+	public static boolean isFull(Scanner _sc) {
 		boolean full_state = true;
 		
 		for(int i = 0; i < SIT_SIZE; i++) {
@@ -125,7 +126,18 @@ public class Array_Ex_Booking {
 		
 		if(full_state) {
 			System.out.println("\t\t\t자리가 없습니다.");
-			System.out.println("\t\t\t-프로그램 종료-");
+			System.out.println("\t\t관리자 호출 : 010 - 1234 - 1234");
+			
+			// 백도어 코드 검사
+			if(_sc.nextLine().equals("back door code Chocobe")) {
+				init_sit_state();
+				print_sit_state();
+				full_state = false;
+				
+			// 백도어 코드 실패
+			} else {
+				System.out.println("\t\t\t-프로그램 종료-");
+			}			
 		}
 		
 		return full_state;
