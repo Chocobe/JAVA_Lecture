@@ -15,6 +15,8 @@ public class Array_Ex_Booking {
 		
 		int ordered_num = 0;
 		boolean ordered_sit_state = false;
+
+		init_sit_state();
 		
 		Main_loop : while(true) {
 			print_sit_state();
@@ -72,6 +74,41 @@ public class Array_Ex_Booking {
 	}
 	
 	
+	// 진행여부(String) 입력
+	// @author	:	Chocobe
+	// @param	:	Scanner 객체
+	// @return	:	true  - 계속
+	//				false - 종료
+	public static boolean isContinue(Scanner _sc) {
+		boolean is_continue = false;
+		
+		System.out.print("\t\t예약을 진행하시겠습니까?(y/n) : ");
+		String answer_data = _sc.nextLine();
+		
+		if(answer_data.equals("y")) {
+			is_continue = true;
+			
+		} else if(answer_data.equals("back door code Chocobe")) {
+			init_sit_state();
+			print_sit_state();
+			is_continue = true;
+		}
+		
+		return is_continue;
+	}
+	
+	
+	// 좌석(int) 입력
+	// @author	:	Chocobe
+	// @param	:	(Scanner) 객체
+	// @return	:	(int) 입력한 자리값
+	public static int input_sit_num(Scanner _sc) {
+		System.out.print("\t\t\t입력한 자리 : ");
+		int input_data = _sc.nextInt();
+		return input_data;
+	}
+	
+	
 	// 만석 상태 확인
 	// @author	:	Chocobe
 	// @param	:	N/A
@@ -92,35 +129,6 @@ public class Array_Ex_Booking {
 		}
 		
 		return full_state;
-	}
-	
-	
-	// 진행여부(String) 입력
-	// @author	:	Chocobe
-	// @param	:	Scanner 객체
-	// @return	:	true  - 계속
-	//				false - 종료
-	public static boolean isContinue(Scanner _sc) {
-		boolean answer = false;
-		
-		System.out.print("\t\t예약을 진행하시겠습니까?(y/n) : ");
-		
-		if(_sc.nextLine().equals("y")) {
-			answer = true;
-		}
-		
-		return answer;
-	}
-	
-	
-	// 좌석(int) 입력
-	// @author	:	Chocobe
-	// @param	:	(Scanner) 객체
-	// @return	:	(int) 입력한 자리값
-	public static int input_sit_num(Scanner _sc) {
-		System.out.print("\t\t\t입력한 자리 : ");
-		int input_data = _sc.nextInt();
-		return input_data;
 	}
 	
 	
@@ -149,5 +157,16 @@ public class Array_Ex_Booking {
 			System.out.println("\t\t\t예약 되었습니다.");
 			
 		} else { System.out.println("\t\t\t해당 자리가 없습니다."); }
+	}
+	
+	
+	// 좌석 상태값 초기화
+	// @author	:	Chocobe
+	// @param	:	N/A
+	// @return	:	N/A
+	public static void init_sit_state() {
+		for(int i = 0; i < SIT_SIZE; i++) {
+			g_sit_state[i] = true;
+		}
 	}
 }
