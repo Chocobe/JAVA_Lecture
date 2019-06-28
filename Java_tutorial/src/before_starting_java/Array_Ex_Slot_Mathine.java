@@ -27,7 +27,6 @@ public class Array_Ex_Slot_Mathine {
 	public static void run_game() {
 		Scanner scanner = new Scanner(System.in);
 		while(true) {
-			boolean proper_money = false;
 			int batting_money = 0;
 			
 			// 2. 보유금 출력
