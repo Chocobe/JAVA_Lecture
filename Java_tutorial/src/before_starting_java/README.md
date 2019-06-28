@@ -105,7 +105,7 @@
 * [Array_Ex_Booking](#array_ex_booking) - 배열 예제 6 (예약 프로그램 만들기)
 
 
-* [Array_DynamicArray]](#array_dynamicarray) - 배열의 동적할당 (배열크기를 유동적으로 만들기)
+* [Array_DynamicArray](#array_dynamicarray) - 배열의 동적할당 (배열크기를 유동적으로 만들기)
 
 
 
