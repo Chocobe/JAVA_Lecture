@@ -2,6 +2,7 @@ package before_starting_java;
 
 import java.util.Scanner;
 
+// 배열 예제 5
 // 입력한 금액을 50000원, 10000원, 5000원, 1000원, 500원, 100원, 50원, 1원 으로 환산 출력하기
 
 public class Array_Money_Ex {

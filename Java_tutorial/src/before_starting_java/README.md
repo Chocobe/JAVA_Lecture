@@ -102,7 +102,11 @@
 * [Array_Money_Ex](#array_money_ex) - 배열 예제 5 (입력금액을 화폐단위로 환산)
 
 
+* [Array_Ex_Booking](#array_ex_booking) - 배열 예제 6 (예약 프로그램 만들기)
+
+
 * [Array_DynamicArray]](#array_dynamicarray) - 배열의 동적할당 (배열크기를 유동적으로 만들기)
+
 
 
 * [Array_Ex_16](#array_ex_16) - main 메서드의 ``String[] args`` 매개변수 사용 방법
@@ -110,6 +114,8 @@
 
 * [Array_Ex_17](#array_ex_17) - main 메서드의 ``String[] args`` 매개변수 사용 예제 1
 
+
+* [Array_Ex_Grade](#array_ex_grade) - ``String[] args``와 배열을 사용하여 성적표 출력하기
 
 ---
 ---
@@ -619,6 +625,17 @@ int[] 배열명 = new int[배열크기];
 ---
 ---
 
+### Array_Ex_Booking
+
+배열 사용 예제 6
+
+배열을 이용하여 자리 예약 프로그램 만들기
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
 ### Array_DynamicArray
 
 JAVA에서는 C와는 다르게 동적으로 배열의 크기를 정할 수 있다.
@@ -664,3 +681,11 @@ Eclipse메뉴 중,
 
 ---
 ---
+
+### Array_Ex_Grade
+
+배열 사용 예제 7
+
+메인의 ``String[] args``값을 사용하여 학생별 성적, 등수 출력
+
+:camel:[Top](#before-starting-java)
