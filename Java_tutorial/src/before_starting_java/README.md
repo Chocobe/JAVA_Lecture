@@ -117,6 +117,9 @@
 
 * [Array_Ex_Grade](#array_ex_grade) - ``String[] args``와 배열을 사용하여 성적표 출력하기
 
+
+* [DivideException](#divideexception)
+
 ---
 ---
 
@@ -695,3 +698,10 @@ Eclipse메뉴 중,
 메인의 ``String[] args``값을 사용하여 학생별 성적, 등수 출력
 
 :camel:[Top](#before-starting-java)
+
+---
+---
+
+### DivideException
+
+예외 처리 구문 ``try ~ catch``

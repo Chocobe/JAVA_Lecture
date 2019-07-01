@@ -2,6 +2,9 @@ package slot_machine;
 
 import java.util.Scanner;
 
+// stop_slot 메서드 수정하기
+// 매개변수 - 슬롯 위치값_ROW, 슬롯 위치값_COL -> 1번 심볼, 2번 심볼, 3번 심볼
+
 public class Slot_machine_main {
 	
 	public static int g_my_money;
@@ -9,9 +12,9 @@ public class Slot_machine_main {
 	public static int g_system_state;
 	
 	public final static String SLOT_LINE_1 	= "┌───Chocobe─Machine───┐";
-	public final static String SLOT_LINE_2 	= "│    ┌─┐  ┌─┐  ┌─┐    │";
-	public final static String SLOT_LINE_3 	= "│    │ │  │ │  │ │    │";
-	public final static String SLOT_LINE_4 	= "│    └─┘  └─┘  └─┘    │";
+	public final static String SLOT_LINE_2 	= "│*** ┌─┐  ┌─┐  ┌─┐ ***│";
+	public final static String SLOT_LINE_3 	= "│*   │ │  │ │  │ │   *│";
+	public final static String SLOT_LINE_4 	= "│*** └─┘  └─┘  └─┘ ***│";
 	public final static String SLOT_LINE_5	= "└─────────────────────┘";
 	public final static String INIT_COMMENT = "시작 : Enter             ";
 	
@@ -35,6 +38,11 @@ public class Slot_machine_main {
 	public final static char TARGET_IMAGE_1 = '*';
 	public final static char TARGET_IMAGE_2 = '!';
 	public final static char TARGET_IMAGE_3 = '@';
+	
+	public final static char TARGET_POSITION_ROW = 2;
+	public final static char TARGET_POSITION_COL_1 = 6;
+	public final static char TARGET_POSITION_COL_2 = 11;
+	public final static char TARGET_POSITION_COL_3 = 16;
 	
 	public final static int TARGET_PERCENT_1 = 1;
 	public final static int TARGET_PERCENT_2 = 3;
