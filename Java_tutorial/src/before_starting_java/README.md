@@ -120,6 +120,9 @@
 
 * [DivideException](#divideexception)
 
+
+* [DivideException](#divideexception)
+
 ---
 ---
 
@@ -705,3 +708,35 @@ Eclipse메뉴 중,
 ### DivideException
 
 예외 처리 구문 ``try ~ catch``
+
+---
+
+* 에러(error) : 수습될 수 없는 심각한 오류
+
+* 예외(exception) : 수습될 수 있는 다소 미약한 오류
+
+---
+
+* 컴파일 에러 : 컴파일 시에 발생하는 에러
+
+* 런타임 에러 : 실행 시에 발생하는 에러
+
+* 논리적 에러 : 실행은 되지만, 의도와 다르게 동작하는 것
+
+---
+
+* ``Exception 클래스들`` - 사용자의 실수와 같은 외적인 요인에 의해 발생하는 예외
+
+* ``RuntimeException`` - 프로그래머의 실수에 의해 발생하는 예외
+
+---
+
+* 예외처리(Exception handling)의 정의
+	
+	*프로그램 실행 시 발생할 수 있는 예외에 대비한 코드를 작성하는 것
+	
+* 예외처리(Exception handling)의 목적
+
+	*프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것
+	
+:camel:[Top](#before-starting-java)

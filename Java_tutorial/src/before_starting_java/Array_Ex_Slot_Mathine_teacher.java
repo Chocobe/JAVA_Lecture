@@ -162,22 +162,27 @@ public class Array_Ex_Slot_Mathine_teacher {
 		
 		switch(_machine_result) {
 		case PLAYER_WIN_0:	// 실패
+			System.out.println("베팅한 돈을 잃었습니다.");
 			result_money = _my_money;
 			break;
 			
 		case PLAYER_WIN_1:	// '7'성공
+			System.out.println("축하합니다! 베팅한 돈의 50배를 얻게 됩니다.");
 			result_money = _my_money + (_bet_money * 50);
 			break;
 			
 		case PLAYER_WIN_2:	// '#'성공
+			System.out.println("축하합니다! 베팅한 돈의 10배를 얻게 됩니다.");
 			result_money = _my_money + (_bet_money * 10);
 			break;
 			
 		case PLAYER_WIN_3:	// 
+			System.out.println("축하합니다! 베팅한 돈의 5배를 얻게 됩니다.");
 			result_money = _my_money + (_bet_money * 5);
 			break;
 			
 		case PLAYER_WIN_4:
+			System.out.println("축하합니다! 베팅한 돈의 3배를 얻게 됩니다.");
 			result_money = _my_money + (_bet_money * 3);
 			break;
 			
