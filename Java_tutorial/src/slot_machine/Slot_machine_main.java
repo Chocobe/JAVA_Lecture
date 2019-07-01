@@ -36,8 +36,8 @@ public class Slot_machine_main {
 	public final static char TARGET_IMAGE_2 = '!';
 	public final static char TARGET_IMAGE_3 = '@';
 	
-	public final static int TARGET_PERCENT_1 = 8;
-	public final static int TARGET_PERCENT_2 = 9;
+	public final static int TARGET_PERCENT_1 = 1;
+	public final static int TARGET_PERCENT_2 = 3;
 	
 	public static char g_cur_target_1;
 	public static char g_cur_target_2;
@@ -292,7 +292,7 @@ public class Slot_machine_main {
 		if(random_num <= TARGET_PERCENT_1) {
 			return TARGET_IMAGE_1;
 			
-		} else if(random_num <= TARGET_PERCENT_2) {
+		} else if(random_num <= (TARGET_PERCENT_1 + TARGET_PERCENT_2)) {
 			return TARGET_IMAGE_2;
 			
 		} else {

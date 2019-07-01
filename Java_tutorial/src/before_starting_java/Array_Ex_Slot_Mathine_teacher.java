@@ -23,6 +23,7 @@ public class Array_Ex_Slot_Mathine_teacher {
 		do {
 			System.out.printf("현재 갖고 있는 돈 : %d\n", current_money);
 			bet_money = betting(current_money, sc);
+			System.out.printf("배팅한 돈 : %d\n", bet_money);
 			current_money -= bet_money;
 			
 		} while(current_money > 0);
