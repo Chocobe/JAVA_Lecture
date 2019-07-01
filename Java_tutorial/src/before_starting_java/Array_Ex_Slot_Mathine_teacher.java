@@ -7,7 +7,7 @@ public class Array_Ex_Slot_Mathine_teacher {
 	
 	public static final int DEFAULT_MONEY = 1000;
 	
-	public static final int PLAYER_WIN_0 = 0;
+	public static final int PLAYER_LOSE  = 0;
 	public static final int PLAYER_WIN_1 = 1;
 	public static final int PLAYER_WIN_2 = 2;
 	public static final int PLAYER_WIN_3 = 3;
@@ -29,17 +29,26 @@ public class Array_Ex_Slot_Mathine_teacher {
 		
 		int current_money = DEFAULT_MONEY;
 		int bet_money = 0;
+		int machine_result = 0;
 		
-		run_machine();
+		machine_result = run_machine();
 		
 		do {
 			System.out.printf("현재 갖고 있는 돈 : %d\n", current_money);
+			
 			bet_money = betting(current_money, sc);
 			System.out.printf("배팅한 돈 : %d\n", bet_money);
-			run_machine();
-			current_money -= bet_money;
+
+			current_money -= bet_money; // <- 삭제 필요 유무 확인할 것
+			
+			// 슬롯머신 수행
+			machine_result = run_machine();
+			
+			current_money = calculate_money(machine_result, current_money, bet_money);
 			
 		} while(current_money > 0);
+		
+		System.out.println("보유금이 없습니다.");
 		
 		sc.close();
 	}
@@ -126,10 +135,12 @@ public class Array_Ex_Slot_Mathine_teacher {
 				  symbol_1 == '!' && symbol_3 == '!' ||
 				  symbol_2 == '!' && symbol_3 == '!') 
 		{			
-			machine_result = PLAYER_WIN_4; // 계산 = 배팅금액 * 3
+			if(symbol_1 == '@' || symbol_2 == '@' || symbol_3 == '@') {
+				machine_result = PLAYER_WIN_4; // 계산 = 배팅금액 * 3
+			}
 			
 		} else { // 플래이어가 진 경우
-			machine_result = PLAYER_WIN_0;
+			machine_result = PLAYER_LOSE;
 		}
 		
 		return machine_result;
@@ -161,7 +172,7 @@ public class Array_Ex_Slot_Mathine_teacher {
 		int result_money = 0;
 		
 		switch(_machine_result) {
-		case PLAYER_WIN_0:	// 실패
+		case PLAYER_LOSE:	// 실패
 			System.out.println("베팅한 돈을 잃었습니다.");
 			result_money = _my_money;
 			break;
@@ -176,12 +187,12 @@ public class Array_Ex_Slot_Mathine_teacher {
 			result_money = _my_money + (_bet_money * 10);
 			break;
 			
-		case PLAYER_WIN_3:	// 
+		case PLAYER_WIN_3:	// '@'성공
 			System.out.println("축하합니다! 베팅한 돈의 5배를 얻게 됩니다.");
 			result_money = _my_money + (_bet_money * 5);
 			break;
 			
-		case PLAYER_WIN_4:
+		case PLAYER_WIN_4:	// '!'
 			System.out.println("축하합니다! 베팅한 돈의 3배를 얻게 됩니다.");
 			result_money = _my_money + (_bet_money * 3);
 			break;
@@ -194,9 +205,6 @@ public class Array_Ex_Slot_Mathine_teacher {
 	}
 	
 	
-	// 7, #, @, *, ! 생성하기
-	
-	
 	// 심볼 출력
 	// @author	:	teacher
 	// @param	:	char _symbol_1	: 1번 심볼
@@ -204,7 +212,7 @@ public class Array_Ex_Slot_Mathine_teacher {
 	//			:	char _symbol_3	: 3번 심볼
 	// @return	:	N/A
 	public static void display_machine(char _symbol_1, char _symbol_2, char _symbol_3) {
-		System.out.printf("%5c%5c%5c", _symbol_1, _symbol_2, _symbol_3);
+		System.out.printf("%5c%5c%5c\n", _symbol_1, _symbol_2, _symbol_3);
 	}
 }
 

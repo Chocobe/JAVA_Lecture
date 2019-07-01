@@ -118,10 +118,7 @@
 * [Array_Ex_Grade](#array_ex_grade) - ``String[] args``와 배열을 사용하여 성적표 출력하기
 
 
-* [DivideException](#divideexception)
-
-
-* [DivideException](#divideexception)
+* [DivideException](#divideexception) - ``try ~ catch``를 이용한 예외처리
 
 ---
 ---
