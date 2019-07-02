@@ -119,6 +119,9 @@
 
 * [DivideException](#divideexception) - ``try ~ catch``를 이용한 예외처리
 
+
+* [String_test](#string_test) - String(문자열)의 생성과 사용
+
 ---
 ---
 
@@ -807,4 +810,39 @@ Eclipse 상에서,
 
 * 목적 : 프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것
 	
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### String_test
+
+문자열 생성하기
+
+---
+
+String은 클래스이다. 때문에 String을 사용하려면 객체를 생성해야 한다.
+
+```java
+String[] name = new String[3];
+name[0] = new String("Kim");
+name[1] = new String("Park");
+name[2] = new String("Yi");
+```
+
+하지만, String 클래스는 예외적으로 다음과 같이 객체를 생성할 수 있다.
+
+```java
+String[] name = new String[3];
+name[0] = "Kim";
+name[1] = "Park";
+name[2] = "Yi";
+```
+
+또는
+
+```java
+String[] name = {"Kim", "Park", "Yi"};
+```
+
 :camel:[Top](#before-starting-java)
