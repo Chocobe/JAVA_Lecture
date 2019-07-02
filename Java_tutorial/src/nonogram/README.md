@@ -10,7 +10,10 @@
 
 ---
 
-* [New_function_1](*new_function_1) - 절대경로값 얻기
+* [New_function_1](#new_function_1) - 절대경로값 얻기
+
+
+* [New_function_2](#new_function_2) - ``.txt``파일 읽기
 
 ---
 ---
@@ -61,3 +64,5 @@ System.out.println(absolute_directory);
 1. ``FileReader 객체``를 가진 ``BufferedReader``
 
 최종적으로 ``.txt``파일의 데이터를 반환해 주는 것은 ``BufferedReader.readLine()`` 메소드를 통해 얻을 수 있다.
+
+:camel:[Top](#nonogram)
