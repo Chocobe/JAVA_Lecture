@@ -108,7 +108,6 @@
 * [Array_DynamicArray](#array_dynamicarray) - 배열의 동적할당 (배열크기를 유동적으로 만들기)
 
 
-
 * [Array_Ex_16](#array_ex_16) - main 메서드의 ``String[] args`` 매개변수 사용 방법
 
 
@@ -736,8 +735,6 @@ Eclipse메뉴 중,
 
 	*프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것
 	
-:camel:[Top](#before-starting-java)��������� ������ �� �ִ�.
-
 :camel:[Top](#before-starting-java)
 
 ---
@@ -745,24 +742,15 @@ Eclipse메뉴 중,
 
 ### Array_Ex_16
 
-main�޼����� �μ� ``String[] args`` ��� ���
+main 메서드의 매개변수에 값 넣어서 실행 하기
 
-``String[] args``�� ���α׷��� ����� �Էµ� ���� ���Ѵ�.
+Eclipse 상에서,
 
-���ڿ� �迭���� ``String[] args``�� ���ڿ��̹Ƿ�, ���ڿ� ��������� �� �� �ִ�.
-
----
-
-main�޼����� �μ� ``String[] args``�� �� �ִ� ���
-
-Eclipse�޴� ��,
-
-		Run(r) -> Run Configurations(n)
-		�� ���� �Ѵ�.
+		Run(r) -> Run Configurations(n) 실행
 		
-		�׸���, Arguments�� �����Ͽ� Program arguments ���� ���� �ִ´�.
+		메뉴 중, Arguments -> Program arguments 에 매개변수 입력
 		
-		Run �� �����ϸ�, �ش簪�� String[] args �� �ԷµǾ� ����ȴ�.
+		Run을 실행 시키면, 해당 매개변수가 메인 메서드의 args 에 입력되어 실행 된다.
 
 :camel:[Top](#before-starting-java)
 
@@ -771,7 +759,7 @@ Eclipse�޴� ��,
 
 ### Array_Ex_17
 
-������ ``String[] args`` �Ű����� ��� ����
+메인 메소드의 매개변수 ``String[] args`` 활용 예제 1
 
 :camel:[Top](#before-starting-java)
 
@@ -780,9 +768,7 @@ Eclipse�޴� ��,
 
 ### Array_Ex_Grade
 
-�迭 ��� ���� 7
-
-������ ``String[] args``���� ����Ͽ� �л��� ����, ��� ���
+메인 메소드의 매개변수 ``String[] args`` 활용 예제 2 (성적표 만들기)
 
 :camel:[Top](#before-starting-java)
 
@@ -791,36 +777,34 @@ Eclipse�޴� ��,
 
 ### DivideException
 
-���� ó�� ���� ``try ~ catch``
+``try ~ catch``를 이용한 예외 처리
 
 ---
 
-* ����(error) : ������ �� ���� �ɰ��� ����
+* 에러(Error) : 프로그램 코드로 수습할 수 없는 심각한 오류
 
-* ����(exception) : ������ �� �ִ� �ټ� �̾��� ����
-
----
-
-* ������ ���� : ������ �ÿ� �߻��ϴ� ����
-
-* ��Ÿ�� ���� : ���� �ÿ� �߻��ϴ� ����
-
-* ���� ���� : ������ ������, �ǵ��� �ٸ��� �����ϴ� ��
+* 예외(Exception) : 프로그램 코드로 수습 가능한 다소 미약한 오류
 
 ---
 
-* ``Exception Ŭ������`` - ������� �Ǽ��� ���� ������ ���ο� ���� �߻��ϴ� ����
+* 컴파일 에러 : 컴파일 시에 발생하는 에러
 
-* ``RuntimeException`` - ���α׷����� �Ǽ��� ���� �߻��ϴ� ����
+* 런타임 에러 : 실행 시에 발생하는 에러
+
+* 논리적 에러 : 실행은 되지만, 의도와는 다르게 동작하는 것
 
 ---
 
-* ����ó��(Exception handling)�� ����
-	
-	*���α׷� ���� �� �߻��� �� �ִ� ���ܿ� ����� �ڵ带 �ۼ��ϴ� ��
-	
-* ����ó��(Exception handling)�� ����
+* Exception 클래스들 : ``사용자의 실수``와 같은 외적인 요인에 의해 발생하는 예외
 
-	*���α׷��� ������ ���Ḧ ����, �������� ������¸� �����ϴ� ��
+* RuntimeException 클래스들 : 프로그래머의 실수로 발생하는 예외
+
+---
+
+예외처리(exception handling)의
+
+* 정의 : 프로그램 실행 시 발생할 수 있는 예외에 대비한 코드를 작성하는 것
+
+* 목적 : 프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것
 	
 :camel:[Top](#before-starting-java)
