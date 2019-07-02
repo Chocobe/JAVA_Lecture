@@ -1,4 +1,5 @@
-# Nonogram - 네모네모 로직
+# Nonogram
+## 네모네모 로직
 
 미지 영역 : □
 
@@ -18,7 +19,7 @@
 ---
 ---
 
-# New_function_1
+### New_function_1
 
 * 현재 프로젝트의 절대경로값 얻기
 
@@ -47,7 +48,7 @@ System.out.println(absolute_directory);
 ---
 ---
 
-# New_function_2
+### New_function_2
 
 * ``.txt``파일 읽기
 
