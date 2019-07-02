@@ -122,6 +122,9 @@
 
 * [String_test](#string_test) - String(문자열)의 생성과 사용
 
+
+* [Array_Ex_18](#array_ex_18) - 2차원 배열
+
 ---
 ---
 
@@ -844,5 +847,34 @@ name[2] = "Yi";
 ```java
 String[] name = {"Kim", "Park", "Yi"};
 ```
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_18
+
+2차원 배열 생성과 사용
+
+---
+
+2차원 배열에 향상된 for문으로 사용할 경우,
+
+```java
+int[][] arr_num = { ... };
+
+for(int[] i : arr_num) {
+	for(int j : i) {
+		System.out.println(j);
+	}
+}
+```
+
+의 형태로 사용할 수 있다.
+
+주의할 점은, 바깥쪽의 향상된 for문의 루프 변수 i는 ``int[]``형이어야 한다.
+
+(향상된 for문에서 반환되는 값이 1차원 배열이기 때문)
 
 :camel:[Top](#before-starting-java)

@@ -2,7 +2,7 @@ package before_starting_java;
 
 public class String_test {
 	public static void main(String[] args) {
-		// ¹®ÀÚ¿­ ¹è¿­ÀÇ ÃÊ±âÈ­
+		// ë¬¸ìì—´ ë°°ì—´ì˜ ì´ˆê¸°í™”
 		//
 		String[] name_1 = new String[3];
 
@@ -12,7 +12,7 @@ public class String_test {
 		
 		String[] name_2 = { "Chocobe", "Lucid", "Moon" };
 		
-		System.out.println("name_1 Ãâ·Â");
+		System.out.println("name_1 ì¶œë ¥");
 		for(int i = 0; i < name_1.length; i++) {
 			System.out.println("name_1[" + i + "] : " + name_1[i]);
 		}
@@ -21,9 +21,9 @@ public class String_test {
 		print_line();
 		
 		
-		// String[]¸¦ Çâ»óµÈ for¹®À¸·Î Ãâ·ÂÇÏ±â
+		// String[]ë¥¼ í–¥ìƒëœ forë¬¸ìœ¼ë¡œ ì¶œë ¥í•˜ê¸°
 		//
-		System.out.println("name_2 Ãâ·Â");
+		System.out.println("name_2 ì¶œë ¥");
 		for(String str : name_2) {
 			System.out.println(str);
 		}
@@ -32,7 +32,7 @@ public class String_test {
 		print_line();
 		
 		
-		// String¿¡¼­ charÇÏ³ª¾¿ ÃßÃâÇÏ±â
+		// Stringì—ì„œ charí•˜ë‚˜ì”© ì¶”ì¶œí•˜ê¸°
 		//
 		String src = "ABCDE";
 		
