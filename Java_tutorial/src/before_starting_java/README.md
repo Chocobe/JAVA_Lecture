@@ -125,6 +125,9 @@
 
 * [Array_Ex_18](#array_ex_18) - 2차원 배열
 
+
+* [Array_Ex_MultiArrEx1](#array_ex_multiarrex1) - 2차원 배열을 사용한 좌표(x, y) 예제
+
 ---
 ---
 
@@ -878,3 +881,21 @@ for(int[] i : arr_num) {
 (향상된 for문에서 반환되는 값이 1차원 배열이기 때문)
 
 :camel:[Top](#before-starting-java)
+
+---
+---
+
+### Array_Ex_MultiArrEx1
+
+2차원 배열로 좌표(x, y)값을 입력 받아 위치 맞추기 예제
+
+---
+
+char형 배열의 각 요소를 모두 출력할 경우,
+
+``println()``메소드에 char배열의 주소를 넣어주면
+
+char형 배열의 모든 요소를 출력해 준다.
+
+주의할 점은, char형 배열만 가능하다는 것이다.
+
