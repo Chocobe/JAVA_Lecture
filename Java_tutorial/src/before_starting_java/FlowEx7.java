@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class FlowEx7 {
 	public static void main(String[] args) {
-		System.out.println("---°¡À§, ¹ÙÀ§, º¸ °ÔÀÓ---");
-		System.out.println("°¡À§(1), ¹ÙÀ§(2), º¸(3), Á¾·á(0)");
+		System.out.println("---ê°€ìœ„, ë°”ìœ„, ë³´ ê²Œì„---");
+		System.out.println("ê°€ìœ„(1), ë°”ìœ„(2), ë³´(3), ì¢…ë£Œ(0)");
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -18,7 +18,7 @@ public class FlowEx7 {
 		int draw = 0;
 		
 		while(true) { 
-			System.out.print("°ªÀ» ¼±ÅÃÇÏ¼¼¿ä : ");
+			System.out.print("ê°’ì„ ì„ íƒí•˜ì„¸ìš” : ");
 			user = scanner.nextInt();
 			com = (int)(Math.random() * 3) + 1;
 			result = user - com;
@@ -28,30 +28,30 @@ public class FlowEx7 {
 			}
 		
 			System.out.println("----------------------");
-			System.out.println("À¯Àú : " + user + ", com : " + com);
+			System.out.println("ìœ ì € : " + user + ", com : " + com);
 			
 			switch(result) {
 			case 0 :
-				System.out.println("ºñ°å½À´Ï´Ù.");
+				System.out.println("ë¹„ê²¼ìŠµë‹ˆë‹¤.");
 				draw++;
 				break;
 				
 			case 1 : case -2 :
-				System.out.println("ÀÌ°å½À´Ï´Ù.");
+				System.out.println("ì´ê²¼ìŠµë‹ˆë‹¤.");
 				win++;
 				break;
 				
 			case -1 : case 2 :
-				System.out.println("Á³½À´Ï´Ù.");
+				System.out.println("ì¡ŒìŠµë‹ˆë‹¤.");
 				lose++;
 				break;
 				
 			default : 
-				System.out.println("Àß¸øµÈ ÀÔ·Â°ª");
+				System.out.println("ì˜ëª»ëœ ì…ë ¥ê°’");
 				break;
 			}
 			
-			System.out.println("½Â : " + win + ", ÆĞ : " + lose + ", ¹«½ÂºÎ : " + draw);
+			System.out.println("ìŠ¹ : " + win + ", íŒ¨ : " + lose + ", ë¬´ìŠ¹ë¶€ : " + draw);
 			System.out.println("----------------------");
 		}
 		

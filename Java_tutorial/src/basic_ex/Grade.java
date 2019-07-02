@@ -2,17 +2,17 @@ package basic_ex;
 
 import java.util.Scanner;
 
-//	12. ÇÐ»ýµéÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¿© ÃÖÁ¾ Á¡¼ö¿¡ µû¶ó AÀº 90-100, BÀº 80-89, CÀº 70-79 ±×ÀÌ¿Ü Á¡¼ö´Â D·Î ÁØ´Ù.
-//	Ãâ·Â
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 90
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 86
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 96
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 89
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 75
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 72
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 87
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : 96
-//	Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) ÀÔ·Â : -99
+//	12. í•™ìƒë“¤ì˜ ì ìˆ˜ë¥¼ ìž…ë ¥í•˜ì—¬ ìµœì¢… ì ìˆ˜ì— ë”°ë¼ Aì€ 90-100, Bì€ 80-89, Cì€ 70-79 ê·¸ì´ì™¸ ì ìˆ˜ëŠ” Dë¡œ ì¤€ë‹¤.
+//	ì¶œë ¥
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 90
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 86
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 96
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 89
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 75
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 72
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 87
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : 96
+//	ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) ìž…ë ¥ : -99
 //	
 //	A : 3
 //	B : 3
@@ -28,26 +28,26 @@ public class Grade {
 	public static void main(String[] args) {		
 		Scanner scanner = new Scanner(System.in);
 		
-		int cur_score = 0;		// ÇöÀç Á¡¼ö
-		int cur_grade = 0;		// ÇöÀç µî±Þ
+		int cur_score = 0;		// í˜„ìž¬ ì ìˆ˜
+		int cur_grade = 0;		// í˜„ìž¬ ë“±ê¸‰
 		
-		int a_grade_cnt = 0;	// Aµî±Þ ¼ö
-		int b_grade_cnt = 0;	// Bµî±Þ ¼ö
-		int c_grade_cnt = 0;	// Cµî±Þ ¼ö
+		int a_grade_cnt = 0;	// Aë“±ê¸‰ ìˆ˜
+		int b_grade_cnt = 0;	// Bë“±ê¸‰ ìˆ˜
+		int c_grade_cnt = 0;	// Cë“±ê¸‰ ìˆ˜
 		
 		Main_loop : while(true) {
-			// ÀÔ·Â
+			// ìž…ë ¥
 			cur_score = inputScore(scanner);
 			
-			// Á¾·á °Ë»ç
+			// ì¢…ë£Œ ê²€ì‚¬
 			if(isFinish(cur_score)) {
 				break Main_loop;
 			}
 			
-			// µî±Þ °áÁ¤
+			// ë“±ê¸‰ ê²°ì •
 			cur_grade = makeGrade(cur_score);
 			
-			// µî±Þ Ä«¿îÆÃ
+			// ë“±ê¸‰ ì¹´ìš´íŒ…
 			switch(cur_grade) {
 			case MIN_A_GRADE :
 				a_grade_cnt++;
@@ -72,22 +72,22 @@ public class Grade {
 	}
 	
 	
-	// inputScore : Á¡¼ö ÀÔ·Â ¸Þ¼Òµå
+	// inputScore : ì ìˆ˜ ìž…ë ¥ ë©”ì†Œë“œ
 	// @aouthor : Chocobe
-	// @param (Scanner _sc)	: Scanner Å¬·¡½º °´Ã¼
-	// @return	: (int)ÀÔ·Â°ª
+	// @param (Scanner _sc)	: Scanner í´ëž˜ìŠ¤ ê°ì²´
+	// @return	: (int)ìž…ë ¥ê°’
 	public static int inputScore(Scanner _sc) {
-		System.out.print("Á¡¼ö(Á¾·á´Â -999ÀÔ·Â) : ");
+		System.out.print("ì ìˆ˜(ì¢…ë£ŒëŠ” -999ìž…ë ¥) : ");
 		int score = _sc.nextInt();
 		
 		return score;
 	}
 	
 	
-	// isFinish : Á¾·á°Ë»ç ¸Þ¼Òµå
+	// isFinish : ì¢…ë£Œê²€ì‚¬ ë©”ì†Œë“œ
 	// @Author : Chocobe
-	// @param (int _score) : ÇöÀç Á¡¼ö
-	// @return : (boolean)Á¾·á - true, °è¼Ó - false
+	// @param (int _score) : í˜„ìž¬ ì ìˆ˜
+	// @return : (boolean)ì¢…ë£Œ - true, ê³„ì† - false
 	public static boolean isFinish(int _score) {
 		boolean continuity = false;
 		
@@ -99,22 +99,22 @@ public class Grade {
 	}
 	
 	
-	// makeGrade : µî±Þ °áÁ¤ ¸Þ¼Òµå
+	// makeGrade : ë“±ê¸‰ ê²°ì • ë©”ì†Œë“œ
 	// @Author : Chocobe
-	// @param (int _score) : ÇöÀç Á¡¼ö
-	// @return : (int)µî±Þº° ÃÖ¼Ò°ª
+	// @param (int _score) : í˜„ìž¬ ì ìˆ˜
+	// @return : (int)ë“±ê¸‰ë³„ ìµœì†Œê°’
 	public static int makeGrade(int _score) {
 		int grade_val = 0;
 		
-		// Aµî±Þ
+		// Aë“±ê¸‰
 		if(_score >= MIN_A_GRADE) {
 			grade_val = MIN_A_GRADE;
 			
-		// Bµî±Þ
+		// Bë“±ê¸‰
 		} else if(_score >= MIN_B_GRADE) {
 			grade_val = MIN_B_GRADE;
 			
-		// Cµî±Þ
+		// Cë“±ê¸‰
 		} else {
 			grade_val = MIN_C_GRADE;
 		}

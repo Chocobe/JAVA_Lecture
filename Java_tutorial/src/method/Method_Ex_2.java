@@ -2,11 +2,11 @@ package method;
 
 import java.util.Scanner;
 
-// µÎ °ú¸ñÀÇ Á¡¼ö¸¦ ÀÔ·Â ¹Ş¾Æ ÇÕ°è, Æò±ÕÀ» ±¸ÇÏ½Ã¿À
-// ¸Ş¼Òµå : 
-// 		ÀÔ·Â ¸Ş¼Òµå
-// 		Ã³¸® ¸Ş¼Òµå : ÇÕ°è, Æò±Õ
-//		Ãâ·Â ¸Ş¼Òµå
+// ë‘ ê³¼ëª©ì˜ ì ìˆ˜ë¥¼ ì…ë ¥ ë°›ì•„ í•©ê³„, í‰ê· ì„ êµ¬í•˜ì‹œì˜¤
+// ë©”ì†Œë“œ : 
+// 		ì…ë ¥ ë©”ì†Œë“œ
+// 		ì²˜ë¦¬ ë©”ì†Œë“œ : í•©ê³„, í‰ê· 
+//		ì¶œë ¥ ë©”ì†Œë“œ
 
 public class Method_Ex_2 {
 	public static void main(String[] args) {
@@ -18,10 +18,10 @@ public class Method_Ex_2 {
 		int total_score = 0;
 		double avg = 0F;
 			
-		kor_score = inputScore(scanner, "±¹¾î");
+		kor_score = inputScore(scanner, "êµ­ì–´");
 		total_score = outputSum(total_score, kor_score);
 		
-		math_score = inputScore(scanner, "¼öÇĞ");
+		math_score = inputScore(scanner, "ìˆ˜í•™");
 		total_score = outputSum(total_score, math_score);
 		
 		avg = outputAvg(total_score);
@@ -32,41 +32,41 @@ public class Method_Ex_2 {
 	} // main
 	
 	
-	// printData : µ¥ÀÌÅÍ Ãâ·Â ¸Ş¼Òµå
+	// printData : ë°ì´í„° ì¶œë ¥ ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	int _kor	: ±¹¾îÁ¡¼ö
-	//			:	int _math	: ¼öÇĞÁ¡¼ö
-	//			:	int _total	: ÃÑÇÕ
-	//			:	double _avg	: Æò±Õ
+	// @param	:	int _kor	: êµ­ì–´ì ìˆ˜
+	//			:	int _math	: ìˆ˜í•™ì ìˆ˜
+	//			:	int _total	: ì´í•©
+	//			:	double _avg	: í‰ê· 
 	// @return	:	N/A
 	public static void printData(int _kor, int _math, int _total, double _avg) {
 		System.out.println("---------------------------");
-		System.out.println("±¹¾î : " + _kor);
-		System.out.println("¼öÇĞ : " + _math);
-		System.out.println("ÃÑÇÕ : " + _total);
-		System.out.println("Æò±Õ : " + _avg);
+		System.out.println("êµ­ì–´ : " + _kor);
+		System.out.println("ìˆ˜í•™ : " + _math);
+		System.out.println("ì´í•© : " + _total);
+		System.out.println("í‰ê·  : " + _avg);
 		System.out.println("---------------------------");
 	}
 	
 	
-	// inputScore : Á¡¼öÀÔ·Â ¸Ş¼Òµå
+	// inputScore : ì ìˆ˜ì…ë ¥ ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	Scanner _sc	: Scanner °´Ã¼
-	//			:	String _sub	: °ú¸ñ¸í
-	// @return	:	(int)ÀÔ·ÂÇÑ Á¡¼ö
+	// @param	:	Scanner _sc	: Scanner ê°ì²´
+	//			:	String _sub	: ê³¼ëª©ëª…
+	// @return	:	(int)ì…ë ¥í•œ ì ìˆ˜
 	public static int inputScore(Scanner _sc, String _sub) {
-		System.out.print(_sub + " Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print(_sub + " ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int score = _sc.nextInt();
 		
 		return score;
 	}
 	
 	
-	// outputSum : µÎ ¼öÀÇ ÇÕÀ» ±¸ÇÏ´Â ¸Ş¼Òµå
+	// outputSum : ë‘ ìˆ˜ì˜ í•©ì„ êµ¬í•˜ëŠ” ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	int _totalScore	: ÃÑÇÕ
-	//	 		:	int _curScore	: ÇöÀç Á¡¼ö
-	// @return	:	(int) µÎ ÀÎÀÚÀÇ ÇÕ
+	// @param	:	int _totalScore	: ì´í•©
+	//	 		:	int _curScore	: í˜„ì¬ ì ìˆ˜
+	// @return	:	(int) ë‘ ì¸ìì˜ í•©
 	public static int outputSum(int _totalScore, int _curScore) {
 		int sum = _totalScore + _curScore;
 		
@@ -74,10 +74,10 @@ public class Method_Ex_2 {
 	}
 	
 	
-	// outputAvg : Æò±ÕÀ» ±¸ÇÏ´Â ¸Ş¼Òµå
+	// outputAvg : í‰ê· ì„ êµ¬í•˜ëŠ” ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	int _totalScore : Á¡¼ö ÃÑ ÇÕ
-	// @return	:	(double)2°ú¸ñÀÇ Æò±Õ°ª
+	// @param	:	int _totalScore : ì ìˆ˜ ì´ í•©
+	// @return	:	(double)2ê³¼ëª©ì˜ í‰ê· ê°’
 	public static double outputAvg(int _totalScore) {
 		double avg = (double)_totalScore / 2;
 		

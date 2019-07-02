@@ -1,7 +1,7 @@
 package basic_ex;
 
-//	2. 1~10 ±îÁö ÇÕÀ» ¾Æ·¡¿Í °°ÀÌ Ãâ·ÂÇÏ½Ã¿À.
-//	°ª	ÇÕ
+//	2. 1~10 ê¹Œì§€ í•©ì„ ì•„ë˜ì™€ ê°™ì´ ì¶œë ¥í•˜ì‹œì˜¤.
+//	ê°’	í•©
 //	1	1
 //	2	3
 //	3	6
@@ -12,8 +12,8 @@ public class Sequential_sum {
 	public static void main(String[] args) {
 		int sum = 0;
 		
-		System.out.println("¹®Á¦2] 1~10±îÁöÀÇ ÇÕ ±¸ÇÏ±â");
-		System.out.println("°ª\tÇÕ");
+		System.out.println("ë¬¸ì œ2] 1~10ê¹Œì§€ì˜ í•© êµ¬í•˜ê¸°");
+		System.out.println("ê°’\tí•©");
 		
 		for(int i = 1; i <= 10; i++) {
 			sum += i;

@@ -2,8 +2,8 @@ package slot_machine;
 
 import java.util.Scanner;
 
-// stop_slot ¸Ş¼­µå ¼öÁ¤ÇÏ±â
-// ¸Å°³º¯¼ö - ½½·Ô À§Ä¡°ª_ROW, ½½·Ô À§Ä¡°ª_COL -> 1¹ø ½Éº¼, 2¹ø ½Éº¼, 3¹ø ½Éº¼
+// stop_slot ë©”ì„œë“œ ìˆ˜ì •í•˜ê¸°
+// ë§¤ê°œë³€ìˆ˜ - ìŠ¬ë¡¯ ìœ„ì¹˜ê°’_ROW, ìŠ¬ë¡¯ ìœ„ì¹˜ê°’_COL -> 1ë²ˆ ì‹¬ë³¼, 2ë²ˆ ì‹¬ë³¼, 3ë²ˆ ì‹¬ë³¼
 
 public class Slot_machine_main {
 	
@@ -11,12 +11,12 @@ public class Slot_machine_main {
 	public static int g_betting_money;
 	public static int g_system_state;
 	
-	public final static String SLOT_LINE_1 	= "¦£¦¡¦¡¦¡Chocobe¦¡Machine¦¡¦¡¦¡¦¤";
-	public final static String SLOT_LINE_2 	= "¦¢*** ¦£¦¡¦¤  ¦£¦¡¦¤  ¦£¦¡¦¤ ***¦¢";
-	public final static String SLOT_LINE_3 	= "¦¢*   ¦¢ ¦¢  ¦¢ ¦¢  ¦¢ ¦¢   *¦¢";
-	public final static String SLOT_LINE_4 	= "¦¢*** ¦¦¦¡¦¥  ¦¦¦¡¦¥  ¦¦¦¡¦¥ ***¦¢";
-	public final static String SLOT_LINE_5	= "¦¦¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¡¦¥";
-	public final static String INIT_COMMENT = "½ÃÀÛ : Enter             ";
+	public final static String SLOT_LINE_1 	= "â”Œâ”€â”€â”€Chocobeâ”€Machineâ”€â”€â”€â”";
+	public final static String SLOT_LINE_2 	= "â”‚    â”Œâ”€â”  â”Œâ”€â”  â”Œâ”€â”    â”‚";
+	public final static String SLOT_LINE_3 	= "â”‚    â”‚ â”‚  â”‚ â”‚  â”‚ â”‚    â”‚";
+	public final static String SLOT_LINE_4 	= "â”‚    â””â”€â”˜  â””â”€â”˜  â””â”€â”˜    â”‚";
+	public final static String SLOT_LINE_5	= "â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜";
+	public final static String INIT_COMMENT = "ì‹œì‘ : Enter             ";
 	
 	public final static int SLOT_ROW = 7;
 	public final static int SLOT_COL = 23;
@@ -59,7 +59,7 @@ public class Slot_machine_main {
 	} //main
 	
 	
-	// °ÔÀÓ ¿£Áø
+	// ê²Œì„ ì—”ì§„
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -94,7 +94,7 @@ public class Slot_machine_main {
 	}
 	
 	
-	// ÀüÃ¼ µ¥ÀÌÅÍ ÃÊ±âÈ­
+	// ì „ì²´ ë°ì´í„° ì´ˆê¸°í™”
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -107,7 +107,7 @@ public class Slot_machine_main {
 	}
 	
 	
-	// ½½·Ô ÀÌ¹ÌÁö ÃÊ±âÈ­
+	// ìŠ¬ë¡¯ ì´ë¯¸ì§€ ì´ˆê¸°í™”
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -154,14 +154,14 @@ public class Slot_machine_main {
 				break;
 				
 			default:
-				System.out.println("Error] ½ºÅ©¸° µ¥ÀÌÅÍ ¿À·ù : ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù");
+				System.out.println("Error] ìŠ¤í¬ë¦° ë°ì´í„° ì˜¤ë¥˜ : í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤");
 				System.exit(0);
 			}
 		}
 	}
 	
 	
-	// È­¸é Ãâ·Â
+	// í™”ë©´ ì¶œë ¥
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -190,7 +190,7 @@ public class Slot_machine_main {
 	}
 	
 	
-	// È­¸é Å¬¸®¾î
+	// í™”ë©´ í´ë¦¬ì–´
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -201,20 +201,20 @@ public class Slot_machine_main {
 	}
 	
 	
-	// º¸À¯±İ¾× ·£´õ¸µ
+	// ë³´ìœ ê¸ˆì•¡ ëœë”ë§
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
 	public static void setup_my_money_to_screen_image() {
-		String comment = "º¸À¯±İ : " + g_my_money;
+		String comment = "ë³´ìœ ê¸ˆ : " + g_my_money;
 		setup_message(comment, COMMENT_LINE_1);
 	}
 	
 	
-	// Ãâ·Â ¸Ş½ÃÁö °»½Å
+	// ì¶œë ¥ ë©”ì‹œì§€ ê°±ì‹ 
 	// @author	:	Chocobe
-	// @param	:	String _message	: Ãâ·ÂÇÒ ¸Ş½ÃÁö
-	//			:	int _line_num	: Ãâ·ÂÇÒ ¶óÀÎ
+	// @param	:	String _message	: ì¶œë ¥í•  ë©”ì‹œì§€
+	//			:	int _line_num	: ì¶œë ¥í•  ë¼ì¸
 	public static void setup_message(String _message, int _line_num) {
 		for(int i = 0; i < SLOT_COL; i++) {
 			if(i < _message.length()) {
@@ -227,7 +227,7 @@ public class Slot_machine_main {
 	}
 	
 	
-	// ¿ÃÀÎ °Ë»ç
+	// ì˜¬ì¸ ê²€ì‚¬
 	public static boolean is_all_in() {
 		boolean all_in = false;
 		
@@ -235,7 +235,7 @@ public class Slot_machine_main {
 			g_system_state = EXIT_PROGRAM;
 			
 			render_screen(RENDER_COMMAND_NOTHING);
-			System.out.println("¿ÃÀÎÀÔ´Ï´Ù.");
+			System.out.println("ì˜¬ì¸ì…ë‹ˆë‹¤.");
 			System.out.print("GAME OVER");
 			 all_in = true;
 		}
@@ -244,35 +244,35 @@ public class Slot_machine_main {
 	}
 	
 	
-	// º£ÆÃ
+	// ë² íŒ…
 	// @author	:	Chocobe
-	// @param	:	Scanner _sc	: Scanner °´Ã¼
+	// @param	:	Scanner _sc	: Scanner ê°ì²´
 	// @return	:	N/A
 	public static void input_betting(Scanner _sc) {
 		while(true) {
 			clear_screen();
 			render_screen(RENDER_COMMAND_LINE_1);
 			
-			System.out.print("º£ÆÃ ÇÏ¼¼¿ä(Á¾·á : 0) : ");
+			System.out.print("ë² íŒ… í•˜ì„¸ìš”(ì¢…ë£Œ : 0) : ");
 			g_betting_money = _sc.nextInt();
-			_sc.nextLine();	// ¹öÆÛ ºñ¿ì±â
+			_sc.nextLine();	// ë²„í¼ ë¹„ìš°ê¸°
 			
 			clear_screen();
 			
 			if(g_betting_money > g_my_money) {
 				render_screen(RENDER_COMMAND_LINE_1);
-				System.out.print("º¸À¯±İÀÌ ºÎÁ·ÇÕ´Ï´Ù. Enter");
+				System.out.print("ë³´ìœ ê¸ˆì´ ë¶€ì¡±í•©ë‹ˆë‹¤. Enter");
 				
 				_sc.nextLine();
 				
 				continue;
 				
 			} else if(g_betting_money == 0) {
-				String maximum_money_message = "ÃÖÁ¾ º¸À¯±İ : " + g_my_money;
+				String maximum_money_message = "ìµœì¢… ë³´ìœ ê¸ˆ : " + g_my_money;
 				setup_message(maximum_money_message, COMMENT_LINE_1);
 				
 				render_screen(RENDER_COMMAND_LINE_1);
-				System.out.print("ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.");
+				System.out.print("í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.");
 				
 				g_system_state = EXIT_PROGRAM;
 				
@@ -290,7 +290,7 @@ public class Slot_machine_main {
 	}
 	
 	
-	// ³­¼ö ¿¬»ê
+	// ë‚œìˆ˜ ì—°ì‚°
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -309,9 +309,9 @@ public class Slot_machine_main {
 	}
 	
 	
-	// ½½·Ô ÇÏ³ª ½ºÅé
+	// ìŠ¬ë¡¯ í•˜ë‚˜ ìŠ¤í†±
 	// @author	:	Chocobe
-	// @param	:	Scanner _sc	: Scanner °´Ã¼
+	// @param	:	Scanner _sc	: Scanner ê°ì²´
 	// @return	:	N/A
 	public static void stop_slot(Scanner _sc) {
 		char selected_target = ' ';
@@ -339,7 +339,7 @@ public class Slot_machine_main {
 	}
 	
 	
-	// ½½·Ô Áö¿ì±â
+	// ìŠ¬ë¡¯ ì§€ìš°ê¸°
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -350,7 +350,7 @@ public class Slot_machine_main {
 	}
 	
 	
-	// ½½·Ô °á°ú Á¤»ê
+	// ìŠ¬ë¡¯ ê²°ê³¼ ì •ì‚°
 	public static void update_slot_result(Scanner _sc) {
 		String inform_message = "";
 		int success_money = 0;
@@ -358,7 +358,7 @@ public class Slot_machine_main {
 		if(g_cur_target_1 == g_cur_target_2 &&
 				g_cur_target_1 == g_cur_target_3) { 
 			
-			setup_message("¼º°ø! : Enter", COMMENT_LINE_2);
+			setup_message("ì„±ê³µ! : Enter", COMMENT_LINE_2);
 			
 			switch(g_cur_target_1) {
 			case TARGET_IMAGE_1:
@@ -375,13 +375,13 @@ public class Slot_machine_main {
 			}
 			
 			g_my_money += success_money;
-			inform_message = "¼º°ø(+" + success_money +") : Enter";
+			inform_message = "ì„±ê³µ(+" + success_money +") : Enter";
 			
 			setup_my_money_to_screen_image();
 			setup_message(inform_message, COMMENT_LINE_2);
 			
 		} else {
-			setup_message("½ÇÆĞ : Enter", COMMENT_LINE_2);
+			setup_message("ì‹¤íŒ¨ : Enter", COMMENT_LINE_2);
 		}
 		
 		render_screen(RENDER_COMMAND_LINE_2);

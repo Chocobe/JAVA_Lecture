@@ -2,21 +2,21 @@ package basic_ex;
 
 import java.util.Scanner;
 
-//	8. ÅÃ½Ã ¿îÀü»ç°¡ "ÀÚ¹Ù"¶ó´Â ¼Õ´ÔÀ» ÅÂ¿ì°í ¸ñÀûÁö±îÁö µ¥·Á´Ù ÁÖ¸é  ¿µ¾÷À» Áß´ÜÇÏ°í ±× ³¯ ¼öÀÔÀ» °è»êÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼º 
-//	ÇÏ½Ã¿À. °¢ ¼Õ´ÔÀÇ ÀÌ¸§°ú ¿ä±İÀ» ÀĞ¾î ¼Õ´ÔµéÀÌ ¿ä±İÀ» ³½ ¿ä±İÀÇ  ÇÕÀ» ±¸ÇÑ´Ù
-//	Ãâ·Â
-//	¼Õ´ÔÀÇ ÀÌ¸§À» ÀÔ·Â : QQQQ
-//	¿ä±İ :  7000
-//	¼Õ´ÔÀÇ ÀÌ¸§À» ÀÔ·Â : WWWW
-//	¿ä±İ :  5000
-//	¼Õ´ÔÀÇ ÀÌ¸§À» ÀÔ·Â : ÀÚ¹Ù
-//	¿ä±İ : 10000
+//	8. íƒì‹œ ìš´ì „ì‚¬ê°€ "ìë°”"ë¼ëŠ” ì†ë‹˜ì„ íƒœìš°ê³  ëª©ì ì§€ê¹Œì§€ ë°ë ¤ë‹¤ ì£¼ë©´  ì˜ì—…ì„ ì¤‘ë‹¨í•˜ê³  ê·¸ ë‚  ìˆ˜ì…ì„ ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„± 
+//	í•˜ì‹œì˜¤. ê° ì†ë‹˜ì˜ ì´ë¦„ê³¼ ìš”ê¸ˆì„ ì½ì–´ ì†ë‹˜ë“¤ì´ ìš”ê¸ˆì„ ë‚¸ ìš”ê¸ˆì˜  í•©ì„ êµ¬í•œë‹¤
+//	ì¶œë ¥
+//	ì†ë‹˜ì˜ ì´ë¦„ì„ ì…ë ¥ : QQQQ
+//	ìš”ê¸ˆ :  7000
+//	ì†ë‹˜ì˜ ì´ë¦„ì„ ì…ë ¥ : WWWW
+//	ìš”ê¸ˆ :  5000
+//	ì†ë‹˜ì˜ ì´ë¦„ì„ ì…ë ¥ : ìë°”
+//	ìš”ê¸ˆ : 10000
 //	
-//	ÃÑÇÕÀº 22000¿øÀÌ´Ù
+//	ì´í•©ì€ 22000ì›ì´ë‹¤
 
 public class Texi_2 {
 	public static void main(String[] args) {
-		System.out.println("¹®Á¦8] \"ÀÚ¹Ù\"¶ó´Â ¼Õ´ÔÀ» ÅÂ¿ï¶§ ±îÁö ¿µ¾÷ÇÏ¿©, ÃÑ ¼öÀÍ±İ Ãâ·ÂÇÏ±â");
+		System.out.println("ë¬¸ì œ8] \"ìë°”\"ë¼ëŠ” ì†ë‹˜ì„ íƒœìš¸ë•Œ ê¹Œì§€ ì˜ì—…í•˜ì—¬, ì´ ìˆ˜ìµê¸ˆ ì¶œë ¥í•˜ê¸°");
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -29,23 +29,23 @@ public class Texi_2 {
 		Main_loop : while(true) {
 			System.out.println("----------------------------------");
 			
-			System.out.print("¼Õ´ÔÀÌ¸§ : ");
+			System.out.print("ì†ë‹˜ì´ë¦„ : ");
 			curr_name = scanner.nextLine();
 			
-			System.out.print("¿ä±İ : " );
+			System.out.print("ìš”ê¸ˆ : " );
 			curr_charge = scanner.nextInt();
 			scanner.nextLine();
 			
 			total_profit += curr_charge;
 			total_cnt++;
 			
-			if(curr_name.equals("ÀÚ¹Ù")) {
+			if(curr_name.equals("ìë°”")) {
 				break Main_loop;
 			}
 		} // Main_loop
 		
 		System.out.println("----------------------------------");
-		System.out.println("ÃÑ ¼öÀÍ±İ (ÃÑ " + total_cnt + "¸í) : " + total_profit);
+		System.out.println("ì´ ìˆ˜ìµê¸ˆ (ì´ " + total_cnt + "ëª…) : " + total_profit);
 		
 		scanner.close();		
 	} // main

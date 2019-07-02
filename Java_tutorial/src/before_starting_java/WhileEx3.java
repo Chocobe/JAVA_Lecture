@@ -2,31 +2,31 @@ package before_starting_java;
 
 import java.util.Scanner;
 
-// ÀÔ·Â :
-//		Á¡¼ö
-//		(ÀÔ·ÂÇÑ Á¡¼ö °³¼ö°¡ ÇĞ»ı¼ö°¡ µÈ´Ù)
+// ì…ë ¥ :
+//		ì ìˆ˜
+//		(ì…ë ¥í•œ ì ìˆ˜ ê°œìˆ˜ê°€ í•™ìƒìˆ˜ê°€ ëœë‹¤)
 //
-//		ÇÕ°İ - 60Á¡ ÀÌ»ó
-//		³«Á¦ - 60Á¡ ¹Ì¸¸
+//		í•©ê²© - 60ì  ì´ìƒ
+//		ë‚™ì œ - 60ì  ë¯¸ë§Œ
 //
-// Ãâ·Â :
-//		ÇĞ»ı¼ö
-//		Åë°ú ÇĞ»ı¼ö
-//		³«Á¦ ÇĞ»ı¼ö
+// ì¶œë ¥ :
+//		í•™ìƒìˆ˜
+//		í†µê³¼ í•™ìƒìˆ˜
+//		ë‚™ì œ í•™ìƒìˆ˜
 
 public class WhileEx3 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		int student_cnt = 0;				// ÇĞ»ı¼ö
-		int pass_cnt = 0;					// Åë°ú ÇĞ»ı¼ö
-		int fail_cnt = 0;					// ³«Á¦ ÇĞ»ı¼ö
-		int student_score = 0;				// Á¡¼ö
+		int student_cnt = 0;				// í•™ìƒìˆ˜
+		int pass_cnt = 0;					// í†µê³¼ í•™ìƒìˆ˜
+		int fail_cnt = 0;					// ë‚™ì œ í•™ìƒìˆ˜
+		int student_score = 0;				// ì ìˆ˜
 		
 		String continuity = "";			
 		
 		Main_loop : while(true) {
-			System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			student_score = scanner.nextInt();
 			student_cnt++;
 			
@@ -37,7 +37,7 @@ public class WhileEx3 {
 				pass_cnt++;
 			
 			while(true) {
-				System.out.print("Á¾·áÇÏ½Ã°Ú½À´Ï±î?(Y/N) : ");
+				System.out.print("ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(Y/N) : ");
 				
 				scanner.nextLine();
 				continuity = scanner.nextLine();
@@ -50,15 +50,15 @@ public class WhileEx3 {
 					break;
 					
 				} else {
-					System.out.println("Error] Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+					System.out.println("Error] ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 				}
 			}
 		}
 		
 		System.out.println("----------------------");
-		System.out.println("ÃÑ ÇĞ»ı¼ö : " + student_cnt);
-		System.out.println("Åë°ú ÇĞ»ı¼ö : " + pass_cnt);
-		System.out.println("³«Á¦ ÇĞ»ı¼ö : " + fail_cnt);
+		System.out.println("ì´ í•™ìƒìˆ˜ : " + student_cnt);
+		System.out.println("í†µê³¼ í•™ìƒìˆ˜ : " + pass_cnt);
+		System.out.println("ë‚™ì œ í•™ìƒìˆ˜ : " + fail_cnt);
 		System.out.println("----------------------");
 		
 		scanner.close();

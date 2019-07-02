@@ -6,14 +6,14 @@ public class Array_Ex_Bubble_Sort {
 		
 		boolean isChanged = false;
 		
-		System.out.println("¹öºíÁ¤·Ä Àü : ");
+		System.out.println("ë²„ë¸”ì •ë ¬ ì „ : ");
 		for(int i = 0; i < numArr.length; i++) {
 			System.out.print(numArr[i] = (int)(Math.random() * 10));
 			System.out.print(" ");
 		}
 		System.out.println("\n");
 		
-		System.out.println("¹öºíÁ¤·Ä ÈÄ : ");
+		System.out.println("ë²„ë¸”ì •ë ¬ í›„ : ");
 		for(int i = 0; i < numArr.length - 1; i++) {
 			
 			for(int j = 0; j < numArr.length - i - 1; j++) {

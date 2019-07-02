@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Test_for_1 {
 	public static void main(String[] args) {
-		// 1ºÎÅÍ 3±îÁö Ãâ·Â
+		// 1ë¶€í„° 3ê¹Œì§€ ì¶œë ¥
 		//
 		for(int i = 1; i <= 3; i++) {
 			System.out.println("Hello Java");
@@ -12,7 +12,7 @@ public class Test_for_1 {
 		System.out.println("-----------------------------");
 
 		
-		// 1ºÎÅÍ 100±îÁöÀÇ Á¤¼ö Áß, 5·Î ³ª´©¾î ¶³¾îÁö´Â ¼ö Ãâ·Â, ÇÕÀ» ±¸ÇÏ½Ã¿À
+		// 1ë¶€í„° 100ê¹Œì§€ì˜ ì •ìˆ˜ ì¤‘, 5ë¡œ ë‚˜ëˆ„ì–´ ë–¨ì–´ì§€ëŠ” ìˆ˜ ì¶œë ¥, í•©ì„ êµ¬í•˜ì‹œì˜¤
 		//
 		int sum = 0;
 		for(int i = 1; i <= 100; i++) {
@@ -21,16 +21,16 @@ public class Test_for_1 {
 				sum += i;
 			}
 		}
-		System.out.println("5ÀÇ ¹è¼öÀÇ ÃÑ ÇÕ : " + sum);		
+		System.out.println("5ì˜ ë°°ìˆ˜ì˜ ì´ í•© : " + sum);		
 		System.out.println("-----------------------------");
 		
 
-		// ÀÔ·Â :
-		//		Ã¹¹øÂ° ¼ö
-		//		µÎ¹øÂ° ¼ö
-		//		¹è¼ö
-		// Ãâ·Â :
-		//		Ã¹¹øÂ° ¼ö¿¡¼­ µÎ¹øÂ° ¼ö ±îÁö »çÀÌÀÇ ¹è¼öÀÇ ÇÕ
+		// ì…ë ¥ :
+		//		ì²«ë²ˆì§¸ ìˆ˜
+		//		ë‘ë²ˆì§¸ ìˆ˜
+		//		ë°°ìˆ˜
+		// ì¶œë ¥ :
+		//		ì²«ë²ˆì§¸ ìˆ˜ì—ì„œ ë‘ë²ˆì§¸ ìˆ˜ ê¹Œì§€ ì‚¬ì´ì˜ ë°°ìˆ˜ì˜ í•©
 		//
 		int num_1 = 0;
 		int num_2 = 0;
@@ -39,13 +39,13 @@ public class Test_for_1 {
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.print("Ã¹¹øÂ° ¼ö : ");
+		System.out.print("ì²«ë²ˆì§¸ ìˆ˜ : ");
 		num_1 = scanner.nextInt();
 		
-		System.out.print("µÎ¹øÂ° ¼ö : ");
+		System.out.print("ë‘ë²ˆì§¸ ìˆ˜ : ");
 		num_2 = scanner.nextInt();
 		
-		System.out.print("¹è¼ö : ");
+		System.out.print("ë°°ìˆ˜ : ");
 		multiple = scanner.nextInt();
 		
 		if(num_1 > num_2) {
@@ -61,15 +61,15 @@ public class Test_for_1 {
 		
 		System.out.println();
 		System.out.println("num_1 : " + num_1 + ", num_2 : " + num_2);
-		System.out.println(multiple + "¹è¼öÀÇ ÃÑ ÇÕ : " + multiple_sum);
+		System.out.println(multiple + "ë°°ìˆ˜ì˜ ì´ í•© : " + multiple_sum);
 		System.out.println("-----------------------------");
 		
 		
-		// *¸¦ ÀÌ¿ëÇÑ Á÷°¢»ï°¢Çü Ãâ·Â
+		// *ë¥¼ ì´ìš©í•œ ì§ê°ì‚¼ê°í˜• ì¶œë ¥
 		//
 		int height = 0;
 		
-		System.out.print("Ãâ·ÂÇÒ ³ôÀÌ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì¶œë ¥í•  ë†’ì´ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		height = scanner.nextInt();
 		System.out.println();
 		

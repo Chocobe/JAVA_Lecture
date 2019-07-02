@@ -7,27 +7,27 @@ public class WhileEx {
 		System.out.println("-------------------------------");
 		
 		Scanner scanner = new Scanner(System.in);
-		int total_sum = 0;			// Á¡¼ö ÃÑ ÇÕ
-		int curr_val = 0;			// ÇöÀç Á¡¼ö
-		int data_cnt = 0;			// Á¡¼ö µî·Ï °³¼ö
+		int total_sum = 0;			// ì ìˆ˜ ì´ í•©
+		int curr_val = 0;			// í˜„ì¬ ì ìˆ˜
+		int data_cnt = 0;			// ì ìˆ˜ ë“±ë¡ ê°œìˆ˜
 		
-		double avg_score = 0F;		// Æò±Õ Á¡¼ö
-		int max_score = -10000;		// ÃÖ´ë Á¡¼ö
-		int min_score = 10000;		// ÃÖÀú Á¡¼ö
+		double avg_score = 0F;		// í‰ê·  ì ìˆ˜
+		int max_score = -10000;		// ìµœëŒ€ ì ìˆ˜
+		int min_score = 10000;		// ìµœì € ì ìˆ˜
 		
 		while(true) {
-			System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(Á¾·á : -99) : ");
+			System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”(ì¢…ë£Œ : -99) : ");
 			curr_val = scanner.nextInt();
 			
-			// Á¾·á Á¶°Ç °Ë»ç
+			// ì¢…ë£Œ ì¡°ê±´ ê²€ì‚¬
 			if(curr_val == -99)
 				break;
 			
-			// ÃÖ°í Á¡¼ö °»½Å
+			// ìµœê³  ì ìˆ˜ ê°±ì‹ 
 			if(max_score < curr_val)
 				max_score = curr_val;
 			
-			// ÃÖÀú Á¡¼ö °»½Å
+			// ìµœì € ì ìˆ˜ ê°±ì‹ 
 			if(min_score > curr_val)
 				min_score = curr_val;
 			
@@ -37,25 +37,25 @@ public class WhileEx {
 		System.out.println();
 		
 		avg_score = total_sum / data_cnt;
-		System.out.println("ÃÖ°í Á¡¼ö : " + max_score);
-		System.out.println("ÃÖÀú Á¡¼ö : " + min_score);
-		System.out.println("Æò±Õ Á¡¼ö : " + avg_score);
+		System.out.println("ìµœê³  ì ìˆ˜ : " + max_score);
+		System.out.println("ìµœì € ì ìˆ˜ : " + min_score);
+		System.out.println("í‰ê·  ì ìˆ˜ : " + avg_score);
 		System.out.println("-------------------------------");
 		
 		
 		int mode = 0;
 		do {
 			System.out.println("[1.square], [2.square root], [3.log], [0.EXIT]");
-			System.out.print("¸ğµå ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ëª¨ë“œ ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			
 			mode = scanner.nextInt();
 			
 			switch(mode) {
-			case 0 : System.out.println("---ÇÁ·Î±×·¥À» Á¾·áÇÕ´Ï´Ù.---");	break;
-			case 1 : System.out.println("---square ¸ğµå---");			break;
-			case 2 : System.out.println("---square root ¸ğµå---");		break;
-			case 3 : System.out.println("---log ¸ğµå---");				break;
-			default: System.out.println("---Àß¸øµÈ ¸Ş´ºÀÔ´Ï´Ù.---");
+			case 0 : System.out.println("---í”„ë¡œê·¸ë¨ì„ ì¢…ë£Œí•©ë‹ˆë‹¤.---");	break;
+			case 1 : System.out.println("---square ëª¨ë“œ---");			break;
+			case 2 : System.out.println("---square root ëª¨ë“œ---");		break;
+			case 3 : System.out.println("---log ëª¨ë“œ---");				break;
+			default: System.out.println("---ì˜ëª»ëœ ë©”ë‰´ì…ë‹ˆë‹¤.---");
 			}
 			
 			System.out.println("-------------------------------");

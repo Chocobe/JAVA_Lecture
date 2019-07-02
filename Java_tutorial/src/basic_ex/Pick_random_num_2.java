@@ -3,12 +3,12 @@ package basic_ex;
 import java.util.Random;
 import java.util.Scanner;
 
-//	10.  ¼ıÀÚ 1¿¡¼­ 100 »çÀÇ ÀÓÀÇÀÇ ¼±ÅÃÇÑ´Ù. 1°ú 100µµ ¼±ÅÃµÉ ¼ö  ÀÖ´Ù. ÃßÃàÇÑ ¼ıÀÚ¸¦ ¸ÂÃâ¶§±îÁö °è¼ÓÇÏ°í, ¸ÂÃâ ¶§±îÁö 
-//	È½¼ö¸¦ ¼¼°í, ¸Â°í ³­ ÈÄ È½¼ö¸¦ Ãâ·ÂÇÏ½Ã¿À. °ÔÀÓÀÌ ³¡³­ ÈÄ¿¡ ¸ÂÃß±â °ÔÀÓÀ» °è¼ÓÇÏ±â¸¦ ¿øÇÏ´ÂÁö ¾Ë¾Æº¸¶ó.
+//	10.  ìˆ«ì 1ì—ì„œ 100 ì‚¬ì˜ ì„ì˜ì˜ ì„ íƒí•œë‹¤. 1ê³¼ 100ë„ ì„ íƒë  ìˆ˜  ìˆë‹¤. ì¶”ì¶•í•œ ìˆ«ìë¥¼ ë§ì¶œë•Œê¹Œì§€ ê³„ì†í•˜ê³ , ë§ì¶œ ë•Œê¹Œì§€ 
+//	íšŸìˆ˜ë¥¼ ì„¸ê³ , ë§ê³  ë‚œ í›„ íšŸìˆ˜ë¥¼ ì¶œë ¥í•˜ì‹œì˜¤. ê²Œì„ì´ ëë‚œ í›„ì— ë§ì¶”ê¸° ê²Œì„ì„ ê³„ì†í•˜ê¸°ë¥¼ ì›í•˜ëŠ”ì§€ ì•Œì•„ë³´ë¼.
 
 public class Pick_random_num_2 {
 	public static void main(String[] args) {
-		System.out.println("¹®Á¦10] 1ºÎÅÍ 100±îÁöÀÇ ·£´ı ¼ıÀÚ ¸ÂÃß±â");
+		System.out.println("ë¬¸ì œ10] 1ë¶€í„° 100ê¹Œì§€ì˜ ëœë¤ ìˆ«ì ë§ì¶”ê¸°");
 		
 		Scanner scanner = new Scanner(System.in);
 		Random random_obj = new Random(System.currentTimeMillis());
@@ -26,27 +26,27 @@ public class Pick_random_num_2 {
 			System.out.println("----------------------------------");
 			try_cnt++;
 			
-			System.out.print("Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä (½ÃµµÈ¸Â÷ : " + try_cnt + ") : ");
+			System.out.print("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” (ì‹œë„íšŒì°¨ : " + try_cnt + ") : ");
 			input_num = scanner.nextInt();
 			random_num = random_obj.nextInt(MAX_NUM) + MIN_NUM;
 			
 			if(input_num > random_num) {
-				System.out.println("Æ²·È½À´Ï´Ù. ÀÔ·Â°ªÀÌ Å®´Ï´Ù.");
+				System.out.println("í‹€ë ¸ìŠµë‹ˆë‹¤. ì…ë ¥ê°’ì´ í½ë‹ˆë‹¤.");
 				continue;
 				
 			} else if(input_num < random_num) {
-				System.out.println("Æ²·È½À´Ï´Ù. ÀÛ½À´Ï´Ù.");
+				System.out.println("í‹€ë ¸ìŠµë‹ˆë‹¤. ì‘ìŠµë‹ˆë‹¤.");
 				continue;
 				
 			} else {
-				System.out.println("Á¤´äÀÔ´Ï´Ù. (½ÃµµÈ½¼ö : " + try_cnt + ")");
+				System.out.println("ì •ë‹µì…ë‹ˆë‹¤. (ì‹œë„íšŸìˆ˜ : " + try_cnt + ")");
 			}
 			
 			scanner.nextLine();
 			System.out.println();
 			
 			while(true) {
-				System.out.print("´õ ÇÏ½Ã°Ú½À´Ï±î? (y/n) : ");
+				System.out.print("ë” í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n) : ");
 				continue_answer = scanner.nextLine();
 				
 				if(continue_answer.equals("y")) {
@@ -56,7 +56,7 @@ public class Pick_random_num_2 {
 					break Main_loop;
 					
 				} else {
-					System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+					System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 				}				
 			} // while(true)			
 		} // Main_loop

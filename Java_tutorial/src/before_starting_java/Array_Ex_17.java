@@ -7,10 +7,10 @@ public class Array_Ex_17 {
 		char op = ' ';
 		int result = 0;
 		
-		// ¸Å°³º¯¼ö Çü½Ä¿¡ ¸Â´ÂÁö °Ë»ç
+		// ë§¤ê°œë³€ìˆ˜ í˜•ì‹ì— ë§ëŠ”ì§€ ê²€ì‚¬
 		if(args.length != 3) {
-			System.out.println("Usage(»ç¿ë¹ı) : java Array_Ex_17 num1 op num2");
-			// ÇÁ·Î±×·¥ Á¾·á
+			System.out.println("Usage(ì‚¬ìš©ë²•) : java Array_Ex_17 num1 op num2");
+			// í”„ë¡œê·¸ë¨ ì¢…ë£Œ
 			System.exit(0);
 		}
 		
@@ -33,7 +33,7 @@ public class Array_Ex_17 {
 			
 		case '/':
 			if(num2 == 0) {
-				System.out.println("Error] Á¦¼ö°¡ 0ÀÔ´Ï´Ù.");
+				System.out.println("Error] ì œìˆ˜ê°€ 0ì…ë‹ˆë‹¤.");
 				System.exit(0);
 				
 			} else {
@@ -42,6 +42,6 @@ public class Array_Ex_17 {
 			}
 		}
 		
-		System.out.println("°á°ú : " + result);
+		System.out.println("ê²°ê³¼ : " + result);
 	}
 }

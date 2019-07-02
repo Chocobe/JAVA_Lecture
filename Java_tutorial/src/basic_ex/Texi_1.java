@@ -2,12 +2,12 @@ package basic_ex;
 
 import java.util.Scanner;
 
-//	7. ÅÃ½Ã ¿îÀü»ç°¡ 10¸íÀ» ÅÂ¿ì¸é ±× ³¯ ¿µ¾÷À» Áß´ÜÇÏ°í ±×³¯ÀÇ ¼öÀÔÀ» °è»êÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-//	¼öÀÔÀº ¼Õ´ÔÀÌ ³½ ¿ä±İÀ» ÀĞ¾î µé¿© ÇÕÀ» ±¸ÇÑ´Ù.
+//	7. íƒì‹œ ìš´ì „ì‚¬ê°€ 10ëª…ì„ íƒœìš°ë©´ ê·¸ ë‚  ì˜ì—…ì„ ì¤‘ë‹¨í•˜ê³  ê·¸ë‚ ì˜ ìˆ˜ì…ì„ ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+//	ìˆ˜ì…ì€ ì†ë‹˜ì´ ë‚¸ ìš”ê¸ˆì„ ì½ì–´ ë“¤ì—¬ í•©ì„ êµ¬í•œë‹¤.
 
 public class Texi_1 {
 	public static void main(String[] args) {
-		System.out.println("¹®Á¦7] ÅÃ½Ã ¼Õ´Ô 10¸í¿¡ ´ëÇÑ ¼öÀÔ °è»êÇÏ±â");
+		System.out.println("ë¬¸ì œ7] íƒì‹œ ì†ë‹˜ 10ëª…ì— ëŒ€í•œ ìˆ˜ì… ê³„ì‚°í•˜ê¸°");
 		Scanner scanner = new Scanner(System.in);
 		
 		int MAX_NUM = 10;
@@ -17,14 +17,14 @@ public class Texi_1 {
 		
 		for(int i = 0; i < MAX_NUM; i++) {
 			System.out.println("----------------------------");
-			System.out.print("¿ä±İÀ» ÀÔ·ÂÇÏ¼¼¿ä(ÇöÀç°Ç¼ö : " + i + ") : ");
+			System.out.print("ìš”ê¸ˆì„ ì…ë ¥í•˜ì„¸ìš”(í˜„ì¬ê±´ìˆ˜ : " + i + ") : ");
 			curr_charge = scanner.nextInt();
 			
 			total_profit += curr_charge;
 		}
 		
 		System.out.println("----------------------------");
-		System.out.println("ÃÑ ¼öÀÍ±İ : " + total_profit);
+		System.out.println("ì´ ìˆ˜ìµê¸ˆ : " + total_profit);
 		
 		scanner.close();
 	} // main

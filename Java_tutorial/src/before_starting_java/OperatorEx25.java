@@ -8,17 +8,17 @@ public class OperatorEx25 {
 		char ch = ' ';
 		String str = null;
 		
-		System.out.printf("¹®ÀÚ¸¦ ÇÏ³ª ÀÔ·ÂÇÏ¼¼¿ä. > ");
+		System.out.printf("ë¬¸ìžë¥¼ í•˜ë‚˜ ìž…ë ¥í•˜ì„¸ìš”. > ");
 		
 		String input = scanner.nextLine();
 		ch = input.charAt(1);
 		
 		if('0' < ch && ch <= '9') {
-			str = "ÀÔ·ÂÇÏ½Å ¹®ÀÚ´Â ¼ýÀÚÀÔ´Ï´Ù.";
+			str = "ìž…ë ¥í•˜ì‹  ë¬¸ìžëŠ” ìˆ«ìžìž…ë‹ˆë‹¤.";
 		}
 		
 		if(('a' <= ch && ch <= 'z') || ('A' <= ch&& ch <= 'Z')) {
-			str = "ÀÔ·ÂÇÏ½Å ¹®ÀÚ´Â ¿µ¹®ÀÚÀÔ´Ï´Ù.";
+			str = "ìž…ë ¥í•˜ì‹  ë¬¸ìžëŠ” ì˜ë¬¸ìžìž…ë‹ˆë‹¤.";
 		}
 		System.out.println(str);
 		

@@ -1,8 +1,8 @@
 package java_class.book;
 
 public class Book_test {
-	// new : »ç¿ëÀÚ Á¤ÀÇ °ø°£ (heap)¿¡ ÇÒ´ç
-	// new »ı¼ºÀÚ ¸Ş¼Òµå : new ´ÙÀ½ ¸Ş¸ğ¸®¿¡ ÇÒ´çÇÒ ÀÚ·á¸¦ »ı¼ºÇÑ´Ù.
+	// new : ì‚¬ìš©ì ì •ì˜ ê³µê°„ (heap)ì— í• ë‹¹
+	// new ìƒì„±ì ë©”ì†Œë“œ : new ë‹¤ìŒ ë©”ëª¨ë¦¬ì— í• ë‹¹í•  ìë£Œë¥¼ ìƒì„±í•œë‹¤.
 	// new Book();
 	
 	public static void main(String[] args) {
@@ -10,10 +10,10 @@ public class Book_test {
 		book.setAuthor("java");
 		
 		String author = book.getAuthor();
-		System.out.println("ÀúÀÚ : " + author);
+		System.out.println("ì €ì : " + author);
 		
 		book.setAuthor("Java 2");
 		author = book.getAuthor();
-		System.out.println("ÀúÀÚ : " + author);
+		System.out.println("ì €ì : " + author);
 	}
 }

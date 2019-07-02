@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class InputTest {
 	public static void main(String[] args) {
-		// ÇÑ±ÛÀÚ ÀÔ·Â --> ¾Æ½ºÅ°ÄÚµå °ª --> InputStreamÅ¬·¡½º (ÇÑ¹®ÀÚ ÀÔ·Â)
-			// ÇÑ±ÛÀº 2byte¹®ÀÚÀÌ±â ¶§¹®¿¡ InputStreamÀ¸·Î »ç¿ëÇÏ¸é ±úÁø´Ù.
+		// í•œê¸€ì ì…ë ¥ --> ì•„ìŠ¤í‚¤ì½”ë“œ ê°’ --> InputStreamí´ë˜ìŠ¤ (í•œë¬¸ì ì…ë ¥)
+			// í•œê¸€ì€ 2byteë¬¸ìì´ê¸° ë•Œë¬¸ì— InputStreamìœ¼ë¡œ ì‚¬ìš©í•˜ë©´ ê¹¨ì§„ë‹¤.
 		
 		int val = 0;
 		char ch = 0;
@@ -15,21 +15,21 @@ public class InputTest {
 		Scanner scanner = new Scanner(System.in);
 		
 		try {
-			System.out.print("ÇÑ ±ÛÀÚ ÀÔ·Â : ");
+			System.out.print("í•œ ê¸€ì ì…ë ¥ : ");
 			val = System.in.read();
-			System.in.read();	// Enter ÀÔ·Â°ªÀ» ¹ö¸®±â À§ÇÑ ºÎºĞ1
-			System.in.read();	// Enter ÀÔ·Â°ªÀ» ¹ö¸®±â À§ÇÑ ºÎºĞ2
+			System.in.read();	// Enter ì…ë ¥ê°’ì„ ë²„ë¦¬ê¸° ìœ„í•œ ë¶€ë¶„1
+			System.in.read();	// Enter ì…ë ¥ê°’ì„ ë²„ë¦¬ê¸° ìœ„í•œ ë¶€ë¶„2
 			ch = (char)val;
 			
-			System.out.println("¼ıÀÚÀÔ·Â : ");
-			// read()ÀÇ ¹İÈ¯°ªÀº ¾Æ½ºÅ°ÄÚµå°ªÀÌ±â ¶§¹®¿¡, Á¤¼öÇüÀÌÁö¸¸ °ªÀº Á¤¼öÀÇ ¿ø·¡°ªÀÌ ¾Æ´Ï´Ù.
-				// ±×·¯¹Ç·Î, read()ÀÇ ¹İÈ¯°ª¿¡ -48(0ÀÇ ¾Æ½ºÅ°ÄÚµå°ª)À» ÇØ ÁÖ¸é, Á¤¼ö°ªÀ¸·Î ¹Ù²Ü ¼ö ÀÖ´Ù.
+			System.out.println("ìˆ«ìì…ë ¥ : ");
+			// read()ì˜ ë°˜í™˜ê°’ì€ ì•„ìŠ¤í‚¤ì½”ë“œê°’ì´ê¸° ë•Œë¬¸ì—, ì •ìˆ˜í˜•ì´ì§€ë§Œ ê°’ì€ ì •ìˆ˜ì˜ ì›ë˜ê°’ì´ ì•„ë‹ˆë‹¤.
+				// ê·¸ëŸ¬ë¯€ë¡œ, read()ì˜ ë°˜í™˜ê°’ì— -48(0ì˜ ì•„ìŠ¤í‚¤ì½”ë“œê°’)ì„ í•´ ì£¼ë©´, ì •ìˆ˜ê°’ìœ¼ë¡œ ë°”ê¿€ ìˆ˜ ìˆë‹¤.
 			num = System.in.read() - 48;
-			//System.in.read();	// Enter ÀÔ·Â°ªÀ» ¹ö¸®±â À§ÇÑ ºÎºĞ1
-			//System.in.read();	// Enter ÀÔ·Â°ªÀ» ¹ö¸®±â À§ÇÑ ºÎºĞ2
-			scanner.nextLine();	// Enter ÀÔ·Â°ªÀ» ¹ö¸®±â À§ÇÑ ºÎºĞ(ÇÑÁÙÀ» ¹ö¸®°Ô µÈ´Ù.)
+			//System.in.read();	// Enter ì…ë ¥ê°’ì„ ë²„ë¦¬ê¸° ìœ„í•œ ë¶€ë¶„1
+			//System.in.read();	// Enter ì…ë ¥ê°’ì„ ë²„ë¦¬ê¸° ìœ„í•œ ë¶€ë¶„2
+			scanner.nextLine();	// Enter ì…ë ¥ê°’ì„ ë²„ë¦¬ê¸° ìœ„í•œ ë¶€ë¶„(í•œì¤„ì„ ë²„ë¦¬ê²Œ ëœë‹¤.)
 			
-			System.out.print("ÀÌ¸§ ÀÔ·Â : ");
+			System.out.print("ì´ë¦„ ì…ë ¥ : ");
 			name = scanner.nextLine();
 
 			
@@ -42,8 +42,8 @@ public class InputTest {
 		System.out.println("num : " + num);
 		System.out.println("name : " + name);
 		
-		// ¹®ÀÚ¿­·Î ¹ŞÀº µ¥ÀÌÅÍ¸¦ intÇüÀ¸·Î Çüº¯È¯ ÇÏ±â
-		System.out.print("³ªÀÌ : ");
+		// ë¬¸ìì—´ë¡œ ë°›ì€ ë°ì´í„°ë¥¼ intí˜•ìœ¼ë¡œ í˜•ë³€í™˜ í•˜ê¸°
+		System.out.print("ë‚˜ì´ : ");
 		String str_age = scanner.nextLine();
 		int int_age = Integer.parseInt(str_age);
 		System.out.println("age : " + int_age);

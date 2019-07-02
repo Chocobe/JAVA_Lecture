@@ -13,14 +13,14 @@ public class Switch_Ex_1 {
 		char operator = ' ';
 		int result_val = 0;
 		
-		System.out.print("Ã¹ ¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì²« ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		lhs = scanner.nextInt();
 		
 		scanner.nextLine();
 		
-		System.out.print("¿¬»êÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì—°ì‚°ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		
-		// ¾Æ½ºÅ° ÄÚµå°ªÀ¸·Î ÀĞ¾î¿È -> ¾Æ½ºÅ°ÄÚµå°ªÀ» ¹®ÀÚ·Î Çüº¯È¯
+		// ì•„ìŠ¤í‚¤ ì½”ë“œê°’ìœ¼ë¡œ ì½ì–´ì˜´ -> ì•„ìŠ¤í‚¤ì½”ë“œê°’ì„ ë¬¸ìë¡œ í˜•ë³€í™˜
 		try {
 			operator = (char)System.in.read();
 			
@@ -28,7 +28,7 @@ public class Switch_Ex_1 {
 			e.printStackTrace();
 		}
 		
-		System.out.print("µÎ ¹øÂ° Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ë‘ ë²ˆì§¸ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		rhs = scanner.nextInt();
 		
 		switch(operator) {
@@ -47,7 +47,7 @@ public class Switch_Ex_1 {
 		case '/' :
 			if(rhs == 0) {
 				System.out.println("--------------------------------");
-				System.out.println("Á¦¼ö°¡ 0ÀÎ ¿¹¿ÜÁ¶°Ç ¹ß»ı !");
+				System.out.println("ì œìˆ˜ê°€ 0ì¸ ì˜ˆì™¸ì¡°ê±´ ë°œìƒ !");
 				result_val = -100000;
 				
 				scanner.close();
@@ -62,8 +62,8 @@ public class Switch_Ex_1 {
 		}
 		
 		System.out.println("--------------------------------");
-		System.out.println("ÁÂÃøÇ× : " + lhs + ", ¿ìÃøÇ× : " + rhs + ", ¿¬»êÀÚ : " + operator);
-		System.out.println("°á°ú°ª : " + result_val);
+		System.out.println("ì¢Œì¸¡í•­ : " + lhs + ", ìš°ì¸¡í•­ : " + rhs + ", ì—°ì‚°ì : " + operator);
+		System.out.println("ê²°ê³¼ê°’ : " + result_val);
 		
 		scanner.close();
 		

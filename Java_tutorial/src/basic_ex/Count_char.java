@@ -2,18 +2,18 @@ package basic_ex;
 
 import java.util.Scanner;
 
-// 4. ¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¿© °¢ ¸ğÀ½(a,e,i,o,u)ÀÇ ¼ö¿Í ÀÚÀ½µéÀÇ ¼ö¸¦ Ãâ·ÂÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
+// 4. ë¬¸ìì—´ì„ ì…ë ¥í•˜ì—¬ ê° ëª¨ìŒ(a,e,i,o,u)ì˜ ìˆ˜ì™€ ììŒë“¤ì˜ ìˆ˜ë¥¼ ì¶œë ¥í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
 
 public class Count_char {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		int consonant_cnt = 0;	// ÀÚÀ½ °³¼ö
-		int vowel_cnt = 0;		// ¸ğÀ½ °³¼ö
-		int digit_cnt = 0;		// ¼ıÀÚ °³¼ö
-		int others_cnt = 0;		// ±âÅ¸ °³¼ö
+		int consonant_cnt = 0;	// ììŒ ê°œìˆ˜
+		int vowel_cnt = 0;		// ëª¨ìŒ ê°œìˆ˜
+		int digit_cnt = 0;		// ìˆ«ì ê°œìˆ˜
+		int others_cnt = 0;		// ê¸°íƒ€ ê°œìˆ˜
 		
-		System.out.println("¹®Á¦4] ¹®ÀÚ¿­ÀÇ ÀÚÀ½/¸ğÀ½ °³¼ö ±¸ÇÏ±â");
+		System.out.println("ë¬¸ì œ4] ë¬¸ìì—´ì˜ ììŒ/ëª¨ìŒ ê°œìˆ˜ êµ¬í•˜ê¸°");
 
 		String input_data = "";
 		char single_string = ' ';
@@ -30,12 +30,12 @@ public class Count_char {
 			others_cnt = 0;
 			
 			System.out.println("-----------------------");
-			System.out.print("Á¶»çÇÒ ¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì¡°ì‚¬í•  ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 			input_data = scanner.nextLine();
 			length = input_data.length();
 			
 			if(length == 0) {
-				System.out.println("Error] ÀÔ·ÂµÈ ¹®ÀÚ¿­ÀÌ ¾ø½À´Ï´Ù.");
+				System.out.println("Error] ì…ë ¥ëœ ë¬¸ìì—´ì´ ì—†ìŠµë‹ˆë‹¤.");
 				continue;
 			}
 			
@@ -43,18 +43,18 @@ public class Count_char {
 				single_string = input_data.charAt(i);
 				ascii_val = (int)single_string;
 				
-				// Æ¯¼ö¹®ÀÚ °Ë»ç
+				// íŠ¹ìˆ˜ë¬¸ì ê²€ì‚¬
 				if((0 <= ascii_val && ascii_val <= 47) ||
 						(58 <= ascii_val && ascii_val <= 64) ||
 						(91 <= ascii_val && ascii_val <= 96) ||
 						(123 <= ascii_val && ascii_val <= 127)) {
 					others_cnt++;
 					
-				// ¼ıÀÚ °Ë»ç
+				// ìˆ«ì ê²€ì‚¬
 				} else if(48 <= ascii_val && ascii_val <= 57) {
 					digit_cnt++;
 					
-				// ¸ğÀ½ °Ë»ç
+				// ëª¨ìŒ ê²€ì‚¬
 				} else if(ascii_val == 'A' || ascii_val == 'E' ||
 						  ascii_val == 'I' || ascii_val == 'O' ||
 						  ascii_val == 'U' || ascii_val == 'a' ||
@@ -62,21 +62,21 @@ public class Count_char {
 						  ascii_val == 'o' || ascii_val == 'u') {
 					vowel_cnt++;
 					
-				// ÀÚÀ½ °Ë»ç
+				// ììŒ ê²€ì‚¬
 				} else {
 					consonant_cnt++;
 				}
 				
-			} // for(¹®ÀÚ¿­ ±æÀÌ)
+			} // for(ë¬¸ìì—´ ê¸¸ì´)
 			
-			System.out.println("ÀÔ·Â¹®ÀÚ : " + input_data);
-			System.out.println("ÀÚÀ½ °³¼ö : " + consonant_cnt);
-			System.out.println("¸ğÀ½ °³¼ö : " + vowel_cnt);
-			System.out.println("¼ıÀÚ °³¼ö : " + digit_cnt);
-			System.out.println("Æ¯¼ö ¹®ÀÚ °³¼ö : " + others_cnt + "\n");
+			System.out.println("ì…ë ¥ë¬¸ì : " + input_data);
+			System.out.println("ììŒ ê°œìˆ˜ : " + consonant_cnt);
+			System.out.println("ëª¨ìŒ ê°œìˆ˜ : " + vowel_cnt);
+			System.out.println("ìˆ«ì ê°œìˆ˜ : " + digit_cnt);
+			System.out.println("íŠ¹ìˆ˜ ë¬¸ì ê°œìˆ˜ : " + others_cnt + "\n");
 			
 			while(true) {
-				System.out.print("°è¼ÓÁøÇà ÇÏ½Ã°Ú½À´Ï±î? (y/n) : ");
+				System.out.print("ê³„ì†ì§„í–‰ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n) : ");
 				continuity = scanner.nextLine();
 				
 				if(continuity.equals("y")) {
@@ -86,7 +86,7 @@ public class Count_char {
 					break Main_loop;
 					
 				} else {
-					System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+					System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 					continue;
 				}
 			} // while(true)

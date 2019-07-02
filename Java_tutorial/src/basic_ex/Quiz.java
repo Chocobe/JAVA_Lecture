@@ -2,12 +2,12 @@ package basic_ex;
 
 import java.util.Scanner;
 
-// 6. ÄûÁîÀÇ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¿© ÃÖ´ë Á¡¼ö¿Í ÃÖ¼Ò Á¡¼ö¿Í Æò±Õ Á¡¼ö¸¦ ±¸ÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-// ÀÔ·Â Á¡¼ö Á¾·á´Â -999 °¡ ÀÔ·ÂÇÏ¸é Á¾·á ÇÔ.
+// 6. í€´ì¦ˆì˜ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì—¬ ìµœëŒ€ ì ìˆ˜ì™€ ìµœì†Œ ì ìˆ˜ì™€ í‰ê·  ì ìˆ˜ë¥¼ êµ¬í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+// ì…ë ¥ ì ìˆ˜ ì¢…ë£ŒëŠ” -999 ê°€ ì…ë ¥í•˜ë©´ ì¢…ë£Œ í•¨.
 
 public class Quiz {
 	public static void main(String[] args) {
-		System.out.println("¹®Á¦6] ÄûÁîÁ¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ, ÃÖ´ë, ÃÖÀú, Æò±Õ ±¸ÇÏ±â");
+		System.out.println("ë¬¸ì œ6] í€´ì¦ˆì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„, ìµœëŒ€, ìµœì €, í‰ê·  êµ¬í•˜ê¸°");
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -22,7 +22,7 @@ public class Quiz {
 		
 		Main_loop : while(true) {
 			System.out.println("-------------------------");
-			System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(Á¾·á : -99) : ");
+			System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”(ì¢…ë£Œ : -99) : ");
 			curr_score = scanner.nextInt();
 			
 			if(curr_score == -99) {
@@ -43,10 +43,10 @@ public class Quiz {
 		avg_score = (double)total_score / total_cnt;
 		
 		System.out.println("-------------------------");
-		System.out.println("ÃÑ ÀÔ·Â¼ö : " + total_cnt);
-		System.out.println("ÃÖ´ë Á¡¼ö : " + max_score);
-		System.out.println("ÃÖÀú Á¡¼ö : " + min_score);
-		System.out.printf("Æò±Õ Á¡¼ö : %.2f\n", avg_score);
+		System.out.println("ì´ ì…ë ¥ìˆ˜ : " + total_cnt);
+		System.out.println("ìµœëŒ€ ì ìˆ˜ : " + max_score);
+		System.out.println("ìµœì € ì ìˆ˜ : " + min_score);
+		System.out.printf("í‰ê·  ì ìˆ˜ : %.2f\n", avg_score);
 		System.out.println("-------------------------");
 		
 		scanner.close();

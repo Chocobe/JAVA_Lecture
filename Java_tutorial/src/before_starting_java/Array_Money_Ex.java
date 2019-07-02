@@ -2,8 +2,8 @@ package before_starting_java;
 
 import java.util.Scanner;
 
-// ¹è¿­ ¿¹Á¦ 5
-// ÀÔ·ÂÇÑ ±İ¾×À» 50000¿ø, 10000¿ø, 5000¿ø, 1000¿ø, 500¿ø, 100¿ø, 50¿ø, 1¿ø À¸·Î È¯»ê Ãâ·ÂÇÏ±â
+// ë°°ì—´ ì˜ˆì œ 5
+// ì…ë ¥í•œ ê¸ˆì•¡ì„ 50000ì›, 10000ì›, 5000ì›, 1000ì›, 500ì›, 100ì›, 50ì›, 1ì› ìœ¼ë¡œ í™˜ì‚° ì¶œë ¥í•˜ê¸°
 
 public class Array_Money_Ex {
 	
@@ -37,35 +37,35 @@ public class Array_Money_Ex {
 	} //main
 	
 	
-	// ÀÎÆ®·Î ¸Ş¼Òµå
+	// ì¸íŠ¸ë¡œ ë©”ì†Œë“œ
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
 	public static void print_intro() {
-		System.out.print("°è»êÇÒ ±İ¾×À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ê³„ì‚°í•  ê¸ˆì•¡ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 	}
 	
 	
-	// ¿£µù ¸Ş¼Òµå
+	// ì—”ë”© ë©”ì†Œë“œ
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
 	public static void print_ending() {
-		System.out.println("----------------Á¾·áÇÕ´Ï´Ù----------------");
+		System.out.println("----------------ì¢…ë£Œí•©ë‹ˆë‹¤----------------");
 	}
 	
 	
-	// Á¾·á ¸Ş¼Òµå
+	// ì¢…ë£Œ ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	Scanner _sc	: Scanner °´Ã¼
-	// @return	:	true	: Á¾·á
-	//			:	false	: °è¼Ó
+	// @param	:	Scanner _sc	: Scanner ê°ì²´
+	// @return	:	true	: ì¢…ë£Œ
+	//			:	false	: ê³„ì†
 	public static boolean isEXIT(Scanner _sc) {
 		String answer = "";
 		boolean return_answer = false;		
 		
 		System.out.println("\n");
-		System.out.print("Á¾·áÇÏ½Ã°Ú½À´Ï±î?(y/n) : ");
+		System.out.print("ì¢…ë£Œí•˜ì‹œê² ìŠµë‹ˆê¹Œ?(y/n) : ");
 		
 		_sc.nextLine();
 		answer = _sc.nextLine();
@@ -81,19 +81,19 @@ public class Array_Money_Ex {
 	}
 	
 	
-	// ¼ıÀÚ ÀÔ·Â ¸Ş¼Òµå
+	// ìˆ«ì ì…ë ¥ ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	Scanner _sc	: Scanner °´Ã¼
-	// @return	:	(int)ÀÔ·ÂµÈ ±İ¾×
+	// @param	:	Scanner _sc	: Scanner ê°ì²´
+	// @return	:	(int)ì…ë ¥ëœ ê¸ˆì•¡
 	public static int input_money(Scanner _sc) {
 		return _sc.nextInt();
 	}
 	
 	
-	// °¢ È­Æó´ÜÀ§·Î È¯»êÇÏ´Â ¸Ş¼Òµå
+	// ê° í™”íë‹¨ìœ„ë¡œ í™˜ì‚°í•˜ëŠ” ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	int _money	: °è»êÇÒ ±İ¾×
-	// @return	:	(int[])È­Æóº° È¯»êµÈ °³¼ö
+	// @param	:	int _money	: ê³„ì‚°í•  ê¸ˆì•¡
+	// @return	:	(int[])í™”íë³„ í™˜ì‚°ëœ ê°œìˆ˜
 	public static int[] exchange_unit(int _money) {
 		int cur_money = _money;
 		int[] temp_unit = new int[MONEY_UNIT_LEN];
@@ -107,7 +107,7 @@ public class Array_Money_Ex {
 	}
 	
 	
-	// È¯»êµÈ °á°ú Ãâ·Â ¸Ş¼Òµå
+	// í™˜ì‚°ëœ ê²°ê³¼ ì¶œë ¥ ë©”ì†Œë“œ
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -115,18 +115,18 @@ public class Array_Money_Ex {
 		System.out.println();
 		
 		for(int i = 0; i < PAPER_MONEY; i++) {
-			System.out.printf("%7d¿ø    : %2d Àå\t", money_unit[i], money_unit_cnt[i]);
+			System.out.printf("%7dì›    : %2d ì¥\t", money_unit[i], money_unit_cnt[i]);
 		}
 		
 		System.out.println();
 		
 		for(int i = PAPER_MONEY; i < MONEY_UNIT_LEN; i++) {
-			System.out.printf("%7d¿ø    : %2d °³\t", money_unit[i], money_unit_cnt[i]);
+			System.out.printf("%7dì›    : %2d ê°œ\t", money_unit[i], money_unit_cnt[i]);
 		}
 	}
 	
 	
-	// ¶óÀÎ Ãâ·Â
+	// ë¼ì¸ ì¶œë ¥
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A

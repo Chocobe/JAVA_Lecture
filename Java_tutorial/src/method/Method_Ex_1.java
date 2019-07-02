@@ -16,7 +16,7 @@ public class Method_Ex_1 {
 		}
 		
 		printLine();
-		System.out.println("ÇÁ·Î±×·¥ Á¾·á");
+		System.out.println("í”„ë¡œê·¸ë¨ ì¢…ë£Œ");
 		
 		scanner.close();
 	}
@@ -30,13 +30,13 @@ public class Method_Ex_1 {
 	
 	
 	public static String inputName(Scanner _sc) {
-		System.out.print("ÀÌ¸§ : ");
+		System.out.print("ì´ë¦„ : ");
 		return _sc.nextLine();
 	}
 	
 	
 	public static void printName(String _name) {
-		System.out.println("ÀÔ·ÂµÈ ÀÌ¸§ : " + _name);
+		System.out.println("ì…ë ¥ëœ ì´ë¦„ : " + _name);
 		
 		return;
 	}

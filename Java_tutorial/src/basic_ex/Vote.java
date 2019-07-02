@@ -2,29 +2,29 @@ package basic_ex;
 
 import java.util.Scanner;
 
-//	11. ½ÃÀå¿¡ ÀÔÈÄº¸ 2¸íÀÌ °¢ ±¸¿¡ °¢ ÈÄº¸°¡ ¾òÀº µæÇ¥ ¼ö¸¦ ÀÔ·Â ¹Þ¾Æ °¢ ÈÄº¸ÀÇ ÃÑ µæÇ¥¼ö¿Í µæÇ¥À²À» Ãâ·ÂÇÏ°í µ¢¼±ÀÚ¸¦
-//	Ãâ·ÂÇÏ´Â Ãâ·ÂÇÑ´Ù. ÇÁ·Î±×·¥Àº ¸ÕÀú º¸°í  ÇÒ ±¸°¡ ÀÖÀ¸¸é "yes"À» ÀÔ·ÂÇÏ°í,¾øÀ¸¸é "no"À» ÀÔ·ÂÇÑ´Ù
-//	º¸°íÇÒ ±¸°¡ ÀÖ´ÂÁö¸¦ ¹°¾îº¸°í °°Àº °úÁ¤À» ¹Ýº¹ÇÑ´Ù.
+//	11. ì‹œìž¥ì— ìž…í›„ë³´ 2ëª…ì´ ê° êµ¬ì— ê° í›„ë³´ê°€ ì–»ì€ ë“í‘œ ìˆ˜ë¥¼ ìž…ë ¥ ë°›ì•„ ê° í›„ë³´ì˜ ì´ ë“í‘œìˆ˜ì™€ ë“í‘œìœ¨ì„ ì¶œë ¥í•˜ê³  ë©ì„ ìžë¥¼
+//	ì¶œë ¥í•˜ëŠ” ì¶œë ¥í•œë‹¤. í”„ë¡œê·¸ëž¨ì€ ë¨¼ì € ë³´ê³   í•  êµ¬ê°€ ìžˆìœ¼ë©´ "yes"ì„ ìž…ë ¥í•˜ê³ ,ì—†ìœ¼ë©´ "no"ì„ ìž…ë ¥í•œë‹¤
+//	ë³´ê³ í•  êµ¬ê°€ ìžˆëŠ”ì§€ë¥¼ ë¬¼ì–´ë³´ê³  ê°™ì€ ê³¼ì •ì„ ë°˜ë³µí•œë‹¤.
 //	
-//	°á°ú
-//	º¸°í  ÇÒ ±¸°¡ ÀÖÀ¸¸é "yes"À» ÀÔ·ÂÇÏ°í,¾øÀ¸¸é "no"À» ÀÔ·Â : yes
-//	Ã¹¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : 35382
-//	µÎ¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : 53287
+//	ê²°ê³¼
+//	ë³´ê³   í•  êµ¬ê°€ ìžˆìœ¼ë©´ "yes"ì„ ìž…ë ¥í•˜ê³ ,ì—†ìœ¼ë©´ "no"ì„ ìž…ë ¥ : yes
+//	ì²«ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : 35382
+//	ë‘ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : 53287
 //	
-//	º¸°í  ÇÒ ±¸°¡ ÀÖÀ¸¸é "yes"À» ÀÔ·ÂÇÏ°í,¾øÀ¸¸é "no"À» ÀÔ·Â : yes
-//	Ã¹¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : 39019
-//	µÎ¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : 29040
+//	ë³´ê³   í•  êµ¬ê°€ ìžˆìœ¼ë©´ "yes"ì„ ìž…ë ¥í•˜ê³ ,ì—†ìœ¼ë©´ "no"ì„ ìž…ë ¥ : yes
+//	ì²«ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : 39019
+//	ë‘ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : 29040
 //	
-//	º¸°í  ÇÒ ±¸°¡ ÀÖÀ¸¸é "yes"À» ÀÔ·ÂÇÏ°í,¾øÀ¸¸é "no"À» ÀÔ·Â : yes
-//	Ã¹¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : 78569
-//	µÎ¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : 95209
+//	ë³´ê³   í•  êµ¬ê°€ ìžˆìœ¼ë©´ "yes"ì„ ìž…ë ¥í•˜ê³ ,ì—†ìœ¼ë©´ "no"ì„ ìž…ë ¥ : yes
+//	ì²«ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : 78569
+//	ë‘ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : 95209
 //	
-//	º¸°í  ÇÒ ±¸°¡ ÀÖÀ¸¸é "yes"À» ÀÔ·ÂÇÏ°í,¾øÀ¸¸é "no"À» ÀÔ·Â : no
+//	ë³´ê³   í•  êµ¬ê°€ ìžˆìœ¼ë©´ "yes"ì„ ìž…ë ¥í•˜ê³ ,ì—†ìœ¼ë©´ "no"ì„ ìž…ë ¥ : no
 //	
-//	Ã¹¹øÂ° ÈÄº¸°¡ ¾ò´Â ÃÑµæÇ¥¼ö 152970ÀÌ°í µæÇ¥À²Àº 46.3%ÀÌ´Ù
-//	µÎ¹øÂ° ÈÄº¸°¡ ¾ò´Â ÃÑµæÇ¥¼ö 177536ÀÌ°í µæÇ¥À²Àº 53.7%ÀÌ´Ù
+//	ì²«ë²ˆì§¸ í›„ë³´ê°€ ì–»ëŠ” ì´ë“í‘œìˆ˜ 152970ì´ê³  ë“í‘œìœ¨ì€ 46.3%ì´ë‹¤
+//	ë‘ë²ˆì§¸ í›„ë³´ê°€ ì–»ëŠ” ì´ë“í‘œìˆ˜ 177536ì´ê³  ë“í‘œìœ¨ì€ 53.7%ì´ë‹¤
 //	
-//	µÎ¹øÂ° ÈÄº¸°¡ ´ç¼± µÊ
+//	ë‘ë²ˆì§¸ í›„ë³´ê°€ ë‹¹ì„  ë¨
 
 public class Vote {
 	public static void main(String[] args) {
@@ -41,7 +41,7 @@ public class Vote {
 		
 		Main_loop : while(true) {
 			while(true) {
-				System.out.print("º¸°í  ÇÒ ±¸°¡ ÀÖÀ¸¸é \"yes\"À» ÀÔ·ÂÇÏ°í,¾øÀ¸¸é \"no\"À» ÀÔ·Â : ");
+				System.out.print("ë³´ê³   í•  êµ¬ê°€ ìžˆìœ¼ë©´ \"yes\"ì„ ìž…ë ¥í•˜ê³ ,ì—†ìœ¼ë©´ \"no\"ì„ ìž…ë ¥ : ");
 				continue_answer = scanner.nextLine();
 				
 				
@@ -52,14 +52,14 @@ public class Vote {
 					break Main_loop;
 					
 				} else {
-					System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+					System.out.println("ìž˜ëª»ëœ ìž…ë ¥ìž…ë‹ˆë‹¤.");
 				}
 			} // while(true)
 			
-			System.out.print("Ã¹¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : ");
+			System.out.print("ì²«ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : ");
 			first_vote += scanner.nextInt();
 			
-			System.out.print("µÎ¹øÂ° ÈÄº¸ µæÇ¥ ¼ö ÀÔ·Â : ");
+			System.out.print("ë‘ë²ˆì§¸ í›„ë³´ ë“í‘œ ìˆ˜ ìž…ë ¥ : ");
 			second_vote += scanner.nextInt();
 			
 			scanner.nextLine();			
@@ -70,8 +70,8 @@ public class Vote {
 		second_rate = ((double)second_vote / total_vote) * 100;
 		
 		System.out.println("---------------------------------");
-		System.out.printf("Ã¹¹øÂ° ÈÄº¸°¡ ¾ò´Â ÃÑµæÇ¥¼ö %dÀÌ°í µæÇ¥À²Àº %.1f%%ÀÌ´Ù\n", first_vote, first_rate);
-		System.out.printf("µÎ¹øÂ° ÈÄº¸°¡ ¾ò´Â ÃÑµèÇ¥¼ö %dÀÌ°í µæÇ¥À²Àº %.1f%%ÀÌ´Ù\n", second_vote, second_rate);
+		System.out.printf("ì²«ë²ˆì§¸ í›„ë³´ê°€ ì–»ëŠ” ì´ë“í‘œìˆ˜ %dì´ê³  ë“í‘œìœ¨ì€ %.1f%%ì´ë‹¤\n", first_vote, first_rate);
+		System.out.printf("ë‘ë²ˆì§¸ í›„ë³´ê°€ ì–»ëŠ” ì´ë“£í‘œìˆ˜ %dì´ê³  ë“í‘œìœ¨ì€ %.1f%%ì´ë‹¤\n", second_vote, second_rate);
 		
 		scanner.close();
 	} // main

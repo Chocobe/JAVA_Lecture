@@ -1,80 +1,80 @@
 package java_class.book;
 
 public class Book {
-	// Ã¥ÀÇ ¼Ó¼º
+	// ì±…ì˜ ì†ì„±
 	private String author;
 	private String title;
 	private int price;
 	private int pageNumber;
 	private String publisher;
 	
-	// author ¼Ó¼º°ª ´ëÀÔ
-	// @param	:	String _author : ÀúÀÚ ÀÌ¸§
+	// author ì†ì„±ê°’ ëŒ€ì…
+	// @param	:	String _author : ì €ì ì´ë¦„
 	// @return	:	N/A
 	public void setAuthor(String _author) {
 		this.author = _author;
 	}
 
-	// title ¼Ó¼º°ª ´ëÀÔ
-	// @param	:	String _title : Ã¥ Á¦¸ñ
+	// title ì†ì„±ê°’ ëŒ€ì…
+	// @param	:	String _title : ì±… ì œëª©
 	// @return	:	N/A
 	public void setTitle(String _title) {
 		this.title = _title;
 	}
 	
-	// price ¼Ó¼º°ª ´ëÀÔ
-	// @param	:	int _price : °¡°İ
+	// price ì†ì„±ê°’ ëŒ€ì…
+	// @param	:	int _price : ê°€ê²©
 	// @return	:	N/A
 	public void setPrice(int _price) {
 		this.price = _price;
 	}
 	
-	// pageNumber ¼Ó¼º°ª ´ëÀÔ
-	// @param	:	int _pageNumber : ÃÑ ÆäÀÌÁö ¼ö
+	// pageNumber ì†ì„±ê°’ ëŒ€ì…
+	// @param	:	int _pageNumber : ì´ í˜ì´ì§€ ìˆ˜
 	// @return	:	N/A
 	public void setPageNumber(int _pageNumber) {
 		this.pageNumber = _pageNumber;
 	}
 	
-	// publisher ¼Ó¼º°ª ´ëÀÔ
-	// @param	:	String _publisher : ÃâÆÇ»ç¸í
+	// publisher ì†ì„±ê°’ ëŒ€ì…
+	// @param	:	String _publisher : ì¶œíŒì‚¬ëª…
 	// @return	:	N/A
 	public void setPublisher(String _publisher) {
 		this.publisher = _publisher;
 	}
 	
 	
-	// author ¼Ó¼º°ª ¹İÈ¯
+	// author ì†ì„±ê°’ ë°˜í™˜
 	// @param	:	N/A
-	// @return	:	(String) ÀúÀÚ ÀÌ¸§
+	// @return	:	(String) ì €ì ì´ë¦„
 	public String getAuthor() {
 		return this.author;
 	}
 	
-	// title ¼Ó¼º°ª ¹İÈ¯
+	// title ì†ì„±ê°’ ë°˜í™˜
 	// @param	:	N/A
-	// @return	:	(String) Ã¥ ÀÌ¸§
+	// @return	:	(String) ì±… ì´ë¦„
 	public String getTitle() {
 		return this.title;
 	}
 	
-	// price ¼Ó¼º°ª ¹İÈ¯
+	// price ì†ì„±ê°’ ë°˜í™˜
 	// @param	:	N/A
-	// @return	:	(int) °¡°İ
+	// @return	:	(int) ê°€ê²©
 	public int getPrice() {
 		return this.price;
 	}
 	
-	// pageNumber ¼Ó¼º°ª ¹İÈ¯
+	// pageNumber ì†ì„±ê°’ ë°˜í™˜
 	// @param	:	N/A
-	// @return	:	(int) ÆäÀÌÁö ÃÑ ¼ö
+	// @return	:	(int) í˜ì´ì§€ ì´ ìˆ˜
 	public int getPageNumber() {
 		return this.pageNumber;
 	}
 	
-	// publisher ¼Ó¼º°ª ¹İÈ¯
+	// publisher ì†ì„±ê°’ ë°˜í™˜
 	// @param	:	N/A
-	// @return	:	(String) ÃâÆÇ»ç¸í 
+	// @return	:	(String) ì¶œíŒì‚¬ëª… 
 	public String getPublisher() {
 		return this.publisher;
 	}

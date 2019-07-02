@@ -2,13 +2,13 @@ package basic_ex;
 
 import java.util.Scanner;
 
-// 1. »ç¿ëÀÚ·Î ºÎÅÍ ¾ÏÈ£·ê ÀÔ·Â¹Ş¾Æ ¾ÏÈ£°¡ ¸ÂÀ¸¸é "È¯¿µÇÕ´Ï´Ù" ¶ó´Â ¸Ş¼¼Áö¸¦ Ãâ·ÂÇÏ¿© Á¾·áÇÏ°í ¾ÏÈ£°¡ Æ²¸®¸é "¾ÏÈ£°¡ Æ²¸²
-// ÀÔ´Ï´Ù" ¸Ş¼¼Áö¸¦ Ãâ·ÂÇÑ´Ù.¾ÏÈ£¸¦  3¹ø Àß¸ø ÀÔ·ÂÇÏ¸é Á¢¼ÓÀ» "°ÅºÎÇÕ´Ï´Ù" Ãâ·ÂÇÏ°í Á¾·áÇÑ´Ù. ¾ÏÈ£´Â koreajava·Î ÇÑ´Ù
+// 1. ì‚¬ìš©ìë¡œ ë¶€í„° ì•”í˜¸ë£° ì…ë ¥ë°›ì•„ ì•”í˜¸ê°€ ë§ìœ¼ë©´ "í™˜ì˜í•©ë‹ˆë‹¤" ë¼ëŠ” ë©”ì„¸ì§€ë¥¼ ì¶œë ¥í•˜ì—¬ ì¢…ë£Œí•˜ê³  ì•”í˜¸ê°€ í‹€ë¦¬ë©´ "ì•”í˜¸ê°€ í‹€ë¦¼
+// ì…ë‹ˆë‹¤" ë©”ì„¸ì§€ë¥¼ ì¶œë ¥í•œë‹¤.ì•”í˜¸ë¥¼  3ë²ˆ ì˜ëª» ì…ë ¥í•˜ë©´ ì ‘ì†ì„ "ê±°ë¶€í•©ë‹ˆë‹¤" ì¶œë ¥í•˜ê³  ì¢…ë£Œí•œë‹¤. ì•”í˜¸ëŠ” koreajavaë¡œ í•œë‹¤
 
 public class Authorization_Ex1 {
 	public static void main(String[] args) {
 		
-		System.out.println("¹®Á¦1] ÀÎÁõ ÇÁ·Î±×·¥");
+		System.out.println("ë¬¸ì œ1] ì¸ì¦ í”„ë¡œê·¸ë¨");
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -18,12 +18,12 @@ public class Authorization_Ex1 {
 		
 		while(true) {
 			System.out.println("-----------------------------------");
-			System.out.print("ºñ¹Ğ¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä (Æ²¸°È½¼ö : " + try_cnt + ") : ");
+			System.out.print("ë¹„ë°€ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” (í‹€ë¦°íšŸìˆ˜ : " + try_cnt + ") : ");
 			
 			input_pass = scanner.nextLine();
 			
 			if(input_pass.equals(password)) {
-				System.out.println("È¯¿µÇÕ´Ï´Ù.");
+				System.out.println("í™˜ì˜í•©ë‹ˆë‹¤.");
 				System.out.println("-----------------------------------");
 				break;
 				
@@ -31,11 +31,11 @@ public class Authorization_Ex1 {
 				try_cnt++;
 				
 				if(try_cnt < 3) {
-					System.out.println("°æ°í] " + try_cnt + "È¸ ÀÎÁõ ½ÇÆĞ");
+					System.out.println("ê²½ê³ ] " + try_cnt + "íšŒ ì¸ì¦ ì‹¤íŒ¨");
 				
 				} else {
-					System.out.println("\nÆ²¸°È½¼ö : " + try_cnt);
-					System.out.println("°ÅºÎÇÕ´Ï´Ù.");
+					System.out.println("\ní‹€ë¦°íšŸìˆ˜ : " + try_cnt);
+					System.out.println("ê±°ë¶€í•©ë‹ˆë‹¤.");
 					System.out.println("-----------------------------------");
 					break;
 				}

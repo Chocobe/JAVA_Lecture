@@ -3,14 +3,14 @@ package before_starting_java;
 public class Array_Ex_16 {
 	public static void main(String[] args) {
 		if(args.length != 0) {
-			System.out.println("¸Å°³º¯¼ö °³¼ö : " + args.length);
+			System.out.println("ë§¤ê°œë³€ìˆ˜ ê°œìˆ˜ : " + args.length);
 			
 			for(int i = 0; i < args.length; i++) {
 				System.out.println("args[" + i + "] :\"" + args[i] + "\"");
 			}
 			
 		} else {
-			System.out.println("Usage(»ç¿ë¹ý) : java Array_Ex_16 ¸Å°³º¯¼ö");
+			System.out.println("Usage(ì‚¬ìš©ë²•) : java Array_Ex_16 ë§¤ê°œë³€ìˆ˜");
 		}
 	} //main
 }

@@ -2,24 +2,24 @@ package basic_ex;
 
 import java.util.Scanner;
 
-// 5. ÀÚ¹Ù Á¡¼öÀ» ÀĞ¾î 60ÀÌ»ó ¹ŞÀº ÇĞ»ıµéÀÇ ¼ö¿Í 60Á¡ ¹Ì¸¸¸¦ ¹ŞÀº ÇĞ»ıµéÀÇ ¼ö¸¦ °è»êÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
+// 5. ìë°” ì ìˆ˜ì„ ì½ì–´ 60ì´ìƒ ë°›ì€ í•™ìƒë“¤ì˜ ìˆ˜ì™€ 60ì  ë¯¸ë§Œë¥¼ ë°›ì€ í•™ìƒë“¤ì˜ ìˆ˜ë¥¼ ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
 
 public class Count_score {
 	public static void main(String[] args) {
-		System.out.println("¹®Á¦5] 60Á¡ ÀÌ»ó ÇĞ»ı, 60Á¡ ¹Ì¸¸ ÇĞ»ıÀÇ ¼ö¸¦ °è»êÇÏ±â");
+		System.out.println("ë¬¸ì œ5] 60ì  ì´ìƒ í•™ìƒ, 60ì  ë¯¸ë§Œ í•™ìƒì˜ ìˆ˜ë¥¼ ê³„ì‚°í•˜ê¸°");
 		
 		Scanner scanner = new Scanner(System.in);
 		
-		int total_num = 0;		// ÃÑ ÇĞ»ı¼ö
-		int pass_num = 0;		// 60Á¡ ÀÌ»ó ÇĞ»ı¼ö
-		int fail_num = 0;		// 60Á¡ ¹Ì¸¸ ÇĞ»ı¼ö
-		int curr_score = 0;		// ÇöÀç ÇĞ»ı Á¡¼ö
+		int total_num = 0;		// ì´ í•™ìƒìˆ˜
+		int pass_num = 0;		// 60ì  ì´ìƒ í•™ìƒìˆ˜
+		int fail_num = 0;		// 60ì  ë¯¸ë§Œ í•™ìƒìˆ˜
+		int curr_score = 0;		// í˜„ì¬ í•™ìƒ ì ìˆ˜
 		
-		String continuity = "";	// °è¼Ó ÁøÇà ¿©ºÎ
+		String continuity = "";	// ê³„ì† ì§„í–‰ ì—¬ë¶€
 		
 		Main_loop : while(true) {
 			System.out.println("-----------------------------");
-			System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : " );
+			System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : " );
 			curr_score = scanner.nextInt();
 			total_num++;
 			
@@ -33,7 +33,7 @@ public class Count_score {
 			scanner.nextLine();
 			
 			while(true) {
-				System.out.print("Ãß°¡ ÀÔ·Â ÇÏ½Ã°Ú½À´Ï±î? (y/n) : ");
+				System.out.print("ì¶”ê°€ ì…ë ¥ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n) : ");
 				continuity = scanner.nextLine();
 				
 				if(continuity.equals("y")) {
@@ -43,15 +43,15 @@ public class Count_score {
 					break Main_loop;
 					
 				} else {
-					System.out.println("Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+					System.out.println("ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 				}
 			} // while(true) - EXIT
 		} // Main_loop - EXIT
 		
 		System.out.println("-----------------------------");
-		System.out.println("ÃÑ ÇĞ»ı¼ö : " + total_num);
-		System.out.println("60Á¡ ÀÌ»ó ÇĞ»ı¼ö : " + pass_num);
-		System.out.println("60Á¡ ¹Ì¸¸ ÇĞ»ı¼ö : " + fail_num);
+		System.out.println("ì´ í•™ìƒìˆ˜ : " + total_num);
+		System.out.println("60ì  ì´ìƒ í•™ìƒìˆ˜ : " + pass_num);
+		System.out.println("60ì  ë¯¸ë§Œ í•™ìƒìˆ˜ : " + fail_num);
 		System.out.println("-----------------------------");
 		
 		scanner.close();

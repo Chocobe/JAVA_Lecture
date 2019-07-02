@@ -21,16 +21,16 @@ public class DivideException {
 			div = num_1 / num_2;
 			
 		} catch(InputMismatchException e) {
-			System.out.println("ÀÔ·Â°ªÀº Á¤¼öÇüÀÔ´Ï´Ù." + e.getMessage());
+			System.out.println("ì…ë ¥ê°’ì€ ì •ìˆ˜í˜•ì…ë‹ˆë‹¤." + e.getMessage());
 			
 		} catch(ArithmeticException e) {
-			System.out.println("ºĞ¸ğ°¡ 0ÀÌ µÉ ¼ö ¾ø½À´Ï´Ù.");
+			System.out.println("ë¶„ëª¨ê°€ 0ì´ ë  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.");
 			
 		} catch(Exception e) {
-			System.out.println("¾Ë ¼ö ¾ø´Â ¿¡·¯ÀÔ´Ï´Ù.");
+			System.out.println("ì•Œ ìˆ˜ ì—†ëŠ” ì—ëŸ¬ì…ë‹ˆë‹¤.");
 		}
 		
-		System.out.printf("°á°ú : %.2f", div);
+		System.out.printf("ê²°ê³¼ : %.2f", div);
 		
 		scanner.close();
 	}

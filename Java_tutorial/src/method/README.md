@@ -1,27 +1,27 @@
 # Method
 
-* [Method_Ex_1](#method_ex_1) - ``static``¸Þ¼­µå ÀÛ¼ºÇÏ±â
+* [Method_Ex_1](#method_ex_1) - ``static``ë©”ì„œë“œ ìž‘ì„±í•˜ê¸°
 
 
-* [Method_Ex_2](#method_ex_2) - Method ÀÛ¼º ¿¹Á¦ 1
+* [Method_Ex_2](#method_ex_2) - Method ìž‘ì„± ì˜ˆì œ 1
 
 
-* [Method_Ex_3](#method_ex_3) - Method ÀÛ¼º ¿¹Á¦ 2
+* [Method_Ex_3](#method_ex_3) - Method ìž‘ì„± ì˜ˆì œ 2
 
 ---
 ---
 
 ### Method_Ex_1
 
-method ÀÛ¼º½Ã, ``static`` ÇÑÁ¤ÀÚ¸¦ »ç¿ëÇÏ°Ô µÇ¸é
+method ìž‘ì„±ì‹œ, ``static`` í•œì •ìžë¥¼ ì‚¬ìš©í•˜ê²Œ ë˜ë©´
 
-ÀÌ ¸Þ¼Òµå´Â ¸Þ¸ð¸®¿¡ »óÁÖÇÏ°Ô µÇ´Â Á¤Àû ¸Þ¼Òµå°¡ µÈ´Ù.
+ì´ ë©”ì†Œë“œëŠ” ë©”ëª¨ë¦¬ì— ìƒì£¼í•˜ê²Œ ë˜ëŠ” ì •ì  ë©”ì†Œë“œê°€ ëœë‹¤.
 
 ---
 
-ÀÔ·Â ¸Þ¼Òµå¸¦ ¸¸µé ¶§, ``Scanner`` °´Ã¼¸¦ »ç¿ëÇÏ°Ô µÇ´Âµ¥
+ìž…ë ¥ ë©”ì†Œë“œë¥¼ ë§Œë“¤ ë•Œ, ``Scanner`` ê°ì²´ë¥¼ ì‚¬ìš©í•˜ê²Œ ë˜ëŠ”ë°
 
-``Scanner``ÀÇ °´Ã¼¸¦ ÀÎ¼ö·Î ÁÖ´Â ¹æ½ÄÀ» »ç¿ëÇØ¾ß ``Scanner°´Ã¼.close()``¸¦ »ç¿ëÇÒ ¼ö ÀÖ´Ù. 
+``Scanner``ì˜ ê°ì²´ë¥¼ ì¸ìˆ˜ë¡œ ì£¼ëŠ” ë°©ì‹ì„ ì‚¬ìš©í•´ì•¼ ``Scannerê°ì²´.close()``ë¥¼ ì‚¬ìš©í•  ìˆ˜ ìžˆë‹¤. 
 
 :camel:[Top](#method)
 
@@ -30,9 +30,9 @@ method ÀÛ¼º½Ã, ``static`` ÇÑÁ¤ÀÚ¸¦ »ç¿ëÇÏ°Ô µÇ¸é
 
 ### Method_Ex_2
 
-method ÀÛ¼º ¿¹Á¦ 1
+method ìž‘ì„± ì˜ˆì œ 1
 
-¸ÞÀÎ¿¡ ÇÊ¿äÇÑ ¸ðµç ±â´ÉµéÀ» ¸Þ¼Òµå·Î ±¸Á¶È­ ÇÑ ¹æ½Ä
+ë©”ì¸ì— í•„ìš”í•œ ëª¨ë“  ê¸°ëŠ¥ë“¤ì„ ë©”ì†Œë“œë¡œ êµ¬ì¡°í™” í•œ ë°©ì‹
 
 :camel:[Top](#method)
 
@@ -41,6 +41,6 @@ method ÀÛ¼º ¿¹Á¦ 1
 
 ### Method_Ex_3
 
-method ÀÛ¼º ¿¹Á¦ 2
+method ìž‘ì„± ì˜ˆì œ 2
 
 :camel:[Top](#method)

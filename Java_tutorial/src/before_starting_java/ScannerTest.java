@@ -5,27 +5,27 @@ import java.util.Scanner;
 public class ScannerTest {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("---µ¥ÀÌÅÍ ÀÔ·ÂºÎ---");
+		System.out.println("---ë°ì´í„° ì…ë ¥ë¶€---");
 		
-		System.out.print("¼º¸í : ");
+		System.out.print("ì„±ëª… : ");
 		String name = scanner.nextLine();
 		
-		System.out.print("±¹¾î : ");
+		System.out.print("êµ­ì–´ : ");
 		int kor = scanner.nextInt();
 		
-		// ¼ıÀÚÀÔ·ÂºÎµé »çÀÌ¿¡ ¹®ÀÚ¿­ÀÔ·ÂÀÌ ÀÖÀ» °æ¿ì,
-		// Enter°ªÀ» Áö¿öÁÖ´Â (¹öÆÛ¸¦ ºñ¿ì´Â) ÀÛ¾÷ÀÌ ÇÊ¿äÇÏ´Ù.
+		// ìˆ«ìì…ë ¥ë¶€ë“¤ ì‚¬ì´ì— ë¬¸ìì—´ì…ë ¥ì´ ìˆì„ ê²½ìš°,
+		// Enterê°’ì„ ì§€ì›Œì£¼ëŠ” (ë²„í¼ë¥¼ ë¹„ìš°ëŠ”) ì‘ì—…ì´ í•„ìš”í•˜ë‹¤.
 		scanner.nextLine();
 		
-		System.out.print("ºñ°í : ");
+		System.out.print("ë¹„ê³  : ");
 		
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		int math = scanner.nextInt();
 		
-		System.out.println("\n---ÀÔ·ÂµÈ µ¥ÀÌÅÍ Ãâ·ÂºÎ---");
-		System.out.println("ÀÌ¸§ : " + name);
-		System.out.println("±¹¾î : " + kor);
-		System.out.println("¼öÇĞ : " + math);
+		System.out.println("\n---ì…ë ¥ëœ ë°ì´í„° ì¶œë ¥ë¶€---");
+		System.out.println("ì´ë¦„ : " + name);
+		System.out.println("êµ­ì–´ : " + kor);
+		System.out.println("ìˆ˜í•™ : " + math);
 		
 		scanner.close();
 	}

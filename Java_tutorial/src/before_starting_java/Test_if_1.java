@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Test_if_1 {
 	public static void main(String[] args) {
-		// Æò±ÕÀÌ 70ÀÌ°í, ¼ºº°ÀÌ "³²"ÀÌ°Å³ª, ÀÚ°İÁõÀÌ ÀÖÀ¸¸é "ÇØ¿Ü±Ù¹«"
+		// í‰ê· ì´ 70ì´ê³ , ì„±ë³„ì´ "ë‚¨"ì´ê±°ë‚˜, ìê²©ì¦ì´ ìˆìœ¼ë©´ "í•´ì™¸ê·¼ë¬´"
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -12,47 +12,47 @@ public class Test_if_1 {
 		String sex = "";
 		boolean isCertificate = false;
 		
-		System.out.print("Æò±ÕÁ¡¼ö : ");
+		System.out.print("í‰ê· ì ìˆ˜ : ");
 		avg = scanner.nextInt();
 		
-		scanner.nextLine();		// ¹öÆÛ Á¦°Å(Enter°ª)
+		scanner.nextLine();		// ë²„í¼ ì œê±°(Enterê°’)
 		
-		System.out.print("¼ºº° : ");
+		System.out.print("ì„±ë³„ : ");
 		sex = scanner.nextLine();
 		
-		System.out.print("ÀÚ°İÁõ(true/false) : ");
+		System.out.print("ìê²©ì¦(true/false) : ");
 		isCertificate = scanner.nextBoolean();
 		
-		if(avg >= 70 && (sex.equals("³²") || isCertificate)) {
-			System.out.println("ÇØ¿Ü±Ù¹«");
+		if(avg >= 70 && (sex.equals("ë‚¨") || isCertificate)) {
+			System.out.println("í•´ì™¸ê·¼ë¬´");
 		}
 		System.out.println("-------------------------------");
 		
 		
-		// °èÀı ¿ù ÀÔ·Â :
-		//			3, 4, 5 : º½
-		//			6, 7, 8 : ¿©¸§
-		//			9, 10, 11 : °¡À»
-		//			12, 1, 2 : °Ü¿ï
+		// ê³„ì ˆ ì›” ì…ë ¥ :
+		//			3, 4, 5 : ë´„
+		//			6, 7, 8 : ì—¬ë¦„
+		//			9, 10, 11 : ê°€ì„
+		//			12, 1, 2 : ê²¨ìš¸
 		String season = "";
 		int month = 0;
 		
-		System.out.print("ÇöÀç ¿ù : ");
+		System.out.print("í˜„ì¬ ì›” : ");
 		month = scanner.nextInt();
 		
 		if(3 <= month && month <= 5)
-			season = "º½";
+			season = "ë´„";
 		
 		else if(6 <= month && month <= 8)
-			season = "¿©¸§";
+			season = "ì—¬ë¦„";
 		
 		else if(9 <= month && month <= 11)
-			season = "°¡À»";
+			season = "ê°€ì„";
 		
 		else
-			season = "°Ü¿ï";
+			season = "ê²¨ìš¸";
 		
-		System.out.println("ÇöÀç °èÀıÀº " + season + "ÀÔ´Ï´Ù.");
+		System.out.println("í˜„ì¬ ê³„ì ˆì€ " + season + "ì…ë‹ˆë‹¤.");
 		System.out.println("-------------------------------");
 		
 		

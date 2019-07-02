@@ -3,18 +3,18 @@ package before_starting_java;
 import java.util.Date;
 
 /*
- * ÁÖ¼®
+ * ì£¼ì„
  */
 public class Hello {
 	public static void main(String[] args) {
 		
 		System.out.println("Hello Java!");
-		System.out.println("ÀÚ¹Ù ÀÀ¿ë ÇÁ·Î±×·¥\nÁ¦ÀÛÀÚ : ±è¿µ¿ì");
-		System.out.println("¹øÈ£\tÀÌ¸§\tÀüÈ­¹øÈ£\t");
+		System.out.println("ìë°” ì‘ìš© í”„ë¡œê·¸ë¨\nì œì‘ì : ê¹€ì˜ìš°");
+		System.out.println("ë²ˆí˜¸\tì´ë¦„\tì „í™”ë²ˆí˜¸\t");
 		System.out.println();
-		System.out.print("¹øÈ£");
-		System.out.print("ÀÌ¸§");
-		System.out.print("ÀüÈ­¹øÈ£");
+		System.out.print("ë²ˆí˜¸");
+		System.out.print("ì´ë¦„");
+		System.out.print("ì „í™”ë²ˆí˜¸");
 		System.out.printf("%d%s", 1000, "korea\n");
 		
 		int num = 1;
@@ -41,7 +41,7 @@ public class Hello {
 		
 		System.out.println();
 		Date d = new Date();
-		System.out.println("³¯Â¥ : " + d);
+		System.out.println("ë‚ ì§œ : " + d);
 		
 		float f = 123.456F;
 		System.out.println("f = " + f);
@@ -63,9 +63,9 @@ public class Hello {
 		System.out.printf("%s%6.2f\n\n", city, f);
 		
 		char ch = 'A';
-		System.out.printf("¹®ÀÚ : %c, %d, %c, %d\n", ch, (int)ch, ch + 1, (int)ch + 1);
+		System.out.printf("ë¬¸ì : %c, %d, %c, %d\n", ch, (int)ch, ch + 1, (int)ch + 1);
 		
 		char ch2 = 'a';
-		System.out.printf("¹®ÀÚ2 : %c, %d\n", ch2 - 32, (int)ch2);
+		System.out.printf("ë¬¸ì2 : %c, %d\n", ch2 - 32, (int)ch2);
 	}
 }

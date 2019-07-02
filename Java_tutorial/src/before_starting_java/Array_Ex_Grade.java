@@ -1,10 +1,10 @@
 package before_starting_java;
 
-// ¹è¿­ ¿¹Á¦ 7
-// ÀÔ·Â : (¸ŞÀÎ ¸Å°³º¯¼ö »ç¿ë)
-//		ÀÌ¸§, ±¹¾îÁ¡¼ö, ¿µ¾îÁ¡¼ö, ¼öÇĞÁ¡¼ö
-// Ãâ·Â :
-//		ÀÌ¸§, ±¹¾îÁ¡¼ö, ¿µ¾îÁ¡¼ö, ¼öÇĞÁ¡¼ö, ÃÑÁ¡, Æò±Õ, µî¼ö (7°³)
+// ë°°ì—´ ì˜ˆì œ 7
+// ì…ë ¥ : (ë©”ì¸ ë§¤ê°œë³€ìˆ˜ ì‚¬ìš©)
+//		ì´ë¦„, êµ­ì–´ì ìˆ˜, ì˜ì–´ì ìˆ˜, ìˆ˜í•™ì ìˆ˜
+// ì¶œë ¥ :
+//		ì´ë¦„, êµ­ì–´ì ìˆ˜, ì˜ì–´ì ìˆ˜, ìˆ˜í•™ì ìˆ˜, ì´ì , í‰ê· , ë“±ìˆ˜ (7ê°œ)
 
 public class Array_Ex_Grade {	
 	
@@ -14,49 +14,49 @@ public class Array_Ex_Grade {
 		
 		final int TOTAL_STUDENT = args.length / 4;
 		
-		String[] arr_name = new String[TOTAL_STUDENT];	// ÀÌ¸§ ÀúÀå¼Ò
-		int[][] arr_score = null;						// °¢ °ú¸ñº° Á¡¼ö ÀúÀå¼Ò
-		int[] arr_total_score = null;					// ÃÑÁ¡ ÀúÀå¼Ò
-		double[] arr_avg_score = null;					// Æò±Õ ÀúÀå¼Ò
-		int[] arr_rank = null;							// µî¼ö ÀúÀå¼Ò
+		String[] arr_name = new String[TOTAL_STUDENT];	// ì´ë¦„ ì €ì¥ì†Œ
+		int[][] arr_score = null;						// ê° ê³¼ëª©ë³„ ì ìˆ˜ ì €ì¥ì†Œ
+		int[] arr_total_score = null;					// ì´ì  ì €ì¥ì†Œ
+		double[] arr_avg_score = null;					// í‰ê·  ì €ì¥ì†Œ
+		int[] arr_rank = null;							// ë“±ìˆ˜ ì €ì¥ì†Œ
 		
-		// 1. ÀÌ¸§ ÃßÃâ
+		// 1. ì´ë¦„ ì¶”ì¶œ
 		arr_name = get_name(args, TOTAL_STUDENT);
 		
-		// 2. Á¡¼ö ÃßÃâ
+		// 2. ì ìˆ˜ ì¶”ì¶œ
 		arr_score = get_score(args, TOTAL_STUDENT);
 		
-		// 3. ÃÑÁ¡
+		// 3. ì´ì 
 		arr_total_score = get_total_score(arr_score, TOTAL_STUDENT);
 		
-		// 4. Æò±Õ
+		// 4. í‰ê· 
 		arr_avg_score = get_avg_score(arr_total_score, TOTAL_STUDENT);
 
-		// 5. µî¼ö
+		// 5. ë“±ìˆ˜
 		arr_rank = get_rank(arr_avg_score, TOTAL_STUDENT);
 
-		// 6. Ãâ·Â
+		// 6. ì¶œë ¥
 		print_attribute();
 		print_result(arr_name, arr_score, arr_total_score, arr_avg_score, arr_rank);
 	} // main
 	
 	
-	// ¼Ó¼º¸í Ãâ·Â
+	// ì†ì„±ëª… ì¶œë ¥
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
 	public static void print_attribute() {
 		System.out.printf("%4s |%3s |%3s |%3s |%3s |%4s   | %3s", 
-						  "ÇĞ»ı¸í", "±¹ ¾î", "¿µ ¾î", "¼ö ÇĞ", "ÃÑ Á¡", "Æò ±Õ", "µî ¼ö");
+						  "í•™ìƒëª…", "êµ­ ì–´", "ì˜ ì–´", "ìˆ˜ í•™", "ì´ ì ", "í‰ ê· ", "ë“± ìˆ˜");
 		System.out.println();
 	}
 	
 	
-	// ÀÌ¸§ ÃßÃâ
+	// ì´ë¦„ ì¶”ì¶œ
 	// @author	:	Chocobe
-	// @param	:	String[] _args	: ¸ŞÀÎ ¸Ş¼Òµå ÀÎÀÚ°ª
-	//			:	int _total_student	: ÇĞ»ı ¼ö
-	// @return	:	(String[]) ÃßÃâÇÑ ÀÌ¸§
+	// @param	:	String[] _args	: ë©”ì¸ ë©”ì†Œë“œ ì¸ìê°’
+	//			:	int _total_student	: í•™ìƒ ìˆ˜
+	// @return	:	(String[]) ì¶”ì¶œí•œ ì´ë¦„
 	public static String[] get_name(String[] _args, int _total_student) {		
 		String name[] = new String[_total_student];
 		
@@ -68,11 +68,11 @@ public class Array_Ex_Grade {
 	}
 	
 	
-	// ±¹¾î/¿µ¾î/¼öÇĞ Á¡¼ö ÃßÃâ
+	// êµ­ì–´/ì˜ì–´/ìˆ˜í•™ ì ìˆ˜ ì¶”ì¶œ
 	// @author	:	Chocobe
-	// @param	:	String[] _args	: ¸ŞÀÎ ¸Ş¼Òµå ÀÎÀÚ°ª
-	//			:	int _total_student	: ÇĞ»ı ¼ö
-	// @return	:	(int[][]) ÃßÃâÇÑ °¢ Á¡¼ö
+	// @param	:	String[] _args	: ë©”ì¸ ë©”ì†Œë“œ ì¸ìê°’
+	//			:	int _total_student	: í•™ìƒ ìˆ˜
+	// @return	:	(int[][]) ì¶”ì¶œí•œ ê° ì ìˆ˜
 	public static int[][] get_score(String[] _args, int _total_student) {
 		int[][] score = new int[_total_student][SUB_COUNT];
 		
@@ -87,11 +87,11 @@ public class Array_Ex_Grade {
 	}
 	
 	
-	// ÃÑÇÕ °è»ê
+	// ì´í•© ê³„ì‚°
 	// @author	:	Chocobe
-	// @param	:	int[][] _score	: ÃßÃâÇÑ °¢ Á¡¼ö
-	//			:	int _total_student	: ÃÑ ÇĞ»ı ¼ö
-	// @return	:	(int[]) ÇĞ»ıº° ÃÑ ÇÕ
+	// @param	:	int[][] _score	: ì¶”ì¶œí•œ ê° ì ìˆ˜
+	//			:	int _total_student	: ì´ í•™ìƒ ìˆ˜
+	// @return	:	(int[]) í•™ìƒë³„ ì´ í•©
 	public static int[] get_total_score(int[][] _score, int _total_student) {
 		int[] sum = new int[_total_student];
 		
@@ -108,11 +108,11 @@ public class Array_Ex_Grade {
 	}
 	
 	
-	// Æò±Õ °è»ê
+	// í‰ê·  ê³„ì‚°
 	// @author	:	Chocobe
-	// @param	:	int[] _total_score	: ÇĞ»ıº° ÃÑ ÇÕ
-	//			:	int _total_student	: ÇĞ»ı ¼ö
-	// @return	:	(double[]) ÇĞ»ıº° Æò±Õ Á¡¼ö
+	// @param	:	int[] _total_score	: í•™ìƒë³„ ì´ í•©
+	//			:	int _total_student	: í•™ìƒ ìˆ˜
+	// @return	:	(double[]) í•™ìƒë³„ í‰ê·  ì ìˆ˜
 	public static double[] get_avg_score(int[] _total_score, int _total_student) {
 		double[] avg = new double[_total_student];
 		for(int i = 0; i < _total_student; i++) {
@@ -122,11 +122,11 @@ public class Array_Ex_Grade {
 	}
 	
 	
-	// µî¼ö °è»ê
+	// ë“±ìˆ˜ ê³„ì‚°
 	// @author	:	Chocobe
-	// @param	:	double[] _avg	: ÇĞ»ıº° Æò±Õ Á¡¼ö
-	//			:	int _total_student	: ÇĞ»ı ¼ö
-	// @return	:	(int[]) ÇĞ»ıº° µî¼ö
+	// @param	:	double[] _avg	: í•™ìƒë³„ í‰ê·  ì ìˆ˜
+	//			:	int _total_student	: í•™ìƒ ìˆ˜
+	// @return	:	(int[]) í•™ìƒë³„ ë“±ìˆ˜
 	public static int[] get_rank(double[] _avg, int _total_student) {
 		int[] rank = new int[_total_student];
 		double cur_stand_score = 0F;
@@ -145,13 +145,13 @@ public class Array_Ex_Grade {
 	}
 	
 	
-	// Ãâ·Â
+	// ì¶œë ¥
 	// @author	:	Chocobe
-	// @param	:	String[] _name	: ÇĞ»ı ÀÌ¸§
-	//			:	int[][] _score	: °¢ Á¡¼ö
-	//			:	int[] _total_score	: ÇĞ»ıº° ÃÑ ÇÕ
-	//			:	double[] _avg	: ÇĞ»ıº° Æò±Õ Á¡¼ö
-	//			:	int[] _rank		: ÇĞ»ıº° µî¼ö
+	// @param	:	String[] _name	: í•™ìƒ ì´ë¦„
+	//			:	int[][] _score	: ê° ì ìˆ˜
+	//			:	int[] _total_score	: í•™ìƒë³„ ì´ í•©
+	//			:	double[] _avg	: í•™ìƒë³„ í‰ê·  ì ìˆ˜
+	//			:	int[] _rank		: í•™ìƒë³„ ë“±ìˆ˜
 	// @return	:	N/A
 	public static void print_result(
 			String[] _name, int[][] _score, int[] _total_score,

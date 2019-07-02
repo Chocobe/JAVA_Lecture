@@ -2,7 +2,7 @@ package before_starting_java;
 
 import java.util.Scanner;
 
-// µ¿ÀûÀ¸·Î °ø°£ ÇÒ´çÀÌ °¡´ÉÇÏ´Ù.
+// ë™ì ìœ¼ë¡œ ê³µê°„ í• ë‹¹ì´ ê°€ëŠ¥í•˜ë‹¤.
 
 public class Array_DynamicArray {
 	public static void main(String[] args) {
@@ -11,10 +11,10 @@ public class Array_DynamicArray {
 		int num = 0;
 		String str = "";
 		
-		System.out.print("¹®ÀÚ¿­ ÀÔ·Â : ");
+		System.out.print("ë¬¸ìì—´ ì…ë ¥ : ");
 		str = scanner.nextLine();
 		
-		System.out.print("¹è¿­ Å©±â : ");
+		System.out.print("ë°°ì—´ í¬ê¸° : ");
 		num = scanner.nextInt();
 		
 		x = new int[num];

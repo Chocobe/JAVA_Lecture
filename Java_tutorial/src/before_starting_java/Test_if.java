@@ -9,7 +9,7 @@ public class Test_if {
 		
 		//num = scanner.nextInt();
 		num = Integer.parseInt(scanner.nextLine());
-		System.out.println("ÀÔ·ÂµÈ °ª : " + num);
+		System.out.println("ì…ë ¥ëœ ê°’ : " + num);
 		
 		if(num < 100)
 			num += 100;	//num = num + 100;
@@ -20,80 +20,80 @@ public class Test_if {
 		System.out.println("---------------------------");
 		
 		
-		// µÎ ¼ö¸¦ ÀÔ·ÂÇÏ¿© Å« °ªÀ» Ãâ·ÂÇÏ±â
+		// ë‘ ìˆ˜ë¥¼ ì…ë ¥í•˜ì—¬ í° ê°’ì„ ì¶œë ¥í•˜ê¸°
 		//
 		int num1, num2;
 		String str = "";
 		
-		System.out.print("num1 ÀÔ·Â : ");		
+		System.out.print("num1 ì…ë ¥ : ");		
 		num1 = scanner.nextInt();
-		System.out.print("num2 ÀÔ·Â : ");
+		System.out.print("num2 ì…ë ¥ : ");
 		num2 = scanner.nextInt();
 		
 		if(num1 < num2) 
-			str = "Å« ¼ö´Â " + num2 + "ÀÔ´Ï´Ù.";
+			str = "í° ìˆ˜ëŠ” " + num2 + "ì…ë‹ˆë‹¤.";
 		else 
-			str = "Å« ¼ö´Â " + num1 + "ÀÔ´Ï´Ù.";
+			str = "í° ìˆ˜ëŠ” " + num1 + "ì…ë‹ˆë‹¤.";
 		
-		System.out.println("ºñ±³°á°ú : " + str);
+		System.out.println("ë¹„êµê²°ê³¼ : " + str);
 		System.out.println("---------------------------");
 		
 		
-		// µÎ °ú¸ñÀÇ Á¡¼ö¸¦ ÀÔ·Â¹Ş¾Æ, 180ÀÌ¸é "Á¶°Ç¼º¸³", ±× ¿Ü¿¡´Â "Á¶°Ç ºÒÀÏÄ¡"
+		// ë‘ ê³¼ëª©ì˜ ì ìˆ˜ë¥¼ ì…ë ¥ë°›ì•„, 180ì´ë©´ "ì¡°ê±´ì„±ë¦½", ê·¸ ì™¸ì—ëŠ” "ì¡°ê±´ ë¶ˆì¼ì¹˜"
 		//
 		int sub_1, sub_2, sum = 0;
 		
-		System.out.print("°ú¸ñ 1 : ");
+		System.out.print("ê³¼ëª© 1 : ");
 		sub_1 = scanner.nextInt();
-		System.out.print("°ú¸ñ2 : ");
+		System.out.print("ê³¼ëª©2 : ");
 		sub_2 = scanner.nextInt();
 		
 		sum = sub_1 + sub_2;
 		
 		if(sum == 180)
-			System.out.println("Á¶°Ç¼º¸³");
+			System.out.println("ì¡°ê±´ì„±ë¦½");
 		
 		else
-			System.out.println("Á¶°Ç ºÒÀÏÄ¡");
+			System.out.println("ì¡°ê±´ ë¶ˆì¼ì¹˜");
 		System.out.println("---------------------------");
 		
 		
-		// ÀÌ¸§, Á¡¼ö ÀÔ·Â
-		// Ãâ·Â :
-		//		ÀÌ¸§ : ÇÕ°İ(70Á¡ ÀÌ»óÀÏ °æ¿ì)
-		//		ÀÌ¸§ : ºÒÇÕ°İ(70Á¡ ¹Ì¸¸)
+		// ì´ë¦„, ì ìˆ˜ ì…ë ¥
+		// ì¶œë ¥ :
+		//		ì´ë¦„ : í•©ê²©(70ì  ì´ìƒì¼ ê²½ìš°)
+		//		ì´ë¦„ : ë¶ˆí•©ê²©(70ì  ë¯¸ë§Œ)
 		//
 		String name = "";
 		int score = 0;
 		
-		scanner.nextLine();	// ¹öÆÛ ºñ¿ì±â
+		scanner.nextLine();	// ë²„í¼ ë¹„ìš°ê¸°
 		
-		System.out.print("ÀÌ¸§À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì´ë¦„ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		name = scanner.nextLine();
-		System.out.print("Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		score = scanner.nextInt();
 		
-		System.out.print("ÀÌ¸§ : " + name + ", ");
+		System.out.print("ì´ë¦„ : " + name + ", ");
 		if(score < 70) 
-			System.out.println("ºÒÇÕ°İ Á¡¼ö : " + score);
+			System.out.println("ë¶ˆí•©ê²© ì ìˆ˜ : " + score);
 		
 		else {
-			System.out.println("ÇÕ°İ Á¡¼ö : " + score);
+			System.out.println("í•©ê²© ì ìˆ˜ : " + score);
 		}
 		System.out.println("---------------------------");
 		
 		
-		// µÎ Á¤¼ö¸¦ ÀÔ·ÂÇÏ¿©, ÇÕ°ú Â÷¸¦ ºñ±³ÇÏ¿© °á°ú Ãâ·Â
-		// Ãâ·Â :
-		//		"ÇÕ > Â÷" ¶Ç´Â "ÇÕ < Â÷" "°°´Ù"
-		//		ÇÕ = xxx
-		//		Â÷ = xxx
+		// ë‘ ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì—¬, í•©ê³¼ ì°¨ë¥¼ ë¹„êµí•˜ì—¬ ê²°ê³¼ ì¶œë ¥
+		// ì¶œë ¥ :
+		//		"í•© > ì°¨" ë˜ëŠ” "í•© < ì°¨" "ê°™ë‹¤"
+		//		í•© = xxx
+		//		ì°¨ = xxx
 		int lhs, rhs, sub = 0;
-		System.out.println("µÎ ¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä");
+		System.out.println("ë‘ ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”");
 		
-		System.out.print("ÁÂÃøÇ× : ");
+		System.out.print("ì¢Œì¸¡í•­ : ");
 		lhs = scanner.nextInt();
-		System.out.print("¿ìÃøÇ× : ");
+		System.out.print("ìš°ì¸¡í•­ : ");
 		rhs = scanner.nextInt();
 		
 		sum = lhs + rhs;
@@ -107,48 +107,48 @@ public class Test_if {
 		sub = lhs - rhs;
 		
 		if(sum > sub) {
-			System.out.println("ÇÕ > Â÷");
+			System.out.println("í•© > ì°¨");
 			
 		} else if(sum < sub) {
-			System.out.println("ÇÕ < Â÷");
+			System.out.println("í•© < ì°¨");
 			
 		} else {
-			System.out.println("°°´Ù");
+			System.out.println("ê°™ë‹¤");
 		}
 		
-		System.out.println("ÇÕ : " + sum + ", Â÷ : " + sub);
+		System.out.println("í•© : " + sum + ", ì°¨ : " + sub);
 		System.out.println("---------------------------");
 		
-		// ÀÔ·Â :
-		//		ÃÑ ÀÎ¿ø¼ö : xxx
-		//		ÃÑ ½Ä»çºñ : xxx
-		// ÃÑ ÀÎ¿ø¼ö°¡ 4¸í ÀÌ»óÀÌ¸é, "ÃÑ ½Ä»çºñ * 0.1"·Î ÇÒÀÎÇÏ¿©, ÃÑ ÁöºÒ¾×À» °è»êÇÑ´Ù.
+		// ì…ë ¥ :
+		//		ì´ ì¸ì›ìˆ˜ : xxx
+		//		ì´ ì‹ì‚¬ë¹„ : xxx
+		// ì´ ì¸ì›ìˆ˜ê°€ 4ëª… ì´ìƒì´ë©´, "ì´ ì‹ì‚¬ë¹„ * 0.1"ë¡œ í• ì¸í•˜ì—¬, ì´ ì§€ë¶ˆì•¡ì„ ê³„ì‚°í•œë‹¤.
 		//
 		int member = 0;
 		int cost = 0;
 		
-		System.out.print("ÃÑ ÀÎ¿ø¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì´ ì¸ì›ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		member = scanner.nextInt();
-		System.out.print("ÃÑ ½Ä»çºñ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì´ ì‹ì‚¬ë¹„ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		cost = scanner.nextInt();
 		
 		if(member >= 4) {
 			cost = cost - (int)(cost * 0.1);
 		}
 		
-		System.out.println("ÃÑ ÀÎ¿ø¼ö : " + member);
-		System.out.println("ÃÑ ½Ä»çºñ : " + cost);
+		System.out.println("ì´ ì¸ì›ìˆ˜ : " + member);
+		System.out.println("ì´ ì‹ì‚¬ë¹„ : " + cost);
 		System.out.println("---------------------------");
 		
-		// ºñÀ²¿¡ µû¶ó 30ÀÌ»óÀÌ¸é "ÃÖ»óÀÌÀÍ" Ãâ·Â
-		// 20ÀÌ»óÀÌ¸é "ÁÁÀº¼öÀÍ",
-		// 10ÀÌ»óÀÌ¸é "º¸Åë¼öÀÍ" Ãâ·Â
+		// ë¹„ìœ¨ì— ë”°ë¼ 30ì´ìƒì´ë©´ "ìµœìƒì´ìµ" ì¶œë ¥
+		// 20ì´ìƒì´ë©´ "ì¢‹ì€ìˆ˜ìµ",
+		// 10ì´ìƒì´ë©´ "ë³´í†µìˆ˜ìµ" ì¶œë ¥
 		//
-		// ÀÔ·ÂÇü½Ä :
-		//			¿ø°¡ : xxx
-		//			ÆÇ¸Å°¡ : xxx
-		//			ÀÌÀÍ = ÆÇ¸Å°¡ - ¿ø°¡
-		//			ºñÀ² = ÀÌÀÍ / ÆÇ¸Å°¡ * 100
+		// ì…ë ¥í˜•ì‹ :
+		//			ì›ê°€ : xxx
+		//			íŒë§¤ê°€ : xxx
+		//			ì´ìµ = íŒë§¤ê°€ - ì›ê°€
+		//			ë¹„ìœ¨ = ì´ìµ / íŒë§¤ê°€ * 100
 		//
 		int origin_price = 0;
 		int sale_price = 0;
@@ -156,63 +156,63 @@ public class Test_if {
 		double rate = 0.0F;
 		int res = 0;
 		
-		System.out.print("ÀçÇ°ÀÇ ¿ø°¡ : ");
+		System.out.print("ì¬í’ˆì˜ ì›ê°€ : ");
 		origin_price = scanner.nextInt();
-		System.out.print("ÀçÇ°ÀÇ ÆÇ¸Å°¡ : ");
+		System.out.print("ì¬í’ˆì˜ íŒë§¤ê°€ : ");
 		sale_price = scanner.nextInt();
 		
 		profit = sale_price - origin_price;
 		rate = ((double)profit / sale_price) * 100;
 		res = (int)rate;
 
-		System.out.println("ÆÇ¸Å°¡ : " + sale_price + ", ¿ø°¡ : " + origin_price);
+		System.out.println("íŒë§¤ê°€ : " + sale_price + ", ì›ê°€ : " + origin_price);
 		
-		System.out.print("¼öÀÍÆò°¡ : ");
+		System.out.print("ìˆ˜ìµí‰ê°€ : ");
 		if(res >= 30)
-			System.out.println("ÃÖ»óÀÌÀÍ");
+			System.out.println("ìµœìƒì´ìµ");
 		
 		else if(res >= 20)
-			System.out.println("ÁÁÀº¼öÀÍ");
+			System.out.println("ì¢‹ì€ìˆ˜ìµ");
 		
 		else
-			System.out.println("º¸Åë¼öÀÍ");
+			System.out.println("ë³´í†µìˆ˜ìµ");
 		
-		System.out.printf("ºñÀ² : %d\n", res);
+		System.out.printf("ë¹„ìœ¨ : %d\n", res);
 		System.out.println("---------------------------");
 		
 		
-		// 2°ú¸ñÀÇ Á¡¼ö, °øÀÎÁ¡¼ö ÀÔ·Â
-		// Æò±Õ >= 70 ÀÌ°Å³ª, °øÀÎÁ¡¼ö >= 700ÀÌ¸é ÇÕ°İ, not ºÒÇÕ°İ
+		// 2ê³¼ëª©ì˜ ì ìˆ˜, ê³µì¸ì ìˆ˜ ì…ë ¥
+		// í‰ê·  >= 70 ì´ê±°ë‚˜, ê³µì¸ì ìˆ˜ >= 700ì´ë©´ í•©ê²©, not ë¶ˆí•©ê²©
 		int kor_score = 0;
 		int eng_score = 0;
 		
-		System.out.print("±¹¾îÁ¡¼ö : ");
+		System.out.print("êµ­ì–´ì ìˆ˜ : ");
 		kor_score = scanner.nextInt();
-		System.out.print("¿µ¾îÁ¡¼ö : ");
+		System.out.print("ì˜ì–´ì ìˆ˜ : ");
 		eng_score = scanner.nextInt();
 		
 		if(kor_score >= 70 || eng_score >= 700)
-			System.out.println("ÇÕ°İ");
+			System.out.println("í•©ê²©");
 		
 		else
-			System.out.println("ºÒÇÕ°İ");
+			System.out.println("ë¶ˆí•©ê²©");
 		
 		System.out.println("---------------------------");
 		
 		
-		// Æò±ÕÀÌ 70ÀÌ°í ¼ºº°ÀÌ "man"ÀÌ¸é "ÇØ¿Ü±Ù¹«"
+		// í‰ê· ì´ 70ì´ê³  ì„±ë³„ì´ "man"ì´ë©´ "í•´ì™¸ê·¼ë¬´"
 		int work_score = 0;
 		String sex = "";
 		
-		System.out.print("°í°¡Á¡¼ö : ");
+		System.out.print("ê³ ê°€ì ìˆ˜ : ");
 		work_score = scanner.nextInt();
-		scanner.nextLine();		// ¹öÆÛÁ¦°Å
+		scanner.nextLine();		// ë²„í¼ì œê±°
 		
-		System.out.print("¼ºº° : ");
+		System.out.print("ì„±ë³„ : ");
 		sex = scanner.nextLine();
 		
-		if(work_score >= 70 && sex.equals("³²"))
-			System.out.println("ÇØ¿Ü±Ù¹«");
+		if(work_score >= 70 && sex.equals("ë‚¨"))
+			System.out.println("í•´ì™¸ê·¼ë¬´");
 		
 		System.out.println("---------------------------");
 		

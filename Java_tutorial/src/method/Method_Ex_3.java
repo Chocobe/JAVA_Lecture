@@ -11,33 +11,33 @@ public class Method_Ex_3 {
 		int rhs = 0;
 		int min = 0;
 		
-		lhs = setData(scanner, "ÁÂÃøÇ×");
-		rhs = setData(scanner, "¿ìÃøÇ×");
+		lhs = setData(scanner, "ì¢Œì¸¡í•­");
+		rhs = setData(scanner, "ìš°ì¸¡í•­");
 		
 		min = getMin(lhs, rhs);
 		
 		printLine();
-		printNum(lhs, "ÁÂÃøÇ×");
-		printNum(rhs, "¿ìÃøÇ×");
-		printNum(min, "ÃÖ¼Ò°ª");
+		printNum(lhs, "ì¢Œì¸¡í•­");
+		printNum(rhs, "ìš°ì¸¡í•­");
+		printNum(min, "ìµœì†Œê°’");
 		printLine();
 		
 		scanner.close();
 	} // main
 	
 	
-	// setData : °ª ÀÔ·Â ¸Ş¼Òµå
+	// setData : ê°’ ì…ë ¥ ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	Scanner _sc		: Scanner °´Ã¼
-	//			:	String _name	: µ¥ÀÌÅÍ°ªÀÇ ÀÌ¸§
-	// @return	:	(int)ÀÔ·ÂÇÑ °ª
+	// @param	:	Scanner _sc		: Scanner ê°ì²´
+	//			:	String _name	: ë°ì´í„°ê°’ì˜ ì´ë¦„
+	// @return	:	(int)ì…ë ¥í•œ ê°’
 	public static int setData(Scanner _sc, String _name) {
-		System.out.print(_name + "À»(¸¦) ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print(_name + "ì„(ë¥¼) ì…ë ¥í•˜ì„¸ìš” : ");
 		return _sc.nextInt();
 	}
 	
 	
-	// printLine : °¡·Î¼± Ãâ·Â ¸Ş¼Òµå
+	// printLine : ê°€ë¡œì„  ì¶œë ¥ ë©”ì†Œë“œ
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -48,10 +48,10 @@ public class Method_Ex_3 {
 	}
 	
 	
-	// printNum : °ªÀ» ÄÜ¼Ö¿¡ Ãâ·ÂÇÏ´Â ¸Ş¼Òµå
+	// printNum : ê°’ì„ ì½˜ì†”ì— ì¶œë ¥í•˜ëŠ” ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	int _val		: Ãâ·ÂÇÒ °ª
-	//			:	String _name	: °ªÀÇ ÀÌ¸§
+	// @param	:	int _val		: ì¶œë ¥í•  ê°’
+	//			:	String _name	: ê°’ì˜ ì´ë¦„
 	// @return	:	N/A
 	public static void printNum(int _val, String _name) {
 		System.out.println(_name + " : " + _val);
@@ -60,11 +60,11 @@ public class Method_Ex_3 {
 	}
 	
 	
-	// getMin : µÎ °ªÀ» ºñ±³ÇÏ¿© ÃÖ¼Ò°ªÀ» ±¸ÇÏ´Â ¸Ş¼Òµå
+	// getMin : ë‘ ê°’ì„ ë¹„êµí•˜ì—¬ ìµœì†Œê°’ì„ êµ¬í•˜ëŠ” ë©”ì†Œë“œ
 	// @author	:	Chocobe
-	// @param	:	int _lhs	: ÁÂÃøÇ×
-	//			:	int _rhs	: ¿ìÃøÇ×
-	// @param	:	(int)µÎ °ªÁß ÀÛÀº °ª
+	// @param	:	int _lhs	: ì¢Œì¸¡í•­
+	//			:	int _rhs	: ìš°ì¸¡í•­
+	// @param	:	(int)ë‘ ê°’ì¤‘ ì‘ì€ ê°’
 	public static int getMin(int _lhs, int _rhs) {
 		int min = 0;
 		

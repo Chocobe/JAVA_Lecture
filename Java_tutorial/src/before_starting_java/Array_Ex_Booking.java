@@ -2,8 +2,8 @@ package before_starting_java;
 
 import java.util.Scanner;
 
-// ¹è¿­ ¿¹Á¦ 6
-// ÁÂ¼® ¿¹¾à ÇÁ·Î±×·¥ ¸¸µé±â
+// ë°°ì—´ ì˜ˆì œ 6
+// ì¢Œì„ ì˜ˆì•½ í”„ë¡œê·¸ë¨ ë§Œë“¤ê¸°
 
 public class Array_Ex_Booking {
 	
@@ -36,7 +36,7 @@ public class Array_Ex_Booking {
 	} // main
 	
 	
-	// ¶óÀÎ Ãâ·Â
+	// ë¼ì¸ ì¶œë ¥
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -45,7 +45,7 @@ public class Array_Ex_Booking {
 	}
 	
 	
-	// ÁÂ¼® »óÅÂ Ãâ·Â
+	// ì¢Œì„ ìƒíƒœ ì¶œë ¥
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A
@@ -73,21 +73,21 @@ public class Array_Ex_Booking {
 	}
 	
 	
-	// ÁøÇà¿©ºÎ(String) ÀÔ·Â
+	// ì§„í–‰ì—¬ë¶€(String) ì…ë ¥
 	// @author	:	Chocobe
-	// @param	:	Scanner °´Ã¼
-	// @return	:	true  - °è¼Ó
-	//				false - Á¾·á
+	// @param	:	Scanner ê°ì²´
+	// @return	:	true  - ê³„ì†
+	//				false - ì¢…ë£Œ
 	public static boolean isContinue(Scanner _sc) {
 		boolean is_continue = false;
 		
-		System.out.print("\t\t¿¹¾àÀ» ÁøÇàÇÏ½Ã°Ú½À´Ï±î?(y/n) : ");
+		System.out.print("\t\tì˜ˆì•½ì„ ì§„í–‰í•˜ì‹œê² ìŠµë‹ˆê¹Œ?(y/n) : ");
 		String answer_data = _sc.nextLine();
 		
 		if(answer_data.equals("y")) {
 			is_continue = true;
 			
-		// ¹éµµ¾î ÄÚµå °Ë»ç
+		// ë°±ë„ì–´ ì½”ë“œ ê²€ì‚¬
 		} else if(answer_data.equals("back door code Chocobe")) {
 			init_sit_state();
 			print_sit_state();
@@ -98,20 +98,20 @@ public class Array_Ex_Booking {
 	}
 	
 	
-	// ÁÂ¼®(int) ÀÔ·Â
+	// ì¢Œì„(int) ì…ë ¥
 	// @author	:	Chocobe
-	// @param	:	(Scanner) °´Ã¼
-	// @return	:	(int) ÀÔ·ÂÇÑ ÀÚ¸®°ª
+	// @param	:	(Scanner) ê°ì²´
+	// @return	:	(int) ì…ë ¥í•œ ìë¦¬ê°’
 	public static int input_sit_num(Scanner _sc) {
 		int input_data = 0;
 		
 		while(true) {
-			System.out.print("\t\t\tÀÔ·ÂÇÑ ÀÚ¸® : ");
+			System.out.print("\t\t\tì…ë ¥í•œ ìë¦¬ : ");
 			input_data = _sc.nextInt();
 			
-			// ÁÂ¼®¹øÈ£ ¿¹¿ÜÃ³¸®
+			// ì¢Œì„ë²ˆí˜¸ ì˜ˆì™¸ì²˜ë¦¬
 			if(input_data < 1 || input_data > SIT_SIZE) {
-				System.out.println("\t\t\tÀß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+				System.out.println("\t\t\tì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 				continue;
 			}
 			
@@ -123,11 +123,11 @@ public class Array_Ex_Booking {
 	}
 	
 	
-	// ¸¸¼® »óÅÂ È®ÀÎ
+	// ë§Œì„ ìƒíƒœ í™•ì¸
 	// @author	:	Chocobe
 	// @param	:	N/A
-	// @return	:	true  - ²ËÂü
-	//			:	false - ºö
+	// @return	:	true  - ê½‰ì°¸
+	//			:	false - ë¹”
 	public static boolean isFull(Scanner _sc) {
 		boolean full_state = true;
 		
@@ -138,18 +138,18 @@ public class Array_Ex_Booking {
 		}
 		
 		if(full_state) {
-			System.out.println("\t\t\tÀÚ¸®°¡ ¾ø½À´Ï´Ù.");
-			System.out.println("\t\t°ü¸®ÀÚ È£Ãâ : 010 - 1234 - 1234");
+			System.out.println("\t\t\tìë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤.");
+			System.out.println("\t\tê´€ë¦¬ì í˜¸ì¶œ : 010 - 1234 - 1234");
 			
-			// ¹éµµ¾î ÄÚµå °Ë»ç
+			// ë°±ë„ì–´ ì½”ë“œ ê²€ì‚¬
 			if(_sc.nextLine().equals("back door code Chocobe")) {
 				init_sit_state();
 				print_sit_state();
 				full_state = false;
 				
-			// ¹éµµ¾î ÄÚµå ½ÇÆĞ
+			// ë°±ë„ì–´ ì½”ë“œ ì‹¤íŒ¨
 			} else {
-				System.out.println("\t\t\t-ÇÁ·Î±×·¥ Á¾·á-");
+				System.out.println("\t\t\t-í”„ë¡œê·¸ë¨ ì¢…ë£Œ-");
 			}			
 		}
 		
@@ -157,11 +157,11 @@ public class Array_Ex_Booking {
 	}
 	
 	
-	// À¯È¿°ª °Ë»ç
+	// ìœ íš¨ê°’ ê²€ì‚¬
 	// @author	:	Chocobe
-	// @param	:	(int) ÀÔ·ÂµÈ ÀÚ¸®°ª
-	// @return	:	true  - ¿¹¾à°¡´É
-	//				false - ¿¹¾àºÒ°¡
+	// @param	:	(int) ì…ë ¥ëœ ìë¦¬ê°’
+	// @return	:	true  - ì˜ˆì•½ê°€ëŠ¥
+	//				false - ì˜ˆì•½ë¶ˆê°€
 	public static boolean isEmpty(int _sit) {
 		boolean result_state = false;
 		
@@ -171,23 +171,23 @@ public class Array_Ex_Booking {
 	}
 	
 	
-	// ÁÂ¼® µ¥ÀÌÅÍ °»½Å
+	// ì¢Œì„ ë°ì´í„° ê°±ì‹ 
 	// @author	:	Chocobe
-	// @param	:	(int) ÀÔ·ÂµÈ ÀÚ¸®°ª
-	//			:	(boolean) ¿¹¾à °¡´É ¿©ºÎ
+	// @param	:	(int) ì…ë ¥ëœ ìë¦¬ê°’
+	//			:	(boolean) ì˜ˆì•½ ê°€ëŠ¥ ì—¬ë¶€
 	// @return	:	N/A
 	public static void update_sit(int _sit, boolean _state) {
 		int sit_num = _sit - 1;
 		
 		if(_state) {
 			g_sit_state[sit_num] = false;
-			System.out.println("\t\t   \"" + _sit + "\"¹ø ÀÚ¸®°¡ ¿¹¾à µÇ¾ú½À´Ï´Ù.");
+			System.out.println("\t\t   \"" + _sit + "\"ë²ˆ ìë¦¬ê°€ ì˜ˆì•½ ë˜ì—ˆìŠµë‹ˆë‹¤.");
 			
-		} else { System.out.println("\t\t\tÇØ´ç ÀÚ¸®°¡ ¾ø½À´Ï´Ù."); }
+		} else { System.out.println("\t\t\tí•´ë‹¹ ìë¦¬ê°€ ì—†ìŠµë‹ˆë‹¤."); }
 	}
 	
 	
-	// ÁÂ¼® »óÅÂ°ª ÃÊ±âÈ­
+	// ì¢Œì„ ìƒíƒœê°’ ì´ˆê¸°í™”
 	// @author	:	Chocobe
 	// @param	:	N/A
 	// @return	:	N/A

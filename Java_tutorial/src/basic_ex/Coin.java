@@ -2,17 +2,17 @@ package basic_ex;
 
 import java.util.Scanner;
 
-//	3. ÇÒÀÎ¸¶Æ®ÀÇ ¸ğµç »óÇ°ÀÇ °¡°İÀº 500ÀÌÇÏ´Ù. ¹°°Ç ÇÑ°³¸¦ »ç¸é 500¿øÀ» ³¾ ¶§ °Å½º¸§µ·À» °è»êÇÏ´Â ÇÁ·Î±×·¥À» ÀÛ¼ºÇÏ½Ã¿À.
-//	Ãâ·Â
-//	±¸¸Å±İ¾×À» ÀÔ·ÂÇÏ½Ã¿À(0-500) : 122
-//	378¿øÀÇ °Å½º¸§ µ·Àº ´ÙÀ½°ú °°´Ù
-//	100¿ø µ¿Àü : 3°³
-//	10¿ø µ¿Àü :  7°³
-//	1¿ø µ¿Àü  :  8°³
+//	3. í• ì¸ë§ˆíŠ¸ì˜ ëª¨ë“  ìƒí’ˆì˜ ê°€ê²©ì€ 500ì´í•˜ë‹¤. ë¬¼ê±´ í•œê°œë¥¼ ì‚¬ë©´ 500ì›ì„ ë‚¼ ë•Œ ê±°ìŠ¤ë¦„ëˆì„ ê³„ì‚°í•˜ëŠ” í”„ë¡œê·¸ë¨ì„ ì‘ì„±í•˜ì‹œì˜¤.
+//	ì¶œë ¥
+//	êµ¬ë§¤ê¸ˆì•¡ì„ ì…ë ¥í•˜ì‹œì˜¤(0-500) : 122
+//	378ì›ì˜ ê±°ìŠ¤ë¦„ ëˆì€ ë‹¤ìŒê³¼ ê°™ë‹¤
+//	100ì› ë™ì „ : 3ê°œ
+//	10ì› ë™ì „ :  7ê°œ
+//	1ì› ë™ì „  :  8ê°œ
 
 public class Coin {
 	public static void main(String[] args) {
-		System.out.println("¹®Á¦3] °Å½º¸§µ· ±¸ÇÏ±â");
+		System.out.println("ë¬¸ì œ3] ê±°ìŠ¤ë¦„ëˆ êµ¬í•˜ê¸°");
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -28,7 +28,7 @@ public class Coin {
 		
 		Main_loop : while(true) {
 			
-			System.out.print("¹°°Ç°ªÀ» ÀÔ·ÂÇÏ¼¼¿ä(500¿ø ÀÌÇÏ) : ");			
+			System.out.print("ë¬¼ê±´ê°’ì„ ì…ë ¥í•˜ì„¸ìš”(500ì› ì´í•˜) : ");			
 			price = scanner.nextInt();
 
 			int remain_money = MY_MONEY - price;
@@ -39,14 +39,14 @@ public class Coin {
 			coin_10 = remain_money / 10;
 			coin_1 = remain_money % 10;
 			
-			System.out.println("100¿ø µ¿Àü : " + coin_100);
-			System.out.println("10¿ø µ¿Àü : " + coin_10);
-			System.out.println("1¿ø µ¿Àü : " + coin_1);
+			System.out.println("100ì› ë™ì „ : " + coin_100);
+			System.out.println("10ì› ë™ì „ : " + coin_10);
+			System.out.println("1ì› ë™ì „ : " + coin_1);
 			
 			scanner.nextLine();
 			
 			while(true) {				
-				System.out.print("°è¼Ó ÁøÇà ÇÏ½Ã°Ú½À´Ï±î? (y/n) : ");
+				System.out.print("ê³„ì† ì§„í–‰ í•˜ì‹œê² ìŠµë‹ˆê¹Œ? (y/n) : ");
 				user_answer = scanner.nextLine();
 				
 				if(user_answer.equals("y")) {
@@ -56,7 +56,7 @@ public class Coin {
 					break Main_loop;
 					
 				} else {
-					System.out.println("Error] Àß¸ø ÀÔ·ÂÇß½À´Ï´Ù.");
+					System.out.println("Error] ì˜ëª» ì…ë ¥í–ˆìŠµë‹ˆë‹¤.");
 				}
 			}// while(true) - EXIT
 			

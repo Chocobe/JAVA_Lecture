@@ -7,27 +7,27 @@ public class FlowEx2 {
 		Scanner scanner = new Scanner(System.in);
 		int input = 0;
 		
-		System.out.print("Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		input = Integer.parseInt(scanner.nextLine());
 		
-		// if¹® µÎ°³¸¦ »ç¿ë
+		// ifë¬¸ ë‘ê°œë¥¼ ì‚¬ìš©
 		if(input == 0)
-			System.out.println("ÀÔ·ÂÇÑ ¼ıÀÚ´Â 0ÀÔ´Ï´Ù.");
+			System.out.println("ì…ë ¥í•œ ìˆ«ìëŠ” 0ì…ë‹ˆë‹¤.");
 		
 		if(input != 0) {
-			System.out.print("ÀÔ·ÂÇÑ ¼ıÀÚ´Â 0ÀÌ ¾Æ´Ï°í, ");
-			System.out.println(input + "ÀÔ´Ï´Ù.");
+			System.out.print("ì…ë ¥í•œ ìˆ«ìëŠ” 0ì´ ì•„ë‹ˆê³ , ");
+			System.out.println(input + "ì…ë‹ˆë‹¤.");
 		}
 		
 		System.out.println("---------------------------");
 		
-		// if ~ else¸¦ »ç¿ë
+		// if ~ elseë¥¼ ì‚¬ìš©
 		if(input == 0) {
-			System.out.println("ÀÔ·ÂÇÑ ¼ıÀÚ´Â 0ÀÔ´Ï´Ù.");
+			System.out.println("ì…ë ¥í•œ ìˆ«ìëŠ” 0ì…ë‹ˆë‹¤.");
 			
 		} else {
-			System.out.print("ÀÔ·ÂÇÑ ¼ıÀÚ´Â 0ÀÌ ¾Æ´Ï°í, ");
-			System.out.println(input + "ÀÔ´Ï´Ù.");
+			System.out.print("ì…ë ¥í•œ ìˆ«ìëŠ” 0ì´ ì•„ë‹ˆê³ , ");
+			System.out.println(input + "ì…ë‹ˆë‹¤.");
 		}
 		
 		scanner.close();

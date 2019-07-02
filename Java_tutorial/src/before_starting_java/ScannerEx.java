@@ -6,20 +6,20 @@ public class ScannerEx {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println("---¼ºÀû ÀÔ·Â---");
-		System.out.print("±¹¾î : ");
+		System.out.println("---ì„±ì  ì…ë ¥---");
+		System.out.print("êµ­ì–´ : ");
 		int kor = scanner.nextInt();
-		System.out.print("¼öÇĞ : ");
+		System.out.print("ìˆ˜í•™ : ");
 		int math = scanner.nextInt();
 		
 		System.out.println();
-		System.out.println("---ÀÔ·ÂµÈ °ª---");
-		System.out.println("±¹¾î : " + kor);
-		System.out.println("¼öÇĞ : " + math);
+		System.out.println("---ì…ë ¥ëœ ê°’---");
+		System.out.println("êµ­ì–´ : " + kor);
+		System.out.println("ìˆ˜í•™ : " + math);
 		
 		int sum = kor + math;
 		double avg = sum / 2F;
-		System.out.printf("Æò±Õ : %.2f\n", avg);
+		System.out.printf("í‰ê·  : %.2f\n", avg);
 		System.out.println(kor + math);
 		System.out.println("" + kor + math);
 		

@@ -1,6 +1,6 @@
 package before_starting_java;
 
-// ¹è¿­ ¿ä¼ÒµéÀÇ °ªÀÇ ÃÑÇÕ, Æò±Õ, ÃÖ´ë, ÃÖ¼Ò ±¸ÇÏ±â
+// ë°°ì—´ ìš”ì†Œë“¤ì˜ ê°’ì˜ ì´í•©, í‰ê· , ìµœëŒ€, ìµœì†Œ êµ¬í•˜ê¸°
 
 public class Array_Ex_3 {
 	public static void main(String[] args) {
@@ -27,9 +27,9 @@ public class Array_Ex_3 {
 		
 		avg = (double)sum / len;
 		
-		System.out.println("ÃÑÇÕ : " + sum);
-		System.out.println("Æò±Õ : " + avg);
-		System.out.println("ÃÖ´ë : " + max);
-		System.out.println("ÃÖ¼Ò : " + min);
+		System.out.println("ì´í•© : " + sum);
+		System.out.println("í‰ê·  : " + avg);
+		System.out.println("ìµœëŒ€ : " + max);
+		System.out.println("ìµœì†Œ : " + min);
 	}
 }

@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class Ascii {
 	public static void main(String[] args) {
 		
-		final int MIN = (int)'a';	// aÀÇ ¾Æ½ºÅ°ÄÚµå °ª
-		final int MAX = (int)'z';	// bÀÇ ¾Æ½ºÅ°ÄÚµå °ª
+		final int MIN = (int)'a';	// aì˜ ì•„ìŠ¤í‚¤ì½”ë“œ ê°’
+		final int MAX = (int)'z';	// bì˜ ì•„ìŠ¤í‚¤ì½”ë“œ ê°’
 		
 		Scanner scanner = new Scanner(System.in);
 		
@@ -17,19 +17,19 @@ public class Ascii {
 		
 		while(true) {
 			System.out.println("---------------------------");
-			System.out.print("¹®ÀÚ ÇÏ³ª ÀÔ·Â : ");
+			System.out.print("ë¬¸ì í•˜ë‚˜ ì…ë ¥ : ");
 			input_data = scanner.nextLine().charAt(0);
 			input_data_ascii = (int)input_data;
 			
 			if(MIN <= input_data_ascii && input_data_ascii <= MAX) {
-				System.out.println("¾ËÆÄºª ¼Ò¹®ÀÚ");
-				System.out.println(input_data + "ÀÇ ¾Æ½ºÅ°°ª : " + input_data_ascii);
+				System.out.println("ì•ŒíŒŒë²³ ì†Œë¬¸ì");
+				System.out.println(input_data + "ì˜ ì•„ìŠ¤í‚¤ê°’ : " + input_data_ascii);
 				
 			} else {
-				System.out.println("¾ËÆÄºª ¼Ò¹®ÀÚ°¡ ¾Æ´Õ´Ï´Ù.");
+				System.out.println("ì•ŒíŒŒë²³ ì†Œë¬¸ìê°€ ì•„ë‹™ë‹ˆë‹¤.");
 			}
 			
-			System.out.print("Á¾·á(y/n) : ");
+			System.out.print("ì¢…ë£Œ(y/n) : ");
 			answer = scanner.nextLine();
 			
 			if(answer.equals("y")) {

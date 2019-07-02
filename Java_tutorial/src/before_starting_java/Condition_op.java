@@ -8,12 +8,12 @@ public class Condition_op {
 		int gender = -1;
 		String res = "";
 		
-		System.out.println("¼ºº°À» ÀÔ·ÂÇÏ¼¼¿ä :");
-		System.out.println("³²¼º : 1, ¿©¼º : 2");
+		System.out.println("ì„±ë³„ì„ ì…ë ¥í•˜ì„¸ìš” :");
+		System.out.println("ë‚¨ì„± : 1, ì—¬ì„± : 2");
 		
 		gender = scanner.nextInt();
 		
-		res = (gender == 1) ? "³²¼ºÀÔ´Ï´Ù." : "¿©¼ºÀÔ´Ï´Ù.";
+		res = (gender == 1) ? "ë‚¨ì„±ì…ë‹ˆë‹¤." : "ì—¬ì„±ì…ë‹ˆë‹¤.";
 		System.out.println(res);
 		
 		scanner.close();

@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class While_test {
 	public static void main(String[] args) {
 		int i = 11;
-		System.out.println("Ä«¿îÆ® ´Ù¿îÀ» ½ÃÀÛÇÕ´Ï´Ù.");
+		System.out.println("ì¹´ìš´íŠ¸ ë‹¤ìš´ì„ ì‹œì‘í•©ë‹ˆë‹¤.");
 		
 		while(i-- != 0) {
 			System.out.println(i);
@@ -17,7 +17,7 @@ public class While_test {
 		System.out.println("------------------------------");
 		
 		
-		// ÀÔ·Â¹ŞÀº ¼öÀÇ °¢ ¼ıÀÚµéÀÇ ÇÕ ±¸ÇÏ±â
+		// ì…ë ¥ë°›ì€ ìˆ˜ì˜ ê° ìˆ«ìë“¤ì˜ í•© êµ¬í•˜ê¸°
 		//
 		Scanner scanner = new Scanner(System.in);
 		String str_origin = "";
@@ -26,7 +26,7 @@ public class While_test {
 		int remain = 0;
 		int before_num = 0;
 		
-		System.out.print("Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä(¿¹ : 12345) : ");
+		System.out.print("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš”(ì˜ˆ : 12345) : ");
 		str_origin = scanner.nextLine();
 		quotient = Integer.parseInt(str_origin);
 		
@@ -39,7 +39,7 @@ public class While_test {
 			
 			System.out.printf("sum : %3d, num : %d\n", sum, before_num);
 		}
-		System.out.println("ÀÔ·Â µ¥ÀÌÅÍ : " + str_origin + ", ÃÑ ÇÕ : " + sum);
+		System.out.println("ì…ë ¥ ë°ì´í„° : " + str_origin + ", ì´ í•© : " + sum);
 		System.out.println("------------------------------");
 		
 		
@@ -48,14 +48,14 @@ public class While_test {
 		boolean flag = true;
 		
 		while(flag) {
-			System.out.print("ÇÕ°è¸¦ ±¸ÇÒ ¼ıÀÚ(0Àº Á¾·á) : ");
+			System.out.print("í•©ê³„ë¥¼ êµ¬í•  ìˆ«ì(0ì€ ì¢…ë£Œ) : ");
 			input_num = scanner.nextInt();
 			cur_sum += input_num;
 			if(input_num == 0) {
 				flag = false;
 			}
 		}
-		System.out.println("ÃÑ ÇÕ : " + cur_sum);
+		System.out.println("ì´ í•© : " + cur_sum);
 		System.out.println("------------------------------");
 		
 		
@@ -65,21 +65,21 @@ public class While_test {
 		Random random = new Random(System.currentTimeMillis());
 		
 		do {
-			System.out.print("1¿¡¼­ 100»çÀÌÀÇ Á¤¼ö ÀÔ·Â : ");
+			System.out.print("1ì—ì„œ 100ì‚¬ì´ì˜ ì •ìˆ˜ ì…ë ¥ : ");
 			num = scanner.nextInt();
 			answer = random.nextInt(100) + 1;
 			
 			if(num > answer)
-				System.out.println("Å®´Ï´Ù - [À¯Àú : " + num + "], [ÄÄ] : " + answer);
+				System.out.println("í½ë‹ˆë‹¤ - [ìœ ì € : " + num + "], [ì»´] : " + answer);
 			
 			else if(num < answer)
-				System.out.println("ÀÛ½À´Ï´Ù - [À¯Àú : " + num + "], [ÄÄ] : " + answer);
+				System.out.println("ì‘ìŠµë‹ˆë‹¤ - [ìœ ì € : " + num + "], [ì»´] : " + answer);
 			
 			answer_cnt++;
 			System.out.println("------------------------------");
 		} while(num != answer);
 		
-		System.out.println("·çÇÁ Å»Ãâ È½¼ö : " + answer_cnt);
+		System.out.println("ë£¨í”„ íƒˆì¶œ íšŸìˆ˜ : " + answer_cnt);
 		System.out.println("------------------------------");
 		
 		

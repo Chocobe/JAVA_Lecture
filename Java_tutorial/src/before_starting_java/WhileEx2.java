@@ -2,64 +2,64 @@ package before_starting_java;
 
 import java.util.Scanner;
 
-// (Ãâ¼® * 0.1) + (°úÁ¦ * 0.4) + (¼ö½Ã * 0.1) + (Áß°£ * 0.2) + (±â¸» * 0.2);
-//	90 ÀÌ»ó - A
+// (ì¶œì„ * 0.1) + (ê³¼ì œ * 0.4) + (ìˆ˜ì‹œ * 0.1) + (ì¤‘ê°„ * 0.2) + (ê¸°ë§ * 0.2);
+//	90 ì´ìƒ - A
 //	80
 //	70
 //	60
-//	60 ¹Ì¸¸ - F
-// 	Æò±Õ Ãâ·Â
+//	60 ë¯¸ë§Œ - F
+// 	í‰ê·  ì¶œë ¥
 
 public class WhileEx2 {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		
-		String sub_name = "";		// °ú¸ñ¸í
+		String sub_name = "";		// ê³¼ëª©ëª…
 		
-		double attend = 0;			// Ãâ¼®Á¡¼ö
-		double homeWork = 0;		// °úÁ¦
-		double pre_score = 0;		// ¼ö½Ã
-		double mid_score = 0;		// Áß°£
-		double final_score = 0;		// ±â¸»
-		int avg = 0;				// Æò±Õ
+		double attend = 0;			// ì¶œì„ì ìˆ˜
+		double homeWork = 0;		// ê³¼ì œ
+		double pre_score = 0;		// ìˆ˜ì‹œ
+		double mid_score = 0;		// ì¤‘ê°„
+		double final_score = 0;		// ê¸°ë§
+		int avg = 0;				// í‰ê· 
 		
 		double total_score = 0;
-		char grade = ' ';			// µî±Ş
+		char grade = ' ';			// ë“±ê¸‰
 
-		boolean begin = true;		// ÇÁ·Î±×·¥ÀÇ Ã¹ ·çÇÁ °Ë»ç
+		boolean begin = true;		// í”„ë¡œê·¸ë¨ì˜ ì²« ë£¨í”„ ê²€ì‚¬
 		
 		System.out.println("-------------------");
-		System.out.println("---¼ºÀû »êÃâ ÇÁ·Î±×·¥---");
-		System.out.println("  ½ÇÇà : 1, Á¾·á : 0");
+		System.out.println("---ì„±ì  ì‚°ì¶œ í”„ë¡œê·¸ë¨---");
+		System.out.println("  ì‹¤í–‰ : 1, ì¢…ë£Œ : 0");
 		System.out.println("-------------------");
 		
 		Loop_title : while(true) {
 			
 			if(!begin) {
 				scanner.nextLine();
-				System.out.print("(´ÙÀ½ ÁøÇà : y, Á¾·á : n) : ");
+				System.out.print("(ë‹¤ìŒ ì§„í–‰ : y, ì¢…ë£Œ : n) : ");
 				
 				if(scanner.nextLine().equals("n")) {
 					break Loop_title;
 				}
 			}
 			
-			System.out.print("°ú¸ñ¸íÀ» ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ê³¼ëª©ëª…ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 			sub_name = scanner.nextLine();
 			
-			System.out.print("Ãâ¼®Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì¶œì„ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			attend = scanner.nextInt();
 			
-			System.out.print("°úÁ¦ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ê³¼ì œ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			homeWork = scanner.nextInt();
 			
-			System.out.print("¼ö½Ã Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ìˆ˜ì‹œ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			pre_score = scanner.nextInt();
 			
-			System.out.print("Áß°£ Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ì¤‘ê°„ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			mid_score = scanner.nextInt();
 			
-			System.out.print("±â¸» Á¡¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+			System.out.print("ê¸°ë§ ì ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 			final_score = scanner.nextInt();
 			
 			avg = (int)((attend + homeWork + pre_score + mid_score + final_score) / 5);
@@ -78,10 +78,10 @@ public class WhileEx2 {
 			else if(total_score >= 60)	grade = 'D';
 			
 			System.out.println("-------------------------");
-			System.out.println("°ú¸ñ¸í : " + sub_name);
-			System.out.println("ÃÑÁ¡ : " + total_score);
-			System.out.println("µî±Ş : " + grade);
-			System.out.println("Æò±Õ : " + avg);
+			System.out.println("ê³¼ëª©ëª… : " + sub_name);
+			System.out.println("ì´ì  : " + total_score);
+			System.out.println("ë“±ê¸‰ : " + grade);
+			System.out.println("í‰ê·  : " + avg);
 			System.out.println("-------------------------");
 			
 			begin = false;

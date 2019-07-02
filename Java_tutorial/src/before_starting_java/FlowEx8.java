@@ -8,21 +8,21 @@ public class FlowEx8 {
 		String ID = "";
 		char gender = ' ';
 		
-		System.out.print("ÁÖ¹Îµî·Ï¹øÈ£¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		System.out.print("ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		ID = scanner.nextLine();
 		gender = ID.charAt(7);
 		
 		switch(gender) {
 		case '1' : case '3':
-			System.out.println("³²¼ºÀÔ´Ï´Ù.");
+			System.out.println("ë‚¨ì„±ì…ë‹ˆë‹¤.");
 			break;
 			
 		case '2' : case '4' :
-			System.out.println("¿©¼ºÀÔ´Ï´Ù.");
+			System.out.println("ì—¬ì„±ì…ë‹ˆë‹¤.");
 			break;
 			
 		default :
-			System.out.println("Àß¸øµÈ ÀÔ·ÂÀÔ´Ï´Ù.");
+			System.out.println("ì˜ëª»ëœ ì…ë ¥ì…ë‹ˆë‹¤.");
 		}
 		
 		scanner.close();
