@@ -1,13 +1,6 @@
 package nonogram;
 
-public class Block {
-	
-	// 출력부로 옮기자. Class name : Render
-	public final static String WHITE  = "□";
-	public final static String BLACK  = "■";
-	public final static String V	  = "V";
-	public final static String X	  = "X";
-	
+public class Block {	
 	public Block_type guess_block;
 	public Block_type origin_block;
 	
@@ -43,7 +36,7 @@ public class Block {
 		int row = _block.length;
 		int col = _block[0].length;
 		
-		Block[][] set_block = new Block[row][col];
+		Block[][] set_block = _block;
 		
 		for(int i = 0; i < row; i++) {
 			for(int j = 0; j < col; j++) {

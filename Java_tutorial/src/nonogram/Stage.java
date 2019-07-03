@@ -9,8 +9,6 @@ import java.nio.file.Paths;
 // 스테이지 불러오기, 출력 담당 클래스
 
 public class Stage {
-	
-	private String name_stage_0;		// 스테이지 파일0
 	private String name_stage_1;		// 스테이지 파일1
 	private String name_stage_2;		// 스테이지 파일2
 	private String name_stage_3;		// 스테이지 파일3
@@ -27,7 +25,6 @@ public class Stage {
 	// @param	:	N/A
 	// @return	:	N/A
 	public Stage(int _stage_num) {
-		this.name_stage_0 = "\\src\\nonogram\\nonogram_stage_0.txt";
 		this.name_stage_1 = "\\src\\nonogram\\nonogram_stage_1.txt";
 		this.name_stage_2 = "\\src\\nonogram\\nonogram_stage_2.txt";
 		this.name_stage_3 = "\\src\\nonogram\\nonogram_stage_3.txt";
@@ -41,7 +38,7 @@ public class Stage {
 		
 		//
 		// 블록화 메소드로 만들자
-		// init_all_block();
+		init_all_block();
 	}
 	
 	
@@ -61,9 +58,6 @@ public class Stage {
 			
 		} else if(_stage_num == 3) {
 			absolute_path += this.name_stage_3;
-			
-		} else if(_stage_num == 0) {
-			absolute_path += this.name_stage_0;
 		}
 		
 		File file = new File(absolute_path);
@@ -92,7 +86,7 @@ public class Stage {
 	}
 	
 	
-	// 읽어온 .txt 파일과 배열 크기 맞추기
+	// 읽어온 .txt 파일과 배열 크기 맞추기 (load_stage() 내부에 사용)
 	// @author	:	Chocobe
 	// @param	:	String[] _source : 임의의 크기에 저장된 스테이지 데이터
 	//			:	int _len : 스테이지 데이터의 라인 수
@@ -109,6 +103,9 @@ public class Stage {
 	
 	
 	// 읽어온 데이터 -> 블록화
+	// @author	:	Chocobe
+	// @param	:	N/A
+	// @return	:	N/A
 	private void init_all_block() {
 		this.stage_block = new Block[this.stage_size_row][this.stage_size_col];
 		
