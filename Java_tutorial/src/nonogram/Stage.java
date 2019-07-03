@@ -16,8 +16,11 @@ public class Stage {
 	private int stage_size_row;
 	private int stage_size_col;
 	
-	public String[] origin_data;	// 불러온 스테이지 데이터
-	public Block[][] stage_block;	// 데이터의 블록화
+	public String[] origin_data;		// 불러온 스테이지 데이터
+	public Block[][] stage_block;		// 데이터의 블록화
+	
+	public int[][] horizon_hint_data;	// 가로 힌트
+	public int[][] vertical_hint_data;	// 세로 힌트
 	
 	
 	// 생성자
@@ -37,6 +40,8 @@ public class Stage {
 		this.stage_size_col = this.origin_data[0].length();
 		
 		init_all_block();
+		
+		integrated_hint_init();
 	}
 	
 	
@@ -100,6 +105,24 @@ public class Stage {
 	}
 	
 	
+	// stage_size_row 반환
+	// @author	:	Chocobe
+	// @param	:	N/A
+	// @return	:	(int) 스테이지 행 개수
+	public int get_stage_row() {
+		return this.stage_size_row;
+	}
+	
+	
+	// stage_size_col 반환
+	// @author	:	Chocobe
+	// @param	:	N/A
+	// @return	:	(int) 스테이지 열 개수
+	public int get_stage_col() {
+		return this.stage_size_col;
+	}
+	
+	
 	// 읽어온 데이터 -> 블록화
 	// @author	:	Chocobe
 	// @param	:	N/A
@@ -121,4 +144,134 @@ public class Stage {
 		
 		this.stage_block = Block.init_all_block(this.stage_block);
 	}
+	
+	
+	// 힌트 연산 통합
+	private void integrated_hint_init() {
+		this.horizon_hint_data = new int[this.stage_size_row][this.stage_size_col];
+		this.vertical_hint_data = new int[this.stage_size_row][this.stage_size_col];
+		horizon_hint_init();
+		vertical_hint_init();
+	}
+	
+	// 가로방향 힌트 연산
+	// @author	:	Chocobe
+	// @param	:	N/A
+	// @return	:	N/A
+	private void horizon_hint_init() {
+		int continuity_cnt = 0;
+		boolean is_continuity = false;
+		int[] temp_arr = new int[0];
+		
+		for(int i = 0; i < this.stage_size_row; i++) {
+			for(int j = 0; j < this.stage_size_col; j++) {
+				
+				// 정답블록 -> 카운팅
+				if(stage_block[i][j].origin_block == Block_type.BLACK) {
+					continuity_cnt++;
+					is_continuity = true;
+				} //if
+				
+				// 오답블록 or 마지막 블록 -> 힌트 데이터 갱신
+				if(stage_block[i][j].origin_block != Block_type.BLACK || j == this.stage_size_col - 1) {
+					if(is_continuity) {
+						temp_arr = add_idx(temp_arr, continuity_cnt);
+						continuity_cnt = 0;
+						is_continuity = false;
+					}
+				} //if
+			} //for(j)
+			
+			this.horizon_hint_data[i] = temp_arr;
+			temp_arr = new int[0];
+		} //for(i)
+	}
+	
+	// 세로방향 힌트 연산
+	private void vertical_hint_init() {
+		int continuity_cnt = 0;
+		boolean is_continuity = false;
+		int[] temp_arr = new int[0];
+		
+		Block[][] rotated_arr = rotate_arr_reverse(this.stage_block);
+		
+		for(int i = 0; i < this.stage_size_col; i++) {
+			for(int j = 0; j < this.stage_size_row; j++) {
+				
+				// 정답블록 -> 카운팅
+				if(rotated_arr[i][j].origin_block == Block_type.BLACK) {
+					continuity_cnt++;
+					is_continuity = true;
+				} //if
+				
+				// 오답블록 or 마지막 블록 -> 힌트 데이터 갱신
+				if(rotated_arr[i][j].origin_block != Block_type.BLACK || j == this.stage_size_row - 1) {
+					if(is_continuity) {
+						temp_arr = add_idx(temp_arr, continuity_cnt);
+						continuity_cnt = 0;
+						is_continuity = false;
+					}
+				} //if				
+			} //for(j)
+			
+			this.vertical_hint_data[this.stage_size_col - (i + 1)] = temp_arr;
+			temp_arr = new int[0];
+		}
+	}
+	
+	
+	// 배열 인덱스 추가
+	private int[] add_idx(int[] _dest, int _sour) {
+		int len = _dest.length;
+		int[] result_arr = new int[len + 1];
+		
+		for(int i = 0; i < len; i++) {
+			result_arr[i] = _dest[i];
+		}
+		result_arr[len] = _sour;
+		
+		return result_arr;
+	}
+	
+	// 2차원 배열 반시계 회전
+	// @author	:	Chocobe
+	// @param	:	int[][] _sour : 원본 배열
+	// @return	:	(int[][]) 반시계 회전된 결과 배열
+	private Block[][] rotate_arr_reverse(Block[][] _sour) {
+		int reverse_row = _sour[0].length;
+		int reverse_col = _sour.length;
+		
+		Block[][] result_arr = new Block[reverse_row][reverse_col];
+		
+		for(int i = 0; i < reverse_row; i++) {
+			for(int j = 0; j < reverse_col; j++) {
+				result_arr[i][j] = _sour[j][reverse_row - (i + 1)];
+			}
+		}
+		
+		return result_arr;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
