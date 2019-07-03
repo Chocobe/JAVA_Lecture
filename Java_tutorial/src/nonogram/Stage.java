@@ -36,8 +36,6 @@ public class Stage {
 		this.stage_size_row = this.origin_data.length;
 		this.stage_size_col = this.origin_data[0].length();
 		
-		//
-		// 블록화 메소드로 만들자
 		init_all_block();
 	}
 	

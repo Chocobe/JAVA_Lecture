@@ -1,10 +1,10 @@
 package nonogram;
 
 public class Renderer {
-	public final static String WHITE  = "□ ";
-	public final static String BLACK  = "■ ";
-	public final static String V	  = "V ";
-	public final static String X	  = "X ";
+	public final static String WHITE  = "□";
+	public final static String BLACK  = "■";
+	public final static String V	  = "V";
+	public final static String X	  = "X";
 	
 	
 	// 원본 이미지 출력
@@ -22,11 +22,11 @@ public class Renderer {
 					// switch ~ case 로 변경
 					switch(_block[i][j].origin_block) {
 					case WHITE:
-						System.out.print(WHITE);
+						System.out.print(WHITE + " ");
 						break;
 						
 					case BLACK:
-						System.out.print(BLACK);
+						System.out.print(BLACK + " ");
 						break;
 						
 					default:
@@ -38,8 +38,15 @@ public class Renderer {
 			} //for(i)
 
 		} else if(_draw_mode == Draw_mode.CURRENT) {
-			for(int i = 0; i < row; i++) {
+			for(int i = 0; i < row; i++) {				
 				for(int j = 0; j < col; j++) {
+					
+					if(j % 5 == 0) {
+						System.out.print("│");
+						
+					} else {
+						System.out.print(" ");
+					}
 					
 					// switch ~ case 로 변경
 					switch(_block[i][j].guess_block) {
@@ -63,7 +70,7 @@ public class Renderer {
 					}
 				} //for(j)
 				
-				System.out.println();
+				System.out.println("│");
 			} //for(i)
 		} //if~else
 	}

@@ -11,6 +11,7 @@ public class Game_engine {
 		
 		System.out.println("----------------------------------------");
 		
+		// 메인 루프 진입부
 		// 현재 이미지 출력
 		Renderer.draw_screen(stage.stage_block, Draw_mode.CURRENT);
 	}
