@@ -8,8 +8,8 @@ public class Block {
 	public final static String V	  = "V";
 	public final static String X	  = "X";
 	
-	private Block_type guess_block;
-	private Block_type origin_block;
+	public Block_type guess_block;
+	public Block_type origin_block;
 	
 	
 	// 생성자

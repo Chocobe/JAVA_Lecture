@@ -46,4 +46,11 @@ public class TV_lg {
 	public String get_color() {
 		return this.color;
 	}
+
+	// toString()의 원래 기능 : 해당 객체의 주소값 반환
+	// 재정의한 기능 : 문자열 "TV_lg [channel=채널값]"을 반환 
+	@Override
+	public String toString() {
+		return "TV_lg [color=" + color + ", channel=" + channel + "]";
+	}
 }

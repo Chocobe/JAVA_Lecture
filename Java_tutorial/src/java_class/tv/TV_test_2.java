@@ -30,6 +30,11 @@ public class TV_test_2 {
 		
 		System.out.println("tv_1의 현재 채널 : " + tv_1.get_channel());
 		System.out.println("tv_2의 현재 채널: " + tv_2.get_channel());
+		
+		print_line();
+		
+		System.out.println("toString() 재정의 결과_2 : " + tv_1);
+		System.out.println("toString() 재정의 결과_1 : " + tv_1.toString());
 	} //main
 	
 	

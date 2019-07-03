@@ -23,6 +23,30 @@ TV_lg 클래스 작성
 
 private으로 멤버변수를 구성
 
+---
+
+오버라이딩(overriding) : 상속받은 메소드를 자식 클래스에서 재정의 하여 사용하는 방법
+
+모든 클래스가 상속받는 ``Class Object``의 메소드 중, ``toString()``을 재정의 해 보자.
+
+```java
+public String toString() {
+	return System.out.println("문자열");
+}
+```
+
+상위 클래스의 메소드를 재정의 할 경우, 재정의한 기능으로 동작된다.
+
+주의해야 할 점은, 오버라이딩(overriding) 이전의 기능은 사라지고, 재정의한 기능으로 동작 된다는 점이다.
+
+* eclipse의 오버라이딩(overriding) 기능으로 ``toString()`` 재정의 예제
+
+	1. 입력할 위치에 마우스 우클릭
+	2. source -> Generate toString()..
+	3. 생성된 코드를 정의한다.
+
+이 방법은 eclipse의 기능을 사용한 것이고, 원래는 직접 작성해야 한다.
+
 :camel:[Top](#tv)
 
 ---

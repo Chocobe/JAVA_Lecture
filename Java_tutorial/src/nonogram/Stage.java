@@ -10,11 +10,13 @@ import java.nio.file.Paths;
 
 public class Stage {
 	
-	public String name_stage_1;		// 스테이지 파일1
-	public String name_stage_2;		// 스테이지 파일2
+	private String name_stage_0;		// 스테이지 파일0
+	private String name_stage_1;		// 스테이지 파일1
+	private String name_stage_2;		// 스테이지 파일2
+	private String name_stage_3;		// 스테이지 파일3
 	
-	public int stage_size_row;
-	public int stage_size_col;
+	private int stage_size_row;
+	private int stage_size_col;
 	
 	public String[] origin_data;	// 불러온 스테이지 데이터
 	public Block[][] stage_block;	// 데이터의 블록화
@@ -25,8 +27,10 @@ public class Stage {
 	// @param	:	N/A
 	// @return	:	N/A
 	public Stage(int _stage_num) {
+		this.name_stage_0 = "\\src\\nonogram\\nonogram_stage_0.txt";
 		this.name_stage_1 = "\\src\\nonogram\\nonogram_stage_1.txt";
 		this.name_stage_2 = "\\src\\nonogram\\nonogram_stage_2.txt";
+		this.name_stage_3 = "\\src\\nonogram\\nonogram_stage_3.txt";
 		
 		this.origin_data = new String[100];
 		
@@ -37,7 +41,7 @@ public class Stage {
 		
 		//
 		// 블록화 메소드로 만들자
-		this.stage_block = new Block[this.stage_size_row][this.stage_size_col];
+		// init_all_block();
 	}
 	
 	
@@ -54,6 +58,12 @@ public class Stage {
 			
 		} else if(_stage_num == 2) {
 			absolute_path += this.name_stage_2;
+			
+		} else if(_stage_num == 3) {
+			absolute_path += this.name_stage_3;
+			
+		} else if(_stage_num == 0) {
+			absolute_path += this.name_stage_0;
 		}
 		
 		File file = new File(absolute_path);
@@ -88,12 +98,32 @@ public class Stage {
 	//			:	int _len : 스테이지 데이터의 라인 수
 	// @return	:	(String[]) 크기가 조정된 배열
 	private void fix_array_size(int _len) {
-		String[] added_arr = new String[_len];
+		String[] temp_arr = new String[_len];
 		
 		for(int i = 0; i < _len; i++) {
-			added_arr[i] = this.origin_data[i];
+			temp_arr[i] = this.origin_data[i];
 		}
 		
-		this.origin_data = added_arr;
+		this.origin_data = temp_arr;
+	}
+	
+	
+	// 읽어온 데이터 -> 블록화
+	private void init_all_block() {
+		this.stage_block = new Block[this.stage_size_row][this.stage_size_col];
+		
+		String block_str_data = "";
+		int block_int_data = 0;
+		
+		for(int i = 0; i < this.stage_size_row; i++) {
+			for(int j = 0; j < this.stage_size_col; j++) {
+				block_str_data = this.origin_data[i].substring(j, j + 1);
+				block_int_data = Integer.parseInt(block_str_data);
+				
+				this.stage_block[i][j] = new Block(block_int_data);
+			}
+		}
+		
+		this.stage_block = Block.init_all_block(this.stage_block);
 	}
 }
