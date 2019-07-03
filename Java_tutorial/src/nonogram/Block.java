@@ -45,8 +45,8 @@ public class Block {
 	
 	
 	// (답 입력) 원본 블록과 입력값의 비교 결과 반영
-	public void send_answer(KEY _key) {
-		if(_key == KEY.O) {
+	public void send_answer(Answer _key) {
+		if(_key == Answer.O) {
 			if(this.origin_block == Block_type.BLACK) {
 				this.block_is = Block_type.BLACK;
 				
@@ -54,7 +54,7 @@ public class Block {
 				this.block_is = Block_type.X;
 			}
 			
-		} else if(_key == KEY.X) {
+		} else if(_key == Answer.X) {
 			if(this.block_is == Block_type.WHITE) {
 				this.block_is = Block_type.V;
 				
