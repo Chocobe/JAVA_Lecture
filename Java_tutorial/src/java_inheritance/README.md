@@ -77,7 +77,7 @@ Person person = student;
 ---
 ---
 
-# down_casting
+### down_casting
 
 다운 케스팅은 부모클래스 형인 객체를 자식 클래스 형으로 형변환 하는 것이다.
 
