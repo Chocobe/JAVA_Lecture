@@ -281,26 +281,3 @@ public class Stage {
 		this.vertical_hint_data = result_arr;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
