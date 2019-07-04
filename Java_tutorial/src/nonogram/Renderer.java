@@ -65,10 +65,28 @@ public class Renderer {
 				}
 			} //for(j)
 			
-			System.out.println("│");
+			System.out.print("│");
+			
+			for(int j = 0; j < _stage.horizon_hint_data[i].length; j++) {
+				System.out.print(_stage.horizon_hint_data[i][j] + " ");
+			}
+			
+			System.out.println();
 		} //for(i)
 		
 		print_bottom_line(corrected_line_col);
+		
+		
+		// 세로 힌트 출력부
+		for(int i = 0; i < _stage.vertical_hint_data.length; i++) {
+			System.out.print(" ");
+			
+			for(int j = 0; j < _stage.vertical_hint_data[i].length; j++) {
+				System.out.print(_stage.vertical_hint_data[j][i] + " ");
+			}
+			
+			System.out.println();
+		}
 	}
 	
 	
@@ -141,7 +159,11 @@ public class Renderer {
 		System.out.println(RIGHT_BOT);
 	}
 	
+	
 	// 중앙 경계선
+	// @author	:	Chocobe
+	// @param	:	int _col : 세로 사이즈
+	// @return	:	N/A
 	private static void print_mid_line(int _col) {
 		System.out.print(CENTER_LEFT);
 		

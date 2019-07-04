@@ -19,8 +19,9 @@ public class Stage {
 	public String[] origin_data;		// 불러온 스테이지 데이터
 	public Block[][] stage_block;		// 데이터의 블록화
 	
-	public int[][] horizon_hint_data;	// 가로 힌트
-	public int[][] vertical_hint_data;	// 세로 힌트
+	public int[][] horizon_hint_data;			// 가로 힌트
+	public int[][] origin_vertical_hint_data;	// (추출용)세로 힌트
+	public String[][] vertical_hint_data;		// (출력용)세로 힌트
 	
 	
 	// 생성자
@@ -42,6 +43,8 @@ public class Stage {
 		init_all_block();
 		
 		integrated_hint_init();
+		
+		convert_array_type();
 	}
 	
 	
@@ -149,9 +152,10 @@ public class Stage {
 	// 힌트 연산 통합
 	private void integrated_hint_init() {
 		this.horizon_hint_data = new int[this.stage_size_row][this.stage_size_col];
-		this.vertical_hint_data = new int[this.stage_size_row][this.stage_size_col];
+		this.origin_vertical_hint_data = new int[this.stage_size_row][this.stage_size_col];
 		horizon_hint_init();
 		vertical_hint_init();
+		convert_array_type();
 	}
 	
 	// 가로방향 힌트 연산
@@ -214,13 +218,17 @@ public class Stage {
 				} //if				
 			} //for(j)
 			
-			this.vertical_hint_data[this.stage_size_col - (i + 1)] = temp_arr;
+			this.origin_vertical_hint_data[this.stage_size_col - (i + 1)] = temp_arr;
 			temp_arr = new int[0];
 		}
 	}
 	
 	
 	// 배열 인덱스 추가
+	// @author	:	Chocobe
+	// @param	:	int[] _dest : 저장 장소
+	//			:	int _sour	: 저장할 값
+	// @return	:	(int[]) 값이 추가된 배열
 	private int[] add_idx(int[] _dest, int _sour) {
 		int len = _dest.length;
 		int[] result_arr = new int[len + 1];
@@ -232,6 +240,7 @@ public class Stage {
 		
 		return result_arr;
 	}
+	
 	
 	// 2차원 배열 반시계 회전
 	// @author	:	Chocobe
@@ -250,6 +259,26 @@ public class Stage {
 		}
 		
 		return result_arr;
+	}
+	
+	
+	// int[][] -> String[][] 로 변환 (정사각형 배열로 보정)
+	public void convert_array_type() {
+		String[][] result_arr = new String[this.stage_size_row][this.stage_size_col];
+		
+		for(int i = 0; i < result_arr.length; i++) {
+			for(int j = 0; j < result_arr[i].length; j++) {
+				result_arr[i][j] = " ";
+			}
+		}
+		
+		for(int i = 0; i < this.origin_vertical_hint_data.length; i++) {
+			for(int j = 0; j < this.origin_vertical_hint_data[i].length; j++) {
+				result_arr[i][j] = Integer.toString(this.origin_vertical_hint_data[i][j]);
+			}
+		}
+		
+		this.vertical_hint_data = result_arr;
 	}
 }
 
