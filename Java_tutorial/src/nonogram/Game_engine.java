@@ -22,16 +22,9 @@ public class Game_engine {
 		System.out.println("--------------------------");
 		
 		// 세로 힌트 테스트
-		for(int i = 0; i < stage.get_stage_row(); i++) {
-			for(int j = 0; j < stage.get_stage_col(); j++) {
-				if(stage.vertical_hint_data[j].length > j) {
-					System.out.print(stage.vertical_hint_data[j][i] + " ");
-					
-				} else {
-					System.out.print("  ");
-				}
+		for(int i = 0; i < stage.vertical_hint_data.length; i++) {
+			for(int j = 0; j < stage.vertical_hint_data.length; j++) {
 				
-			System.out.println();
 			}
 		}
 	}

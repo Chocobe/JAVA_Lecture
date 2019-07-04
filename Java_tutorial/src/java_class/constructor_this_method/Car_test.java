@@ -1,4 +1,4 @@
-package java_class.constructor;
+package java_class.constructor_this_method;
 
 public class Car_test {
 	public static void main(String[] args) {
