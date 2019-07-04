@@ -8,6 +8,9 @@
 
 * [constructor](#constructor) - 자식 클래스의 객체를 생성시, 호출되는 부모 클래스 알아보기
 
+
+* [up_casting](#up_casting) - ``자식클래스 객체 -> 부모 클래스 형``으로 형변환 하기
+
 ---
 ---
 
