@@ -17,7 +17,7 @@ public class Renderer {
 	public final static String CENTER 		= "┼";
 	
 	
-	// 진행 화면 출력	(단서 출력 추가 필요)
+	// 진행 화면 출력
 	// @author	:	Chocobe
 	// @param	:	Stage _stage : 스테이지 객체
 	// @return	:	N/A
@@ -43,7 +43,6 @@ public class Renderer {
 					System.out.print(" ");
 				}
 
-				// switch ~ case 로 변경
 				switch(_stage.stage_block[i][j].guess_block) {
 				case WHITE:
 					System.out.print(WHITE);
@@ -67,6 +66,7 @@ public class Renderer {
 			
 			System.out.print("│");
 			
+			// 가로 힌트 출력부
 			for(int j = 0; j < _stage.horizon_hint_data[i].length; j++) {
 				System.out.print(_stage.horizon_hint_data[i][j] + " ");
 			}
@@ -177,5 +177,10 @@ public class Renderer {
 		}
 		
 		System.out.println(CENTER_RIGHT);
+	}
+	
+	
+	public static void clear_screen() {
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
 	}
 }

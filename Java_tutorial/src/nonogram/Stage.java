@@ -158,6 +158,7 @@ public class Stage {
 		convert_array_type();
 	}
 	
+	
 	// 가로방향 힌트 연산
 	// @author	:	Chocobe
 	// @param	:	N/A
@@ -191,7 +192,12 @@ public class Stage {
 		} //for(i)
 	}
 	
+	
 	// 세로방향 힌트 연산
+	// @author	:	Chocobe
+	// @adviser	:	Cha_seong_han
+	// @param	:	N/A
+	// @return	:	N/A
 	private void vertical_hint_init() {
 		int continuity_cnt = 0;
 		boolean is_continuity = false;
@@ -263,7 +269,11 @@ public class Stage {
 	
 	
 	// int[][] -> String[][] 로 변환 (정사각형 배열로 보정)
-	public void convert_array_type() {
+	// @author	:	Chocobe
+	// @adviser	:	Kim_sun_kyung
+	// @param	:	N/A
+	// @return	:	N/A
+	private void convert_array_type() {
 		String[][] result_arr = new String[this.stage_size_row][this.stage_size_col];
 		
 		for(int i = 0; i < result_arr.length; i++) {
@@ -279,5 +289,10 @@ public class Stage {
 		}
 		
 		this.vertical_hint_data = result_arr;
+	}
+	
+	// 입력정보 -> 블록 갱신
+	public void update_answer(int _x, int _y, Answer_type _answer) {
+		this.stage_block[_y][_x].update_answer(_answer);
 	}
 }

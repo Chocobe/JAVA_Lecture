@@ -28,7 +28,7 @@ public class Block {
 	}
 	
 	
-	// 전체 블록 레이지 초기화
+	// 전체 블록 레이지 초기화 (클래스 메소드)
 	// @author	:	Chocobe
 	// @param	:	Block[][] _block : 생성된 블록배열
 	// @return	:	N/A
@@ -52,8 +52,8 @@ public class Block {
 	// @author	:	Chocobe
 	// @param	:	Answer _key : 플레이어의 입력값 (O 또는 X)
 	// @return	:	N/A
-	public void send_answer(Answer _key) {
-		if(_key == Answer.O) {
+	public void update_answer(Answer_type _key) {
+		if(_key == Answer_type.o) {
 			if(this.origin_block == Block_type.BLACK) {
 				this.guess_block = Block_type.BLACK;
 				
@@ -61,12 +61,41 @@ public class Block {
 				this.guess_block = Block_type.X;
 			}
 			
-		} else if(_key == Answer.X) {
+		} else if(_key == Answer_type.x) {
 			if(this.guess_block== Block_type.WHITE) {
 				this.guess_block = Block_type.V;
 				
 			} else if(this.guess_block == Block_type.V) {
 				this.guess_block = Block_type.WHITE;
+			}
+		}
+	}
+	
+	
+	// back door code Chocobe (클래스 메소드)
+	// @author	:	Chocobe
+	// @param	:	N/A
+	// @return	:	N/A
+	public static void chocobe(Stage _stage) {
+		final int VERTICAL = 0;
+		
+		int random_direction = (int)(Math.random() * 2);
+		int random_line = 0;
+		
+		if(random_direction == VERTICAL) {
+			random_line = (int)(Math.random() * _stage.get_stage_row());
+			
+			for(int i = 0; i < _stage.get_stage_row(); i++) {
+				_stage.stage_block[i][random_line].guess_block =
+						_stage.stage_block[i][random_line].origin_block;
+			}
+			
+		} else {
+			random_line = (int)(Math.random() * _stage.get_stage_col());
+			
+			for(int i = 0; i < _stage.get_stage_col(); i++) {
+				_stage.stage_block[random_line][i].guess_block =
+						_stage.stage_block[random_line][i].origin_block;
 			}
 		}
 	}
