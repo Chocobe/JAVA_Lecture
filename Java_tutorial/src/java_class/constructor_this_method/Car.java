@@ -1,16 +1,34 @@
 package java_class.constructor_this_method;
 
 public class Car {
-	String color;
-	String gearType;
-	int door;
+	private String color;
+	private String gear_type;
+	private int door;
 	
 	
-	public Car() {}
+	public Car() {
+		this("White", "auto", 4);
+	}
 	
-	public Car(String _color, String _gear, int _door) {
+	public Car(int _door) {
+		this("White", "auto", _door);
+	}
+	
+	public Car(String _color) {
+		this(_color, "auto", 4);
+	}
+	
+	public Car(String _color, String _gear_type) {
+		this(_color, _gear_type, 4);
+	}
+	
+	public Car(String _color, String _gear_type, int _door) {
 		this.color = _color;
-		this.gearType = _gear;
+		this.gear_type = _gear_type;
 		this.door = _door;
+	}
+	
+	public void print_inform() {
+		System.out.println(this.color + "색 " + this.gear_type + ", 문 " + this.door + "개");
 	}
 }

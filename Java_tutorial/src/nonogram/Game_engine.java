@@ -1,6 +1,5 @@
 package nonogram;
 
-
 public class Game_engine {
 	public static void main(String[] args) {	
 		// 스테이지 생성
