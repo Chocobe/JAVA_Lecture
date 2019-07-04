@@ -13,8 +13,8 @@ public class Stage {
 	private String name_stage_2;		// 스테이지 파일2
 	private String name_stage_3;		// 스테이지 파일3
 	
-	private int stage_size_row;
-	private int stage_size_col;
+	private int stage_size_row;			// 스테이지 행 크기
+	private int stage_size_col;			// 스테이지 열 크기
 	
 	public String[] origin_data;		// 불러온 스테이지 데이터
 	public Block[][] stage_block;		// 데이터의 블록화

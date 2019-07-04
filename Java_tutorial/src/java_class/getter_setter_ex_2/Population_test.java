@@ -16,16 +16,23 @@ public class Population_test {
 		} while(is_continue(scanner));
 		
 		scanner.close();
-	}
+	} //main
 	
 	
 	// 라인 출력
+	// @ahotur	:	Chocobe
+	// @param	:	N/A
+	// @return	:	N/A
 	public static void print_line() {
 		System.out.println("------------------");
 	}
 	
 	
 	// 진행 여부 질문
+	// @author	:	Chocobe
+	// @param	:	Scanner _sc : Scanner 객체
+	// @return	:	true	: 계속
+	//			:	false	: 종료
 	public static boolean is_continue(Scanner _sc) {
 		boolean answer = false;
 		System.out.print("계속하기를 원하세요? (true, false) : ");
