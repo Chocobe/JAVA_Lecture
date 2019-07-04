@@ -1,4 +1,4 @@
-package java_class.getter_setter;
+package java_class.getter_setter_ex_1;
 
 public class Account {
 	String owner_name;		// 예금주
