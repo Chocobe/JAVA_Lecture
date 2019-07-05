@@ -3,7 +3,10 @@
 * [up_down_cast](#up_down_cast) - 업케스팅과 다운케스팅 예제
 
 
-* [instanceof_test](#instanceof_test)
+* [instanceof_test](#instanceof_test) - ``instanceof``연산자로 참조변수의 형변환 가능 여부 검사하기
+
+
+* [ex_TV](#ex_tv) - TV 클래스를 이용한 객체 생성 예제
 
 ---
 ---
@@ -28,3 +31,10 @@
 ``검사할 객체 instanceof 형변환할 타입``
 
 :camel:[Top](#java_polymorphism)
+
+---
+---
+
+### ex_TV
+
+TV 클래스를 이용한 객체 생성 예제
