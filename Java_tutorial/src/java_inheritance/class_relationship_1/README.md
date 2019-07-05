@@ -1,4 +1,4 @@
-# Class_relationship
+# Class_relationship_1
 
 * 상속에 대한 예문
 

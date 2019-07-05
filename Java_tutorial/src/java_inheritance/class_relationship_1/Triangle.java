@@ -1,4 +1,4 @@
-package java_inheritance.class_relationship;
+package java_inheritance.class_relationship_1;
 
 // 삼각형은 도형이다.
 

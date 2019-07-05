@@ -1,4 +1,4 @@
-package java_inheritance.class_relationship;
+package java_inheritance.class_relationship_1;
 
 public class Shape_test {
 	public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package java_inheritance.class_relationship;
+package java_inheritance.class_relationship_1;
 
 // 도형을 표현하는 클래스
 
