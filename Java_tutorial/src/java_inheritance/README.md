@@ -47,6 +47,12 @@
 
 * [down_casting](#down_casting) - ``부모 클래스 형 객체 -> 자식 클래스 형 객체``로 형변환 하기
 
+
+* [class_relationship_1](#class_relationship_1)
+
+
+* [class_relationship_2](#class_relationship_2)
+
 ---
 ---
 
@@ -121,5 +127,27 @@ Person person = student;
 다운 케스팅의 중요한 조건은...
 
 해당 객체가 **업케스팅 된 객체**여야 한다는 점이다.
+
+:camel:[Top](#java_inheritance)
+
+---
+---
+
+### class_relationship_1
+
+클래스의 상속과 포함 관계 예제_1
+
+도형 만들기
+
+:camel:[Top](#java_inheritance)
+
+---
+---
+
+### class_relationship_2
+
+클래스의 상속과 포함 관계 예제_2
+
+카드 랜덤으로 뽑기
 
 :camel:[Top](#java_inheritance)
