@@ -48,10 +48,10 @@
 * [down_casting](#down_casting) - ``부모 클래스 형 객체 -> 자식 클래스 형 객체``로 형변환 하기
 
 
-* [class_relationship_1](#class_relationship_1)
+* [class_relationship_1](#class_relationship_1) - 클래스의 상속과 포함 관계 예제_1
 
 
-* [class_relationship_2](#class_relationship_2)
+* [class_relationship_2](#class_relationship_2) - 클래스의 상속과 포함 관계 예제_2
 
 ---
 ---
