@@ -53,6 +53,9 @@
 
 * [class_relationship_2](#class_relationship_2) - 클래스의 상속과 포함 관계 예제_2
 
+
+* [super_test](#super_test) - ``멤버변수의 이름``, ``this.멤버변수 이름``, ``super.멤버변수 이름`` 구분하기
+
 ---
 ---
 
@@ -151,3 +154,14 @@ Person person = student;
 카드 랜덤으로 뽑기
 
 :camel:[Top](#java_inheritance)
+
+---
+---
+
+### super_test
+
+``멤버변수의 이름``으로 호출하기, ``this.멤버변수 이름``으로 호출하기, ``super.멤버변수 이름``으로 호출하기 구분하기
+
+``멤버변수의 이름``은 ``this.멤버변수 이름``으로 호출하는 것과 같고, 객체 자신의 멤버변수를 호출하게 된다.
+
+``super.멤버변수 이름``으로 호출하게 되면, 부모 객체의 멤버변수를 호출하게 된다. 
