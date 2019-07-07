@@ -181,6 +181,25 @@ public class Renderer {
 	
 	
 	public static void clear_screen() {
-		System.out.println("\n\n\n\n\n\n\n\n\n\n\n");
+		System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+	}
+	
+	
+	// 게임 오버 출력부
+	public static void print_game_over(Stage _stage, Player _player) {
+		if(_player.is_game_over()) {
+			_player.print_fault_answer_state();
+			System.out.println("--- 게임 오버 ---");
+			
+		}
+	}
+	
+	// 게임 클리어 출력부
+	public static void print_stage_clear() {
+		print_top_line(20);
+		System.out.print(VERTICAL);
+		System.out.print("  Congraturation  ");
+		System.out.println(VERTICAL);
+		print_bottom_line(20);
 	}
 }

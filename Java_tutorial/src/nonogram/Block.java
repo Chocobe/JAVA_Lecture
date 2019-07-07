@@ -52,13 +52,21 @@ public class Block {
 	// @author	:	Chocobe
 	// @param	:	Answer _key : 플레이어의 입력값 (O 또는 X)
 	// @return	:	N/A
-	public void update_answer(Answer_type _key) {
+	public void update_answer(Stage _stage, Player _player, Answer_type _key) {
 		if(_key == Answer_type.o) {
+			if(this.guess_block == Block_type.X ||
+					this.guess_block == Block_type.BLACK ||
+					this.guess_block == Block_type.V) {
+				return;
+			}
+			
 			if(this.origin_block == Block_type.BLACK) {
 				this.guess_block = Block_type.BLACK;
+				_player.add_correct_answer_cnt();
 				
 			} else {
 				this.guess_block = Block_type.X;
+				_player.add_fault_answer_cnt();
 			}
 			
 		} else if(_key == Answer_type.x) {

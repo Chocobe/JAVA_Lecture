@@ -23,6 +23,7 @@ public class Stage {
 	public int[][] origin_vertical_hint_data;	// (추출용)세로 힌트
 	public String[][] vertical_hint_data;		// (출력용)세로 힌트
 	
+	private int success_cnt;					// 성공 조건
 	
 	// 생성자
 	// @author	:	Chocobe
@@ -126,6 +127,17 @@ public class Stage {
 	}
 	
 	
+	// 성공 조건 개수 반환
+	public int get_success_cnt() {
+		return this.success_cnt;
+	}
+	
+	// 성공 조건 개수 1 감소
+	public void sub_success_cnt() {
+		this.success_cnt--;
+	}
+	
+	
 	// 읽어온 데이터 -> 블록화
 	// @author	:	Chocobe
 	// @param	:	N/A
@@ -135,6 +147,7 @@ public class Stage {
 		
 		String block_str_data = "";
 		int block_int_data = 0;
+		this.success_cnt = 0;
 		
 		for(int i = 0; i < this.stage_size_row; i++) {
 			for(int j = 0; j < this.stage_size_col; j++) {
@@ -142,6 +155,9 @@ public class Stage {
 				block_int_data = Integer.parseInt(block_str_data);
 				
 				this.stage_block[i][j] = new Block(block_int_data);
+				if(this.stage_block[i][j].origin_block == Block_type.BLACK) {
+					this.success_cnt++;
+				}
 			}
 		}
 		
@@ -292,7 +308,17 @@ public class Stage {
 	}
 	
 	// 입력정보 -> 블록 갱신
-	public void update_answer(int _x, int _y, Answer_type _answer) {
-		this.stage_block[_y][_x].update_answer(_answer);
+	public void update_answer(Player _player, Answer_type _answer) {
+		this.stage_block[_player.get_position_y()][_player.get_position_x()].update_answer(this, _player, _answer);
+	}
+	
+	
+	// 스테이지 클리어 검사
+	public boolean is_success(Player _player) {
+		if(_player.get_correct_answer_cnt() == this.success_cnt) {
+			return true;
+		}
+		
+		return false;
 	}
 }
