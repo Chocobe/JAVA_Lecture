@@ -1,5 +1,38 @@
 # Java_inheritance
 
+* 상속에 대한 예문
+
+	* 원은 좌표상에 존재한다.
+	
+	* 좌표는 x, y의 두 점이다.
+	
+	* x, y상에 원이 존재한다.
+	
+	* x, y : 점이다.
+	
+	* 원 : x, y, 반지름 을 가진다.
+	
+	* 사각형 : x, y 가로변, 세로변 을 가진다.
+	
+	* 공통부분 : x, y
+	
+	* 기능 : ``도형을 그리다``
+	
+	* 위의 내용을 상속, 관계로 표현을 하면
+	
+		* Class 좌표
+		
+		* Class 모양(추상적 의미)
+		
+		* Class 도형
+		
+			* 도형 is a 모양
+			
+			* 도형 has a 좌표
+			
+---
+---
+
 * [point](#point) - 상속 받은 클래스 만들기
 
 
@@ -13,6 +46,15 @@
 
 
 * [down_casting](#down_casting) - ``부모 클래스 형 객체 -> 자식 클래스 형 객체``로 형변환 하기
+
+
+* [class_relationship_1](#class_relationship_1) - 클래스의 상속과 포함 관계 예제_1
+
+
+* [class_relationship_2](#class_relationship_2) - 클래스의 상속과 포함 관계 예제_2
+
+
+* [super_test](#super_test) - ``멤버변수의 이름``, ``this.멤버변수 이름``, ``super.멤버변수 이름`` 구분하기
 
 ---
 ---
@@ -90,3 +132,36 @@ Person person = student;
 해당 객체가 **업케스팅 된 객체**여야 한다는 점이다.
 
 :camel:[Top](#java_inheritance)
+
+---
+---
+
+### class_relationship_1
+
+클래스의 상속과 포함 관계 예제_1
+
+도형 만들기
+
+:camel:[Top](#java_inheritance)
+
+---
+---
+
+### class_relationship_2
+
+클래스의 상속과 포함 관계 예제_2
+
+카드 랜덤으로 뽑기
+
+:camel:[Top](#java_inheritance)
+
+---
+---
+
+### super_test
+
+``멤버변수의 이름``으로 호출하기, ``this.멤버변수 이름``으로 호출하기, ``super.멤버변수 이름``으로 호출하기 구분하기
+
+``멤버변수의 이름``은 ``this.멤버변수 이름``으로 호출하는 것과 같고, 객체 자신의 멤버변수를 호출하게 된다.
+
+``super.멤버변수 이름``으로 호출하게 되면, 부모 객체의 멤버변수를 호출하게 된다. 
