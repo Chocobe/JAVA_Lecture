@@ -69,3 +69,33 @@ System.out.println(absolute_directory);
 최종적으로 ``.txt``파일의 데이터를 반환해 주는 것은 ``BufferedReader.readLine()`` 메소드를 통해 얻을 수 있다.
 
 :camel:[Top](#nonogram)
+
+---
+---
+
+### Scanner_try_catch
+
+``Scanner``객체의 ``nextInt()``메소드의 숫자이외 예외처리 하기
+
+``Scanner``객체의 ``nextInt()``메소드는 정수 이외의 값이 들어오면 예외가 발생하고,
+
+예외처리를 하지 않을 경우, 비정상 종료가 된다.
+
+때문에 정수 이외의 입력값에 대한 예외 처리가 필요하다.
+
+```java
+Scanner scanner = new Scanner(System.in);
+try {
+	String temp_str = scanner.nextInt();
+	
+} catch(Exception e) {
+	scanner.nextLine();
+	System.out.println("입력은 정수만 가능합니다.");
+}
+```
+
+위의 ``try ~ catch``구문의 ``catch``부분에서
+
+``scanner.nextLine()``으로 버퍼를 비워줘야만 현재 버퍼에 남아있는 정수 이외의 값을 버릴 수 있다.
+
+(버퍼를 비우지 않으면, 버퍼에 남아있는 정수 이외의 값이 계속적인 예외를 발생 시킨다.)
