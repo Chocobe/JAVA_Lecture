@@ -18,6 +18,9 @@
 
 * [New_function_2](#new_function_2) - ``.txt``파일 읽기
 
+
+* [Scanner_try_catch](#scanner_try_catch) - nextInt() 메서드의 예외처리
+
 ---
 ---
 
@@ -99,3 +102,5 @@ try {
 ``scanner.nextLine()``으로 버퍼를 비워줘야만 현재 버퍼에 남아있는 정수 이외의 값을 버릴 수 있다.
 
 (버퍼를 비우지 않으면, 버퍼에 남아있는 정수 이외의 값이 계속적인 예외를 발생 시킨다.)
+
+:camel:[Top](#nonogram)
