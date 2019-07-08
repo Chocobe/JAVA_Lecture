@@ -5,6 +5,9 @@
 
 * [interface_test_1](#interface_test_1) - 인터페이스 구현하기 예제_1
 
+
+* [interface_test_2](#interface_test_2) - 인터페이스 구현하기 예제_2
+
 ---
 ---
 
@@ -20,5 +23,14 @@
 ### interface_test_1
 
 인터페이스 구현하기 예제_1
+
+:camel:[Top](#class_interface)
+
+---
+---
+
+### interface_test_2
+
+인터페이스 구현하기 예제_2
 
 :camel:[Top](#class_interface)
