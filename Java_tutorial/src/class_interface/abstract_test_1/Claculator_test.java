@@ -1,4 +1,4 @@
-package abstract_class.abstract_test_1;
+package class_interface.abstract_test_1;
 
 public class Claculator_test {
 	public static void main(String[] args) {

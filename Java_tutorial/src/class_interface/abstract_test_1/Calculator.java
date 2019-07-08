@@ -1,4 +1,4 @@
-package abstract_class.abstract_test_1;
+package class_interface.abstract_test_1;
 
 public abstract class Calculator {
 	public abstract int add(int _lhs, int _rhs);

@@ -1,4 +1,4 @@
-package abstract_class.abstract_test_1;
+package class_interface.abstract_test_1;
 
 public class Good_calc extends Calculator {
 	@Override
