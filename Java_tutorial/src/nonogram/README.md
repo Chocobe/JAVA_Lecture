@@ -19,7 +19,7 @@
 * [New_function_2](#new_function_2) - ``.txt``파일 읽기
 
 
-* [Scanner_try_catch](#scanner_try_catch) - nextInt() 메서드의 예외처리
+* [Scanner_try_catch](#scanner_try_catch) - ``nextInt()`` 메서드의 예외처리
 
 ---
 ---
