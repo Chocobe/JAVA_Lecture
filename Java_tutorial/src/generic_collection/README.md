@@ -12,7 +12,7 @@
 * [arrayList](#arraylist) - ``ArrayList`` 콜랙션 클래스 예제_1
 
 
-* [ieterator](#iterator) - ``Iterator``객체 생성하기 (저장된 데이터 순차 접근 방법)
+* [ieterator](#iterator) - ``Iterator``객체 생성하기 (저장된 데이터 순차 접근 방법) <몰랐던 부분>
 
 
 * [hashMap_1](#hashmap_1) - ``hashMap`` 클래스 예제_1
@@ -67,6 +67,7 @@
 ---
 
 ### iterator
+#### <몰랐던 부분>
 
 ```java
 private class Itr implements Iterator<E> {
