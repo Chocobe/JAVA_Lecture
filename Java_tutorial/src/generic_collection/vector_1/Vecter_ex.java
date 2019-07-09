@@ -1,4 +1,4 @@
-package generic_collection.vectore_1;
+package generic_collection.vector_1;
 
 import java.util.Vector;
 

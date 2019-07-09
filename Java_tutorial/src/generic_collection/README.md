@@ -5,6 +5,9 @@
 
 * [vector_2](#vector_2)
 
+
+* [vector_3](#vector_3)
+
 ---
 ---
 
@@ -24,3 +27,15 @@
 ``Vector``의 요소로 객체도 저장이 가능하다.
 
 :camel:[Top](#generic_collection)
+
+---
+---
+
+### vector_3
+
+``Vector``를 매개변수로 갖는 메소드 만들기
+
+:camel:[Top](#generic_collection)
+
+---
+---
