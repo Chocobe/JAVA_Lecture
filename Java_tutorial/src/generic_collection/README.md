@@ -1,12 +1,18 @@
 # generic_collection
 
-* [vector_1](#vector_1)
+* [vector_1](#vector_1) - ``Vector`` 콜랙션 클래스 예제_1
 
 
-* [vector_2](#vector_2)
+* [vector_2](#vector_2) - ``Vector`` 콜랙션 클래스 예제_1
 
 
-* [vector_3](#vector_3)
+* [vector_3](#vector_3) - ``Vector`` 콜랙션 클래스 예제_1
+
+
+* [arrayList](#arraylist) - ``ArrayList`` 콜랙션 클래스 예제_1
+
+
+* [ieterator](#iterator) - 공부 필요
 
 ---
 ---
@@ -39,3 +45,18 @@
 
 ---
 ---
+
+### arrayList
+
+``ArrayList<String> list = new ArrayList<String>()``
+
+``Vector``와 사용법은 거의 유사하다.
+
+:camel:[Top](#generic_collection)
+
+---
+---
+
+### iterator
+
+공부 필요
