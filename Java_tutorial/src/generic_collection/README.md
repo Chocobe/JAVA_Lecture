@@ -24,7 +24,7 @@
 * [hashMap_3](#hashmap_3) - ``HashMap`` 연습 예제
 
 
-* [collections_class](#collections_class)
+* [collections_class](#collections_class) - 공부 필요
 
 ---
 ---
