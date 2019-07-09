@@ -23,6 +23,9 @@
 
 * [hashMap_3](#hashmap_3) - ``HashMap`` 연습 예제
 
+
+* [collections_class](#collections_class)
+
 ---
 ---
 
@@ -159,5 +162,14 @@ HashMap에 데이터를 저장하기 위해서 ``hash.put("키값", "데이터�
 ### hashMap_3
 
 ``HashMap`` 연습 예제
+
+:camel:[Top](#generic_collection)
+
+---
+---
+
+### collections_class
+
+공부 필요
 
 :camel:[Top](#generic_collection)
