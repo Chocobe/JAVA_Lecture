@@ -34,5 +34,7 @@ public class Hashmap_test_3 {
 			
 			System.out.println();
 		}
+		
+		scanner.close();
 	}
 }

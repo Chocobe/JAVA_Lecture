@@ -104,7 +104,7 @@ public Iterator<E> iterator() {
 
 ``Iterator<E> iterator = vector.iterator()``의 실체는,
 
-``Iterator`` 인터페이스를 구현한 ``Itr``클래스의 객체이다. 
+``Iterator`` 인터페이스를 구현한 ``Itr``클래스의 객체이다. (``Itr`` 클래스의 펙토리 메소드 패턴 == ``iterator()``)
 
 :camel:[Top](#generic_collection)
 
