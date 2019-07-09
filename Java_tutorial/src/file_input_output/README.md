@@ -15,7 +15,8 @@
 	
 * 스트림은 단독으로 사용할 수 없다.
 
-	* 원시 데이터(입력 데이터) -> 바이트 입력 스트림(System.in) -> 문자 입력 스트림(InputStreamReader) -> 자바 응용 프로그램
+	* 원시 데이터(입력 데이터) -> 바이트 입력 스트림(System.in) 
+		-> 문자 입력 스트림(InputStreamReader) -> 자바 응용 프로그램
 		```java
 		InputStreamReader reader = new InputStreamReader(System.in);
 		int ch = reader.read();
