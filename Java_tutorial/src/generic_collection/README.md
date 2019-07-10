@@ -18,13 +18,16 @@
 * [hashMap_1](#hashmap_1) - ``hashMap`` 클래스 예제_1
 
 
-* [hashMap_2](#hashmap_2) - ``HashMap``객체에 ``Set``과 ``Iterator`` 사용하기
+* [hashMap_2](#hashmap_2) - ``HashMap``객체에 ``Set``과 ``Iterator`` 사용하기 <몰랐던 부분>
 
 
 * [hashMap_3](#hashmap_3) - ``HashMap`` 연습 예제
 
 
 * [collections_class](#collections_class) - 공부 필요
+
+
+* [hashMap_4](#hashmap_4) - ``HashMap``객체에 ``Set``과 ``Iterator`` 사용하기 <몰랐던 부분>
 
 ---
 ---
@@ -171,5 +174,16 @@ HashMap에 데이터를 저장하기 위해서 ``hash.put("키값", "데이터�
 ### collections_class
 
 공부 필요
+
+:camel:[Top](#generic_collection)
+
+---
+---
+
+### hashMap_4
+
+``HashMap``객체에 ``Set``과 ``Iterator`` 사용하기 예제
+
+hashMap_2의 예제
 
 :camel:[Top](#generic_collection)
