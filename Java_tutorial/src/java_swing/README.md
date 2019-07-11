@@ -57,7 +57,6 @@
 1. ``JFrame``을 상속받는다.
 
 1. 생성자에 다음 3가지 세팅을 한다.
-
 	1. ``this.setSize(x, y);`` : 창의 크기를 설정
 	1. ``this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);`` : 종료 시, 모든 스레드도 같이 종료
 	1. ``this.setVisible(true);`` : 창을 볼 수 있게 한다.
