@@ -15,8 +15,6 @@ public class Game_engine {
 //		// 원본 이미지 출력
 //		Renderer.draw_origin_screen(stage);
 		
-		System.out.println("가로 개수 : " + stage.get_stage_col());
-		
 		while(true) {
 		// 게임 화면 출력
 			Renderer.draw_current_screen(stage);
