@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Scanner;
 
 // 스테이지 불러오기, 출력 담당 클래스
 
@@ -320,5 +321,30 @@ public class Stage {
 		}
 		
 		return false;
+	}
+	
+	
+	// 다음 스테이지 진행 여부
+	public boolean is_continue(Scanner _scanner) {
+		String continue_answer = "";
+		
+		while(true) {
+			System.out.print("스테이지 이동(y), 종료(n) : ");
+			continue_answer = _scanner.nextLine();
+			
+			if(continue_answer.equals("y")) {
+				Renderer.clear_screen();
+				return true;
+				
+			} else if(continue_answer.equals("n")) {
+				System.out.println("\n게임을 종료합니다.");
+				System.out.println("감사합니다.");
+				return false;
+				
+			} else {
+				System.out.println("\nError] 입력이 유효하지 않습니다.\n");
+				continue;
+			}
+		}
 	}
 }

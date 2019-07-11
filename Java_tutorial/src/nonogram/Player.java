@@ -79,7 +79,8 @@ public class Player {
 				}
 			}
 			catch(InputMismatchException e) {
-				System.out.println("정수만 입력 가능합니다.");
+				System.out.println("Error] 정수만 입력 가능합니다.");
+				scanner.nextLine();
 			}
 		} //while(true)
 	}
