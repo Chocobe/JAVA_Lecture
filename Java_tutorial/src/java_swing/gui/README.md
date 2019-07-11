@@ -11,6 +11,9 @@
 
 * [Label_test](#label_test)
 
+
+* [Enable_button](#enable_button)
+
 ---
 ---
 
@@ -44,5 +47,14 @@
 ### Label_test
 
 레이블 생성하기
+
+:camel:[Top](#gui)
+
+---
+---
+
+### Enable_button
+
+버튼 비활성화 하기
 
 :camel:[Top](#gui)
