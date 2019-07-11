@@ -8,6 +8,9 @@
 
 * [Panel_test](#panel_test)
 
+
+* [Label_test](#label_test)
+
 ---
 ---
 
@@ -32,5 +35,14 @@
 ### Panel_test
 
 패널 생성하기
+
+:camel:[Top](#gui)
+
+---
+---
+
+### Label_test
+
+레이블 생성하기
 
 :camel:[Top](#gui)
