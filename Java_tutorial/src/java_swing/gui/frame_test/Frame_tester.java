@@ -1,6 +1,6 @@
-package java_swing.gui.Button_test;
+package java_swing.gui.frame_test;
 
-public class Button_tester {
+public class Frame_tester {
 	public static void main(String[] args) {
 		new My_frame();
 	}

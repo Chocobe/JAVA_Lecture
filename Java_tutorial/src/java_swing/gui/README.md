@@ -5,6 +5,9 @@
 
 * [Button_test](#button_test)
 
+
+* [Panel_test](#panel_test)
+
 ---
 ---
 
@@ -20,5 +23,14 @@
 ### Button_test
 
 버튼 생성하기
+
+:camel:[Top](#gui)
+
+---
+---
+
+### Panel_test
+
+패널 생성하기
 
 :camel:[Top](#gui)

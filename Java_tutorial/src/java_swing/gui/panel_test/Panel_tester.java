@@ -1,6 +1,6 @@
-package java_swing.gui.Frame_test;
+package java_swing.gui.panel_test;
 
-public class Frame_tester {
+public class Panel_tester {
 	public static void main(String[] args) {
 		new My_frame();
 	}
