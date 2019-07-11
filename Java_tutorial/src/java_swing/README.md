@@ -9,7 +9,19 @@
 * [panel](#panel)
 
 
-* [FlowLayout](#flowlayout)
+* [FlowLayout_test](#flowlayout_test)
+
+
+* [Center_frame](#center_frame)
+
+
+* [BoxLayout_test](#boxlayout_test)
+
+
+* [GridLayout_test](#gridlayout_test)
+
+
+* [CardLayout_test](#cardlayout_test)
 
 ---
 ---
@@ -70,7 +82,7 @@
 ---
 
 ### button
-### (버튼 만들기)
+#### (버튼 만들기)
 
 1. ``JButton button = new JButton();``으로 객체를 생성한다.
 
@@ -82,7 +94,7 @@
 ---
 
 ### panel
-### (패널)
+#### (패널)
 
 1. ``JPanel panel = new JPanel();``로 패널을 생성한다.
 
@@ -93,8 +105,8 @@
 ---
 ---
 
-### FlowLayout
-### (순서대로 정렬하기)
+### FlowLayout_test
+#### (순서대로 정렬하기)
 
 ``this.setLayout(정렬방식을 표현하는 객체);``의 형식이다.
 
@@ -119,3 +131,23 @@
 		FLowLayout.TRAINLING
 		
 :camel:[Top](#java_swing)
+
+---
+---
+
+### Center_frame
+
+---
+---
+
+### BoxLayout_test
+
+---
+---
+
+### GridLayout_test
+
+---
+---
+
+### CardLayout_test
