@@ -1,8 +1,15 @@
 # Java_swing
 
-###한글
+* [basic_window](#basic_window)
 
-* [한글](#한글)
+
+* [button](#button)
+
+
+* [panel](#panel)
+
+---
+---
 
 		java의 GUI API.
 		Java_swing은 AWT를 상속받아 만들어 졌다.
@@ -42,7 +49,8 @@
 ---
 ---
 
-### 기본창 띄우기 (기본설정)
+### basic_window
+### (기본창 띄우기)
 
 1. ``JFrame``을 상속받는다.
 
@@ -55,8 +63,19 @@
 ---
 ---
 
-### 버튼 만들기
+### button
+### (버튼 만들기)
 
 1. ``JButton button = new JButton();``으로 객체를 생성한다.
 
 1. ``this.add(객체);``를 사용하여 프레임에 객체를 추가한다.
+
+---
+---
+
+### panel
+### (패널)
+
+1. ``JPanel panel = new JPanel();``로 패널을 생성한다.
+
+1. ``panel.add(추가할 객체);``로 패널에 객체를 추가한다.
