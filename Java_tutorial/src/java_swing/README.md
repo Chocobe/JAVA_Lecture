@@ -1,14 +1,5 @@
 # Java_swing
 
-* [basic_window](#basic_window)
-
-
-* [button](#button)
-
-
-* [panel](#panel)
-
-
 * [FlowLayout_test](#flowlayout_test)
 
 
