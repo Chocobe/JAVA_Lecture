@@ -66,45 +66,6 @@
 ---
 ---
 
-### basic_window
-### (기본창 띄우기)
-
-1. ``JFrame``을 상속받는다.
-
-1. 생성자에 다음 3가지 세팅을 한다.
-	1. ``this.setSize(x, y);`` : 창의 크기를 설정
-	1. ``this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);`` : 종료 시, 모든 스레드도 같이 종료
-	1. ``this.setVisible(true);`` : 창을 볼 수 있게 한다.
-	
-:camel:[Top](#java_swing)
-	
----
----
-
-### button
-#### (버튼 만들기)
-
-1. ``JButton button = new JButton();``으로 객체를 생성한다.
-
-1. ``this.add(객체);``를 사용하여 프레임에 객체를 추가한다.
-
-:camel:[Top](#java_swing)
-
----
----
-
-### panel
-#### (패널)
-
-1. ``JPanel panel = new JPanel();``로 패널을 생성한다.
-
-1. ``panel.add(추가할 객체);``로 패널에 객체를 추가한다.
-
-:camel:[Top](#java_swing)
-
----
----
-
 ### FlowLayout_test
 #### (순서대로 정렬하기)
 
