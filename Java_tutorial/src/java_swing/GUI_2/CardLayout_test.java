@@ -92,6 +92,7 @@ class MyFrame_5 extends JFrame implements ActionListener {
 		CardLayout layout;
 		
 		public Cards() {
+			// super() 필요없나???
 			this.layout = new CardLayout();
 			this.setLayout(layout);
 			
