@@ -37,19 +37,26 @@
 * 공통부분을 클래스로 만들자.
 
 	* 이름과 주소가 중복된다. (사람 클래스를 상속 받게 하자 -> 사람 클래스 도출)
+		
 		* 학생은 사람이다. 
 		* 교사는 사람이다. 
 		* 직원은 사람이다.
 
 	* 학번, 교번, 사번은 ID로써 같은 역할을 가진다. (추상 메소드면 해결된다.)
 		* 사람 클래스 + 추상메소드(ID) = 추상 클래스 :
+			
 			``class Student extends Person``
+			
 			``class Teacher extends Person``
+			
 			``class Staff extends Person``
 			
 		* 인터페이스 생성(ID)
+			
 			``class Student extends Person implement ID``
+			
 			``class Teacher extends Person implement ID``
+			
 			``class Staff extends Person implement ID`` 
 		
 		
