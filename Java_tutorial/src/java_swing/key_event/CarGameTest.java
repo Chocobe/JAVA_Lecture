@@ -65,7 +65,11 @@ class My_panel extends JPanel {
 			public void keyReleased(KeyEvent e) { }
 		});
 		
+		// 이 컴포넌트가 포커스된다.
 		this.requestFocus();
+		
+		// Panel은 컨테이너기 때문에, 포커스 되지 않는 상태를 기본으로 가진다.
+		// 때문에, setPocusable(true)를 통해서 포커스 가능하도록 하여, panel상에서 입력을 하도록 한것
 		setFocusable(true);
 	}
 	
