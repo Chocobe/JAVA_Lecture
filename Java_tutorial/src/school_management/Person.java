@@ -63,20 +63,23 @@ abstract public class Person {
 		
 		// 문자열 객체.startWith("문자") : 첫번째 문자 검사
 		if(temp_name.startsWith("콩")) {
+			scanner.close();
 			throw new NotSupportNameException("콩씨를 등록할 수 없음");
 			
 		} else if(temp_name.startsWith("팥")) {
+			scanner.close();
 			throw new NotSupportNameException("팥씨를 등록할 수 없음");
 		}
 		set_name(temp_name);
-		
 		
 		// 주소 입력부
 		out.print("주소를 입력하세요 : ");
 		String temp_address = scanner.nextLine();
 		set_address(temp_address);
 		
-		scanner.close();
+		if(scanner != null) {
+			scanner.close();
+		}
 	}
 	
 	
