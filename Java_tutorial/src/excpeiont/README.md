@@ -1,12 +1,15 @@
 # Exception_handling
 
-* [try_catch_1](#try_catch_1)
+* [try_catch_1](#try_catch_1) - ``try ~ catch`` 사용하기
 
 
-* [throw](#throw)
+* [throw](#throw) - 현재 메소드를 호출한 메소드에 예외상황 전달하기
 
 
-* [finally](#finally)
+* [finally](#finally) - ``try ~ catch``문 이후, 공통으로 실행할 코드 작성하기
+
+
+* [MyException](#myexception) - 사용자 정의 예외 클래스 만들기
 
 ---
 ---
@@ -99,4 +102,17 @@
 
 ### MyException
 
-정리할 것
+사용자 정의 예외 만들기
+
+예외 클래스들은 ``Exception``클래스를 상속받아 만들어 진다.
+
+사용자가 원하는 예외 클래스를 만들 때 역시, ``Exception``클래스를 상속받아 만들 수 있다.
+
+```java
+class MyException import Exception {
+	public MyException(String _message) {
+		super(_message);
+	}
+}
+```
+위의 형태로 사용자 예외 클래스를 만들 수 있다.
