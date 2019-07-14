@@ -11,6 +11,10 @@
 
 * [MyException](#myexception) - 사용자 정의 예외 클래스 만들기
 
+
+* [Exception_text_1](#exception_test_1)
+
+
 ---
 ---
 
@@ -46,6 +50,8 @@
 
 	* 프로그램의 비정상 종료를 막고, 정상적인 실행상태를 유지하는 것
 	
+:camel:[Top](#exception_handling)
+
 ---
 ---
 
@@ -97,6 +103,8 @@
 
 ``finally``는 ``return``키워드가 실행 되어도, 해당 메소드가 종료되기 전에 실행 된다.
 
+:camel:[Top](#exception_handling)
+
 ---
 ---
 
@@ -109,10 +117,21 @@
 사용자가 원하는 예외 클래스를 만들 때 역시, ``Exception``클래스를 상속받아 만들 수 있다.
 
 ```java
-class MyException import Exception {
+class MyException extends Exception {
 	public MyException(String _message) {
 		super(_message);
 	}
 }
 ```
 위의 형태로 사용자 예외 클래스를 만들 수 있다.
+
+:camel:[Top](#exception_handling)
+
+---
+---
+
+### Exception_test_1
+
+사용자 정의 예외 만들기 예제
+
+:camel:[Top](#exception_handling)
