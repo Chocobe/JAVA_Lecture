@@ -23,13 +23,6 @@ abstract public class Person {
 // 생성자
 	
 	
-// address
-		public abstract void set_id(String _id); 
-		
-		public abstract String get_id();
-// address
-	
-	
 // name
 	public void set_name(String _name) {
 		this.name = _name;
@@ -49,6 +42,13 @@ abstract public class Person {
 	public String get_address() {
 		return this.address;
 	}
+// address
+	
+	
+// id
+	public abstract void set_id(String _id); 	
+	public abstract String get_id();
+// id
 	
 	
 	// 사람 정보 입력
@@ -71,6 +71,7 @@ abstract public class Person {
 			throw new NotSupportNameException("팥씨를 등록할 수 없음");
 		}
 		set_name(temp_name);
+		
 		
 		// 주소 입력부
 		out.print("주소를 입력하세요 : ");
