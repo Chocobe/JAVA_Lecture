@@ -1,21 +1,21 @@
 # GUI
 
-* [Frame_test](#frame_test)
+* [Frame_test](#frame_test) - ``JFrame``만들기
 
 
-* [Button_test](#button_test)
+* [Button_test](#button_test) - ``JButton``만들기
 
 
-* [Panel_test](#panel_test)
+* [Panel_test](#panel_test) - ``JPanel``만들기
 
 
-* [Label_test](#label_test)
+* [Label_test](#label_test) - ``JLabel``만들기
 
 
-* [Enable_button](#enable_button)
+* [Enable_button](#enable_button) - ``JButton`` 비활성화 시키기
 
 
-* [Text_field](#text_field)
+* [Text_field](#text_field) - ``JTextField``만들기
 
 ---
 ---
@@ -89,13 +89,4 @@ ActionListener 구현 위치
 * Frame이 직접 구현할 때,
 
 	JFrame을 상속 받으면서, ActionListener까지 구현하는 방식
-	
----
----
-
-어뎁터 클래스 용도 : 
-	
-	인터페이스를 구현하게 되면, 인터페이스의 모든 추상 메소드를 구현해야 하지만,
-	어뎁터 클래스를 사용하게 되면, 해당 인터페이스의 메소드 중 필요한 것만 뽑아서 사용할 수 있다.
-	
-	
+		
