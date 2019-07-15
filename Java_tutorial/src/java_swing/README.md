@@ -1,6 +1,6 @@
 # Java_swing
 
-* [FlowLayout_test](#flowlayout_test)
+* [flow_layout](#flow_layout) - 순서대로 배열 하기 (연속배열)
 
 
 * [Center_frame](#center_frame)
@@ -66,31 +66,12 @@
 ---
 ---
 
-### FlowLayout_test
-#### (순서대로 정렬하기)
+### flow_layout
 
-``this.setLayout(정렬방식을 표현하는 객체);``의 형식이다.
+순서대로 배열 하기 (연속배열)
 
-프래임상의 객체를 순서대로 중앙 정렬하는 코드는 다음과 같다.
+``setLayout(new FlowLayout(정렬 상수값));``의 형식
 
-``this.setLayout(new FlowLayout(FlowLayout.CENTER));``
-
----
-
-패널상의 객체들을 정렬할때는 ``this``대신 ``panel명``으로 사용하면 된다.
-
-``my_panel.setLayout(new FlowLayout(FlowLayout.CENTER));``
-
----
-
-``new FlowLayout(인수)``의 인수값은 ``FlowLayout``의 상수값을 사용하는데,
-
-		FlowLayout.CENTER
-		FlowLayout.LEFT
-		FlowLayout.RIGHT
-		FlowLayout.LEADING
-		FLowLayout.TRAINLING
-		
 :camel:[Top](#java_swing)
 
 ---
