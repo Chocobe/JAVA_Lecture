@@ -1,25 +1,8 @@
-# Java_swing
+# java_swing
 
-* [flow_layout](#flow_layout) - 순서대로 배열 하기 (연속배열)
-
-
-* [Center_frame](#center_frame)
-
-
-* [BoxLayout_test](#boxlayout_test)
-
-
-* [GridLayout_test](#gridlayout_test)
-
-
-* [CardLayout_test](#cardlayout_test)
-
----
----
-
-		java의 GUI API.
-		Java_swing은 AWT를 상속받아 만들어 졌다.
-		AWT의 각 메소드명에 접두사로 J를 붙이면, swing의 메소드가 된다. 
+	* java의 GUI API.
+	* Java_swing은 AWT를 상속받아 만들어 졌다.
+	* AWT의 각 메소드명에 접두사로 J를 붙이면, swing의 메소드가 된다. 
 		
 ---
 
@@ -60,42 +43,3 @@
 	인터페이스를 구현하게 되면, 인터페이스의 모든 추상 메소드를 구현해야 하지만,
 	어뎁터 클래스를 사용하게 되면, 해당 인터페이스의 메소드 중 필요한 것만 뽑아서 사용할 수 있다.
 	
-
-:camel:[Top](#java_swing)
-
----
----
-
-### flow_layout
-
-순서대로 배열 하기 (연속배열)
-
-``setLayout(new FlowLayout(정렬 상수값));``의 형식
-
-:camel:[Top](#java_swing)
-
----
----
-
-### Center_frame
-
----
----
-
-### BoxLayout_test
-
----
----
-
-### GridLayout_test
-
----
----
-
-### CardLayout_test
-
----
----
-
-## event
-### ActionEvent_test
