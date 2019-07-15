@@ -117,17 +117,17 @@ public class School_service {
 	
 	
 	public void print_all() {
-		String str = null;
+		String str = "";
 		
 		for(int i = 0; i < this.count; i++) {
 			if(this.p[i] instanceof Student) {
-				str = "\n---학생정보---\n";
+				str += "\n---학생정보---\n";
 				
 			} else if(this.p[i] instanceof Teacher) {
-				str = "\n---교사정보---\n";
+				str += "\n---교사정보---\n";
 				
 			} else if(this.p[i] instanceof Staff) {
-				str = "\n---직원정보---\n";
+				str += "\n---직원정보---\n";
 			}
 			
 			str += p[i].get_info();
