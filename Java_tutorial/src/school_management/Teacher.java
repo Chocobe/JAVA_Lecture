@@ -70,8 +70,6 @@ public class Teacher extends Person {
 		out.print("과목 입력 : ");
 		String temp_subject = scanner.nextLine();
 		this.set_subject(temp_subject);
-		
-		scanner.close();	// 의심되는 부분
 	}
 // 교사 정보 입력
 	

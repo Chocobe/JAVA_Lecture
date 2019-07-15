@@ -10,6 +10,10 @@ public class Staff extends Person {
 	
 	
 // 생성자
+	public Staff() {
+		this("N/A", "N/A", 0, "N/A");
+	}
+	
 	public Staff(
 			String _name, String _address, int _id, String _department) {
 		super(_name, _address);
@@ -66,8 +70,6 @@ public class Staff extends Person {
 		out.print("부서 입력 : ");
 		String temp_department = scanner.nextLine();
 		this.set_department(temp_department);
-		
-		scanner.close();	// 의심되는 부분
 	}
 // 직원 정보 입력
 	

@@ -77,10 +77,6 @@ abstract public class Person {
 		out.print("주소를 입력하세요 : ");
 		String temp_address = scanner.nextLine();
 		set_address(temp_address);
-		
-		if(scanner != null) {
-			scanner.close();
-		}
 	}
 	
 	

@@ -70,8 +70,6 @@ public class Student extends Person {
 		out.print("학급 입력 : ");
 		String temp_class_name = scanner.nextLine();
 		this.set_class_name(temp_class_name);
-		
-		scanner.close(); // 의심되는 부분
 	}
 // 학생 정보 입력
 	
