@@ -5,29 +5,40 @@ import static java.lang.System.out;
 import java.util.Scanner;
 
 public class Staff extends Person {
-	private String id;			// 사번
+	private int id;			// 사번
 	private String department;	// 부서
+	
+	
+// 생성자
+	public Staff(
+			String _name, String _address, int _id, String _department) {
+		super(_name, _address);
+		this.set_id(_id);
+		this.set_department(_department);
+	}
+// 생성자
+	
 	
 // id
 	@Override
-	public void set_id(String _id) {
+	public void set_id(int _id) {
 		this.id = _id;
 	}
 
 	@Override
-	public String get_id() {
+	public int get_id() {
 		return this.id;
 	}
 // id
 	
 	
 // department
-	public void set_department(String _department) {
-		this.department = _department;
-	}
-	
 	public String get_department() {
 		return this.department;
+	}
+	
+	public void set_department(String _department) {
+		this.department = _department;
 	}
 // department
 	
@@ -48,8 +59,9 @@ public class Staff extends Person {
 		Scanner scanner = new Scanner(System.in);
 		
 		out.print("사번 입력 : ");
-		String temp_id = scanner.nextLine();
+		int temp_id = scanner.nextInt();
 		this.set_id(temp_id);
+		scanner.nextLine();
 		
 		out.print("부서 입력 : ");
 		String temp_department = scanner.nextLine();

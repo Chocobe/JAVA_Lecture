@@ -17,8 +17,8 @@ abstract public class Person {
 	
 	public Person(String _name, String _address) {
 		// getter, setter를 생성했다면, 생성자에서 그 메소드를 호출하자. (새로 작성할 필요가 없다.)
-		set_name(_name);
-		set_address(_address);
+		this.set_name(_name);
+		this.set_address(_address);
 	}
 // 생성자
 	
@@ -46,8 +46,8 @@ abstract public class Person {
 	
 	
 // id
-	public abstract void set_id(String _id); 	
-	public abstract String get_id();
+	public abstract void set_id(int _id); 	
+	public abstract int get_id();
 // id
 	
 	
