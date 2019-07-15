@@ -1,18 +1,18 @@
 # Java_swing
 
-* [flow_layout](#flow_layout) - 순서대로 배열 하기 (연속배열)
+* [flow_layout](#flow_layout) - 순서대로 배치 하기 (연속배열)
 
 
 * [border_layout](#border_layout) - 동, 서, 남, 북, 중앙 으로 배치하기
 
 
-* [GridLayout](#gridlayout) - 
+* [grid_layout](#grid_layout) - 행과 열의 컴포넌트 개수 지정하여 배치하기
 
 
-* [BoxLayout_test](#boxlayout_test)
+* [box_layout](#box_layout) - x 또는 y 축으로 배치하기
 
 
-* [CardLayout_test](#cardlayout_test)
+* [card_layout](#card_layout) - 카드방식으로 배치하기
 
 ---
 ---
@@ -70,18 +70,27 @@ setLayout(new BorderLayout(int 수평간격, int 수직간격));
 
 ### grid_layout
 
----
----
+행과 열의 컴포넌트 개수 지정하여 배치하기
 
-### BoxLayout_test
+	* 행이나 열의 값이 0인 경우, 해당 방향으로 무한대로 배치한다.
 
----
----
-
-### CardLayout_test
+:camel:[Top](#java_swing)
 
 ---
 ---
 
-## event
-### ActionEvent_test
+### box_layout
+
+x 또는 y축으로 배치하기
+
+	* BoxLayout.X_AXIS	- x축으로 배치
+	
+	* BoxLayout.Y_AXIS	- y축으로 배치
+	
+---
+---
+
+### card_layout
+
+카드 방식으로 배치하기
+
