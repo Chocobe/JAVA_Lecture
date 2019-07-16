@@ -10,7 +10,7 @@
 
 (컨테이너에 적용한 ``CardLayout``객체가 아닌 다른 ``CardLayout``객체로는 사용할 수 없다.)
 
-때문에 ``CardLayout``을 적용한 컨테이너는, 해당 ``CardLayout``객체를 보관해야만 한다.
+때문에 ``CardLayout``을 적용한 컨테이너는, **해당 ``CardLayout``객체를 보관**해야만 한다.
 
 ```java
 CardLayout layout = new CardLayout();
