@@ -36,3 +36,12 @@ button.addActionListener(ActionListener 타입 객체);
 
 ``addActionListener()``의 인자값으로 들어간 객체가 이 버튼의 액션에 반응하도록 한다.
 
+---
+
+``ActionListener`` 인터페이스를 구현한 클래스는 ``actionPerformed(ActionEvent e)`` 메소드를 구현해야만 한다.
+
+``ActionEvent e``는 ``addActionListener``가 적용된 컴포넌트들의 이벤트 발생 시, 인자값으로 받게 되며,
+
+``e.getActionCommand()``의 반환값으로 해당 컨테이너의 동작을 설정할 수 있다.
+
+(``e.getActionCommand()``의 반환값은 ``String``이다) 
