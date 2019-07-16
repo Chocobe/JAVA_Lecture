@@ -88,9 +88,27 @@ class SchoolGui extends JFrame {
 		panel.add(find = new JButton("검 색"));
 		panel.add(del = new JButton("삭 제"));
 		panel.add(print = new JButton("출 력"));
-		panel.add(save = new JButton("저 장"));
-		
+		panel.add(save = new JButton("저 장"));		
 		this.add(panel, BorderLayout.EAST);
+		
+		// Dialog 만들기
+		// Dialog 생성자의 메소드 중, modal을 true로 주면, 현재 Dialog가 완료 되어야 이전창을 선택 가능
+		dial1 = new JDialog(this, true);
+		dial2 = new JDialog(this, true);
+		dial3 = new JDialog(this, "**검색**", true);
+		
+		// Dial1에 컴포넌트 부착하기
+		btStudent = new JButton("학생");
+		btTeacher = new JButton("강사");
+		btStaff = new JButton("직원");
+		btClose = new JButton("닫기");
+		
+		dial1.setTitle("**등록**");
+		dial1.setLayout(new GridLayout(1, 0));
+		dial1.add(btStudent);
+		dial1.add(btTeacher);
+		dial1.add(btStaff);
+		dial1.add(btClose);
 	}
 }
 
