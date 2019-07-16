@@ -1,13 +1,24 @@
 package school_management;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.GridLayout;
+import java.awt.Insets;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
+@SuppressWarnings("serial")
 class SchoolGui extends JFrame {
+	SchoolApp sa = new SchoolApp();
+	
 	// 업무처리 로직을 가진 클래스 - 콘솔 애플리케이션
 	Person p;
 	JTextArea ta;
@@ -15,8 +26,8 @@ class SchoolGui extends JFrame {
 	// 등록, 삭제, 검색, 출력, 저장
 	JButton reg, del, find, print, save;
 	
-	// 학생 버튼, 선생님 버튼, 직원 버튼, 검색 버튼, 전체 출력버튼 
-	JButton btStudent, btTeacher, btStaff, btFinder, btFindAll;
+	// 학생 버튼, 선생님 버튼, 직원 버튼, 검색 버튼, 검색 종료
+	JButton btStudent, btTeacher, btStaff, btFindOk, btFindFinish;
 	
 	// 확인, 취소, 닫기
 	JButton btOk, btCancel, btClose;
@@ -29,10 +40,64 @@ class SchoolGui extends JFrame {
 	
 	// 입력 컴포넌트 : 이름, 주소, 아이디, 기타, 검색
 	JTextField tfName, tfAddr, tfId, tfPub, tfFindname;
+	
+	
+	public SchoolGui() {
+		super("학생 관리 프로그램");
+		init();
+		start(); // 이벤트 생성용
+		
+		setSize(500, 500);
+		setVisible(true);
+	}
+	
+//
+// 모르는 부분	
+//
+	public void start() {
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		});
+	}
+//
+//
+	
+	
+	// GUI 화면구성하는 메소드
+	private void init() {
+		ta = new JTextArea();
+		add(ta, BorderLayout.CENTER);
+	
+//
+// 모르는 부분
+//
+		JPanel panel = new JPanel(new GridLayout(0, 1, 10, 10)) {
+			// 여백 생성하기
+			public Insets getInsets() {
+				return new Insets(10, 10, 10, 10);
+			}
+		};
+//
+//
+		panel.setBackground(Color.CYAN);
+		
+		panel.add(reg = new JButton("등 록"));
+		panel.add(find = new JButton("검 색"));
+		panel.add(del = new JButton("삭 제"));
+		panel.add(print = new JButton("출 력"));
+		panel.add(save = new JButton("저 장"));
+		
+		this.add(panel, BorderLayout.EAST);
+	}
 }
 
+
+// SchoolGuiMain 클래스
 public class SchoolGuiMain {
 	public static void main(String[] args) {
-		
+		new SchoolGui();
 	}
 }
