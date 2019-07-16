@@ -87,6 +87,8 @@ x 또는 y축으로 배치하기
 	
 	* BoxLayout.Y_AXIS	- y축으로 배치
 	
+:camel:[Top](#java_swing)
+	
 ---
 ---
 
@@ -94,3 +96,4 @@ x 또는 y축으로 배치하기
 
 카드 방식으로 배치하기
 
+:camel:[Top](#java_swing)
