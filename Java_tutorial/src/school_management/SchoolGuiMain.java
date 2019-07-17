@@ -77,9 +77,10 @@ class SchoolGui extends JFrame {
 		
 		btOk.addActionListener(my);
 		btCancel.addActionListener(my);
+		btClose.addActionListener(my);
 		
 		btFindOk.addActionListener(my);
-		btClose.addActionListener(my);
+		btFindClose.addActionListener(my);
 		
 		ta.setEnabled(false);
 	}
@@ -272,8 +273,17 @@ class SchoolGui extends JFrame {
 				tfName.requestFocus();
 				
 			} else if(temp_object == btCancel) { // 취소 버튼
-				// 현재 입력한 데이터 삭제(취소)
+				// dial2를 닫는다
 				dial2.dispose();
+				
+				// 텍스트 필드의 값을 모두 제거
+				tfName.setText("");
+				tfId.setText("");
+				tfAddr.setText("");
+				tfPub.setText("");
+				
+			} else if(temp_object == btClose) {
+				dial1.dispose();
 			}
 			
 			if(temp_object == btFindOk) { // 검색과 삭제 확인
@@ -289,8 +299,10 @@ class SchoolGui extends JFrame {
 				} else {
 					String name = tfFindname.getText();
 					String msg = school_service.delete_person(name);
-					tfFindname.setText("");
+					ta.append(msg + "\n");
 				}
+				
+				tfName.setText("");
 				
 			} else if(temp_object == btFindClose) { // 닫기 버튼
 				dial3.dispose();

@@ -43,3 +43,39 @@
 	인터페이스를 구현하게 되면, 인터페이스의 모든 추상 메소드를 구현해야 하지만,
 	어뎁터 클래스를 사용하게 되면, 해당 인터페이스의 메소드 중 필요한 것만 뽑아서 사용할 수 있다.
 	
+---
+---
+
+### gui
+
+JAVA를 이용한 GUI 프로그램 만들기 기본 (컴포넌트)
+
+:camel:[Top](#java_swing)
+
+---
+---
+
+### layout
+
+컨테이너의 정렬 방법 5가지
+
+	* FlowLayout
+	
+	* BorderLayout
+	
+	* GridLayout
+	
+	* BoxLayout
+	
+	* CardLayout
+	
+:camel:[Top](#java_swing)
+	
+---
+---
+
+### ActionEvent
+
+``ActionListener`` 인터페이스를 구현하여, event 발생 및 동작 시키기
+
+:camel:[Top](#java_swing)
