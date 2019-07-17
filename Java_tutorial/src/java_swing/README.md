@@ -87,6 +87,8 @@ JAVA를 이용한 GUI 프로그램 만들기 기본 (컴포넌트)
 
 ### ActionEvent
 
-``ActionListener`` 인터페이스를 구현하여, event 발생 및 동작 시키기
+* ``ActionListener`` 인터페이스를 구현하여, event 발생 및 동작 시키기
+
+	1. impl_ActionListener_inself : 클래스 자신이 ``ActionListener``를 직접 구현하기 
 
 :camel:[Top](#java_swing)
