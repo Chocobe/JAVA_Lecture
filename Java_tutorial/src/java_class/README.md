@@ -43,6 +43,9 @@
 
 * [getter_setter_ex_2](#getter_setter_ex_2) - getter / setter 예제_2
 
+
+* [inner_class](#inner_class)
+
 ---
 ---
 
@@ -158,3 +161,25 @@
 (입력``(Scanner 객체)``에 대한 예외 처리 하기)
 
 :camel:[Top](#java_class)
+
+---
+---
+
+### inner_class
+
+내부 클래스 만들기
+
+* 내부클래스 종류
+
+	* 인스턴스 클래스
+	
+	* 스테틱 클래스
+	
+	* 지역 클래스
+	
+	* 익명(무명) 클래스
+	
+:camel:[Top](#java_class)
+	
+---
+	
