@@ -57,7 +57,7 @@ Window Builder는 swing을 이용한 GUI환경을 만드는 자동 코딩 프로
 
 ### Option setting
 
-Window Builder의 자동 코드 생성 설정하기
+* Window Builder의 자동 코드 생성 설정하기
 
 	1. 메인 메뉴 중 ``Window`` -> ``Preference`` 선택
 
