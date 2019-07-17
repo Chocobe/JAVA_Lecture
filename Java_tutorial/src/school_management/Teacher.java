@@ -5,17 +5,17 @@ import static java.lang.System.out;
 import java.util.Scanner;
 
 public class Teacher extends Person {
-	private int id;			// 교번
+	private String id;			// 교번
 	private String subject;		// 과목
 
 	
 // 생성자
 	public Teacher() {
-		this("N/A", "N/A", 0, "N/A");
+		this("N/A", "N/A", "N/A", "N/A");
 	}
 	
 	public Teacher(
-			String _name, String _address, int _id, String _subject) {
+			String _name, String _address, String _id, String _subject) {
 		super(_name, _address);
 		this.set_id(_id);
 		this.set_subject(_subject);
@@ -25,12 +25,12 @@ public class Teacher extends Person {
 	
 // id
 	@Override
-	public int get_id() {
+	public String get_id() {
 		return this.id;
 	}
 	
 	@Override
-	public void set_id(int _id) {
+	public void set_id(String _id) {
 		this.id = _id;
 	}
 // id
@@ -63,9 +63,8 @@ public class Teacher extends Person {
 		Scanner scanner = new Scanner(System.in);
 		
 		out.print("교번 입력 : ");
-		int temp_id = scanner.nextInt();
+		String temp_id = scanner.nextLine();
 		this.set_id(temp_id);
-		scanner.nextLine();
 		
 		out.print("과목 입력 : ");
 		String temp_subject = scanner.nextLine();

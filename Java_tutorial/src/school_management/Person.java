@@ -46,8 +46,8 @@ abstract public class Person {
 	
 	
 // id
-	public abstract void set_id(int _id); 	
-	public abstract int get_id();
+	public abstract void set_id(String _id); 	
+	public abstract String get_id();
 // id
 	
 	

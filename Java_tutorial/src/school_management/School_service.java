@@ -102,21 +102,22 @@ public class School_service {
 	
 	
 	// 저장된 객체 검색
-	public void find_person(String _name) {
+	public String find_person(String _name) {
 		
 		for(int i = 0; i < this.count; i++) {
 			// 입력된 이름과 배열에 저장된 값을 비교
 			if(_name.equals(this.p[i].get_name())) {
 				this.p[i].print_all();
-				return;
+				return this.p[i].get_info();
 			}
 		}
 		
 		System.out.println(_name + "이란 사람이 없음");
+		return "이란 사람이 없음";
 	}
 	
 	
-	public void print_all() {
+	public String print_all() {
 		String str = "";
 		
 		for(int i = 0; i < this.count; i++) {
@@ -135,10 +136,12 @@ public class School_service {
 		}// end for()
 		
 		out.println(str);
+		
+		return str;
 	}
 	
 	
-	public void delete_person(String _name) {
+	public String delete_person(String _name) {
 		for(int i = 0; i < this.count; i++) {
 			String temp_name = this.p[i].get_name();
 			
@@ -148,7 +151,11 @@ public class School_service {
 				}
 				this.count--;
 				System.out.println(_name + "님의 자료가 삭제되었습니다");
+				
+				return _name + "님의 자료가 삭제되었습니다";
 			}
 		}
+		
+		return _name + "님의 자료가 존재하지 않습니다";
 	}
 }
