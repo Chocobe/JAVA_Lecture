@@ -128,6 +128,9 @@
 
 * [Array_Ex_MultiArrEx1](#array_ex_multiarrex1) - 2차원 배열을 사용한 좌표(x, y) 예제
 
+
+* [static_val_init](#static_val_init)
+
 ---
 ---
 
@@ -903,5 +906,31 @@ char형 배열의 모든 요소를 출력해 준다.
 char[] test = {'a', 'b', 'c'};
 System.out.println(test);
 ```
+
+:camel:[Top](#before-starting-java)
+
+---
+---
+
+### static_val_init
+
+클래스의 ``static``변수는 **클래스 멤버**라고 한다.
+
+일반적으로 사용하는 변수와 다른 점은, 생성된 객체가 아닌, 클래스 자체로써 해당 클래스의 객체는 공유하는 변수이다.
+
+즉, 같은 클래스의 객체들이 하나의 변수를 공유하는 것이고, 객체를 생성하지 않아도 접근 가능한 변수이다.
+
+---
+
+``static``변수(클래스 변수)의 초기화는 ``static 초기화 블록``에서 따로이 수행할 수 있다.
+
+```java
+static {
+	static변수_1 = 초기화값_1;
+	static변수_2 = 초기화값_2;
+}
+```
+
+``static 초기화 블록``을 사용하게 되면, 클래스가 메모리에 로드될 때, 딱 한번 수행되는 형태로 동작한다.
 
 :camel:[Top](#before-starting-java)
