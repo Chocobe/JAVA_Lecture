@@ -20,6 +20,7 @@ public class InnerEX_3 {
 	}
 	
 	
+	@SuppressWarnings("unused")
 	void method() {
 		int lv = 2;
 		final int LV = 2;
