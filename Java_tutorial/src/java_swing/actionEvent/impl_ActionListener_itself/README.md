@@ -1,6 +1,6 @@
 # impl_ActionListener_itself
 
-프레임을 상속받는 클래스에서 ``ActionListener`` 인터페이스를 직접 구현하는 방법이다.
+``JFrame``을 상속받는 클래스에서 ``ActionListener`` 인터페이스를 직접 구현하는 방법이다.
 
 ```java
 public class MyFrame extends JFrame implements ActionListener {
@@ -24,4 +24,4 @@ text_field.setFont(font);
 
 ``Font``객체를 생성하여 ``JTextField``객체의 ``setFont()``메소드의 인자로 넣어주면 설정된다.
 
-``Font`` 클래스 생성자의 인자값은 ``Font(String 폰트명, int 스타일 상수값, 폰트 크기)`` 이다.
+``Font`` 클래스 생성자의 인자값은 ``Font(String 폰트명, int 스타일 상수값, int 폰트 크기)`` 이다.

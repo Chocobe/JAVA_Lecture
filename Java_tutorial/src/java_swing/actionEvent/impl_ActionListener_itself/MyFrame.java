@@ -40,10 +40,12 @@ public class MyFrame extends JFrame implements ActionListener {
 	
 	
 // 레이지 초기화
-	public void init() {		
+	public void init() {
 		this.cur_page_num = 1;
 		this.page = new CardPage();
 		this.add(page, BorderLayout.CENTER);
+		
+		this.setTitle("imple_ActionListener_itself");
 		
 		this.size_x = 900;
 		this.size_y = 450;
@@ -95,6 +97,7 @@ public class MyFrame extends JFrame implements ActionListener {
 				
 				if(this.cur_page_num == CardPage.TOTAL_PAGE_NUM) {
 					this.button_next.setText("종료");
+					this.button_previous.setEnabled(false);
 				}
 			}
 			break;
@@ -108,10 +111,7 @@ public class MyFrame extends JFrame implements ActionListener {
 				
 			} else {
 				this.page.get_layout().previous(this.page);
-				
-				if(this.cur_page_num < CardPage.TOTAL_PAGE_NUM) {
-					this.button_next.setText("다음");
-				}
+			
 			}
 			break;
 		// end case "이전":
