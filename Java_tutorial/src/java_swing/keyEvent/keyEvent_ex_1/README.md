@@ -6,11 +6,14 @@
 
 ``keyListener`` 인터페이스는 총 3개의 추상 메소드를 가진다.
 
-	1. ``keyTyped(KeyEvent e)``		: 사용자가 (아무)키를 입력했을 떄 호출 (KeyEvent의 상수값 ``keycode``는 가져오지 못한다.
+	1. ``keyTyped(KeyEvent e)``
+		:사용자가 (아무)키를 입력했을 떄 호출 (KeyEvent의 상수값 ``keycode``는 가져오지 못한다.
 	
-	1. ``keyPressed(KeyEvent e)``	: 사용자가 키를 눌렀을 때 호출
+	1. ``keyPressed(KeyEvent e)``
+		: 사용자가 키를 눌렀을 때 호출
 	
-	1. ``keyReleased(keyEvent e)``	: 사용자가 키에서 손을 뗐을 때 호출
+	1. ``keyReleased(keyEvent e)``
+		: 사용자가 키에서 손을 뗐을 때 호출
 	
 ---
 
