@@ -23,5 +23,6 @@
 	
 	2. ``int getKeyCode()``			: ``KeyEvent``객체에 있는 ``키코드(keycode)``를 반환한다. - ``VK_키``
 	
-	3. ``boolean isActionKey()``	: 이벤트를 발생시킨 객체(e)가 액션키일 때 ``true``를 반환한다.
-	(액션키란, ``Paste``, ``Page Up``, ``Caps Lock``, ``화살표``, ``function key``를 의미한다)
+	3. ``boolean isActionKey()``	: 
+		이벤트를 발생시킨 객체(e)가 액션키일 때 ``true``를 반환한다.
+		(액션키란, ``Paste``, ``Page Up``, ``Caps Lock``, ``화살표``, ``function key``를 의미한다)
