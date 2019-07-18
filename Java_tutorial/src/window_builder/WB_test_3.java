@@ -15,5 +15,4 @@ public class WB_test_3 extends JFrame {
 		getContentPane().add(textField, BorderLayout.WEST);
 		textField.setColumns(10);
 	}
-
 }
