@@ -19,3 +19,17 @@
 	(new 연산자는 컴파일 시에 자료형을 정확히 알아야 하기 때문이다)
 	
 	1. instanceof 연산자 역시, new 연산자와 동일한 이유로 타입변수(Generics)를 사용할 수 없다.
+	
+:camle:[Top](#generics_1)
+	
+---
+
+* [FruitBoxEx1](#fruitboxex1)
+
+---
+
+### FruitBoxEx1
+
+Generic 예제_1
+
+:camel:[Top](#generics_1)
