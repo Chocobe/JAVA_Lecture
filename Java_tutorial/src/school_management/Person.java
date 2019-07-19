@@ -5,6 +5,7 @@ import static java.lang.System.out;
 
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 abstract public class Person {
 	private String name;		// 이름
 	private String address;		// 주소

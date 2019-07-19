@@ -4,6 +4,7 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 import java.awt.BorderLayout;
 
+@SuppressWarnings("serial")
 public class WB_test_3 extends JFrame {
 	private JTextField textField;
 	public WB_test_3() {
