@@ -1,6 +1,5 @@
 package window_builder;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,6 +9,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
+
+@SuppressWarnings("serial")
 public class WB_test_2 extends JFrame {
 
 	private JPanel contentPane;

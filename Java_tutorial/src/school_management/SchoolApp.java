@@ -5,9 +5,9 @@ import static java.lang.System.out;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 public class SchoolApp {	
 	public static void main(String[] args) {	
-		SchoolApp app = new SchoolApp();
 		Scanner scanner = new Scanner(System.in);
 		School_service school_service = new School_service();
 		

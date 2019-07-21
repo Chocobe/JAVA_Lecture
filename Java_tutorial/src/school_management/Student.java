@@ -4,6 +4,7 @@ import static java.lang.System.out;
 
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 public class Student extends Person {
 	private String id;			// 학번
 	private String class_name;	// 학급

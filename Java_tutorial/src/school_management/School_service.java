@@ -5,6 +5,7 @@ import static java.lang.System.out;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 public class School_service {
 	private Person[] p = new Person[30];	// 객체를 저장할 공간
 	private int count;						// 저장된 데이터 개수

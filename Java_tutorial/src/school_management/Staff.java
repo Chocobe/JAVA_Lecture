@@ -4,6 +4,7 @@ import static java.lang.System.out;
 
 import java.util.Scanner;
 
+@SuppressWarnings("resource")
 public class Staff extends Person {
 	private String id;			// 사번
 	private String department;	// 부서
