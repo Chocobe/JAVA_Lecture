@@ -1,6 +1,7 @@
 package school_management;
 
 // 콘솔 출력용 코드 System.를 생략하기 위한 import
+
 import static java.lang.System.out;
 
 import java.util.Scanner;
@@ -46,7 +47,7 @@ abstract public class Person {
 	
 	
 // id
-	public abstract void set_id(String _id); 	
+	public abstract void set_id(String _id);
 	public abstract String get_id();
 // id
 	

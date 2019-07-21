@@ -14,6 +14,7 @@ public class Student extends Person {
 		this("N/A", "N/A", "N/A", "N/A");
 	}
 	
+	
 	public Student(
 			String _name, String _address, String _id, String _class_name) {
 		super(_name, _address);
@@ -28,6 +29,7 @@ public class Student extends Person {
 	public String get_id() {
 		return this.id;
 	}
+	
 	
 	@Override
 	public void set_id(String _id) {

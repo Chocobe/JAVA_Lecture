@@ -7,8 +7,7 @@ import java.util.Scanner;
 
 public class School_service {
 	private Person[] p = new Person[30];	// 객체를 저장할 공간
-	private int count;						// 배열의 인덱스로 사용될 변수
-	
+	private int count;						// 저장된 데이터 개수
 	
 	public Person[] get_person() {
 		return this.p;
@@ -44,10 +43,10 @@ public class School_service {
 		
 		outer : while(true) {
 			this.subMenu();
-			
+
 			try {
 				no = scanner.nextInt();
-				
+
 			} catch(InputMismatchException e) {
 				System.out.println("정수로 입력하세요");
 				return;
@@ -97,7 +96,7 @@ public class School_service {
 			
 			temp_arr[cur_len] = _person;
 			this.p = temp_arr;
-		}
+		}		
 	}
 	
 	
