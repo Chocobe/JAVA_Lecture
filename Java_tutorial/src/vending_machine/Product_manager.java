@@ -25,12 +25,12 @@ public final class Product_manager {
 // 생성자
 	private Product_manager() {
 		
-		this.soda_drink = new HashMap<String, Product>();
-		this.sports_drink = new HashMap<String, Product>();
-		this.hot_coffee = new HashMap<String, Product>();
-		this.ice_coffee = new HashMap<String, Product>();
+		this.soda_drink 	= new HashMap<String, Product>();
+		this.sports_drink 	= new HashMap<String, Product>();
+		this.hot_coffee 	= new HashMap<String, Product>();
+		this.ice_coffee 	= new HashMap<String, Product>();
 		
-		this.total_product = new ArrayList<HashMap<String, Product>>();
+		this.total_product 	= new ArrayList<HashMap<String, Product>>();
 		this.total_product.add(this.soda_drink);
 		this.total_product.add(this.sports_drink);
 		this.total_product.add(this.hot_coffee);
