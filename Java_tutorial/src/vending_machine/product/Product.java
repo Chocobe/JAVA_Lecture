@@ -1,6 +1,6 @@
 package vending_machine.product;
 
-public abstract class Product {
+public class Product {
 	private String name;
 	private int origin_price;
 	private int sales_price;
@@ -55,7 +55,9 @@ public abstract class Product {
 		return this.kind_type;
 	}
 	
-	public abstract void set_kind_type();
+	public void set_kind_type(String _kind_type) {
+		this.kind_type = _kind_type;
+	}
 	
 	
 // remain_number
