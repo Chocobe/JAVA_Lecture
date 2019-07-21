@@ -1,6 +1,6 @@
 package vending_machine.product;
 
-public class Hot_coffee extends Product implements IHot, ICoffee {
+public final class Hot_coffee extends Product implements IHot, ICoffee {
 	
 // 생성자
 	public Hot_coffee() {

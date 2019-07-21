@@ -6,11 +6,14 @@ import java.util.Iterator;
 
 import vending_machine.product.Hot_coffee;
 import vending_machine.product.Ice_coffee;
+import vending_machine.product.NotEnoughProductException;
 import vending_machine.product.Product;
 import vending_machine.product.Soda_drink;
 import vending_machine.product.Sports_drink;
 
-public class Product_manager {
+public final class Product_manager {
+	private static Product_manager manager = new Product_manager();
+	
 	private HashMap<String, Product> soda_drink;
 	private HashMap<String, Product> sports_drink;
 	private HashMap<String, Product> hot_coffee;
@@ -20,7 +23,8 @@ public class Product_manager {
 	
 	
 // 생성자
-	public Product_manager() {
+	private Product_manager() {
+		
 		this.soda_drink = new HashMap<String, Product>();
 		this.sports_drink = new HashMap<String, Product>();
 		this.hot_coffee = new HashMap<String, Product>();
@@ -34,7 +38,13 @@ public class Product_manager {
 	}
 	
 	
-	// 상품 추가
+// 싱글톤 페턴
+	public static Product_manager get_manager() {
+		return Product_manager.manager;
+	}
+	
+	
+// 상품 추가
 	public <T extends Product> boolean insert_product(T _product) {
 		String product_name = _product.get_name();
 		int before_data_num = 0;
@@ -89,10 +99,10 @@ public class Product_manager {
 	}
 	
 	
-	// 상품 삭제
+// 상품 삭제
 	public boolean delete_product(String _name) {
 		boolean operation_result = false;
-		Product cur_product = this.find_product(_name);
+		Product cur_product = this.get_product(_name);
 		String cur_product_name = cur_product.get_name();
 		
 		if(cur_product != null) {
@@ -124,8 +134,8 @@ public class Product_manager {
 	}
 	
 	
-	// 상품 검색
-	public Product find_product(String _name) {
+// 상품 검색
+	public Product get_product(String _name) {
 		Product cur_product = null;
 		Iterator<HashMap<String, Product>> iterator = this.total_product.iterator();
 		
@@ -138,6 +148,36 @@ public class Product_manager {
 		}// end while()
 		
 		return cur_product;
+	}
+	
+	
+// 상품 판매
+	public void sales_product(String _name, int _sales_number) {
+		Product cur_product = this.get_product(_name);
+		
+		if(cur_product != null) {
+			try {
+				cur_product.sales_product(_sales_number);
+				
+			} catch(NotEnoughProductException e) {
+				System.err.println(e.getMessage());
+			}
+		}
+	}
+	
+	
+// 상품 정보 출력
+	public void print_product_info(String _name) {
+		Product cur_product = this.get_product(_name);
+		
+		if(cur_product != null) {
+			System.out.println(cur_product.get_name());
+			System.out.println(cur_product.get_kind_type());
+			System.out.println(cur_product.get_origin_price());
+			System.out.println(cur_product.get_sales_price());
+			System.out.println(cur_product.get_profit());
+			System.out.println(cur_product.get_remain_number());
+		}
 	}
 }
 

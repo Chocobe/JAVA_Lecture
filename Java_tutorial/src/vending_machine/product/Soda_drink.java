@@ -1,6 +1,6 @@
 package vending_machine.product;
 
-public class Soda_drink extends Product implements IDrink, ISoda {
+public final class Soda_drink extends Product implements IDrink, ISoda {
 	
 // 생성자
 	public Soda_drink() {

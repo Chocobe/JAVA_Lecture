@@ -44,9 +44,19 @@ public abstract class Product {
 		return this.profit;
 	}
 	
-	public void add_profit(int _sales_number) {
+	public void sales_product(int _sales_number) throws NotEnoughProductException {
+		if(_sales_number > this.get_remain_number()) {
+			throw new NotEnoughProductException(
+					this.get_name() + 
+					"의 재고량이 부족합니다" +
+					" (재고량 : " +
+					this.get_remain_number() +
+					")");
+		}
+		
 		int profit = this.get_sales_price() - this.get_origin_price();
 		this.profit += profit * _sales_number;
+		this.sub_product(_sales_number);
 	}
 	
 	
@@ -69,5 +79,9 @@ public abstract class Product {
 	
 	public void supply_product(int _number) {
 		this.remain_number += _number;
+	}
+	
+	private void sub_product(int _number) {
+		this.remain_number -= _number;
 	}
 }

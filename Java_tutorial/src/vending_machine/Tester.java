@@ -1,29 +1,49 @@
 package vending_machine;
 
-import java.util.HashMap;
+import vending_machine.product.Hot_coffee;
+import vending_machine.product.NotEnoughProductException;
+import vending_machine.product.Product;
 
-import vending_machine.product.Ice_coffee;
-
-
-
-public class Tester {
-	enum tester {
-		test_1, test_2
-	}
-	
+public class Tester {	
 	public static void main(String[] args) {
-		HashMap<String, Ice_coffee> product = new HashMap<String, Ice_coffee>();
-		Ice_coffee ice = new Ice_coffee();
+		Product_manager manager = Product_manager.get_manager();
 		
-		product.put("americano", ice);
-		product.put("americano", ice);
-		System.out.println("개수 : " + product.size());
-		System.out.println(product.get("americano").get_kind_type());
+		Hot_coffee hot_1 = new Hot_coffee();
+		hot_1.set_name("milk tee");
+		hot_1.set_origin_price(1000);
+		hot_1.set_sales_price(2000);
+		hot_1.supply_product(10);
 		
+		manager.insert_product(hot_1);
 		
-		product.put("americano", ice);
-		System.out.println("개수 : " + product.size());
+		try {
+			manager.get_product("milk tee").sales_product(11);
+			
+		} catch(NotEnoughProductException e) {
+			System.err.println(e.getMessage());
+		}
 		
-		System.out.println(product.get("s"));
+		try {
+			manager.get_product("milk tee").sales_product(9);
+			
+		} catch(NotEnoughProductException e) {
+			System.err.println(e.getMessage());
+		}
+		
+		System.out.println("-------------------------");
+		Product cur_product = manager.get_product("milk tee");
+		System.out.println(cur_product.get_name());
+		System.out.println(cur_product.get_kind_type());
+		System.out.println(cur_product.get_origin_price());
+		System.out.println(cur_product.get_sales_price());
+		System.out.println(cur_product.get_profit());
+		System.out.println(cur_product.get_remain_number());
+		System.out.println("-------------------------");
+		
+		manager.sales_product("milk tee", 2);
+		
+		manager.print_product_info("milk tee");
+		
+		System.out.println("프로그램 종료");
 	}
 }
