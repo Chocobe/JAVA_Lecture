@@ -1,4 +1,4 @@
-package vending_machine.product;
+package project_convenience_store.product;
 
 @SuppressWarnings("serial")
 public class NotEnoughProductException extends RuntimeException {

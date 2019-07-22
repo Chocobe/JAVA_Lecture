@@ -1,26 +1,26 @@
-package vending_machine.product;
+package project_convenience_store.product;
 
-public final class Soda_drink extends Product implements IDrink, ISoda {
+public final class Ice_coffee extends Product implements IIce, ICoffee {
 	
 // 생성자
-	public Soda_drink() {
+	public Ice_coffee() {
 		this.set_kind_type();
 	}
-	
+
 	
 // main_sort
 	@Override
 	public String get_main_sort() {
 		return MAIN_SORT;
 	}
+
 	
-	
-// sub_sort	
+// sub_sort
 	@Override
 	public String get_sub_sort() {
 		return SUB_SORT;
 	}
-	
+
 	
 // kind_type
 	@Override
@@ -28,4 +28,5 @@ public final class Soda_drink extends Product implements IDrink, ISoda {
 		String kind_type = this.get_sub_sort() + " " + this.get_main_sort();
 		super.set_kind_type(kind_type);
 	}
+
 }

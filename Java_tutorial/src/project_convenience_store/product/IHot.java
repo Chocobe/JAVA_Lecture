@@ -1,4 +1,4 @@
-package vending_machine.product;
+package project_convenience_store.product;
 
 public interface IHot {
 	public final static String SUB_SORT = Sub_sort_type.HOT.toString();

@@ -1,4 +1,4 @@
-package vending_machine.product;
+package project_convenience_store.product;
 
 public final class Hot_coffee extends Product implements IHot, ICoffee {
 	

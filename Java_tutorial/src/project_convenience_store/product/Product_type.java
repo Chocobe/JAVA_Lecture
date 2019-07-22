@@ -1,4 +1,4 @@
-package vending_machine.product;
+package project_convenience_store.product;
 
 public enum Product_type {
 	SODA_DRINK,

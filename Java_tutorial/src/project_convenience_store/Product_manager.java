@@ -1,16 +1,17 @@
-package vending_machine;
+package project_convenience_store;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-import vending_machine.product.Hot_coffee;
-import vending_machine.product.Ice_coffee;
-import vending_machine.product.NotEnoughProductException;
-import vending_machine.product.Product;
-import vending_machine.product.Product_type;
-import vending_machine.product.Soda_drink;
-import vending_machine.product.Sports_drink;
+import project_convenience_store.product.Hot_coffee;
+import project_convenience_store.product.Ice_coffee;
+import project_convenience_store.product.NotEnoughProductException;
+import project_convenience_store.product.Product;
+import project_convenience_store.product.Product_type;
+import project_convenience_store.product.Soda_drink;
+import project_convenience_store.product.Sports_drink;
+
 
 public final class Product_manager {
 	private static Product_manager manager = new Product_manager();

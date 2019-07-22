@@ -1,9 +1,9 @@
-package vending_machine;
+package project_convenience_store;
 
-import vending_machine.gui.Intro_frame;
-import vending_machine.product.Hot_coffee;
-import vending_machine.product.NotEnoughProductException;
-import vending_machine.product.Product;
+import project_convenience_store.gui.Intro_frame;
+import project_convenience_store.product.Hot_coffee;
+import project_convenience_store.product.NotEnoughProductException;
+import project_convenience_store.product.Product;
 
 
 public class Tester {	
@@ -48,6 +48,7 @@ public class Tester {
 		
 		System.out.println("-----------------------------");
 		
+		@SuppressWarnings("unused")
 		Intro_frame intro = new Intro_frame();
 	}
 }
