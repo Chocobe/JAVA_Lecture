@@ -1,8 +1,10 @@
 package vending_machine;
 
+import vending_machine.gui.Intro_frame;
 import vending_machine.product.Hot_coffee;
 import vending_machine.product.NotEnoughProductException;
 import vending_machine.product.Product;
+
 
 public class Tester {	
 	public static void main(String[] args) {
@@ -44,6 +46,8 @@ public class Tester {
 		
 		manager.print_product_info("milk tee");
 		
-		System.out.println("프로그램 종료");
+		System.out.println("-----------------------------");
+		
+		Intro_frame intro = new Intro_frame();
 	}
 }
