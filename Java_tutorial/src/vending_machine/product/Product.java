@@ -81,7 +81,7 @@ public abstract class Product {
 		this.remain_number += _number;
 	}
 	
-	private void sub_product(int _number) {
-		this.remain_number -= _number;
+	private void sub_product(int _sales_number) {
+		this.remain_number -= _sales_number;
 	}
 }
