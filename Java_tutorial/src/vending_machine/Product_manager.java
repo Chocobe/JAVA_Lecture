@@ -8,6 +8,7 @@ import vending_machine.product.Hot_coffee;
 import vending_machine.product.Ice_coffee;
 import vending_machine.product.NotEnoughProductException;
 import vending_machine.product.Product;
+import vending_machine.product.Product_type;
 import vending_machine.product.Soda_drink;
 import vending_machine.product.Sports_drink;
 
@@ -19,7 +20,7 @@ public final class Product_manager {
 	private HashMap<String, Product> hot_coffee;
 	private HashMap<String, Product> ice_coffee;
 	
-	private ArrayList<HashMap<String, Product>> total_product;
+	private ArrayList<HashMap<String, Product>> all_product;
 	
 	
 // 생성자
@@ -30,11 +31,11 @@ public final class Product_manager {
 		this.hot_coffee 	= new HashMap<String, Product>();
 		this.ice_coffee 	= new HashMap<String, Product>();
 		
-		this.total_product 	= new ArrayList<HashMap<String, Product>>();
-		this.total_product.add(this.soda_drink);
-		this.total_product.add(this.sports_drink);
-		this.total_product.add(this.hot_coffee);
-		this.total_product.add(this.ice_coffee);
+		this.all_product 	= new ArrayList<HashMap<String, Product>>();
+		this.all_product.add(this.soda_drink);
+		this.all_product.add(this.sports_drink);
+		this.all_product.add(this.hot_coffee);
+		this.all_product.add(this.ice_coffee);
 	}
 	
 	
@@ -47,48 +48,48 @@ public final class Product_manager {
 // 상품 추가
 	public <T extends Product> boolean insert_product(T _product) {
 		String product_name = _product.get_name();
-		int before_data_num = 0;
+		int before_total_data_num = 0;
 		boolean operation_result = false;
 		
 		if(_product instanceof Soda_drink) {
-			before_data_num = this.soda_drink.size();
+			before_total_data_num = this.soda_drink.size();
 			this.soda_drink.put(product_name, (Soda_drink)_product);
 			
-			if(this.soda_drink.size() > before_data_num) {
-				this.total_product.get(
+			if(this.soda_drink.size() > before_total_data_num) {
+				this.all_product.get(
 						Product_type.SODA_DRINK.ordinal()).put(product_name, _product);
 				
 				operation_result = true;
 			}// end if
 			
 		} else if(_product instanceof Sports_drink) {
-			before_data_num = this.sports_drink.size();			
+			before_total_data_num = this.sports_drink.size();			
 			this.sports_drink.put(product_name, (Sports_drink)_product);
 			
-			if(this.sports_drink.size() > before_data_num) {
-				this.total_product.get(
+			if(this.sports_drink.size() > before_total_data_num) {
+				this.all_product.get(
 						Product_type.SPORTS_DRINK.ordinal()).put(product_name, _product);
 				
 				operation_result = true;
 			}// end if
 			
 		} else if(_product instanceof Hot_coffee) {
-			before_data_num = this.hot_coffee.size();
+			before_total_data_num = this.hot_coffee.size();
 			this.hot_coffee.put(product_name, (Hot_coffee)_product);
 			
-			if(this.hot_coffee.size() > before_data_num) {
-				this.total_product.get(
+			if(this.hot_coffee.size() > before_total_data_num) {
+				this.all_product.get(
 						Product_type.HOT_COFFEE.ordinal()).put(product_name, _product);
 				
 				operation_result = true;
 			}// end if
 			
 		} else if(_product instanceof Ice_coffee) {
-			before_data_num = this.ice_coffee.size();
+			before_total_data_num = this.ice_coffee.size();
 			this.ice_coffee.put(product_name, (Ice_coffee)_product);
 			
-			if(this.ice_coffee.size() > before_data_num) {
-				this.total_product.get(
+			if(this.ice_coffee.size() > before_total_data_num) {
+				this.all_product.get(
 						Product_type.ICE_COFFEE.ordinal()).put(product_name, _product);
 				
 				operation_result = true;
@@ -108,27 +109,27 @@ public final class Product_manager {
 		if(cur_product != null) {
 			if(cur_product instanceof Soda_drink) {
 				this.soda_drink.remove(cur_product_name);
-				this.total_product.get(
+				this.all_product.get(
 						Product_type.SODA_DRINK.ordinal()).remove(cur_product_name);
 				
 			} else if(cur_product instanceof Sports_drink) {
 				this.sports_drink.remove(cur_product_name);
-				this.total_product.get(
+				this.all_product.get(
 						Product_type.SPORTS_DRINK.ordinal()).remove(cur_product_name);
 				
 			} else if(cur_product instanceof Hot_coffee) {
 				this.hot_coffee.remove(cur_product_name);
-				this.total_product.get(
+				this.all_product.get(
 						Product_type.HOT_COFFEE.ordinal()).remove(cur_product_name);
 				
 			} else if(cur_product instanceof Ice_coffee) {
 				this.ice_coffee.remove(cur_product_name);
-				this.total_product.get(
+				this.all_product.get(
 						Product_type.ICE_COFFEE.ordinal()).remove(cur_product_name);
-			}
+			}// end if ~ else
 			
 			operation_result = true;
-		}
+		}// end if
 		
 		return operation_result;
 	}
@@ -137,7 +138,7 @@ public final class Product_manager {
 // 상품 검색
 	public Product get_product(String _name) {
 		Product cur_product = null;
-		Iterator<HashMap<String, Product>> iterator = this.total_product.iterator();
+		Iterator<HashMap<String, Product>> iterator = this.all_product.iterator();
 		
 		while(iterator.hasNext()) {
 			cur_product = iterator.next().get(_name);
@@ -180,21 +181,3 @@ public final class Product_manager {
 		}
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
