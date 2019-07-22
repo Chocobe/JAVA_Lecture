@@ -1,6 +1,6 @@
 package project_convenience_store;
 
-import project_convenience_store.gui.Intro_frame;
+import project_convenience_store.gui.Main_frame;
 import project_convenience_store.product.Hot_coffee;
 import project_convenience_store.product.NotEnoughProductException;
 import project_convenience_store.product.Product;
@@ -49,6 +49,6 @@ public class Tester {
 		System.out.println("-----------------------------");
 		
 		@SuppressWarnings("unused")
-		Intro_frame intro = new Intro_frame();
+		Main_frame frame = new Main_frame();
 	}
 }

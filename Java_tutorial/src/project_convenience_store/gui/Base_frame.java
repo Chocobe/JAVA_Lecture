@@ -1,16 +1,11 @@
 package project_convenience_store.gui;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public abstract class Base_frame extends JFrame {
@@ -21,25 +16,29 @@ public abstract class Base_frame extends JFrame {
 	private Dimension dim_window;
 	
 	private int location_x;
-	private int location_y;
-
-	protected static ActionListener action_listener;
-	protected static JPanel north_panel;
-	protected static JButton button_main;
-	protected static JButton button_manager;
+	private int location_y;	
 	
-
+	private Base_north_panel north_panel;
 	
+	public static Font font;
 	
 // 클래스 변수 초기화
 	static {
-		size_x = 700;
-		size_y = 500;
+		size_x = 1000;
+		size_y = 700;
+		font = new Font(null, Font.PLAIN, 25); 
 	}
 	
 	
 // 생성자
 	protected Base_frame() {
+		super();
+		this.init_frame();
+		this.init_component();
+	}
+	
+	
+	private void init_frame() {
 		this.setSize(Base_frame.size_x, Base_frame.size_y);
 		
 		Toolkit kit = Toolkit.getDefaultToolkit();
@@ -54,59 +53,17 @@ public abstract class Base_frame extends JFrame {
 		this.setLocation(this.location_x, this.location_y);
 		
 		this.setLayout(new BorderLayout());
-		
-		this.init_north_component();
-		this.init_center_component();		
+		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		this.setResizable(false);
 	}
 	
 	
-	protected abstract void set_default_close_operation();
 	protected abstract void set_frame_title();
 	
 	
-	private void init_north_component() {
-		Base_frame.action_listener = new Main_menu_action_listener();
-		
-		Base_frame.button_main = new JButton("Main");
-		Base_frame.button_main.addActionListener(Base_frame.action_listener);
-		Base_frame.button_main.setEnabled(false);
-		
-		Base_frame.button_manager = new JButton("Manager");
-		Base_frame.button_manager.addActionListener(Base_frame.action_listener);
-		
-		Base_frame.north_panel = new JPanel();
-		Base_frame.north_panel.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 10));
-		Base_frame.north_panel.add(Base_frame.button_main);
-		Base_frame.north_panel.add(Base_frame.button_manager);
-		
-		// test
-		Base_frame.north_panel.setBackground(Color.LIGHT_GRAY);
-		
-		this.add(Base_frame.north_panel, BorderLayout.NORTH);
-	}
-	
-	
-	private void init_center_component() {
-		
-	}
-	
-	
-	class Main_menu_action_listener implements ActionListener {
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			String command = e.getActionCommand();
-			
-			switch(command) {
-			case "Main":
-				System.out.println("Main 버튼 누름");
-				break;
-				
-			case "Manager":
-				System.out.println("Manager 버튼 누름");
-				break;
-			}
-		}
+	private void init_component() {
+		this.north_panel = new Base_north_panel();
+		this.add(this.north_panel, BorderLayout.NORTH);
 	}
 }
