@@ -21,7 +21,7 @@
 	1. instanceof 연산자 역시, new 연산자와 동일한 이유로 타입변수(Generics)를 사용할 수 없다.
 	
 :camle:[Top](#generics_1)
-	
+
 ---
 
 * [FruitBoxEx1](#fruitboxex1)
