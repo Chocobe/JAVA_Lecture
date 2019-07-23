@@ -54,6 +54,8 @@ public class Main_center_panel extends JPanel {
 		
 		this.init_main_panel();
 		
+		this.add_main_attribute();
+		
 		this.visible_main_panel();
 	}
 	
@@ -162,21 +164,23 @@ public class Main_center_panel extends JPanel {
 	}
 	
 	
+//
+// JLabel ->> JTextField 변경하기
 // 메인 속성 라벨 생성
 	public void add_main_attribute() {
 		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
 		
-		JLabel temp_name = new JLabel("초코비", JLabel.LEFT);
+		JLabel temp_name = new JLabel("", JLabel.LEFT);
 		temp_name.setFont(this.font);
 		temp_name.setPreferredSize(this.dim_name);
 		temp_name.setBorder(this.border_attribute);
 		
-		JLabel temp_number = new JLabel("3000 원", JLabel.RIGHT);
+		JLabel temp_number = new JLabel("", JLabel.RIGHT);
 		temp_number.setFont(this.font);
 		temp_number.setPreferredSize(this.dim_others);
 		temp_number.setBorder(this.border_attribute);
 		
-		JLabel temp_price = new JLabel("25000 원", JLabel.RIGHT);
+		JLabel temp_price = new JLabel("", JLabel.RIGHT);
 		temp_price.setFont(this.font);
 		temp_price.setPreferredSize(this.dim_others);
 		temp_price.setBorder(this.border_attribute);
@@ -193,27 +197,27 @@ public class Main_center_panel extends JPanel {
 	public void add_manage_attribute() {
 		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
 		
-		JLabel temp_name = new JLabel("Chocobe", JLabel.LEFT);
+		JLabel temp_name = new JLabel("", JLabel.LEFT);
 		temp_name.setFont(this.font);
 		temp_name.setPreferredSize(this.dim_name);
 		temp_name.setBorder(this.border_attribute);
 		
-		JLabel temp_origin_price = new JLabel("3000", JLabel.RIGHT);
+		JLabel temp_origin_price = new JLabel("", JLabel.RIGHT);
 		temp_origin_price.setFont(this.font);
 		temp_origin_price.setPreferredSize(this.dim_others);
 		temp_origin_price.setBorder(this.border_attribute);
 		
-		JLabel temp_sales_price = new JLabel("40000", JLabel.RIGHT);
+		JLabel temp_sales_price = new JLabel("", JLabel.RIGHT);
 		temp_sales_price.setFont(this.font);
 		temp_sales_price.setPreferredSize(this.dim_others);
 		temp_sales_price.setBorder(this.border_attribute);
 		
-		JLabel temp_profit = new JLabel("100000", JLabel.RIGHT);
+		JLabel temp_profit = new JLabel("", JLabel.RIGHT);
 		temp_profit.setFont(this.font);
 		temp_profit.setPreferredSize(this.dim_others);
 		temp_profit.setBorder(this.border_attribute);
 		
-		JLabel temp_number = new JLabel("1234", JLabel.RIGHT);
+		JLabel temp_number = new JLabel("", JLabel.RIGHT);
 		temp_number.setFont(this.font);
 		temp_number.setPreferredSize(this.dim_others);
 		temp_number.setBorder(this.border_attribute);
@@ -225,5 +229,21 @@ public class Main_center_panel extends JPanel {
 		temp_panel.add(temp_number);
 		
 		this.add(temp_panel);
+	}
+	
+	
+// 메인 패널로 전환
+	public void change_to_main_panel() {
+		this.removeAll();
+		this.init_main_panel();
+		repaint();
+	}
+	
+	
+// 관리 패널로 전환
+	public void change_to_manage_panel() {
+		this.removeAll();
+		this.init_manage_panel();
+		repaint();
 	}
 }

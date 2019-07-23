@@ -24,7 +24,10 @@ public class Main_east_panel extends JPanel {
 	
 	private JLabel manage_title;
 	private JButton button_totalization;
+	
+// 신규 기능 지우기
 	private JButton button_new_product;
+//
 	
 	private ActionListener action_listener;
 	

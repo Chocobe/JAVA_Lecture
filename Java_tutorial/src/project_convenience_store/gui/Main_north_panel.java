@@ -83,14 +83,19 @@ public class Main_north_panel extends JPanel {
 				case "Main":
 					System.out.println("Main 누름");
 					button_manage_enable();
+					Main_frame.get_main_frame().center_panel.change_to_main_panel();
+					
 					Main_frame.get_main_frame().east_panel.visible_main_panel();
 					Main_frame.get_main_frame().center_panel.visible_main_panel();
 					Main_frame.get_main_frame().center_panel.add_main_attribute();
+					
 					break;
 					
 				case "Manage":
 					System.out.println("Manage 누름");
 					button_main_enable();
+					Main_frame.get_main_frame().center_panel.change_to_manage_panel();
+					
 					Main_frame.get_main_frame().east_panel.visible_manage_panel();
 					Main_frame.get_main_frame().center_panel.visible_manage_panel();
 					Main_frame.get_main_frame().center_panel.add_manage_attribute();
