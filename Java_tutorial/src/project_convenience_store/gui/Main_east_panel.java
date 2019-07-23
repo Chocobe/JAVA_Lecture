@@ -28,7 +28,7 @@ public class Main_east_panel extends JPanel {
 // 신규 기능 지우기
 	private JButton button_new_product;
 //
-	
+	@SuppressWarnings("unused")
 	private ActionListener action_listener;
 	
 	private Font font;
@@ -81,7 +81,7 @@ public class Main_east_panel extends JPanel {
 		this.button_totalization.setFont(this.font);
 		// addActionListener
 		
-		this.button_new_product = new JButton("신규");
+		this.button_new_product = new JButton("보충");
 		this.button_new_product.setFont(font);
 		// addActionListener
 		
@@ -95,14 +95,14 @@ public class Main_east_panel extends JPanel {
 	}
 	
 	
-	public void visible_main_panel() {
+	public void change_to_main_mode() {
 		this.main_panel.setVisible(true);
 		this.manage_panel.setVisible(false);
 		System.out.println("visible_main_panel 동작");
 	}
 	
 	
-	public void visible_manage_panel() {
+	public void change_to_manage_mode() {
 		this.manage_panel.setVisible(true);
 		this.main_panel.setVisible(false);
 		System.out.println("visible_manage_panel 동작");

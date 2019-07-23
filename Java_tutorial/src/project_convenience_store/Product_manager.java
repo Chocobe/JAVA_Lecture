@@ -168,6 +168,12 @@ public final class Product_manager {
 	}
 	
 	
+// 전체 데이터 출력
+	public ArrayList<HashMap<String, Product>> get_all_product() {
+		return this.all_product;
+	}
+	
+	
 // 상품 정보 출력
 	public void print_product_info(String _name) {
 		Product cur_product = this.get_product(_name);

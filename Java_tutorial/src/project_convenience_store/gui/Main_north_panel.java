@@ -1,5 +1,7 @@
 package project_convenience_store.gui;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -14,17 +16,22 @@ public class Main_north_panel extends JPanel {
 	
 	private JButton button_main;
 	private JButton button_manage;
+	
+	private JPanel store_name_panel;
 	private JLabel store_name;
 	
 	private ActionListener action_listener;
 	
 	private Font font_menu;
+	private Font font_store_name;
 	
 // 생성자
 	public Main_north_panel(Font _font_menu) {
 		super();
 
 		this.font_menu = _font_menu;
+		
+		this.font_store_name = new Font(null, Font.PLAIN, 18);
 		
 		this.setLayout(new FlowLayout(FlowLayout.LEFT, 20, 10));
 		
@@ -47,27 +54,30 @@ public class Main_north_panel extends JPanel {
 		this.button_manage.setFont(this.font_menu);
 		this.button_manage.addActionListener(this.action_listener);
 		
+		this.store_name = new JLabel("<ZS25 서면점>");
+		this.store_name.setFont(this.font_store_name);
+		this.store_name_panel = new JPanel(new BorderLayout());
+		this.store_name_panel.setPreferredSize(new Dimension(700, 20));
+		this.store_name_panel.add(this.store_name, BorderLayout.EAST);
 		
-		this.store_name = new JLabel("ZS25 서면점");
-		this.store_name.setFont(this.font_menu);
 		
 		this.add(this.button_main);
 		this.add(this.button_manage);
-		this.add(this.store_name);
+		this.add(this.store_name_panel);
 	}
 	
 	
 // 메인버튼 활성화
-	private void button_main_enable() {
-		this.button_main.setEnabled(true);
-		this.button_manage.setEnabled(false);
+	public void change_to_main_mode() {
+		this.button_main.setEnabled(false);
+		this.button_manage.setEnabled(true);
 	}
 	
 	
 // 메니저버튼 활성화
-	private void button_manage_enable() {
-		this.button_manage.setEnabled(true);
-		this.button_main.setEnabled(false);
+	public void change_to_manage_mode() {
+		this.button_main.setEnabled(true);
+		this.button_manage.setEnabled(false);
 	}
 	
 	
@@ -82,23 +92,13 @@ public class Main_north_panel extends JPanel {
 				switch(command) {
 				case "Main":
 					System.out.println("Main 누름");
-					button_manage_enable();
-					Main_frame.get_main_frame().center_panel.change_to_main_panel();
-					
-					Main_frame.get_main_frame().east_panel.visible_main_panel();
-					Main_frame.get_main_frame().center_panel.visible_main_panel();
-					Main_frame.get_main_frame().center_panel.add_main_attribute();
+					Main_frame.get_frame().change_to_main_mode();					
 					
 					break;
 					
 				case "Manage":
 					System.out.println("Manage 누름");
-					button_main_enable();
-					Main_frame.get_main_frame().center_panel.change_to_manage_panel();
-					
-					Main_frame.get_main_frame().east_panel.visible_manage_panel();
-					Main_frame.get_main_frame().center_panel.visible_manage_panel();
-					Main_frame.get_main_frame().center_panel.add_manage_attribute();
+					Main_frame.get_frame().change_to_manage_mode();					
 					
 					break;
 				}// end switch
