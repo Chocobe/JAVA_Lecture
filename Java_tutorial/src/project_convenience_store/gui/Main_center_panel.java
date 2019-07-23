@@ -1,11 +1,14 @@
 package project_convenience_store.gui;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 
 @SuppressWarnings("serial")
 public class Main_center_panel extends JPanel {
@@ -25,7 +28,16 @@ public class Main_center_panel extends JPanel {
 	public JLabel label_manage_profit;
 	
 	
+// label 길이
+	private Dimension dim_name;
+	private Dimension dim_others;
+	
+
+// 경계선
+	private Border border_field;
+	private Border border_attribute;
 	private Font font;
+	
 	
 // 생성자
 	public Main_center_panel(Font _font) {
@@ -48,52 +60,67 @@ public class Main_center_panel extends JPanel {
 
 // this 초기화
 	public void init_main() {
-		this.setPreferredSize(new Dimension(750, 500));
+		this.setPreferredSize(new Dimension(700, 500));
 		this.setLayout(new FlowLayout(FlowLayout.LEFT));
+		this.border_field = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLACK);
+		this.border_attribute = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK);
+		
+		this.dim_name = new Dimension(200, 21);
+		this.dim_others = new Dimension(120, 21);
+		
+		
 	}
 	
 	
 // 메인 필드 컴포넌트 초기화
 	private void init_main_field_component() {
-		this.main_field_panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		this.main_field_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
 		
-		this.label_main_name = new JLabel("상품명");
+		this.label_main_name = new JLabel("상품명", JLabel.LEFT);
 		this.label_main_name.setFont(this.font);
-		this.label_main_name.setPreferredSize(new Dimension(200, 20));
+		this.label_main_name.setPreferredSize(this.dim_name);
+		this.label_main_name.setBorder(border_field);
 		
-		this.label_main_sales_price = new JLabel("가 격");
+		this.label_main_sales_price = new JLabel("가 격", JLabel.RIGHT);
 		this.label_main_sales_price.setFont(this.font);
-		this.label_main_sales_price.setPreferredSize(new Dimension(120, 20));
+		this.label_main_sales_price.setPreferredSize(this.dim_others);
+		this.label_main_sales_price.setBorder(this.border_field);
 		
-		this.label_main_number = new JLabel("개 수");
+		this.label_main_number = new JLabel("개 수", JLabel.RIGHT);
 		this.label_main_number.setFont(this.font);
-		this.label_main_number.setPreferredSize(new Dimension(100, 20));
+		this.label_main_number.setPreferredSize(this.dim_others);
+		this.label_main_number.setBorder(this.border_field);
 	}
 	
 
 // 관리 필드 컴포넌트 초기화
 	private void init_manage_field_component() {
-		this.manage_field_panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+		this.manage_field_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
 		
-		this.label_manage_name = new JLabel("상품명");
+		this.label_manage_name = new JLabel("상품명", JLabel.LEFT);
 		this.label_manage_name.setFont(font);
-		this.label_manage_name.setPreferredSize(new Dimension(200, 20));
+		this.label_manage_name.setPreferredSize(this.dim_name);
+		this.label_manage_name.setBorder(this.border_field);
 		
-		this.label_manage_sales_price = new JLabel("판매가");
+		this.label_manage_sales_price = new JLabel("판매가", JLabel.RIGHT);
 		this.label_manage_sales_price.setFont(font);
-		this.label_manage_sales_price.setPreferredSize(new Dimension(150, 20));
+		this.label_manage_sales_price.setPreferredSize(this.dim_others);
+		this.label_manage_sales_price.setBorder(this.border_field);
 		
-		this.label_manage_origin_price = new JLabel("원 가");
+		this.label_manage_origin_price = new JLabel("원 가", JLabel.RIGHT);
 		this.label_manage_origin_price.setFont(this.font);
-		this.label_manage_origin_price.setPreferredSize(new Dimension(150, 20));
+		this.label_manage_origin_price.setPreferredSize(this.dim_others);
+		this.label_manage_origin_price.setBorder(this.border_field);
 		
-		this.label_manage_remain_number = new JLabel("재 고");
+		this.label_manage_remain_number = new JLabel("재 고", JLabel.RIGHT);
 		this.label_manage_remain_number.setFont(this.font);
-		this.label_manage_remain_number.setPreferredSize(new Dimension(120, 20));
+		this.label_manage_remain_number.setPreferredSize(this.dim_others);
+		this.label_manage_remain_number.setBorder(this.border_field);
 		
-		this.label_manage_profit = new JLabel("수익금");
+		this.label_manage_profit = new JLabel("수익금", JLabel.RIGHT);
 		this.label_manage_profit.setFont(this.font);
-		this.label_manage_profit.setPreferredSize(new Dimension(150, 20));
+		this.label_manage_profit.setPreferredSize(this.dim_others);
+		this.label_manage_profit.setBorder(this.border_field);
 	}
 	
 	
@@ -132,5 +159,71 @@ public class Main_center_panel extends JPanel {
 		this.main_field_panel.setVisible(false);
 		this.manage_field_panel.setVisible(true);
 		System.out.println("관리");
+	}
+	
+	
+// 메인 속성 라벨 생성
+	public void add_main_attribute() {
+		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
+		
+		JLabel temp_name = new JLabel("초코비", JLabel.LEFT);
+		temp_name.setFont(this.font);
+		temp_name.setPreferredSize(this.dim_name);
+		temp_name.setBorder(this.border_attribute);
+		
+		JLabel temp_number = new JLabel("3000 원", JLabel.RIGHT);
+		temp_number.setFont(this.font);
+		temp_number.setPreferredSize(this.dim_others);
+		temp_number.setBorder(this.border_attribute);
+		
+		JLabel temp_price = new JLabel("25000 원", JLabel.RIGHT);
+		temp_price.setFont(this.font);
+		temp_price.setPreferredSize(this.dim_others);
+		temp_price.setBorder(this.border_attribute);
+		
+		temp_panel.add(temp_name);
+		temp_panel.add(temp_number);
+		temp_panel.add(temp_price);
+		
+		this.add(temp_panel);
+	}
+	
+	
+// 관리 속성 라벨 생성
+	public void add_manage_attribute() {
+		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
+		
+		JLabel temp_name = new JLabel("Chocobe", JLabel.LEFT);
+		temp_name.setFont(this.font);
+		temp_name.setPreferredSize(this.dim_name);
+		temp_name.setBorder(this.border_attribute);
+		
+		JLabel temp_origin_price = new JLabel("3000", JLabel.RIGHT);
+		temp_origin_price.setFont(this.font);
+		temp_origin_price.setPreferredSize(this.dim_others);
+		temp_origin_price.setBorder(this.border_attribute);
+		
+		JLabel temp_sales_price = new JLabel("40000", JLabel.RIGHT);
+		temp_sales_price.setFont(this.font);
+		temp_sales_price.setPreferredSize(this.dim_others);
+		temp_sales_price.setBorder(this.border_attribute);
+		
+		JLabel temp_profit = new JLabel("100000", JLabel.RIGHT);
+		temp_profit.setFont(this.font);
+		temp_profit.setPreferredSize(this.dim_others);
+		temp_profit.setBorder(this.border_attribute);
+		
+		JLabel temp_number = new JLabel("1234", JLabel.RIGHT);
+		temp_number.setFont(this.font);
+		temp_number.setPreferredSize(this.dim_others);
+		temp_number.setBorder(this.border_attribute);
+		
+		temp_panel.add(temp_name);
+		temp_panel.add(temp_origin_price);
+		temp_panel.add(temp_sales_price);
+		temp_panel.add(temp_profit);
+		temp_panel.add(temp_number);
+		
+		this.add(temp_panel);
 	}
 }

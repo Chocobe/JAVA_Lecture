@@ -7,6 +7,7 @@ import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -38,7 +39,6 @@ public class Main_east_panel extends JPanel {
 		this.init_main_panel();
 		
 		this.init_manage_panel();
-	
 	}
 	
 	
