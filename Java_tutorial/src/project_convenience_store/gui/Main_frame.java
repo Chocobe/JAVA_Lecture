@@ -8,9 +8,11 @@ public class Main_frame extends Base_frame {
 	private static Main_frame main_frame = new Main_frame(); 	
 	
 	public Font font_menu;
+	public Font font_info;
 	
 	public Main_north_panel north_panel;
 	public Main_east_panel east_panel;
+	public Main_center_panel center_panel;
 	
 	private Main_frame() {
 		super();
@@ -21,6 +23,7 @@ public class Main_frame extends Base_frame {
 		
 		this.init_north_panel();
 		this.init_east_panel();
+		this.init_center_panel();
 		
 		this.setVisible(true);
 	}
@@ -33,6 +36,7 @@ public class Main_frame extends Base_frame {
 	
 	private void init_font() {
 		this.font_menu = new Font(null, Font.PLAIN, 25);
+		this.font_info = new Font(null, Font.PLAIN, 20);
 	}
 	
 	
@@ -49,7 +53,8 @@ public class Main_frame extends Base_frame {
 	
 	
 	private void init_center_panel() {
-		
+		this.center_panel = new Main_center_panel(this.font_info);
+		this.add(this.center_panel, BorderLayout.CENTER);
 	}
 	
 	

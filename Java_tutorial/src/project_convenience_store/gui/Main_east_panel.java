@@ -27,14 +27,13 @@ public class Main_east_panel extends JPanel {
 	
 	private ActionListener action_listener;
 	
-	private Font main_font;
+	private Font font;
 	
 // 생성자
 	public Main_east_panel(Font _font) {
 		super();
-		this.init_panel();
 		
-		this.main_font = _font;
+		this.font = _font;
 		
 		this.init_main_panel();
 		
@@ -43,26 +42,22 @@ public class Main_east_panel extends JPanel {
 	}
 	
 	
-// 패널 초기화
-	private void init_panel() {
-		this.setPreferredSize(new Dimension(200, 300));
-	}
-	
-	
 // 메인부 패널 초기화
 	private void init_main_panel() {
+		this.setPreferredSize(new Dimension(200, 300));
+		
 		this.main_title = new JLabel("    Total price    ");
-		this.main_title.setFont(this.main_font);
+		this.main_title.setFont(this.font);
 		
 		this.total_price = new JLabel("1111");
-		this.total_price.setFont(this.main_font);
+		this.total_price.setFont(this.font);
 		
 		this.total_price_panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
 		this.total_price_panel.setBackground(Color.LIGHT_GRAY);
 		this.total_price_panel.add(this.total_price);
 		
 		this.button_calc = new JButton("계산");
-		this.button_calc.setFont(this.main_font);
+		this.button_calc.setFont(this.font);
 		// button_calc.addActionListener
 		
 		this.main_panel = new JPanel(new GridLayout(0, 1, 20, 25));
@@ -77,14 +72,14 @@ public class Main_east_panel extends JPanel {
 // 관리부 패널 초기화
 	private void init_manage_panel() {
 		this.manage_title = new JLabel("Manager Mode");
-		this.manage_title.setFont(main_font);
+		this.manage_title.setFont(font);
 		
 		this.button_totalization = new JButton("정산");
-		this.button_totalization.setFont(this.main_font);
+		this.button_totalization.setFont(this.font);
 		// addActionListener
 		
 		this.button_new_product = new JButton("신규");
-		this.button_new_product.setFont(main_font);
+		this.button_new_product.setFont(font);
 		// addActionListener
 		
 		this.manage_panel = new JPanel(new GridLayout(0, 1, 20, 25));

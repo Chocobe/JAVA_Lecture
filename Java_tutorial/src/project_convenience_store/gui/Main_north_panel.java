@@ -84,6 +84,7 @@ public class Main_north_panel extends JPanel {
 					System.out.println("Main 누름");
 					button_manage_enable();
 					Main_frame.get_main_frame().east_panel.visible_main_panel();
+					Main_frame.get_main_frame().center_panel.visible_main_panel();
 					
 					break;
 					
