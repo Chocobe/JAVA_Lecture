@@ -81,7 +81,7 @@ public class Main_center_panel extends JPanel {
 		this.label_main_name.setPreferredSize(this.dim_name);
 		this.label_main_name.setBorder(border_field);
 		
-		this.label_main_sales_price = new JLabel("가 격", JLabel.RIGHT);
+		this.label_main_sales_price = new JLabel("단위가격", JLabel.RIGHT);
 		this.label_main_sales_price.setFont(this.font);
 		this.label_main_sales_price.setPreferredSize(this.dim_others);
 		this.label_main_sales_price.setBorder(this.border_field);
@@ -241,10 +241,4 @@ public class Main_center_panel extends JPanel {
 		
 		repaint();
 	}
-	
-	
-// 모든 정보 출력
-//	private void output_all_product_info() {
-//		
-//	}
 }

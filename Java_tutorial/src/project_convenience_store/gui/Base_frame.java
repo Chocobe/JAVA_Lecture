@@ -15,7 +15,7 @@ public abstract class Base_frame extends JFrame {
 	private Dimension dim_window;
 	
 	private int location_x;
-	private int location_y;	
+	private int location_y;
 	
 	
 // 클래스 변수 초기화

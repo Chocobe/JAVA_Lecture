@@ -44,6 +44,10 @@ public abstract class Product {
 		return this.profit;
 	}
 	
+	public void init_profit() {
+		this.profit = 0;
+	}
+	
 	public void sales_product(int _sales_number) throws NotEnoughProductException {
 		if(_sales_number > this.get_remain_number()) {
 			throw new NotEnoughProductException(

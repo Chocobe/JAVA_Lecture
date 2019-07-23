@@ -3,6 +3,7 @@ package project_convenience_store;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Set;
 
 import project_convenience_store.product.Hot_coffee;
 import project_convenience_store.product.Ice_coffee;
@@ -165,6 +166,35 @@ public final class Product_manager {
 				System.err.println(e.getMessage());
 			}
 		}
+	}
+	
+	
+// 수익금 초기화 (정산)
+	public int init_profit() {
+		int sum = 0;
+		
+		Iterator<HashMap<String, Product>> iterator = this.all_product.iterator();
+		HashMap<String, Product> cur_kind = null;
+		
+		Set<String> kind_key = null;
+		Iterator<String> product_iterator = null;
+		Product cur_product = null;
+		
+		while(iterator.hasNext()) {
+			cur_kind = iterator.next();
+			kind_key = cur_kind.keySet();
+			
+			product_iterator = kind_key.iterator();
+			
+			while(product_iterator.hasNext()) {
+				cur_product = cur_kind.get(product_iterator.next());
+				
+				sum += cur_product.get_profit();
+				cur_product.init_profit();
+			}
+		}
+		
+		return sum;
 	}
 	
 	

@@ -54,7 +54,7 @@ public class Main_north_panel extends JPanel {
 		this.button_manage.setFont(this.font_menu);
 		this.button_manage.addActionListener(this.action_listener);
 		
-		this.store_name = new JLabel("<ZS25 서면점>");
+		this.store_name = new JLabel("쓰다 벅스 - 그린점");
 		this.store_name.setFont(this.font_store_name);
 		this.store_name_panel = new JPanel(new BorderLayout());
 		this.store_name_panel.setPreferredSize(new Dimension(700, 20));

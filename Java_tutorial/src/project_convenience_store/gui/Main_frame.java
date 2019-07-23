@@ -97,6 +97,7 @@ public class Main_frame extends Base_frame {
 //--------------------------------------------------//
 	
 	
+// 메인 모드 전환
 	public void change_to_main_mode() {
 		this.north_panel.change_to_main_mode();
 		this.east_panel.change_to_main_mode();
@@ -104,12 +105,15 @@ public class Main_frame extends Base_frame {
 	}
 	
 	
+// 관리 모드 전환
 	public void change_to_manage_mode() {
 		this.north_panel.change_to_manage_mode();
 		this.east_panel.change_to_manage_mode();
 		this.center_panel.change_to_manage_mode();
 	}
 	
+	
+// 상품 정보 전체 출력
 	public void output_all_product_info() {
 		Iterator<HashMap<String, Product>> iterator = 
 				this.product_database.get_all_product().iterator();
