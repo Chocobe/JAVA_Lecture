@@ -48,7 +48,7 @@ public class Tester {
 		
 		System.out.println("-----------------------------");
 		
-		@SuppressWarnings("unused")
-		Main_frame frame = new Main_frame();
+		Main_frame.get_main_frame();
+		
 	}
 }

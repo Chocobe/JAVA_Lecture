@@ -2,7 +2,6 @@ package project_convenience_store.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.Toolkit;
 
 import javax.swing.JFrame;
@@ -18,15 +17,11 @@ public abstract class Base_frame extends JFrame {
 	private int location_x;
 	private int location_y;	
 	
-	private Base_north_panel north_panel;
-	
-	public static Font font;
 	
 // 클래스 변수 초기화
 	static {
 		size_x = 1000;
 		size_y = 700;
-		font = new Font(null, Font.PLAIN, 25); 
 	}
 	
 	
@@ -34,10 +29,10 @@ public abstract class Base_frame extends JFrame {
 	protected Base_frame() {
 		super();
 		this.init_frame();
-		this.init_component();
 	}
 	
 	
+// 프레임 초기화
 	private void init_frame() {
 		this.setSize(Base_frame.size_x, Base_frame.size_y);
 		
@@ -59,11 +54,6 @@ public abstract class Base_frame extends JFrame {
 	}
 	
 	
+// 프레임 타이틀
 	protected abstract void set_frame_title();
-	
-	
-	private void init_component() {
-		this.north_panel = new Base_north_panel();
-		this.add(this.north_panel, BorderLayout.NORTH);
-	}
 }
