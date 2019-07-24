@@ -4,11 +4,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.Border;
+
+import project_convenience_store.Product_manager;
 
 @SuppressWarnings("serial")
 public class Main_center_panel extends JPanel {
@@ -17,6 +21,9 @@ public class Main_center_panel extends JPanel {
 	public JLabel label_main_name;
 	public JLabel label_main_sales_price;
 	public JLabel label_main_number;
+	
+	private JComboBox<String> combox_product_name;
+	private JComboBox<Integer> combox_select_number;
 	
 	
 // 관리 필드 컴포넌트
@@ -152,25 +159,35 @@ public class Main_center_panel extends JPanel {
 	public void add_main_attribute() {
 		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
 		
+		ArrayList<String> all_product_name = Product_manager.get_manager().get_all_product_name();
+		String[] all_name = all_product_name.toArray(new String[all_product_name.size()]);
+		
+		this.combox_product_name = new JComboBox<String>(all_name);
+		this.combox_product_name.setFont(this.font);
+		
+		this.combox_select_number = new JComboBox<Integer>();
+		
 		JLabel temp_name = new JLabel("", JLabel.LEFT);
 		temp_name.setFont(this.font);
 		temp_name.setPreferredSize(this.dim_name);
 		temp_name.setBorder(this.border_attribute);
 		
-		JLabel temp_number = new JLabel("", JLabel.RIGHT);
-		temp_number.setFont(this.font);
-		temp_number.setPreferredSize(this.dim_others);
-		temp_number.setBorder(this.border_attribute);
-		
-		JLabel temp_price = new JLabel("", JLabel.RIGHT);
-		temp_price.setFont(this.font);
-		temp_price.setPreferredSize(this.dim_others);
-		temp_price.setBorder(this.border_attribute);
-		
-		temp_panel.add(temp_name);
-		temp_panel.add(temp_number);
-		temp_panel.add(temp_price);
-		
+		temp_panel.add(this.combox_product_name);
+//		
+//		JLabel temp_number = new JLabel("", JLabel.RIGHT);
+//		temp_number.setFont(this.font);
+//		temp_number.setPreferredSize(this.dim_others);
+//		temp_number.setBorder(this.border_attribute);
+//		
+//		JLabel temp_price = new JLabel("", JLabel.RIGHT);
+//		temp_price.setFont(this.font);
+//		temp_price.setPreferredSize(this.dim_others);
+//		temp_price.setBorder(this.border_attribute);
+//		
+//		temp_panel.add(temp_name);
+//		temp_panel.add(temp_number);
+//		temp_panel.add(temp_price);
+//		
 		this.add(temp_panel);
 	}
 	
@@ -222,8 +239,9 @@ public class Main_center_panel extends JPanel {
 		this.init_main_panel();
 		
 		// 콤보박스 추가
-		this.add_main_attribute();	// 컴포넌트 추가/수정 필요
-		// 콤보박스 추가
+		 this.add_main_attribute();	// 컴포넌트 추가/수정 필요
+		
+
 		
 		this.main_field_panel.setVisible(true);
 		this.manage_field_panel.setVisible(false);

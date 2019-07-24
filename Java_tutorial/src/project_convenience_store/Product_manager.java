@@ -224,6 +224,32 @@ public final class Product_manager {
 		return product_name;
 	}
 	
+// 전체 상품 재고 반환(Integer[])
+	public ArrayList<Integer> get_all_product_remain() {
+		ArrayList<Integer> product_remain = new ArrayList<Integer>();
+		
+		Iterator<HashMap<String, Product>> kind_iterator = this.all_product.iterator();
+		HashMap<String, Product> product_kind = null;
+		
+		Set<String> product_key = null;
+		Iterator<String> product_iterator = null;
+		Product cur_product = null;
+		
+		while(kind_iterator.hasNext()) {
+			product_kind = kind_iterator.next();
+			product_key = product_kind.keySet();
+			product_iterator = product_key.iterator();
+			
+			while(product_iterator.hasNext()) {
+				cur_product = product_kind.get(product_iterator.next());
+				
+				product_remain.add(cur_product.get_remain_number());
+			}
+		}
+		
+		return product_remain;
+	}
+	
 	
 // 전체 데이터 반환
 	public ArrayList<HashMap<String, Product>> get_all_product() {
