@@ -155,17 +155,17 @@ public final class Product_manager {
 	
 	
 // 상품 판매
-	public void sales_product(String _name, int _sales_number) {
+	public void sales_product(String _name, int _sales_number) throws NotEnoughProductException {
 		Product cur_product = this.get_product(_name);
 		
-		if(cur_product != null) {
-			try {
-				cur_product.sales_product(_sales_number);
-				
-			} catch(NotEnoughProductException e) {
-				System.err.println(e.getMessage());
-			}
+		if (cur_product.get_remain_number() < _sales_number) {
+			throw new NotEnoughProductException(cur_product.get_name() + "의 재고 부족");
+			
+		} else {
+			cur_product.sales_product(_sales_number);
 		}
+		
+		
 	}
 	
 	

@@ -28,6 +28,7 @@ public class Main_center_panel extends JPanel {
 	public JLabel label_main_name;
 	public JLabel label_main_sales_price;
 	public JLabel label_main_number;
+	private int[] each_price;
 	
 	private JComboBox<String> combox_product_name;
 	private JPanel panel_main_attribute;
@@ -35,7 +36,7 @@ public class Main_center_panel extends JPanel {
 	public JLabel one_price;
 	public JButton button_confirm;
 	public JButton button_cancel;
-	private boolean isCalc;
+	private int confirm_count;
 	
 	
 // 관리 필드 컴포넌트
@@ -127,7 +128,9 @@ public class Main_center_panel extends JPanel {
 		this.button_cancel.setFont(this.font);
 		this.button_confirm.addActionListener(this.action_listener);
 		
-		this.isCalc = false;
+		this.confirm_count = 0;
+		
+		this.each_price = new int[5];
 	}
 	
 
@@ -188,7 +191,7 @@ public class Main_center_panel extends JPanel {
 // JLabel ->> JTextField 변경하기
 // 메인 속성 라벨 생성
 	public void add_main_attribute() {
-		this.panel_main_attribute.setPreferredSize(new Dimension(800, 800));
+		this.panel_main_attribute.setPreferredSize(new Dimension(630, 500));
 		
 		ArrayList<String> all_product_name = Product_manager.get_manager().get_all_product_name();
 		String[] all_name = all_product_name.toArray(new String[all_product_name.size()]);
@@ -204,7 +207,7 @@ public class Main_center_panel extends JPanel {
 		this.one_price.setFont(this.font);
 		this.one_price.setPreferredSize(new Dimension(110, 30));
 		this.one_price.setBorder(this.border_attribute);
-		
+
 		this.button_confirm = new JButton("결정");
 		this.button_confirm.setFont(this.font);
 		this.button_confirm.addActionListener(this.action_listener);
@@ -216,10 +219,8 @@ public class Main_center_panel extends JPanel {
 		this.panel_main_attribute.add(this.combox_product_name);
 		this.panel_main_attribute.add(this.text_select_number);
 		this.panel_main_attribute.add(this.one_price);
-		this.panel_main_attribute.add(this.button_confirm);
-		this.panel_main_attribute.add(this.button_cancel);
-		
-		this.add(this.panel_main_attribute);		
+
+		this.add(this.panel_main_attribute);
 	}
 	
 	
@@ -272,8 +273,8 @@ public class Main_center_panel extends JPanel {
 		
 		// 콤보박스 추가
 		this.add_main_attribute();	// 컴포넌트 추가/수정 필요
-//		this.panel_main_attribute.add(this.button_confirm);
-
+		this.panel_main_attribute.add(this.button_confirm);
+		this.panel_main_attribute.add(this.button_cancel);
 		
 		this.panel_main_field.setVisible(true);
 		this.panel_manage_field.setVisible(false);
@@ -316,6 +317,25 @@ public class Main_center_panel extends JPanel {
 	}// end init_item_listener()
 	
 	
+// 결제금 반환
+	private int total_price() {
+		int sum = 0;
+		for(int i : this.each_price) {
+			sum += i;
+		}
+		
+		return sum;
+	}
+	
+	
+// 결제금 초기화
+	private void init_total_price() {
+		for(int i = 0; i < this.each_price.length; i++) {
+			this.each_price[i] = 0;
+		}
+	}
+	
+	
 // ActionListener 초기화
 	private void init_action_listener() {
 		this.action_listener = new ActionListener() {
@@ -326,17 +346,62 @@ public class Main_center_panel extends JPanel {
 				
 				switch(command) {
 				case "결정":
-					add_main_attribute();
-					panel_main_attribute.setVisible(false);
-					panel_main_attribute.setVisible(true);
+					int number = 0;
+					int price = 0;
+					
+					if(confirm_count < 5) {
+						// 금액 저장
+						
+						try {
+							number = Integer.parseInt(text_select_number.getText());
+							price = Integer.parseInt(one_price.getText());
+						
+						} catch(Exception err) {
+							init_total_price();
+							Main_frame.get_frame().east_panel.set_total_price(0);
+							
+							change_to_manage_mode();
+							change_to_main_mode();
+							
+							return;
+						}// end try ~ catch
+						
+						System.out.println(number);
+						System.out.println(price);
+					}
+					
+					if(confirm_count < 5) {
+						combox_product_name.setEnabled(false);
+						text_select_number.setEnabled(false);
+						
+						if(confirm_count < 4) {
+							add_main_attribute();
+							panel_main_attribute.setVisible(false);
+							panel_main_attribute.setVisible(true);
+						}
+						
+						each_price[confirm_count] = number * price;
+						
+						int sum = total_price();
+						
+						Main_frame.get_frame().east_panel.set_total_price(sum);
+						
+						confirm_count++;
+						
+					} 
 					
 					
-					System.out.println("결정 동작");
-					
-					
+					System.out.println("결정 동작 이상해");
 					break;
 					
 				case "취소":
+					init_total_price();
+					Main_frame.get_frame().east_panel.set_total_price(0);
+					
+					change_to_manage_mode();
+					change_to_main_mode();
+					confirm_count = 0;
+					
 					System.out.println("취소 동작");
 					break;
 				}

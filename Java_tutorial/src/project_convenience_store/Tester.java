@@ -87,46 +87,6 @@ public class Tester {
 		
 		manager.insert_product(soda);
 		
-		try {
-			manager.get_product("Milk tee").sales_product(11);
-			
-		} catch(NotEnoughProductException e) {
-			System.err.println(e.getMessage());
-		}
-		
-		try {
-			manager.get_product("Milk tee").sales_product(9);
-			manager.get_product("SODA_3").sales_product(1);
-			
-		} catch(NotEnoughProductException e) {
-			System.err.println(e.getMessage());
-		}
-		
-		System.out.println("-------------------------");
-		Product cur_product = manager.get_product("Milk tee");
-		System.out.println(cur_product.get_name());
-		System.out.println(cur_product.get_kind_type());
-		System.out.println(cur_product.get_origin_price());
-		System.out.println(cur_product.get_sales_price());
-		System.out.println(cur_product.get_profit());
-		System.out.println(cur_product.get_remain_number());
-		System.out.println("-------------------------");
-		
-		manager.sales_product("Milk tee", 2);
-		
-		manager.print_product_info("Milk tee");
-		
-		System.out.println("-----------------------------");
-		
 		Main_frame.get_frame();
-		
-		
-		ArrayList<String> list = new ArrayList<String>();
-		list = manager.get_all_product_name();
-		Iterator<String> iterator = list.iterator();
-		
-		while(iterator.hasNext()) {
-			System.out.println(iterator.next());
-		}
 	}
 }

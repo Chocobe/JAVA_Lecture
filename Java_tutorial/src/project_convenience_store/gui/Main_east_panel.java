@@ -99,6 +99,11 @@ public class Main_east_panel extends JPanel {
 	}
 	
 	
+	public void set_total_price(int _price) {
+		this.total_price.setText(Integer.toString(_price));
+	}
+	
+	
 // 메인부 패널 초기화
 	private void init_main_panel() {
 		this.setPreferredSize(new Dimension(200, 300));
@@ -106,7 +111,7 @@ public class Main_east_panel extends JPanel {
 		this.main_title = new JLabel("    Total price    ");
 		this.main_title.setFont(this.font);
 		
-		this.total_price = new JLabel("TEST");
+		this.total_price = new JLabel("");
 		this.total_price.setFont(this.font);
 		
 		this.total_price_panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
