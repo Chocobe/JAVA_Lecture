@@ -28,7 +28,7 @@ public class Main_center_panel extends JPanel {
 	public JLabel label_main_name;
 	public JLabel label_main_sales_price;
 	public JLabel label_main_number;
-	private int[] each_price;
+	
 	
 	private JComboBox<String> combox_product_name;
 	private JPanel panel_main_attribute;
@@ -36,7 +36,11 @@ public class Main_center_panel extends JPanel {
 	public JLabel one_price;
 	public JButton button_confirm;
 	public JButton button_cancel;
-	private int confirm_count;
+	
+	private int[] confirmed_price;
+	private String[] confirmed_product_name;
+	private int confirmed_count;
+	private int cur_product_remain;
 	
 	
 // 관리 필드 컴포넌트
@@ -81,8 +85,20 @@ public class Main_center_panel extends JPanel {
 		this.init_main_panel();
 		
 		this.init_manage_panel();
-		
-//		this.add_main_attribute();
+	}
+	
+	
+// confirmed
+	public int[] get_confirmed_price() {
+		return this.confirmed_price;
+	}
+	
+	public String[] get_confirmed_product_name() {
+		return this.confirmed_product_name;
+	}
+	
+	public int get_confirmed_count() {
+		return this.confirmed_count;
 	}
 	
 
@@ -128,9 +144,10 @@ public class Main_center_panel extends JPanel {
 		this.button_cancel.setFont(this.font);
 		this.button_confirm.addActionListener(this.action_listener);
 		
-		this.confirm_count = 0;
-		
-		this.each_price = new int[5];
+		this.confirmed_count = 0;
+		this.confirmed_product_name = new String[5];
+		this.confirmed_price = new int[5];
+		this.cur_product_remain = 0;
 	}
 	
 
@@ -186,9 +203,7 @@ public class Main_center_panel extends JPanel {
 		this.add(this.panel_manage_field);
 	}
 	
-	
-//
-// JLabel ->> JTextField 변경하기
+
 // 메인 속성 라벨 생성
 	public void add_main_attribute() {
 		this.panel_main_attribute.setPreferredSize(new Dimension(630, 500));
@@ -310,6 +325,7 @@ public class Main_center_panel extends JPanel {
 					Product cur_product = Product_manager.get_manager().get_product(cur_product_name);
 					
 					one_price.setText(Integer.toString(cur_product.get_sales_price()));
+					cur_product_remain = cur_product.get_remain_number();
 					
 				}// end if
 			}// end itemStateChanged()
@@ -320,7 +336,7 @@ public class Main_center_panel extends JPanel {
 // 결제금 반환
 	private int total_price() {
 		int sum = 0;
-		for(int i : this.each_price) {
+		for(int i : this.confirmed_price) {
 			sum += i;
 		}
 		
@@ -329,10 +345,23 @@ public class Main_center_panel extends JPanel {
 	
 	
 // 결제금 초기화
-	private void init_total_price() {
-		for(int i = 0; i < this.each_price.length; i++) {
-			this.each_price[i] = 0;
+	private void init_confirmed() {
+		for(int i = 0; i < this.confirmed_price.length; i++) {
+			this.confirmed_price[i] = 0;
+			this.confirmed_product_name[i] = "";
+			this.confirmed_count = 0;
+			this.cur_product_remain = 0;
 		}
+	}
+	
+	
+// 과정 취소(결제 취소)
+	private void init_sequence() {
+		init_confirmed();
+		
+		Main_frame.get_frame().east_panel.set_total_price(0);
+		change_to_manage_mode();
+		change_to_main_mode();
 	}
 	
 	
@@ -349,63 +378,61 @@ public class Main_center_panel extends JPanel {
 					int number = 0;
 					int price = 0;
 					
-					if(confirm_count < 5) {
-						// 금액 저장
-						
+					System.out.println(number);
+					System.out.println(price);
+					
+					if(confirmed_count < 5) {
+						int require_number = 0;
+
 						try {
 							number = Integer.parseInt(text_select_number.getText());
 							price = Integer.parseInt(one_price.getText());
+							
+							require_number = number;
 						
 						} catch(Exception err) {
-							init_total_price();
-							Main_frame.get_frame().east_panel.set_total_price(0);
-							
-							change_to_manage_mode();
-							change_to_main_mode();
+							init_sequence();
 							
 							return;
 						}// end try ~ catch
 						
-						System.out.println(number);
-						System.out.println(price);
-					}
-					
-					if(confirm_count < 5) {
+						if(require_number > cur_product_remain) {
+							// 팝업 출력 필요
+							init_sequence();
+							
+							return;
+						}// end if
+						
 						combox_product_name.setEnabled(false);
 						text_select_number.setEnabled(false);
 						
-						if(confirm_count < 4) {
+						if(confirmed_count < 4) {
 							add_main_attribute();
 							panel_main_attribute.setVisible(false);
 							panel_main_attribute.setVisible(true);
-						}
+						}// end if
 						
-						each_price[confirm_count] = number * price;
+						confirmed_price[confirmed_count] = number * price;
 						
 						int sum = total_price();
 						
 						Main_frame.get_frame().east_panel.set_total_price(sum);
 						
-						confirm_count++;
-						
-					} 
-					
+						System.out.println(confirmed_count);
+						confirmed_count++;
+					}// end if
 					
 					System.out.println("결정 동작 이상해");
 					break;
+				// end case "결정":
 					
 				case "취소":
-					init_total_price();
-					Main_frame.get_frame().east_panel.set_total_price(0);
-					
-					change_to_manage_mode();
-					change_to_main_mode();
-					confirm_count = 0;
+					init_sequence();
 					
 					System.out.println("취소 동작");
 					break;
-				}
-			}
+				}// end switch
+			}// end actionPerformed()
 		};
-	}
+	}// end init_action_listener()
 }
