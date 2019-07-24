@@ -4,15 +4,19 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 import javax.swing.border.Border;
 
 import project_convenience_store.Product_manager;
+import project_convenience_store.product.Product;
 
 @SuppressWarnings("serial")
 public class Main_center_panel extends JPanel {
@@ -23,7 +27,8 @@ public class Main_center_panel extends JPanel {
 	public JLabel label_main_number;
 	
 	private JComboBox<String> combox_product_name;
-	private JComboBox<Integer> combox_select_number;
+	private JTextField text_select_number;
+	public JLabel one_price;
 	
 	
 // 관리 필드 컴포넌트
@@ -46,10 +51,15 @@ public class Main_center_panel extends JPanel {
 	private Font font;
 	
 	
+	private ItemListener item_listener;
+	
+	
 // 생성자
 	public Main_center_panel(Font _font) {
 		super();
 		this.font = _font;
+		
+		this.init_item_listener();
 		
 		this.init_main();
 		
@@ -157,38 +167,30 @@ public class Main_center_panel extends JPanel {
 // JLabel ->> JTextField 변경하기
 // 메인 속성 라벨 생성
 	public void add_main_attribute() {
-		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
+		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
+		temp_panel.setPreferredSize(new Dimension(500, 500));
 		
 		ArrayList<String> all_product_name = Product_manager.get_manager().get_all_product_name();
 		String[] all_name = all_product_name.toArray(new String[all_product_name.size()]);
-		
 		this.combox_product_name = new JComboBox<String>(all_name);
 		this.combox_product_name.setFont(this.font);
+		this.combox_product_name.setPreferredSize(new Dimension(195, 30));
+		this.combox_product_name.addItemListener(this.item_listener);
 		
-		this.combox_select_number = new JComboBox<Integer>();
+		this.text_select_number = new JTextField(7);
+		this.text_select_number.setFont(this.font);
 		
-		JLabel temp_name = new JLabel("", JLabel.LEFT);
-		temp_name.setFont(this.font);
-		temp_name.setPreferredSize(this.dim_name);
-		temp_name.setBorder(this.border_attribute);
+		this.one_price = new JLabel("",JLabel.RIGHT);
+		this.one_price.setFont(this.font);
+		this.one_price.setPreferredSize(new Dimension(110, 30));
+		
+		this.one_price.setBorder(this.border_attribute);
 		
 		temp_panel.add(this.combox_product_name);
-//		
-//		JLabel temp_number = new JLabel("", JLabel.RIGHT);
-//		temp_number.setFont(this.font);
-//		temp_number.setPreferredSize(this.dim_others);
-//		temp_number.setBorder(this.border_attribute);
-//		
-//		JLabel temp_price = new JLabel("", JLabel.RIGHT);
-//		temp_price.setFont(this.font);
-//		temp_price.setPreferredSize(this.dim_others);
-//		temp_price.setBorder(this.border_attribute);
-//		
-//		temp_panel.add(temp_name);
-//		temp_panel.add(temp_number);
-//		temp_panel.add(temp_price);
-//		
-		this.add(temp_panel);
+		temp_panel.add(this.text_select_number);
+		temp_panel.add(this.one_price);
+		
+		this.add(temp_panel);		
 	}
 	
 	
@@ -262,4 +264,23 @@ public class Main_center_panel extends JPanel {
 		
 		repaint();
 	}
+	
+	
+	private void init_item_listener() {
+		this.item_listener = new ItemListener() {
+			
+			@Override
+			public void itemStateChanged(ItemEvent e) {
+				if(e.getStateChange() == ItemEvent.SELECTED) {
+					System.out.println(e.getItem());
+					
+					String cur_product_name = (String)e.getItem();
+					Product cur_product = Product_manager.get_manager().get_product(cur_product_name);
+					
+					one_price.setText(Integer.toString(cur_product.get_sales_price()));
+					repaint();
+				}// end if
+			}// end itemStateChanged()
+		};
+	}// end init_item_listener()
 }

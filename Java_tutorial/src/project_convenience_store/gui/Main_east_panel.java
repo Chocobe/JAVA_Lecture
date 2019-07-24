@@ -360,8 +360,10 @@ public class Main_east_panel extends JPanel {
 							System.out.println("보충 완료");
 							
 							dialog_supplement.dispose();
-						}
+						}// end if
 					}// end if
+					
+					text_supply.setText("");
 					
 					break;
 					
