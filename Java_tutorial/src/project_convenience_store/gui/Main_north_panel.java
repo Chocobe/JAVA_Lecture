@@ -67,14 +67,14 @@ public class Main_north_panel extends JPanel {
 	}
 	
 	
-// 메인버튼 활성화
+// 메인 모드 전환
 	public void change_to_main_mode() {
 		this.button_main.setEnabled(false);
 		this.button_manage.setEnabled(true);
 	}
 	
 	
-// 메니저버튼 활성화
+// 관리 모드 전환
 	public void change_to_manage_mode() {
 		this.button_main.setEnabled(true);
 		this.button_manage.setEnabled(false);

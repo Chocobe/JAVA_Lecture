@@ -216,7 +216,7 @@ public class Main_center_panel extends JPanel {
 	}
 	
 	
-// 메인 패널로 전환
+// 메인 모드 전환
 	public void change_to_main_mode() {
 		this.removeAll();
 		this.init_main_panel();
@@ -229,7 +229,7 @@ public class Main_center_panel extends JPanel {
 	}
 	
 	
-// 관리 패널로 전환
+// 관리 모드 전환
 	public void change_to_manage_mode() {
 		this.removeAll();
 		this.init_manage_panel();
