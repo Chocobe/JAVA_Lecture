@@ -106,7 +106,7 @@ public class Main_east_panel extends JPanel {
 		this.main_title = new JLabel("    Total price    ");
 		this.main_title.setFont(this.font);
 		
-		this.total_price = new JLabel("1111");
+		this.total_price = new JLabel("TEST");
 		this.total_price.setFont(this.font);
 		
 		this.total_price_panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -369,7 +369,7 @@ public class Main_east_panel extends JPanel {
 					
 				case "계산":
 					// 계산부 작성
-					
+					System.out.println("계산 동작");
 				}// end switch
 			}// end actionPerformed()
 		};

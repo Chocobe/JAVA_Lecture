@@ -4,11 +4,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -21,18 +24,22 @@ import project_convenience_store.product.Product;
 @SuppressWarnings("serial")
 public class Main_center_panel extends JPanel {
 // 메인 필드 컴포넌트
-	private JPanel main_field_panel;
+	private JPanel panel_main_field;
 	public JLabel label_main_name;
 	public JLabel label_main_sales_price;
 	public JLabel label_main_number;
 	
 	private JComboBox<String> combox_product_name;
+	private JPanel panel_main_attribute;
 	private JTextField text_select_number;
 	public JLabel one_price;
+	public JButton button_confirm;
+	public JButton button_cancel;
+	private boolean isCalc;
 	
 	
 // 관리 필드 컴포넌트
-	private JPanel manage_field_panel;
+	private JPanel panel_manage_field;
 	public JLabel label_manage_name;
 	public JLabel label_manage_origin_price;
 	public JLabel label_manage_sales_price;
@@ -52,6 +59,7 @@ public class Main_center_panel extends JPanel {
 	
 	
 	private ItemListener item_listener;
+	private ActionListener action_listener;
 	
 	
 // 생성자
@@ -60,6 +68,8 @@ public class Main_center_panel extends JPanel {
 		this.font = _font;
 		
 		this.init_item_listener();
+		
+		this.init_action_listener();
 		
 		this.init_main();
 		
@@ -71,13 +81,13 @@ public class Main_center_panel extends JPanel {
 		
 		this.init_manage_panel();
 		
-		this.add_main_attribute();
+//		this.add_main_attribute();
 	}
 	
 
 // this 초기화
 	public void init_main() {
-		this.setPreferredSize(new Dimension(700, 500));
+		this.setPreferredSize(new Dimension(700, 100));
 		this.setLayout(new FlowLayout(FlowLayout.LEFT));
 		this.border_field = BorderFactory.createMatteBorder(0, 0, 2, 0, Color.BLACK);
 		this.border_attribute = BorderFactory.createMatteBorder(0, 0, 1, 0, Color.BLACK);
@@ -91,7 +101,8 @@ public class Main_center_panel extends JPanel {
 	
 // 메인 필드 컴포넌트 초기화
 	private void init_main_field_component() {
-		this.main_field_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
+		this.panel_main_field = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
+		this.panel_main_attribute = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
 		
 		this.label_main_name = new JLabel("상품명", JLabel.LEFT);
 		this.label_main_name.setFont(this.font);
@@ -107,12 +118,22 @@ public class Main_center_panel extends JPanel {
 		this.label_main_number.setFont(this.font);
 		this.label_main_number.setPreferredSize(this.dim_others);
 		this.label_main_number.setBorder(this.border_field);
+		
+		this.button_confirm = new JButton("결정");
+		this.button_confirm.setFont(this.font);
+		this.button_confirm.addActionListener(this.action_listener);
+		
+		this.button_cancel = new JButton("취소");
+		this.button_cancel.setFont(this.font);
+		this.button_confirm.addActionListener(this.action_listener);
+		
+		this.isCalc = false;
 	}
 	
 
 // 관리 필드 컴포넌트 초기화
 	private void init_manage_field_component() {
-		this.manage_field_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
+		this.panel_manage_field = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 10));
 		
 		this.label_manage_name = new JLabel("상품명", JLabel.LEFT);
 		this.label_manage_name.setFont(font);
@@ -143,23 +164,23 @@ public class Main_center_panel extends JPanel {
 	
 // 메인 패널 초기화(add)
 	private void init_main_panel() {
-		this.main_field_panel.add(this.label_main_name);
-		this.main_field_panel.add(this.label_main_number);
-		this.main_field_panel.add(this.label_main_sales_price);
+		this.panel_main_field.add(this.label_main_name);
+		this.panel_main_field.add(this.label_main_number);
+		this.panel_main_field.add(this.label_main_sales_price);
 		
-		this.add(this.main_field_panel);
+		this.add(this.panel_main_field);
 	}
 	
 	
 // 관리 패널 초기화(add)
 	private void init_manage_panel() {
-		this.manage_field_panel.add(this.label_manage_name);
-		this.manage_field_panel.add(this.label_manage_origin_price);
-		this.manage_field_panel.add(this.label_manage_sales_price);
-		this.manage_field_panel.add(this.label_manage_profit);
-		this.manage_field_panel.add(this.label_manage_remain_number);
+		this.panel_manage_field.add(this.label_manage_name);
+		this.panel_manage_field.add(this.label_manage_origin_price);
+		this.panel_manage_field.add(this.label_manage_sales_price);
+		this.panel_manage_field.add(this.label_manage_profit);
+		this.panel_manage_field.add(this.label_manage_remain_number);
 		
-		this.add(this.manage_field_panel);
+		this.add(this.panel_manage_field);
 	}
 	
 	
@@ -167,8 +188,7 @@ public class Main_center_panel extends JPanel {
 // JLabel ->> JTextField 변경하기
 // 메인 속성 라벨 생성
 	public void add_main_attribute() {
-		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
-		temp_panel.setPreferredSize(new Dimension(500, 500));
+		this.panel_main_attribute.setPreferredSize(new Dimension(800, 800));
 		
 		ArrayList<String> all_product_name = Product_manager.get_manager().get_all_product_name();
 		String[] all_name = all_product_name.toArray(new String[all_product_name.size()]);
@@ -183,14 +203,23 @@ public class Main_center_panel extends JPanel {
 		this.one_price = new JLabel("",JLabel.RIGHT);
 		this.one_price.setFont(this.font);
 		this.one_price.setPreferredSize(new Dimension(110, 30));
-		
 		this.one_price.setBorder(this.border_attribute);
 		
-		temp_panel.add(this.combox_product_name);
-		temp_panel.add(this.text_select_number);
-		temp_panel.add(this.one_price);
+		this.button_confirm = new JButton("결정");
+		this.button_confirm.setFont(this.font);
+		this.button_confirm.addActionListener(this.action_listener);
 		
-		this.add(temp_panel);		
+		this.button_cancel = new JButton("취소");
+		this.button_cancel.setFont(this.font);
+		this.button_cancel.addActionListener(this.action_listener);
+		
+		this.panel_main_attribute.add(this.combox_product_name);
+		this.panel_main_attribute.add(this.text_select_number);
+		this.panel_main_attribute.add(this.one_price);
+		this.panel_main_attribute.add(this.button_confirm);
+		this.panel_main_attribute.add(this.button_cancel);
+		
+		this.add(this.panel_main_attribute);		
 	}
 	
 	
@@ -238,15 +267,16 @@ public class Main_center_panel extends JPanel {
 // 메인 모드 전환
 	public void change_to_main_mode() {
 		this.removeAll();
+		this.panel_main_attribute = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 10));
 		this.init_main_panel();
 		
 		// 콤보박스 추가
-		 this.add_main_attribute();	// 컴포넌트 추가/수정 필요
-		
+		this.add_main_attribute();	// 컴포넌트 추가/수정 필요
+//		this.panel_main_attribute.add(this.button_confirm);
 
 		
-		this.main_field_panel.setVisible(true);
-		this.manage_field_panel.setVisible(false);
+		this.panel_main_field.setVisible(true);
+		this.panel_manage_field.setVisible(false);
 		
 		repaint();
 	}
@@ -259,13 +289,14 @@ public class Main_center_panel extends JPanel {
 		
 		Main_frame.get_frame().output_all_product_info();
 		
-		this.main_field_panel.setVisible(false);
-		this.manage_field_panel.setVisible(true);
+		this.panel_main_field.setVisible(false);
+		this.panel_manage_field.setVisible(true);
 		
 		repaint();
 	}
 	
 	
+// ItemListener 초기화
 	private void init_item_listener() {
 		this.item_listener = new ItemListener() {
 			
@@ -278,9 +309,38 @@ public class Main_center_panel extends JPanel {
 					Product cur_product = Product_manager.get_manager().get_product(cur_product_name);
 					
 					one_price.setText(Integer.toString(cur_product.get_sales_price()));
-					repaint();
+					
 				}// end if
 			}// end itemStateChanged()
 		};
 	}// end init_item_listener()
+	
+	
+// ActionListener 초기화
+	private void init_action_listener() {
+		this.action_listener = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String command = e.getActionCommand();
+				
+				switch(command) {
+				case "결정":
+					add_main_attribute();
+					panel_main_attribute.setVisible(false);
+					panel_main_attribute.setVisible(true);
+					
+					
+					System.out.println("결정 동작");
+					
+					
+					break;
+					
+				case "취소":
+					System.out.println("취소 동작");
+					break;
+				}
+			}
+		};
+	}
 }
