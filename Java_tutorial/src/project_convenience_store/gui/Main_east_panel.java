@@ -374,6 +374,16 @@ public class Main_east_panel extends JPanel {
 					
 				case "계산":
 					// 계산부 작성
+					Product product = null;
+					String[] product_name = null;
+					int[] require_number = null;
+					int loop = 0;
+					
+					product_name = Main_frame.get_frame().center_panel.get_confirmed_product_name();
+					require_number = Main_frame.get_frame().center_panel.get_confirmed_price();
+					loop = Main_frame.get_frame().center_panel.get_confirmed_count();
+					
+					
 					System.out.println("계산 동작");
 				}// end switch
 			}// end actionPerformed()

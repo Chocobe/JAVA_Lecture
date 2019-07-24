@@ -38,9 +38,11 @@ public class Main_center_panel extends JPanel {
 	public JButton button_cancel;
 	
 	private int[] confirmed_price;
+	private int[] confirmed_product_count;
 	private String[] confirmed_product_name;
 	private int confirmed_count;
 	private int cur_product_remain;
+	private String cur_product_name;
 	
 	
 // 관리 필드 컴포넌트
@@ -93,6 +95,10 @@ public class Main_center_panel extends JPanel {
 		return this.confirmed_price;
 	}
 	
+	public int[] get_confirmed_product_count() {
+		return this.confirmed_product_count;
+	}
+	
 	public String[] get_confirmed_product_name() {
 		return this.confirmed_product_name;
 	}
@@ -100,7 +106,7 @@ public class Main_center_panel extends JPanel {
 	public int get_confirmed_count() {
 		return this.confirmed_count;
 	}
-	
+
 
 // this 초기화
 	public void init_main() {
@@ -147,6 +153,7 @@ public class Main_center_panel extends JPanel {
 		this.confirmed_count = 0;
 		this.confirmed_product_name = new String[5];
 		this.confirmed_price = new int[5];
+		this.confirmed_product_count = new int[5];
 		this.cur_product_remain = 0;
 	}
 	
@@ -321,11 +328,12 @@ public class Main_center_panel extends JPanel {
 				if(e.getStateChange() == ItemEvent.SELECTED) {
 					System.out.println(e.getItem());
 					
-					String cur_product_name = (String)e.getItem();
-					Product cur_product = Product_manager.get_manager().get_product(cur_product_name);
+					String product_name = (String)e.getItem();
+					Product cur_product = Product_manager.get_manager().get_product(product_name);
 					
 					one_price.setText(Integer.toString(cur_product.get_sales_price()));
 					cur_product_remain = cur_product.get_remain_number();
+					cur_product_name = product_name;
 					
 				}// end if
 			}// end itemStateChanged()
@@ -349,14 +357,24 @@ public class Main_center_panel extends JPanel {
 		for(int i = 0; i < this.confirmed_price.length; i++) {
 			this.confirmed_price[i] = 0;
 			this.confirmed_product_name[i] = "";
-			this.confirmed_count = 0;
-			this.cur_product_remain = 0;
+			this.confirmed_product_count[i] = 0;	
 		}
+		
+		this.confirmed_count = 0;
+		this.cur_product_remain = 0;
 	}
 	
 	
 // 과정 취소(결제 취소)
 	private void init_sequence() {
+		
+		for(int i = 0; i < confirmed_product_name.length; i++) {
+			System.out.print("상품명 : " + confirmed_product_name[i] + " ");
+			System.out.print("가격 : " + confirmed_price[i] + " ");
+			System.out.print("구매 개수 : " + confirmed_product_count[i]);
+			System.out.println();
+		}
+		
 		init_confirmed();
 		
 		Main_frame.get_frame().east_panel.set_total_price(0);
@@ -412,7 +430,9 @@ public class Main_center_panel extends JPanel {
 							panel_main_attribute.setVisible(true);
 						}// end if
 						
+						confirmed_product_count[confirmed_count] = number;
 						confirmed_price[confirmed_count] = number * price;
+						confirmed_product_name[confirmed_count] = cur_product_name;
 						
 						int sum = total_price();
 						
