@@ -115,7 +115,8 @@ public class Main_east_panel extends JPanel {
 		
 		this.button_calc = new JButton("계산");
 		this.button_calc.setFont(this.font);
-		// button_calc.addActionListener
+		this.button_calc.addActionListener(this.action_listener);
+		// action_listener "계산" 추가하기
 		
 		this.main_panel = new JPanel(new GridLayout(0, 1, 20, 25));
 		this.main_panel.add(this.main_title);
@@ -362,8 +363,14 @@ public class Main_east_panel extends JPanel {
 							dialog_supplement.dispose();
 						}
 					}// end if
+					
+					break;
+					
+				case "계산":
+					// 계산부 작성
+					
 				}// end switch
 			}// end actionPerformed()
 		};
-	}
+	}// end init_action_listener()
 }
