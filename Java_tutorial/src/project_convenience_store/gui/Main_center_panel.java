@@ -220,7 +220,10 @@ public class Main_center_panel extends JPanel {
 	public void change_to_main_mode() {
 		this.removeAll();
 		this.init_main_panel();
-		this.add_main_attribute();
+		
+		// 콤보박스 추가
+		this.add_main_attribute();	// 컴포넌트 추가/수정 필요
+		// 콤보박스 추가
 		
 		this.main_field_panel.setVisible(true);
 		this.manage_field_panel.setVisible(false);
