@@ -1,4 +1,4 @@
-package school_management;
+package project_school_management;
 
 import java.awt.BorderLayout;
 import java.awt.Color;

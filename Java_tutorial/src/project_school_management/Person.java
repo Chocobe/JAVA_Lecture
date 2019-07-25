@@ -1,4 +1,4 @@
-package school_management;
+package project_school_management;
 
 // 콘솔 출력용 코드 System.를 생략하기 위한 import
 

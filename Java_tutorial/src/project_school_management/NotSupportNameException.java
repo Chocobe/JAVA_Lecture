@@ -1,4 +1,4 @@
-package school_management;
+package project_school_management;
 
 @SuppressWarnings("serial")
 public class NotSupportNameException extends Exception {

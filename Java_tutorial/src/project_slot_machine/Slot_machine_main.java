@@ -1,4 +1,4 @@
-package slot_machine;
+package project_slot_machine;
 
 import java.util.Scanner;
 
@@ -20,7 +20,7 @@ public class Slot_machine_main {
 	
 	public final static int SLOT_ROW = 7;
 	public final static int SLOT_COL = 23;
-
+	
 	public final static int COMMENT_NOTHING = 4;
 	public final static int COMMENT_LINE_1  = 5;
 	public final static int COMMENT_LINE_2  = 6;

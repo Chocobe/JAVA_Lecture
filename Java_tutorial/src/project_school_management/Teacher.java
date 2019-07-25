@@ -1,4 +1,4 @@
-package school_management;
+package project_school_management;
 
 import static java.lang.System.out;
 
