@@ -22,7 +22,9 @@ public class PokeBag {
 			cur_pokemon.add(_pokemon);
 			
 		} else {
-			pokemons.put(cur_pokemon_name, cur_pokemon);
+			ArrayList<Pokemon> cur_pokemon_list = new ArrayList<Pokemon>();
+			cur_pokemon_list.add(_pokemon);
+			this.pokemons.put(cur_pokemon_name, cur_pokemon_list);
 		}
 	}
 	
@@ -31,16 +33,59 @@ public class PokeBag {
 		Set<String> key = this.pokemons.keySet();
 		Iterator<String> iterator = key.iterator();
 		
+		ArrayList<Pokemon> temp_pokemons = null;
 		
+		int max_cp = 0;
+		Pokemon max_cp_pokemon = null;
 		
+		while(iterator.hasNext()) {
+			max_cp = 0;
+			max_cp_pokemon = null;
+			temp_pokemons = this.pokemons.get(iterator.next());
+			
+			if(temp_pokemons.get(0) != null && temp_pokemons.get(0).name == _name) {
+				for(Pokemon i : temp_pokemons) {
+					if(max_cp < i.cp) {
+						max_cp_pokemon = i;
+						max_cp = i.cp;
+					}
+				}
+				
+				break;
+			}
+		}
 		
-		return new Pokemon("", 12);
+		return max_cp_pokemon; 
 	}
 	
 	
 	public Pokemon getStrongest() {
+		ArrayList<Pokemon> cur_pokemon_group = null;
+		Pokemon strongest_pokemon = null;
+		Pokemon group_strongest_pokemon = null;
+		String cur_pokemon_name = "";
 		
+		boolean isFirstStep = true;
 		
-		return new Pokemon("", 12);
+		Set<String> key = this.pokemons.keySet();
+		Iterator<String> iterator = key.iterator();
+		
+		while(iterator.hasNext()) {
+			 cur_pokemon_group = this.pokemons.get(iterator.next());
+			 cur_pokemon_name = cur_pokemon_group.get(0).name;
+			 
+			 group_strongest_pokemon = getStrongest(cur_pokemon_name);
+			 
+			 if(isFirstStep) {
+				 strongest_pokemon = group_strongest_pokemon;
+				 
+			 } else {
+				 if(strongest_pokemon.cp < group_strongest_pokemon.cp) {
+					 strongest_pokemon = group_strongest_pokemon;
+				 }
+			 }
+		}
+		
+		return strongest_pokemon;
 	}
 }
