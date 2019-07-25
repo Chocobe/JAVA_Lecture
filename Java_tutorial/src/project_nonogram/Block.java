@@ -1,4 +1,4 @@
-package nonogram;
+package project_nonogram;
 
 public class Block {	
 	public Block_type guess_block;

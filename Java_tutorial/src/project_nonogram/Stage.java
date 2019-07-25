@@ -1,4 +1,4 @@
-package nonogram;
+package project_nonogram;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -31,9 +31,9 @@ public class Stage {
 	// @param	:	N/A
 	// @return	:	N/A
 	public Stage(int _stage_num) {
-		this.name_stage_1 = "\\src\\nonogram\\nonogram_stage_1.txt";
-		this.name_stage_2 = "\\src\\nonogram\\nonogram_stage_2.txt";
-		this.name_stage_3 = "\\src\\nonogram\\nonogram_stage_3.txt";
+		this.name_stage_1 = "\\src\\project_nonogram\\nonogram_stage_1.txt";
+		this.name_stage_2 = "\\src\\project_nonogram\\nonogram_stage_2.txt";
+		this.name_stage_3 = "\\src\\project_nonogram\\nonogram_stage_3.txt";
 		
 		this.origin_data = new String[100];
 		

@@ -1,4 +1,4 @@
-package nonogram;
+package project_nonogram;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

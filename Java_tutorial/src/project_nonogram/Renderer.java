@@ -1,4 +1,4 @@
-package nonogram;
+package project_nonogram;
 
 public class Renderer {
 	public final static String WHITE  = "□";
