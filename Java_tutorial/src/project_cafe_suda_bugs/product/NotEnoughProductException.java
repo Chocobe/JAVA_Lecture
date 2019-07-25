@@ -1,4 +1,4 @@
-package project_convenience_store.product;
+package project_cafe_suda_bugs.product;
 
 @SuppressWarnings("serial")
 public class NotEnoughProductException extends RuntimeException {

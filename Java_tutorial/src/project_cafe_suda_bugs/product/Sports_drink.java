@@ -1,9 +1,8 @@
-package project_convenience_store.product;
+package project_cafe_suda_bugs.product;
 
-public final class Soda_drink extends Product implements IDrink, ISoda {
-	
+public final class Sports_drink extends Product implements ISports, IDrink {
 // 생성자
-	public Soda_drink() {
+	public Sports_drink() {
 		this.set_kind_type();
 	}
 	
@@ -13,9 +12,9 @@ public final class Soda_drink extends Product implements IDrink, ISoda {
 	public String get_main_sort() {
 		return MAIN_SORT;
 	}
+
 	
-	
-// sub_sort	
+// sub_sort
 	@Override
 	public String get_sub_sort() {
 		return SUB_SORT;

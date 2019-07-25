@@ -1,17 +1,17 @@
-package project_convenience_store;
+package project_cafe_suda_bugs;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-import project_convenience_store.product.Hot_coffee;
-import project_convenience_store.product.Ice_coffee;
-import project_convenience_store.product.NotEnoughProductException;
-import project_convenience_store.product.Product;
-import project_convenience_store.product.Product_type;
-import project_convenience_store.product.Soda_drink;
-import project_convenience_store.product.Sports_drink;
+import project_cafe_suda_bugs.product.Hot_coffee;
+import project_cafe_suda_bugs.product.Ice_coffee;
+import project_cafe_suda_bugs.product.NotEnoughProductException;
+import project_cafe_suda_bugs.product.Product;
+import project_cafe_suda_bugs.product.Product_type;
+import project_cafe_suda_bugs.product.Soda_drink;
+import project_cafe_suda_bugs.product.Sports_drink;
 
 
 public final class Product_manager {

@@ -1,13 +1,12 @@
-package project_convenience_store.product;
+package project_cafe_suda_bugs.product;
 
-public final class Ice_coffee extends Product implements IIce, ICoffee {
-	
+public final class Hot_coffee extends Product implements IHot, ICoffee {
 // 생성자
-	public Ice_coffee() {
+	public Hot_coffee() {
 		this.set_kind_type();
 	}
-
 	
+
 // main_sort
 	@Override
 	public String get_main_sort() {
@@ -28,5 +27,4 @@ public final class Ice_coffee extends Product implements IIce, ICoffee {
 		String kind_type = this.get_sub_sort() + " " + this.get_main_sort();
 		super.set_kind_type(kind_type);
 	}
-
 }

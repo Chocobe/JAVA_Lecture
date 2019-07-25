@@ -1,4 +1,4 @@
-package project_convenience_store.gui;
+package project_cafe_suda_bugs.gui;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -18,8 +18,8 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.Border;
 
-import project_convenience_store.Product_manager;
-import project_convenience_store.product.Product;
+import project_cafe_suda_bugs.Product_manager;
+import project_cafe_suda_bugs.product.Product;
 
 @SuppressWarnings("serial")
 public class Main_center_panel extends JPanel {
@@ -105,6 +105,15 @@ public class Main_center_panel extends JPanel {
 	
 	public int get_confirmed_count() {
 		return this.confirmed_count;
+	}
+
+	public int get_total_price() {
+		int sum = 0;
+		for(int i : this.confirmed_price) {
+			sum += i;
+		}
+		
+		return sum;
 	}
 
 
@@ -341,19 +350,11 @@ public class Main_center_panel extends JPanel {
 	}// end init_item_listener()
 	
 	
-// 결제금 반환
-	private int total_price() {
-		int sum = 0;
-		for(int i : this.confirmed_price) {
-			sum += i;
-		}
-		
-		return sum;
-	}
+
 	
 	
 // 결제금 초기화
-	private void init_confirmed() {
+	public void init_confirmed() {
 		for(int i = 0; i < this.confirmed_price.length; i++) {
 			this.confirmed_price[i] = 0;
 			this.confirmed_product_name[i] = "";
@@ -434,7 +435,7 @@ public class Main_center_panel extends JPanel {
 						confirmed_price[confirmed_count] = number * price;
 						confirmed_product_name[confirmed_count] = cur_product_name;
 						
-						int sum = total_price();
+						int sum = get_total_price();
 						
 						Main_frame.get_frame().east_panel.set_total_price(sum);
 						

@@ -1,4 +1,4 @@
-package project_convenience_store.gui;
+package project_cafe_suda_bugs.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -20,8 +20,8 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 
-import project_convenience_store.Product_manager;
-import project_convenience_store.product.Product;
+import project_cafe_suda_bugs.Product_manager;
+import project_cafe_suda_bugs.product.Product;
 
 
 @SuppressWarnings("serial")
@@ -33,6 +33,7 @@ public class Main_east_panel extends JPanel {
 	private JLabel total_price;
 	private JButton button_calc;
 
+	
 // 관리 모드 컴포넌트
 	private JPanel manage_panel;
 	private JLabel manage_title;
@@ -41,6 +42,13 @@ public class Main_east_panel extends JPanel {
 	
 	private ActionListener action_listener;
 
+	
+// 판매(계산) 완료 컴포넌트
+	private JDialog dialog_complete_calc;
+	private JLabel label_complete_calc;
+	private JButton button_complete_calc;
+	
+	
 // 정산 팝업 컴포넌트
 	private JDialog dialog_totalization;
 	private JLabel label_profit;
@@ -56,13 +64,14 @@ public class Main_east_panel extends JPanel {
 	private int location_x;
 	private int location_y;
 	
+	
 // 보충 팝업 컴포넌트
 	private JDialog dialog_supplement;
 	private JList<String> list_product_name;
 	private JLabel label_supply;
 	private JTextField text_supply;
 	private JButton button_supply;
-	private JButton button_complete;
+	private JButton button_supply_adapt;
 	
 	private Font font;
 	
@@ -93,9 +102,9 @@ public class Main_east_panel extends JPanel {
 		
 		this.init_manage_panel();
 		
-		this.init_totalization_dialog_spec();
+		this.init_totalization_dialog();
 		
-		this.init_supplement_dialog_spec();
+		this.init_supplement_dialog();
 	}
 	
 	
@@ -111,7 +120,7 @@ public class Main_east_panel extends JPanel {
 		this.main_title = new JLabel("    Total price    ");
 		this.main_title.setFont(this.font);
 		
-		this.total_price = new JLabel("");
+		this.total_price = new JLabel("0");
 		this.total_price.setFont(this.font);
 		
 		this.total_price_panel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
@@ -155,7 +164,7 @@ public class Main_east_panel extends JPanel {
 	
 	
 // 정산 팝업창 초기화
-	private void init_totalization_dialog_spec() {
+	private void init_totalization_dialog() {
 		this.size_x = 500;
 		this.size_y = 300;
 		
@@ -176,10 +185,11 @@ public class Main_east_panel extends JPanel {
 		this.dialog_totalization.setSize(this.size_x, this.size_y);
 		this.dialog_totalization.setLocation(this.location_x, this.location_y);
 		this.dialog_totalization.setLayout(new BorderLayout());
+		this.dialog_totalization.setResizable(false);
 		
-		button_ok = new JButton("확인");
-		button_ok.setFont(this.font);
-		button_ok.addActionListener(this.action_listener);
+		this.button_ok = new JButton("확인");
+		this.button_ok.setFont(this.font);
+		this.button_ok.addActionListener(this.action_listener);
 		
 		JPanel panel_ok = new JPanel(new FlowLayout(FlowLayout.CENTER));
 		panel_ok.add(button_ok);
@@ -189,7 +199,7 @@ public class Main_east_panel extends JPanel {
 	
 	
 // 보충 팝업창 초기화
-	private void init_supplement_dialog_spec() {
+	private void init_supplement_dialog() {
 		JLabel label_supply_title = new JLabel("상품 보충");
 		label_supply_title.setFont(this.font);
 		JPanel panel_supply_title = new JPanel(new FlowLayout(FlowLayout.CENTER));
@@ -228,6 +238,7 @@ public class Main_east_panel extends JPanel {
 		this.dialog_supplement.setSize(this.size_x, this.size_y);
 		this.dialog_supplement.setLocation(this.location_x, this.location_y);
 		this.dialog_supplement.setLayout(new BorderLayout());
+		this.dialog_supplement.setResizable(false);
 		
 		this.dialog_supplement.add(panel_supply_title, BorderLayout.NORTH);
 		this.dialog_supplement.add(panel_list, BorderLayout.CENTER);
@@ -258,16 +269,43 @@ public class Main_east_panel extends JPanel {
 	}
 	
 	
+// 계산 팝업 초기화
+	private void init_complete_dialog(String _price) {
+		this.dialog_complete_calc = new JDialog();
+		this.dialog_complete_calc.setTitle("계산완료");
+		this.dialog_complete_calc.setModal(true);
+		this.dialog_complete_calc.setSize(this.size_x, this.size_y);
+		this.dialog_complete_calc.setLocation(this.location_x, this.location_y);
+		this.dialog_complete_calc.setLayout(new BorderLayout());
+		this.dialog_complete_calc.setResizable(false);
+		
+		this.label_complete_calc = new JLabel(_price + "원이 결제 되었습니다", JLabel.CENTER);
+		this.label_complete_calc.setFont(this.font);
+		
+		this.button_complete_calc = new JButton("계산완료");
+		this.button_complete_calc.setFont(this.font);
+		this.button_complete_calc.addActionListener(this.action_listener);
+		
+		JPanel temp_panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+		temp_panel.add(button_complete_calc);
+		
+		this.dialog_complete_calc.add(this.label_complete_calc, BorderLayout.CENTER);
+		this.dialog_complete_calc.add(temp_panel, BorderLayout.SOUTH);
+		
+		this.dialog_complete_calc.setVisible(true);
+	}	
+	
+	
 // 정산 팝업 열기
 	private void open_total_profit(int _profit) {
 		this.label_profit = new JLabel("총 수익금 : " + Integer.toString(_profit), JLabel.CENTER);
 		this.label_profit.setFont(this.font);
 		
-		this.button_complete = new JButton("정산완료");
-		this.button_complete.addActionListener(this.action_listener);
+		this.button_supply_adapt = new JButton("정산완료");
+		this.button_supply_adapt.addActionListener(this.action_listener);
 		
 		south_panel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-		south_panel.add(button_complete);
+		south_panel.add(button_supply_adapt);
 		
 		this.dialog_totalization.add(this.label_profit, BorderLayout.CENTER);
 		this.dialog_totalization.add(south_panel, BorderLayout.SOUTH);
@@ -373,18 +411,42 @@ public class Main_east_panel extends JPanel {
 					break;
 					
 				case "계산":
-					// 계산부 작성
-					Product product = null;
 					String[] product_name = null;
-					int[] require_number = null;
+					int[] require_count = null;
+					int total_price = 0;
 					int loop = 0;
 					
 					product_name = Main_frame.get_frame().center_panel.get_confirmed_product_name();
-					require_number = Main_frame.get_frame().center_panel.get_confirmed_price();
+					require_count = Main_frame.get_frame().center_panel.get_confirmed_product_count();
+					total_price = Main_frame.get_frame().center_panel.get_total_price();
 					loop = Main_frame.get_frame().center_panel.get_confirmed_count();
 					
+					System.out.println(product_name[0] + " " + require_count[0] + " " + loop);
 					
+					for(int i = 0; i < loop; i++) {
+						Product_manager.get_manager().sales_product(product_name[i], require_count[i]);
+					}
+					
+					main_panel.setVisible(false);
+					main_panel.removeAll();
+					init_main_panel();
+					main_panel.setVisible(true);
+					
+					Main_frame.get_frame().center_panel.init_confirmed();
+					Main_frame.get_frame().change_to_manage_mode();
+					Main_frame.get_frame().change_to_main_mode();
 					System.out.println("계산 동작");
+					
+					if(total_price != 0) {				
+						init_complete_dialog(Integer.toString(total_price));
+					}
+					
+					break;
+				// case "계산":
+					
+				case "계산완료":
+					dialog_complete_calc.dispose();
+					break;
 				}// end switch
 			}// end actionPerformed()
 		};

@@ -1,4 +1,4 @@
-package project_convenience_store.gui;
+package project_cafe_suda_bugs.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

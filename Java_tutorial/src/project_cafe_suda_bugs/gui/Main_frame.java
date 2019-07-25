@@ -1,4 +1,4 @@
-package project_convenience_store.gui;
+package project_cafe_suda_bugs.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Font;
@@ -6,8 +6,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Set;
 
-import project_convenience_store.Product_manager;
-import project_convenience_store.product.Product;
+import project_cafe_suda_bugs.Product_manager;
+import project_cafe_suda_bugs.product.Product;
 
 @SuppressWarnings("serial")
 public class Main_frame extends Base_frame {
@@ -21,6 +21,7 @@ public class Main_frame extends Base_frame {
 	public Main_north_panel north_panel;
 	public Main_east_panel east_panel;
 	public Main_center_panel center_panel;
+	
 	
 // 생성자
 	private Main_frame() {
@@ -45,7 +46,7 @@ public class Main_frame extends Base_frame {
 // 타이틀 초기화
 	@Override
 	protected void set_frame_title() {
-		this.setTitle("ZS25 system");
+		this.setTitle("쓰다벅스");
 	}
 	
 	
@@ -141,7 +142,7 @@ public class Main_frame extends Base_frame {
 				
 				this.center_panel.add_manage_attribute(
 						name, origin_price, sales_price, profit, remain_number);
-			}
-		}
-	}
+			}// end while
+		}// end while 
+	}// end output_all_product_info
 }

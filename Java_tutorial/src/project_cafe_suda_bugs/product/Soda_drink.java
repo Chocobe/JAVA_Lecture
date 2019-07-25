@@ -1,26 +1,25 @@
-package project_convenience_store.product;
+package project_cafe_suda_bugs.product;
 
-public final class Hot_coffee extends Product implements IHot, ICoffee {
-	
+public final class Soda_drink extends Product implements IDrink, ISoda {
 // 생성자
-	public Hot_coffee() {
+	public Soda_drink() {
 		this.set_kind_type();
 	}
 	
-
+	
 // main_sort
 	@Override
 	public String get_main_sort() {
 		return MAIN_SORT;
 	}
-
 	
-// sub_sort
+	
+// sub_sort	
 	@Override
 	public String get_sub_sort() {
 		return SUB_SORT;
 	}
-
+	
 	
 // kind_type
 	@Override

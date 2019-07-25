@@ -1,4 +1,4 @@
-package project_convenience_store.gui;
+package project_cafe_suda_bugs.gui;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -24,6 +24,7 @@ public class Main_north_panel extends JPanel {
 	
 	private Font font_menu;
 	private Font font_store_name;
+	
 	
 // 생성자
 	public Main_north_panel(Font _font_menu) {
@@ -54,7 +55,7 @@ public class Main_north_panel extends JPanel {
 		this.button_manage.setFont(this.font_menu);
 		this.button_manage.addActionListener(this.action_listener);
 		
-		this.store_name = new JLabel("쓰다 벅스 - 그린점");
+		this.store_name = new JLabel("쓰다벅스 - 그린점");
 		this.store_name.setFont(this.font_store_name);
 		this.store_name_panel = new JPanel(new BorderLayout());
 		this.store_name_panel.setPreferredSize(new Dimension(700, 20));
@@ -104,5 +105,5 @@ public class Main_north_panel extends JPanel {
 				}// end switch
 			}// end actionPerformed()
 		};
-	}
+	}// end init_action_listener()
 }

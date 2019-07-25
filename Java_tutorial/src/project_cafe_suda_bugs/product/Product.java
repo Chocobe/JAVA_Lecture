@@ -1,4 +1,4 @@
-package project_convenience_store.product;
+package project_cafe_suda_bugs.product;
 
 public abstract class Product {
 	private String name;
