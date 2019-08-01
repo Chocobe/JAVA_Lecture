@@ -59,6 +59,18 @@
 
 타이머 만들기
 
+* ``getContentPane()``메서드는?
+
+	``Container``클래스를 상속받는 ``JFrame``에 컴포넌트를 붙이기 위해서 ``add()``메소드를 사용했었다.
+	하지만, JAVA설계자의 의도는 ``JFrame``에 컴포넌트를 붙이려면, ``add()``메소드를 사용하지 말고,
+	```java
+		Container c = JFrame객체.getContentPane();
+		c.add(컴포넌트);
+	```
+	의 형식으로 사용하라고 한다.
+	이유는, ``JFrame``의 ``add()``는 다른 API와 충돌을 일으킬 수 있기 때문이라고 한다.
+
+
 :camel:[Top](#thread)
 
 ---
@@ -103,14 +115,18 @@
 
 	* JLabel의 인스턴스 메소드인 ``setOpaque(true);`` 살펴보기
 	
-	* 공부 필요
+		* ``JLabel``과 ``JPanel``은 기본적으로 배경 투명도(알파값)이 0(false)이기 때문에, 배경이 없다. 그래서 setBackground()를 적용시키려면, ``setOpaque(true)`` 메서드를 이용하여 배경이 있도록 설정해야 setBackground() 메소드가 적용된다.
 	
+:camel:[Top](#thread)
+
 ---
 ---
 
 ### thread_information
 
 * 현재 쓰레드의 정보값 가져오기
+
+:camel:[Top](#thread)
 
 ---
 ---
@@ -120,3 +136,28 @@
 * 쓰레드를 정지시키는 기능
 
 	* 공부 필요
+	
+:camel:[Top](#thread)
+	
+---
+---
+
+### thread_sysnchronized
+
+* 쓰레드들의 동기화를 하기위한 키워드 ``synchronized``
+
+* ``synchronized``키워드는 메소드 앞, 또는 코드블록에 설정할 수 있다.
+
+* 동기화 메소드를 생성할 경우,
+
+	* ``synchronized public void method() { }``
+	
+* 동기화 코드블록을 생성할 경우,
+
+	* ``synchronized(이 블록이 포함된 객체를 참조하는 객체) { 코드블록 }``
+	
+	* 예를 들어, 인스턴스 메소드 안에 있는 코드블록 일부를 동기화 한다면,
+	
+		``synchronized(this) { 코드블록 }``
+		
+:camel:[Top](#thread)		
