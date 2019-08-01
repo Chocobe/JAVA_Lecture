@@ -39,6 +39,18 @@
 
 * [multi_thread_test_2](#multi_thread_test_2)
 
+
+* [multi_thread_test_3](#multi_thread_test_3)
+
+
+* [thread_information](#thread_information)
+
+
+* [thread_interrupt](#thread_interrupt)
+
+
+* [thread_synchronized](#thread_synchronized)
+
 ---
 ---
 
@@ -142,7 +154,7 @@
 ---
 ---
 
-### thread_sysnchronized
+### thread_synchronized
 
 * 쓰레드들의 동기화를 하기위한 키워드 ``synchronized``
 
