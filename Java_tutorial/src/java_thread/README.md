@@ -93,3 +93,30 @@
 	* 쓰레드 객체를 여러개 생성하여 종료점 비교하기
 	
 :camel:[Top](#thread)
+
+---
+---
+
+### multi_thread_test_3
+
+* ``Runnable``인터페이스를 구현한 쓰레드 구현 예제_3
+
+	* JLabel의 인스턴스 메소드인 ``setOpaque(true);`` 살펴보기
+	
+	* 공부 필요
+	
+---
+---
+
+### thread_information
+
+* 현재 쓰레드의 정보값 가져오기
+
+---
+---
+
+### thread_interrupt
+
+* 쓰레드를 정지시키는 기능
+
+	* 공부 필요
