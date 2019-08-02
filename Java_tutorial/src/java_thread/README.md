@@ -51,6 +51,9 @@
 
 * [thread_synchronized](#thread_synchronized)
 
+
+* [threadControl](#threadcontrol)
+
 ---
 ---
 
@@ -172,4 +175,15 @@
 	
 		``synchronized(this) { 코드블록 }``
 		
-:camel:[Top](#thread)		
+:camel:[Top](#thread)	
+
+---
+---
+
+### threadControl
+
+``Thread``객체의 ``interrupt()``실행하기
+
+``interrupt()``가 호출되면, ``InterruptedException``객체가 생성되고, catch문이 수행되며, 쓰레드가 종료된다.
+
+:camel:[Top](#thread)
