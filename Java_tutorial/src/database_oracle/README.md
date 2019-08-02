@@ -9,3 +9,17 @@
 1. Oracle Database가 설치된 곳의 ``ojdbc6.jar``파일을 열고, 등록하면 완료된다.
 
 	``(C:\app\user\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar)``
+	
+---
+---
+
+### connection_test
+
+JDBC를 이용하여 database에 접속 하기
+
+---
+---
+
+### select_test
+
+JDBC를 이용하여 ``SELECT``쿼리 사용하기
