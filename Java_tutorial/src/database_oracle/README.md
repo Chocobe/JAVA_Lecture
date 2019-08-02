@@ -1,0 +1,11 @@
+# JDBC eclipse에 추가하기
+
+1. Package Explorer의 최상위 폴더에서 우클릭
+
+1. ``Build Path`` -> ``Configure Build Path`` 들어간다.
+
+1. ``Libraries`` -> ``Add extenal JARs``
+
+1. Oracle Database가 설치된 곳의 ``ojdbc6.jar``파일을 열고, 등록하면 완료된다.
+
+	``(C:\app\user\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar)``
