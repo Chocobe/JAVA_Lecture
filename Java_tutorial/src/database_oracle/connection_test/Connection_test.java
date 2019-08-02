@@ -24,6 +24,7 @@ public class Connection_test {
 			System.out.println("구동 드라이브 연결 성공");
 			
 			// 2. url, user, password 로 연결
+			@SuppressWarnings("unused")
 			Connection connection = DriverManager.getConnection(url, user, password);
 			System.out.println("Database 연결 성공");
 			
