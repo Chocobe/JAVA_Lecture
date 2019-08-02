@@ -52,7 +52,7 @@
 * [thread_synchronized](#thread_synchronized)
 
 
-* [threadControl](#threadcontrol)
+* [thread_control](#thread_control)
 
 ---
 ---
@@ -180,10 +180,23 @@
 ---
 ---
 
-### threadControl
+### thread_control
 
 ``Thread``객체의 ``interrupt()``실행하기
 
 ``interrupt()``가 호출되면, ``InterruptedException``객체가 생성되고, catch문이 수행되며, 쓰레드가 종료된다.
 
 :camel:[Top](#thread)
+
+---
+---
+
+### thread_count_test
+
+``Thread``의 ``run()``메소드에서 1증가와 1감소를 한번씩 수행하도록 한다.
+
+``run()``메소드가 실행되어 종료되면 원래 값이 되야 정상이다.
+
+이때, 다수의 쓰레드가 하나의 객체에 대해 위와 같은 동작을 수행하면, 동기화 하지 않았기 때문에, 정상적인 동작이 안된다.
+
+때문에 동기화가 필요하다.
