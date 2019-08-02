@@ -12,10 +12,9 @@ public class FlickeringLabel extends JLabel implements Runnable {
 		super(_text);
 		this.delay = _delay;
 		
-		
-		//뭔지 찾아볼 것
-		this.setOpaque(true);
-		
+		// JLabel은 배경 투명도 값이 기본값으로 false
+		// 투명도를 true로 만들어야 배경에 대한 설정이 출력된다.
+		this.setOpaque(true);		
 		
 		Thread th = new Thread(this);
 		th.start();
