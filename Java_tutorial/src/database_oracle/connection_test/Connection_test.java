@@ -31,7 +31,7 @@ public class Connection_test {
 		} catch(ClassNotFoundException e) {
 			System.out.println("오라클 구동 파일을 찾을 수 없음 : " + e.getMessage());
 			
-		} catch (SQLException e) {			
+		} catch (SQLException e) {
 			System.out.println("Database 연결 실패 : " + e.getMessage());
 		}
 	}
