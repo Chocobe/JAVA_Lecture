@@ -23,7 +23,20 @@
 
 ### connection_test
 
-JDBC를 이용하여 database에 접속 하기
+* JDBC를 이용하여 database에 접속 하기
+
+	1. JDBC 드라이버 객체 생성하기(구동하기)
+	
+		```java
+		String driver_path = "oracle.jdbc.driver.OracleDriver;
+		forName(driver_path);
+		```
+		
+		JDBC 드라이버가 구동된다.
+		
+	1. URL 설정하기
+	
+		* URL (Uniform Resource Locator) : 자원 위치 지정자
 
 :camel:[Top](#database_jdbc)
 
