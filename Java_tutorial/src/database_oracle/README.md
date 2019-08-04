@@ -50,7 +50,7 @@ JDBC를 이용하여 database에 접속 하기
 	* ``Connection``객체는 생성자를 호출하여 생성하지 않고, ``DriverManager``클래스의 ``getConnection(url, id, password)`` 메소드를 통해 생성한다. (정적 펙토리 메소드 패턴)
 	
 	```java
-	Connection c = DriverManager(url, id, password);
+	Connection c = DriverManager.getConnection(url, id, password);
 	```
 	
 1. JDBC 드라이버 구동, ``Connection``객체 생성, 이 두 과정을 통해 DB에 접속상태가 된다.
@@ -69,7 +69,7 @@ DB에 쿼리를 정송하여 결과를 읽어오기 위해서는 ``Statement``�
 1. 쿼리를 전송하는 객체인 ``Statement`` 객체 생성하기
 
 	```java
-	Connection c = DriverManager(url, id, password);
+	Connection c = DriverManager.getConnection(url, id, password);
 	Statement st = c.createStatement();
 	```
 	
