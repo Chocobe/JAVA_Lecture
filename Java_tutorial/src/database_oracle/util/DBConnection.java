@@ -5,45 +5,53 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class DBConnection {
-	public static Connection con;
-	public static Statement st;
+public final class DBConnection {
+	public static Connection connection;
+	public static Statement statement;
 	
+	private final static String DRIVER;
 	private final static String URL;
 	private final static String ID;
 	private final static String PW;
 	
 	static {
+		DRIVER = "oracle.jdbc.driver.OracleDriver";
 		URL = "jdbc:oracle:thin:@localhost:1521:orcl";
 		ID = "scott";
 		PW = "tiger";
 		
-		init_connection();
+		lazy_init_DBConnection();
 	}
 	
-	private static void init_connection() {
-		try {			
-			con = DriverManager.getConnection(URL, ID, PW);
+	
+// lazy_init
+	private static void lazy_init_DBConnection() {
+		try {
+			Class.forName(DRIVER);
 			System.out.println("드라이버 구동 완료");
 			
-			st = con.createStatement();
-			System.out.println(ID + "계정의 접속 완료");
+			connection = DriverManager.getConnection(URL, ID, PW);
+			System.out.println(ID + "계정으로 접속 완료");
+			
+		} catch(ClassNotFoundException e) {
+			System.out.println("구동 실패" + e.getMessage());
 			
 		} catch(SQLException e) {
-			System.out.println("Error : " + e.getMessage());
+			System.out.println(ID + "계정 접속 실패" + e.getMessage());
 		}
 	}
 	
 	
+// 스트림 종료
 	public static void close() {
 		try {
-			if (con != null) { con.close(); }
-			if (st != null) { st.close(); }
-			System.out.println("DB 정상 종료");
-						
+			if(connection != null) { connection.close(); }
+			if(statement != null) { statement.close(); }
+			
+			System.out.println("DB - 정상 접속 종료");
+			
 		} catch (SQLException e) {
-			System.out.println("DB 비정상 종료");
+			System.out.println("DB종료 에러 : " + e.getMessage());
 		}
-		
 	}
 }

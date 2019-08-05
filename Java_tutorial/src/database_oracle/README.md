@@ -122,8 +122,35 @@ Database는 접속하는데 자원소비가 크다.
 ---
 ---
 
+### update_test
+
+aaa
+
+---
+---
+
+### insert_prepared_test
+
+aaa
+
+---
+---
+
+### update_prepared_test
+
+aaa
+
+---
+---
+
 ### util
 
-반복적으로 사용하는 메소드를 만들어 놓자.
+
+** 반복적으로 사용하는 메소드를 만들어 놓자. **
 
 :camel:[Top](#database_jdbc)
+
+---
+---
+
+### simple_project_DB_1
