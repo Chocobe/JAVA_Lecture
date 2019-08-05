@@ -21,6 +21,9 @@
 
 * [insert_test](#insert_test)
 
+
+* [util](#util)
+
 ---
 ---
 
@@ -114,9 +117,13 @@ Database는 접속하는데 자원소비가 크다.
 
 때문에, Database접속 메소드를 만들어, 한번만 수행하도록 구조를 만들자
 
---
---
+:camel:[Top](#database_jdbc)
+
+---
+---
 
 ### util
 
 반복적으로 사용하는 메소드를 만들어 놓자.
+
+:camel:[Top](#database_jdbc)
