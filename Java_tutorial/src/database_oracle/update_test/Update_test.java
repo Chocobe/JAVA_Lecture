@@ -1,4 +1,4 @@
-package database_oracle.insert_test;
+package database_oracle.update_test;
 
 // 사원번호가 9999인 사원의
 // JOB = ANALYST, 부서 = 20 으로 변경하기
