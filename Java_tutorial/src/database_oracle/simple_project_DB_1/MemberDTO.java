@@ -1,6 +1,7 @@
 package database_oracle.simple_project_DB_1;
 
 // DTO : Data Transfer Object
+// 데이터베이스에 자료를 전달할 때 전송하는 대상 객체(전송단위)
 
 public class MemberDTO {
 	private int id;

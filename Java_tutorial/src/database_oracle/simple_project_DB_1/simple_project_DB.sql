@@ -1,0 +1,10 @@
+CREATE TABLE MEMBER(
+    ID          NUMBER,  -- 길이값 기본값 : 5자리 : NUMBER(5)
+    NAME        VARCHAR2(20),
+    PASSWORD    VARCHAR2(20),
+    EMAIL       VARCHAR2(20)
+);
+
+SELECT * FROM MEMBER;
+
+DELETE FROM MEMBER;

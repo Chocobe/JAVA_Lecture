@@ -6,19 +6,27 @@ import java.sql.SQLException;
 import oracle.jdbc.pool.OracleDataSource;
 
 public class DBConnection {
-	private OracleDataSource data_source;
-	private Connection conn;
+	private static OracleDataSource data_source;
+	private static Connection conn;
 	
-	private final String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
-	private final String ID = "scott";
-	private final String PW = "tiger";
+	private final static String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+	private final static String ID = "scott";
+	private final static String PW = "tiger";
+	
+	static {
+		init_Connection();
+	}
 	
 	
-	public DBConnection() {
+	// 싱글톤
+	private DBConnection() { }
+	
+	
+	private static void init_Connection() {
 		try {
-			this.data_source = new OracleDataSource();
-			data_source.setURL(this.URL);
-			this.conn = data_source.getConnection(this.ID, this.PW);
+			data_source = new OracleDataSource();
+			data_source.setURL(URL);
+			conn = data_source.getConnection(ID, PW);
 			System.out.println("JDBC 접속 성공");
 			
 		} catch (SQLException e) {
@@ -27,7 +35,17 @@ public class DBConnection {
 	}
 	
 	
-	public Connection get_connection() {
-		return this.conn;
+	public static Connection get_connection() {
+		return conn;
+	}
+	
+	
+	public static void close() {
+		try {
+			if(conn != null) { conn.close(); }
+			
+		} catch (SQLException e) {
+			System.out.println("Connection 비정상 종료 : " + e.getMessage());
+		}
 	}
 }

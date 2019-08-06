@@ -1,6 +1,8 @@
 package database_oracle.simple_project_DB_1;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class ManagerData {
@@ -14,8 +16,6 @@ public class ManagerData {
 	}
 	
 	public void inputData() {
-		System.out.println("자료입력");
-		
 		// id 입력시, 잘못된 데이터 처리(정수형 입력)
 		//		- 정수 이외는 예외처리로 재입력
 		// id 중복 처리
@@ -25,6 +25,10 @@ public class ManagerData {
 			try {
 				System.out.print("ID입력 : ");
 				dto.setId(scanner.nextInt());
+				
+				if(dao.isDuplicate(dto)) { continue; }
+				
+				scanner.nextLine();	// 버퍼상 ENTER값 지우기
 				break;
 				
 			} catch(InputMismatchException e) {
@@ -47,7 +51,10 @@ public class ManagerData {
 		
 		
 		// 완성된 DTO를 DAO로 보내기
-		dao.registerMember(dto);
+		int res = dao.registerMember(dto);
+		
+		if(res == 1) System.out.println("회원가입 성공");
+		else 		 System.out.println("회원가입 실패");
 		
 		System.out.println("inputData 메소드 종료");
 	}
@@ -55,6 +62,17 @@ public class ManagerData {
 	
 	public void writeAll() {
 		System.out.println("전체 회원 출력 페이지");
+		
+		
+		ArrayList<MemberDTO> list = dao.get_all_list();
+		for(Iterator<MemberDTO> itr = list.iterator();
+				itr.hasNext(); ) {
+			
+			MemberDTO cur_dto = itr.next();
+			System.out.printf("[%10d] | [%10s] | [%10s] | [%10s]\n",
+					cur_dto.getId(), cur_dto.getName(), 
+					cur_dto.getPassword(), cur_dto.getEmail());
+		}
 	}
 	
 	
@@ -69,6 +87,18 @@ public class ManagerData {
 	
 	
 	public void deleteData() {
-		System.out.println("회원 삭제 페이지");
+		// 삭제 시퀀스
+		
+//		dao.delete_data();
+	}
+	
+	
+	public void delete_all() {
+		dao.delete_all();
+	}
+	
+	
+	public void close() {
+		dao.close();
 	}
 }
