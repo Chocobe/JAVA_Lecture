@@ -6,9 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import database_oracle.util_practice_2.DBConnection;
-
-
+import database_oracle.util_OracleDataSource.DBConnection_data_source;
 
 // DAO : Data Access Object
 // 데이터베이스 기능을 구현하는 클래스
@@ -20,7 +18,7 @@ public class MemberDAO {
 	
 // 생성자
 	public MemberDAO() {
-		this.conn = DBConnection.get_connection();
+		this.conn = DBConnection_data_source.get_connection();
 	}
 	
 	
@@ -41,7 +39,7 @@ public class MemberDAO {
 			result_state = pre_statement.executeUpdate();
 			
 		} finally {
-			DBConnection.close(pre_statement);
+			DBConnection_data_source.close(pre_statement);
 		}
 		
 		if(result_state == 1) {return true; }
@@ -51,8 +49,8 @@ public class MemberDAO {
 	
 // ID 중복 검사
 	public boolean isDuplicate(MemberDTO _dto) {
-		ResultSet result_set = null; 
 		PreparedStatement pre_statement = null;
+		ResultSet result_set = null;	
 		
 		boolean isDuplicate = false;
 		int cur_id = _dto.getId();
@@ -65,7 +63,7 @@ public class MemberDAO {
 			result_set = pre_statement.executeQuery();
 			
 			while(result_set.next()) {
-				System.out.println(cur_id + "는 중복된 ID입니다\n");
+				System.out.println(cur_id + "은(는) 중복된 ID입니다");
 				isDuplicate = true;
 				break;
 			}
@@ -74,7 +72,8 @@ public class MemberDAO {
 			System.out.println("SELECT 에러 : " + e.getMessage());
 		
 		} finally {
-			DBConnection.close(pre_statement);
+			DBConnection_data_source.close(pre_statement);
+			DBConnection_data_source.close(result_set);
 		}
 		
 		return isDuplicate;
@@ -111,8 +110,9 @@ public class MemberDAO {
 			System.out.println("전체 정보 가져오기 실패 : " + e.getMessage());
 			
 		} finally {
-			DBConnection.close(pre_statement);
-			DBConnection.close(result_set);
+			System.out.println();
+			DBConnection_data_source.close(pre_statement);
+			DBConnection_data_source.close(result_set);
 		}
 		
 		return list;
@@ -155,6 +155,10 @@ public class MemberDAO {
 				
 			} catch(SQLException e) {
 				System.out.println("비정상 종료 : " + e.getMessage());
+				
+			} finally {
+				DBConnection_data_source.close(result_set);
+				DBConnection_data_source.close(pre_statement);
 			}
 		}
 
@@ -168,7 +172,8 @@ public class MemberDAO {
 		String password = "";
 		String email = "";
 		String sql = "UPDATE MEMBER SET " +
-					 "PASSWORD = ?, EMAIL = ?";
+					 "PASSWORD = ?, EMAIL = ?" +
+					 "WHERE ID = ?";
 
 		System.out.print("비밀번호 변경 : ");
 		password = ManagerData.scanner.nextLine();
@@ -176,12 +181,16 @@ public class MemberDAO {
 		System.out.print("이메일 변경 : ");
 		email = ManagerData.scanner.nextLine();
 		
+		int update_state = 0;
+		
 		try {
 			pre_statement = conn.prepareStatement(sql);
 			pre_statement.setString(1, password);
 			pre_statement.setString(2, email);
+			pre_statement.setInt(3, _id);
 			
-			int update_state = pre_statement.executeUpdate();
+			update_state = pre_statement.executeUpdate();
+			
 			if(update_state == 1) {
 				System.out.println("[회원번호 : " + _id + "]의 정보가 수정되었습니다");
 				
@@ -191,6 +200,10 @@ public class MemberDAO {
 			
 		} catch(SQLException e) {
 			System.out.println("정보수정 에러 : " + e.getMessage());
+			
+		} finally {
+			System.out.println();
+			DBConnection_data_source.close(pre_statement);
 		}
 	}
 	
@@ -209,7 +222,7 @@ public class MemberDAO {
 			System.out.println("삭제 에러 : " + e.getMessage());
 			
 		} finally {
-			DBConnection.close(pre_statement);
+			DBConnection_data_source.close(pre_statement);
 		}
 	}
 	
@@ -235,12 +248,7 @@ public class MemberDAO {
 			System.out.println("삭제 에러 : " + e.getMessage());
 			
 		} finally {
-			DBConnection.close(pre_statement);
+			DBConnection_data_source.close(pre_statement);
 		}
-	}
-	
-	
-	public Connection get_conn() {
-		return conn;
 	}
 }

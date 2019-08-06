@@ -3,7 +3,7 @@ package database_oracle.simple_project_DB_1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import database_oracle.util_practice_2.DBConnection;
+import database_oracle.util_OracleDataSource.DBConnection_data_source;
 
 // - 번호별 메뉴 구현
 //		1. 회원가입
@@ -38,9 +38,7 @@ public class MemberMain {
 // 메인 메소드
 	public static void main(String[] args) {
 		
-		while(true) {
-			print_menu();
-			
+		while(true) {			
 			int selected_menu = input_main_menu();
 			
 			enter_menu(selected_menu);
@@ -64,18 +62,23 @@ public class MemberMain {
 	public static int input_main_menu() {
 		int input_val = 0;
 		
-		System.out.print(">> ");
-		
 		while(true) {
 			try {
+				print_menu();
+				System.out.print(">> ");
+				
 				input_val = scanner.nextInt();
 				break;
 				
 			} catch(InputMismatchException e) {
 				System.out.println("유효하지 않은 선택입니다");
 				scanner.nextLine();
+				
+			} finally {
+				System.out.println();
 			}
 		}
+		
 		
 		return input_val;
 	}
@@ -118,7 +121,7 @@ public class MemberMain {
 			
 		case 7:
 			System.out.println("[7.종료] 선택");
-			DBConnection.close(manager.dao.get_conn());
+			DBConnection_data_source.close_connection();
 			ManagerData.scanner.close();
 			System.exit(0);
 			break;
@@ -132,36 +135,3 @@ public class MemberMain {
 		return valid_state;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

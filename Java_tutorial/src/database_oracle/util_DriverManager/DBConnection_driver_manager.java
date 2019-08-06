@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public final class DBConnection {
+public final class DBConnection_driver_manager {
 	public static Connection connection;
 	public static Statement statement;
 	
@@ -45,8 +45,8 @@ public final class DBConnection {
 // 스트림 종료
 	public static void close() {
 		try {
-			if(connection != null) { connection.close(); }
 			if(statement != null) { statement.close(); }
+			if(connection != null) { connection.close(); }
 			
 			System.out.println("DB - 정상 접속 종료");
 			

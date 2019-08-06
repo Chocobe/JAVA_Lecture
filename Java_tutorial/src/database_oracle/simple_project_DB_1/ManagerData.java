@@ -36,6 +36,8 @@ public class ManagerData {
 				System.out.println("ID는 정수만 가능합니다");
 				scanner.nextLine();
 				
+			} finally {
+				System.out.println();
 			}
 		} while(true);
 		
@@ -65,7 +67,7 @@ public class ManagerData {
 		if(is_registed) { System.out.println("회원가입 성공"); }
 		else { System.out.println("회원가입 실패"); }
 		
-		System.out.println("inputData 메소드 종료");
+		System.out.println();
 	}
 	
 	
@@ -113,8 +115,9 @@ public class ManagerData {
 				break;
 				
 			} catch(InputMismatchException e) {
-				System.out.println("회원번호는 숫자입니다 : " + e.getMessage());
+				System.out.println("** 회원번호는 숫자입니다 **\n");
 				scanner.nextLine();
+				
 			}
 		}
 		

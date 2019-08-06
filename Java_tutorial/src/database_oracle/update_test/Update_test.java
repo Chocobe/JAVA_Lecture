@@ -10,7 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import database_oracle.util.DBConnection;
+import database_oracle.util_DriverManager.DBConnection_driver_manager;
 
 public class Update_test {
 	private final static String DRIVER;
@@ -100,6 +100,6 @@ public class Update_test {
 		
 		up.select_emp(9991);
 		
-		DBConnection.close();
+		DBConnection_driver_manager.close();
 	}
 }
