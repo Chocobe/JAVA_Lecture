@@ -6,14 +6,13 @@ import java.sql.Statement;
 
 public class Tester {
 	public static void main(String[] args) {
-		DBConnection db = new DBConnection();
 		Statement statement = null;
 		ResultSet result_set = null;
 		
 		try {
 			String sql = "SELECT * FROM EMP_JAVA";
 			
-			statement = db.get_connection().createStatement();
+			statement = DBConnection.get_connection().createStatement();
 			result_set = statement.executeQuery(sql);
 			
 			while(result_set.next()) {

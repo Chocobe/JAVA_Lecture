@@ -3,6 +3,8 @@ package database_oracle.simple_project_DB_1;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import database_oracle.util_practice_2.DBConnection;
+
 // - 번호별 메뉴 구현
 //		1. 회원가입
 //		2. 전체출력
@@ -28,33 +30,36 @@ import java.util.Scanner;
 // PASS : 6글자 이상
 // EMAIL : @ 문자 유무 검사
 
-public class MemberMain {	
+public class MemberMain {
 	private static ManagerData manager = new ManagerData();
 	private static Scanner scanner = new Scanner(System.in);
 	
+
+// 메인 메소드
 	public static void main(String[] args) {
 		
-		print_menu();
-		
-		int selected_menu = input_main_menu();
-		
-		enter_menu(selected_menu);
-		
-		manager.close();
+		while(true) {
+			print_menu();
+			
+			int selected_menu = input_main_menu();
+			
+			enter_menu(selected_menu);
+		}
 	}
 	
 	
+// 메뉴 출력부
 	public static void print_menu() {
+		System.out.println("------------------------------------------------------------------------------------------");
+		
 		System.out.println(
-				"----------------------------------------------------------------------------");
-		System.out.println(
-				"[1.회원가입] | [2.전체출력] | [3.이름으로 검색] | [4.회원수정] | [5.회원삭제] | [6.종료]");
-		System.out.println(
-				"----------------------------------------------------------------------------");
+				"[1.회원가입] | [2.전체출력] | [3.이름으로 검색] | " +
+				"[4.회원수정] | [5.회원삭제] | [6. 전체삭제] | [7.종료]");
+		
+		System.out.println("------------------------------------------------------------------------------------------");
 	}
 	
-	
-// 미사용
+
 // 메뉴 선택 메소드
 	public static int input_main_menu() {
 		int input_val = 0;
@@ -76,7 +81,6 @@ public class MemberMain {
 	}
 	
 	
-
 // 메뉴 열기 메소드
 	public static boolean enter_menu(int _input_val) {
 		boolean valid_state = true;
@@ -89,14 +93,17 @@ public class MemberMain {
 			
 		case 2:
 			System.out.println("[2.전체출력] 선택");
+			manager.writeAll();
 			break;
 			
 		case 3:
 			System.out.println("[3.이름으로 검색] 선택");
+			manager.searchName();
 			break;
 			
 		case 4:
 			System.out.println("[4.회원수정] 선택");
+			manager.modifyData();
 			break;
 			
 		case 5:
@@ -105,13 +112,15 @@ public class MemberMain {
 			break;
 			
 		case 6:
-			System.out.println("[6.종료] 선택");
-			System.exit(0);
+			System.out.println("[6.전체삭제] 선택");
+			manager.delete_all();
 			break;
 			
 		case 7:
-			System.out.println("-- 전체삭제 --");
-			manager.delete_all();
+			System.out.println("[7.종료] 선택");
+			DBConnection.close(manager.dao.get_conn());
+			ManagerData.scanner.close();
+			System.exit(0);
 			break;
 			
 		default:

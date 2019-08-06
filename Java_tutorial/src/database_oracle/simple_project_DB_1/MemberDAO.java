@@ -16,16 +16,18 @@ import database_oracle.util_practice_2.DBConnection;
 
 public class MemberDAO {
 	private Connection conn;
-	private PreparedStatement pre_statement;	
 	
 	
+// 생성자
 	public MemberDAO() {
-		this.conn = new DBConnection().get_connection();
+		this.conn = DBConnection.get_connection();
 	}
 	
 	
-	public int registerMember(MemberDTO _dto) {
+// 회원등록
+	public boolean registerMember(MemberDTO _dto) throws SQLException {
 		String sql = "INSERT INTO MEMBER VALUES(?, ?, ?, ?)";
+		PreparedStatement pre_statement = null;
 		
 		int result_state = 0;
 		
@@ -38,23 +40,27 @@ public class MemberDAO {
 			
 			result_state = pre_statement.executeUpdate();
 			
-		} catch(SQLException e) {
-			System.out.println("입력 오류 : " + e.getMessage());
-		}		
+		} finally {
+			DBConnection.close(pre_statement);
+		}
 		
-		return result_state;
+		if(result_state == 1) {return true; }
+		else { return false; }
 	}
 	
 	
+// ID 중복 검사
 	public boolean isDuplicate(MemberDTO _dto) {
 		ResultSet result_set = null; 
+		PreparedStatement pre_statement = null;
+		
 		boolean isDuplicate = false;
 		int cur_id = _dto.getId();
 		
 		String sql = "SELECT ID FROM MEMBER WHERE ID = ?";
 		
 		try {
-			this.pre_statement = this.conn.prepareStatement(sql);
+			pre_statement = this.conn.prepareStatement(sql);
 			pre_statement.setInt(1, cur_id);
 			result_set = pre_statement.executeQuery();
 			
@@ -65,83 +71,176 @@ public class MemberDAO {
 			}
 			
 		} catch(SQLException e) {
-			System.out.println("SELECT 실패 : " + e.getMessage());
+			System.out.println("SELECT 에러 : " + e.getMessage());
+		
+		} finally {
+			DBConnection.close(pre_statement);
 		}
 		
 		return isDuplicate;
 	}
 	
 	
+// 정보 전체 반환
 	public ArrayList<MemberDTO> get_all_list() {
+		PreparedStatement pre_statement = null;
+		ResultSet result_set = null;
+		
 		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
 		String sql = "SELECT * FROM MEMBER";
 		MemberDTO cur_dto = null;
 		
 		try {
-			this.pre_statement = this.conn.prepareStatement(sql);
-			ResultSet rs = pre_statement.executeQuery();
+			pre_statement = this.conn.prepareStatement(sql);
+			result_set = pre_statement.executeQuery();
 			
-			while(rs.next()) {
+			while(result_set.next()) {
 				cur_dto = new MemberDTO();
-				cur_dto.setId(rs.getInt("ID"));
-				cur_dto.setName(rs.getString("NAME"));
-				cur_dto.setPassword(rs.getString("PASSWORD"));
-				cur_dto.setEmail(rs.getString("EMAIL"));
+				cur_dto.setId(result_set.getInt("ID"));
+				cur_dto.setName(result_set.getString("NAME"));
+				cur_dto.setPassword(result_set.getString("PASSWORD"));
+				cur_dto.setEmail(result_set.getString("EMAIL"));
 				
 				list.add(cur_dto);
+				
 			}
 			
 			System.out.println("전체 정보 가져오기 완료");
 			
 		} catch(SQLException e) {
 			System.out.println("전체 정보 가져오기 실패 : " + e.getMessage());
+			
+		} finally {
+			DBConnection.close(pre_statement);
+			DBConnection.close(result_set);
 		}
 		
 		return list;
 	}
 	
 	
-	public void delete_all() {
-		String sql = "DELETE FROM MEMBER";
+// 이름으로 검색
+	public ArrayList<MemberDTO> get_search_name(String _name) {
+		PreparedStatement pre_statement = null;
+		ResultSet result_set = null;
+	
+		ArrayList<MemberDTO> list = new ArrayList<MemberDTO>();
+		String sql = "SELECT * FROM MEMBER WHERE NAME LIKE '%" + _name + "%'";
+		MemberDTO dto = null;
+		
 		try {
-			this.pre_statement = conn.prepareStatement(sql);
-			this.pre_statement.executeUpdate(sql);
+			pre_statement = this.conn.prepareStatement(sql);
+			result_set = pre_statement.executeQuery();
+			
+			while(result_set.next()) {
+				dto = new MemberDTO();
+				
+				dto.setId(result_set.getInt("ID"));
+				dto.setName(result_set.getString("NAME"));
+				dto.setPassword(result_set.getString("PASSWORD"));
+				dto.setEmail(result_set.getString("EMAIL"));
+				
+				list.add(dto);
+			}
+			
+			System.out.println(_name + "정보 가져오기 완료");
+			
+		} catch(SQLException e) {
+			System.out.println("SELECT 에러 : " + e.getMessage());
+			
+		} finally {
+			try {
+				if(pre_statement != null) { pre_statement.close(); }
+				if(result_set != null) { result_set.close(); }
+				
+			} catch(SQLException e) {
+				System.out.println("비정상 종료 : " + e.getMessage());
+			}
+		}
+
+		return list;
+	}
+	
+	
+// 회원 수정
+	public void modify_data(int _id) {
+		PreparedStatement pre_statement = null;
+		String password = "";
+		String email = "";
+		String sql = "UPDATE MEMBER SET " +
+					 "PASSWORD = ?, EMAIL = ?";
+
+		System.out.print("비밀번호 변경 : ");
+		password = ManagerData.scanner.nextLine();
+		
+		System.out.print("이메일 변경 : ");
+		email = ManagerData.scanner.nextLine();
+		
+		try {
+			pre_statement = conn.prepareStatement(sql);
+			pre_statement.setString(1, password);
+			pre_statement.setString(2, email);
+			
+			int update_state = pre_statement.executeUpdate();
+			if(update_state == 1) {
+				System.out.println("[회원번호 : " + _id + "]의 정보가 수정되었습니다");
+				
+			} else {
+				System.out.println("[회원번호 : " + _id + "] 회원 정보 수정 실패");
+			}
+			
+		} catch(SQLException e) {
+			System.out.println("정보수정 에러 : " + e.getMessage());
+		}
+	}
+	
+	
+// 전체 삭제
+	public void delete_all() {
+		PreparedStatement pre_statement = null;
+		String sql = "DELETE FROM MEMBER";
+		
+		try {
+			pre_statement = conn.prepareStatement(sql);
+			pre_statement.executeUpdate(sql);
 			System.out.println("전체 데이터 삭제 완료");
 			
 		} catch (SQLException e) {
 			System.out.println("삭제 에러 : " + e.getMessage());
+			
+		} finally {
+			DBConnection.close(pre_statement);
 		}
 	}
 	
 	
-	public void delete_data(MemberDTO _dto) {
-		int id = _dto.getId();
+// 회원 삭제
+	public void delete_data(int _id) {
+		PreparedStatement pre_statement = null;
 		String sql = "DELETE FROM MEMBER WHERE ID = ?";
 		
 		try {
 			pre_statement = conn.prepareStatement(sql);
+			pre_statement.setInt(1, _id);
 			int result_state = pre_statement.executeUpdate();
 			
 			if(result_state == 1) {
-				System.out.println(id + "데이터 삭제 완료");
+				System.out.println("[회원번호 : " + _id + "] 데이터 삭제 완료");
 				
 			} else {
-				System.out.println(id + "데이터가 존재하지 않습니다");
+				System.out.println("[회원번호 : " + _id + "] 데이터가 존재하지 않습니다");
 			}
 			
 		} catch(SQLException e) {
 			System.out.println("삭제 에러 : " + e.getMessage());
+			
+		} finally {
+			DBConnection.close(pre_statement);
 		}
 	}
 	
-
-	public void close() {
-		try {
-			this.pre_statement.close();
-			this.conn.close();
-			
-		} catch (SQLException e) {
-			System.out.println("비정상 종료 : " + e.getMessage());
-		}
+	
+	public Connection get_conn() {
+		return conn;
 	}
 }

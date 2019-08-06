@@ -1,5 +1,6 @@
 package database_oracle.simple_project_DB_1;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Iterator;
@@ -34,6 +35,7 @@ public class ManagerData {
 			} catch(InputMismatchException e) {
 				System.out.println("ID는 정수만 가능합니다");
 				scanner.nextLine();
+				
 			}
 		} while(true);
 		
@@ -51,10 +53,17 @@ public class ManagerData {
 		
 		
 		// 완성된 DTO를 DAO로 보내기
-		int res = dao.registerMember(dto);
+		boolean is_registed = false;
 		
-		if(res == 1) System.out.println("회원가입 성공");
-		else 		 System.out.println("회원가입 실패");
+		try {
+			is_registed = dao.registerMember(dto);
+			
+		} catch(SQLException e) {
+			System.out.println("등록실패 : " + e.getMessage());
+		}
+		
+		if(is_registed) { System.out.println("회원가입 성공"); }
+		else { System.out.println("회원가입 실패"); }
 		
 		System.out.println("inputData 메소드 종료");
 	}
@@ -63,14 +72,11 @@ public class ManagerData {
 	public void writeAll() {
 		System.out.println("전체 회원 출력 페이지");
 		
-		
 		ArrayList<MemberDTO> list = dao.get_all_list();
-		for(Iterator<MemberDTO> itr = list.iterator();
-				itr.hasNext(); ) {
-			
+		for(Iterator<MemberDTO> itr = list.iterator(); itr.hasNext(); ) {
 			MemberDTO cur_dto = itr.next();
 			System.out.printf("[%10d] | [%10s] | [%10s] | [%10s]\n",
-					cur_dto.getId(), cur_dto.getName(), 
+					cur_dto.getId(), cur_dto.getName(),
 					cur_dto.getPassword(), cur_dto.getEmail());
 		}
 	}
@@ -78,27 +84,68 @@ public class ManagerData {
 	
 	public void searchName() {
 		System.out.println("이름으로 회원 검색 페이지");
+		System.out.print("검색할 이름 : ");
+		String input_name = scanner.nextLine();
+		
+		ArrayList<MemberDTO> list = null;
+		MemberDTO cur_dto = null;
+		
+		list = dao.get_search_name(input_name);
+		
+		for(Iterator<MemberDTO> itr = list.iterator(); itr.hasNext(); ) {
+			cur_dto = itr.next();
+			System.out.printf("[%10d] | [%10s] | [%10s] | [%10s]\n",
+					cur_dto.getId(), cur_dto.getName(),
+					cur_dto.getPassword(), cur_dto.getEmail());
+		}
 	}
 	
 	
 	public void modifyData() {
 		System.out.println("회원 수정 페이지");
+		int cur_id = 0;
+		
+		while(true) {
+			try {			
+				System.out.print("수정할 회원번호 입력 : ");
+				cur_id = scanner.nextInt();
+				scanner.nextLine();
+				break;
+				
+			} catch(InputMismatchException e) {
+				System.out.println("회원번호는 숫자입니다 : " + e.getMessage());
+				scanner.nextLine();
+			}
+		}
+		
+		dao.modify_data(cur_id);
 	}
 	
 	
 	public void deleteData() {
-		// 삭제 시퀀스
+		System.out.println("회원 탈퇴");
+		int delete_id = 0;
 		
-//		dao.delete_data();
+		while(true) {
+			try {
+				System.out.print("탈퇴 ID 입력 : ");
+				delete_id = scanner.nextInt();
+				scanner.nextLine();
+				
+				break;
+				
+			} catch(InputMismatchException e) {
+				System.out.println("회원번호는 숫자입니다 : " + e.getMessage());
+				scanner.nextLine();
+			}
+		}
+		
+		
+		dao.delete_data(delete_id);
 	}
 	
 	
 	public void delete_all() {
 		dao.delete_all();
-	}
-	
-	
-	public void close() {
-		dao.close();
 	}
 }
