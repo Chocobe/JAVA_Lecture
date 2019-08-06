@@ -1,4 +1,4 @@
-package database_oracle.util;
+package database_oracle.util_DriverManager;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
