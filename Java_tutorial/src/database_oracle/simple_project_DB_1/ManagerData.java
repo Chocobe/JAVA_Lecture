@@ -33,11 +33,8 @@ public class ManagerData {
 				break;
 				
 			} catch(InputMismatchException e) {
-				System.out.println("ID는 정수만 가능합니다");
+				System.out.println("ID는 정수만 가능합니다\n");
 				scanner.nextLine();
-				
-			} finally {
-				System.out.println();
 			}
 		} while(true);
 		
@@ -50,9 +47,18 @@ public class ManagerData {
 		dto.setPassword(scanner.nextLine());
 		
 		// email 입력부
-		System.out.print("email입력 : ");
-		dto.setEmail(scanner.nextLine());
-		
+		while(true) {
+			System.out.print("email입력 : ");
+			String email = scanner.nextLine();
+			dto.setEmail(email);
+			
+			if(dao.isValidEmail(dto)) {
+				break;
+				
+			} else {
+				System.out.println("유효하지 않은 Email 입니다\n");
+			}
+		}
 		
 		// 완성된 DTO를 DAO로 보내기
 		boolean is_registed = false;

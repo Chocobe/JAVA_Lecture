@@ -80,6 +80,19 @@ public class MemberDAO {
 	}
 	
 	
+// Email 유효검사
+	public boolean isValidEmail(MemberDTO _dto) {
+		boolean is_valid = true;
+		String email = _dto.getEmail();
+		
+		if(email.indexOf("@") == -1) {
+			is_valid = false;
+		}
+		
+		return is_valid;
+	}
+
+	
 // 정보 전체 반환
 	public ArrayList<MemberDTO> get_all_list() {
 		PreparedStatement pre_statement = null;
@@ -178,8 +191,19 @@ public class MemberDAO {
 		System.out.print("비밀번호 변경 : ");
 		password = ManagerData.scanner.nextLine();
 		
-		System.out.print("이메일 변경 : ");
-		email = ManagerData.scanner.nextLine();
+		while(true) {
+			System.out.print("이메일 변경 : ");
+			email = ManagerData.scanner.nextLine();
+			
+			MemberDTO temp = new MemberDTO();
+			temp.setEmail(email);
+			if(isValidEmail(temp)) {
+				break;
+				
+			} else {
+				System.out.println("유효하지 않은 Email입니다\n");
+			}
+		}
 		
 		int update_state = 0;
 		
