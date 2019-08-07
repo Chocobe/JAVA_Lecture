@@ -149,7 +149,6 @@ public class ManagerData {
 			}
 		}
 		
-		
 		dao.delete_data(delete_id);
 	}
 	
