@@ -4,6 +4,6 @@ import java.util.Vector;
 
 public interface EmployeeTerminatorView {
 	void enableTerminate(boolean enable);
-	void setEmployeeList(Vector<String> employee);
+	void setEmployeeList(Vector<String> employees);
 	void clearSelection();
 }

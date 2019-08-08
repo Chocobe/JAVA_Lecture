@@ -3,20 +3,16 @@ package z_test.practice_1;
 import java.util.Vector;
 
 public class EmployeeTerminatorModel 
-			implements EmployeeTerminatorController {
+				implements EmployeeTerminatorController {
 	private EmployeeTerminatorView view;
 	private Vector<String> employees;
 	private String selectedEmployee;
 	
 	
-	public void initialize(Vector<String> employees,
-				EmployeeTerminatorView view) {
+	public void initialize(
+					Vector<String> employees, EmployeeTerminatorView view) {
 		this.employees = employees;
 		this.view = view;
-		
-		view.setEmployeeList(employees);
-		view.clearSelection();
-		view.enableTerminate(false);
 	}
 	
 	
@@ -25,7 +21,8 @@ public class EmployeeTerminatorModel
 		view.enableTerminate(employee != null);
 		selectedEmployee = employee;
 	}
-
+	
+	
 	@Override
 	public void terminate() {
 		if(selectedEmployee != null) {
@@ -33,7 +30,6 @@ public class EmployeeTerminatorModel
 		}
 		
 		view.setEmployeeList(employees);
-		view.clearSelection();
 		view.enableTerminate(false);
 	}
 }
