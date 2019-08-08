@@ -1,25 +1,25 @@
-package database_oracle.database_with_swing_sample.sample;
+package database_oracle.database_with_swing_sample_1;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 
-import database_oracle.database_with_swing_sample.MemberDAO;
-
-import javax.swing.JScrollPane;
+//import database_oracle.database_with_swing_sample_1.Menu;
 
 @SuppressWarnings("serial")
 public class GuiFrame extends JFrame {
@@ -44,8 +44,8 @@ public class GuiFrame extends JFrame {
 	private final JButton btCancel = new JButton("CANCEL");
 
 	MemberDAO dao=new MemberDAO();  
-	DefaultTableModel model
-				=new DefaultTableModel();
+	MemberDTO dto=new MemberDTO();
+	DefaultTableModel model=new DefaultTableModel();
 	
 	public static final int NONE=0;
 	public static final int ADD=1;
@@ -56,16 +56,13 @@ public class GuiFrame extends JFrame {
 	int cmd=NONE;
 
 	public GuiFrame() {
-		this.tfNo.setBounds(12, 38, 128, 28);
-		this.tfNo.setColumns(10);
 		initGUI();
 		start();
 		
 		try {
 			dao.dbConnect();
 		} catch (Exception e) {
-			System.out.println("DB연결 실패 : " + e.getMessage());
-			
+			System.out.println("DB연결 실패!!!!"+e.getMessage());
 		}//db와 커넥션
 		//////////////////
 		model.addColumn("회원번호");
@@ -91,7 +88,6 @@ public class GuiFrame extends JFrame {
 		addWindowListener(new WindowAdapter(){
 			public void windowClosing(WindowEvent e){
 				dao.close();
-			
 				//db와 연결된 자원 반납
 				System.exit(0);
 			}
@@ -132,13 +128,13 @@ public class GuiFrame extends JFrame {
 		
 		btAdd.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("btAdd_actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				System.out.println("Add actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
 				if(cmd!=ADD){
 					setEnabled(ADD);
 					tfId.requestFocus();//커서
 					
 				}else{
-					//add();
+					add();
 					setEnabled(NONE);
 					cmd=NONE;
 					initialTf();
@@ -149,7 +145,7 @@ public class GuiFrame extends JFrame {
 
 		btFind.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("btFind_actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				System.out.println("Find actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
 				if(cmd!=FIND){
 					setEnabled(FIND);
 					tfName.requestFocus();
@@ -167,7 +163,7 @@ public class GuiFrame extends JFrame {
 		btAll.setText("ALL");
 		btAll.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("btAll_actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
 				cmd=ALL;
 				setEnabled(cmd);
 				initialTf();
@@ -178,7 +174,7 @@ public class GuiFrame extends JFrame {
 		btDel.setText("DELETE");
 		btDel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("btDel_actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
 				if(cmd!=DEL){
 					setEnabled(DEL);
 				}else{
@@ -194,7 +190,7 @@ public class GuiFrame extends JFrame {
 		btCancel.setText("CANCEL");
 		btCancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("btCancel_actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
 				cmd=NONE;
 				setEnabled(cmd);
 				initialTf();
@@ -212,7 +208,10 @@ public class GuiFrame extends JFrame {
 		this.lblNewLabel.setBounds(12, 10, 73, 28);
 		
 		contentPane.add(this.lblNewLabel);
-		
+
+		this.tfNo.setBounds(12, 38, 128, 28);
+		this.tfNo.setColumns(10);
+
 		contentPane.add(this.tfNo);
 		this.label.setBounds(12, 76, 73, 28);
 		
@@ -356,9 +355,86 @@ public class GuiFrame extends JFrame {
 		tfTel.setText("");
 		tfAddr.setText("");
 	}
+	
+	
+	
+	public void add(){
+		//사용자가 입력한 값 받아오기
+		dto.setId(tfId.getText());		
+		dto.setName(tfName.getText());
+		dto.setTel(tfTel.getText());
+		dto.setAddr(tfAddr.getText());
+		String msg="";
+		//유효성 체크
+		if(dto.getId()==null||dto.getName()==null
+				||dto.getId().trim().equals("")
+				||dto.getName().trim().equals("")){
+			msg="ID와 Name값 입력하세요";
+			JOptionPane.showMessageDialog(this,msg);
+			return;
+		}//if-------
+		
+//		db에 입력
+		int n = this.dao.insertMember(dto);
+		
+		if(n > 0) {
+			msg="회원 가입 성공!";
+		} else {
+			msg="회원 가입 실패";
+		}
+		JOptionPane.showMessageDialog(this, msg);
+		showData(ALL);
+	
+	}//add()-------------------
 
 	
+	public void showData(int cmd) {
+		MemberDTO[] arr = null;
+		
+		if(cmd == ALL) {
+			arr = dao.selectAll();
+			
+		} else if(cmd == FIND) {
+//			String name = tfName.getText();
+//			arr = dao.selectByName(name);
+		}
+		
+		if(arr == null || arr.length == 0) {
+			JOptionPane.showMessageDialog(this, "현재 등록된 회원 없음");
+			return;
+		}
+		
+		String[] colNames = { "회원번호", "아이디", "이름", "전화번호", "주소" };
+		String[][] data = new String[arr.length][5];
+		
+		for(int i = 0; i < arr.length; i++) {
+			data[i][0] = arr[i].getNo() + "";
+			data[i][1] = arr[i].getId();
+			data[i][2] = arr[i].getName();
+			data[i][3] = arr[i].getTel();
+			data[i][4] = arr[i].getAddr();
+		}
+		
+		model.setDataVector(data, colNames);
+		table.setModel(model);
+	}
+	
+	
 	public static void main(String[] args) {
-		new GuiFrame();
+			new GuiFrame();
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
