@@ -28,6 +28,12 @@ public class EmployeeTerminatorModel
 
 	@Override
 	public void terminate() {
+		if(selectedEmployee != null) {
+			employees.remove(selectedEmployee);
+		}
 		
+		view.setEmployeeList(employees);
+		view.clearSelection();
+		view.enableTerminate(false);
 	}
 }
