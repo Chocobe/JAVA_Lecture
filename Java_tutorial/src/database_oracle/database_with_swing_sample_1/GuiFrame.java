@@ -400,10 +400,9 @@ public class GuiFrame extends JFrame {
 			String name = tfName.getText();
 			
 			arr = dao.selectByName(name);
-			
 		} 
 		
-		if(arr == null || arr.length == 0) {
+		if(arr == null) {
 			JOptionPane.showMessageDialog(this, "현재 등록된 회원 없음");
 			return;
 		}
@@ -465,17 +464,3 @@ public class GuiFrame extends JFrame {
 		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
