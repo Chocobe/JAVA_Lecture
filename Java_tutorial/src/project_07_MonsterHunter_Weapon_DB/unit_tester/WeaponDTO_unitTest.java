@@ -1,20 +1,19 @@
-package project_07_MonsterHunter_Weapon_DB.WeaponDTO;
+package project_07_MonsterHunter_Weapon_DB.unit_tester;
 
-import java.util.Scanner;
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponDTO;
 
 public class WeaponDTO_unitTest {
 	private static WeaponDTO dto;
 	
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
 		dto = new WeaponDTO();
 		
-		testInsert(scanner);
-		testSelect();
+		testSet();
+		testGet();
 	}
 
-	
-	private static void testInsert(Scanner _sc) {
+// DTO setter 테스트
+	private static void testSet() {
 		System.out.println("----- WeaponDTO set Test -----");
 		
 		System.out.print("\n\t1.name 입력 테스트 : 멸혼의 흉기");
@@ -79,7 +78,8 @@ public class WeaponDTO_unitTest {
 	}
 	
 	
-	public static void testSelect() {
+// DTO getter 테스트
+	public static void testGet() {
 		System.out.println("----- WeaponDTO get Test -----");
 		System.out.println("\n\t1.dto.getName()\n\t\t: " + dto.getName());
 		System.out.println("\n\t2.dto.getSort()\n\t\t: " + dto.getSort());
@@ -101,6 +101,6 @@ public class WeaponDTO_unitTest {
 		System.out.println("\n\t18.dto.getSharpness_5()\n\t\t: " + dto.getSharpness_5());
 		System.out.println("\n\t19.dto.getSharpness_6()\n\t\t: " + dto.getSharpness_6());
 		
-		System.out.println("\n----- get Test 종료 -----\n\n");
+		System.out.println("\n----- get Test 종료 -----");
 	}
 }

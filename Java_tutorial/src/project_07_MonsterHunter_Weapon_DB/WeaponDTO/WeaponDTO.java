@@ -1,6 +1,6 @@
 package project_07_MonsterHunter_Weapon_DB.WeaponDTO;
 
-public class WeaponDTO {
+public class WeaponDTO implements IWeaponDTO {
 	private String name;
 	private String sort;
 	private int damage;
