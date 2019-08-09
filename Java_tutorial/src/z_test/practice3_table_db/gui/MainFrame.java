@@ -20,8 +20,9 @@ public class MainFrame extends JFrame {
 	private JPanel westPanel;
 	private JPanel centerPanel;
 	
-	public MainFrame() {
+	public MainFrame(View _westPanel, View _centerPanel) {
 		initFrame();
+		initPanel(_westPanel, _centerPanel);
 	}
 	
 	private void initFrame() {
@@ -45,12 +46,13 @@ public class MainFrame extends JFrame {
 	}
 	
 	
-	public void setPanel(View _westPanel, View _centerPanel) {
+	public void initPanel(View _westPanel, View _centerPanel) {
 		if(_westPanel instanceof JPanel) {
 			this.westPanel = (JPanel)_westPanel;
 			
 		} else {
 			System.out.println("컴포넌트 연결 실패 : westPanel");
+			System.exit(1);
 		}
 		
 		if(_centerPanel instanceof JPanel) {
@@ -58,6 +60,7 @@ public class MainFrame extends JFrame {
 			
 		} else {
 			System.out.println("컴포넌트 연결 실패 : centerpanel");
+			System.exit(1);
 		}
 		
 		this.getContentPane().add(westPanel);
