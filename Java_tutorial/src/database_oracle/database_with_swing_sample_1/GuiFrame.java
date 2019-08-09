@@ -150,7 +150,7 @@ public class GuiFrame extends JFrame {
 					setEnabled(FIND);
 					tfName.requestFocus();
 				}else{
-					//showData(FIND);
+					showData(FIND);
 					cmd=NONE;
 					setEnabled(cmd);
 					initialTf();
@@ -167,18 +167,20 @@ public class GuiFrame extends JFrame {
 				cmd=ALL;
 				setEnabled(cmd);
 				initialTf();
-				//showData(ALL);
+				showData(ALL);
 			}
 		});
 
 		btDel.setText("DELETE");
 		btDel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
+				System.out.println("Delete actionPerformed()"); // TODO Auto-generated Event stub actionPerformed()
 				if(cmd!=DEL){
 					setEnabled(DEL);
+					tfId.requestFocus();
+					
 				}else{
-					//delete();//id로 삭제
+					delete(); //id로 삭제
 					setEnabled(NONE);
 					cmd=NONE;
 					initialTf();
@@ -395,9 +397,11 @@ public class GuiFrame extends JFrame {
 			arr = dao.selectAll();
 			
 		} else if(cmd == FIND) {
-//			String name = tfName.getText();
-//			arr = dao.selectByName(name);
-		}
+			String name = tfName.getText();
+			
+			arr = dao.selectByName(name);
+			
+		} 
 		
 		if(arr == null || arr.length == 0) {
 			JOptionPane.showMessageDialog(this, "현재 등록된 회원 없음");
@@ -419,9 +423,46 @@ public class GuiFrame extends JFrame {
 		table.setModel(model);
 	}
 	
+
+	public void delete() {
+		// 삭제할 ID 입력 
+		// ID 입력 없을 시 - JOptionPane.showMessageDialog();
+		// 정말 hong님의 정보를 삭제하겠습니까? - JOptionPane.showConfirmDialog();
+		
+		String id = tfId.getText();
+		
+		if(id.equals("")) {
+			JOptionPane.showMessageDialog(this, "ID를 입력하세요");
+			return;
+			
+		} else {
+			int answer = 0;
+			answer = JOptionPane.showConfirmDialog(this, "정말" + id + "를 삭제하시겠습니까?");
+			
+			System.out.println(answer);
+			
+			if(answer == JOptionPane.YES_OPTION) {
+				int isDeletion = dao.deleteMember(id.trim());
+				
+				if(isDeletion != 0) {
+					JOptionPane.showMessageDialog(this, "삭제 완료");
+					showData(ALL);
+					clearTf();
+					
+				} else {
+					JOptionPane.showMessageDialog(this, "대상 ID가 없습니다");
+				}
+				
+			} else {
+				return;
+			}
+		}
+	}
+	
 	
 	public static void main(String[] args) {
-			new GuiFrame();
+		new GuiFrame();
+		
 	}
 }
 

@@ -90,6 +90,56 @@ public class MemberDAO {
 	}
 	
 	
+	public MemberDTO[] selectByName(String name) {
+		String sql = "SELECT * FROM MEMBER2 WHERE NAME = ?";
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, name);
+			rs = ps.executeQuery();
+			MemberDTO[] arr = makeArray(rs);
+			
+			
+			
+			return arr;
+			
+		} catch (SQLException e) {
+			System.out.println("검색실패 : " + e.getMessage());
+			return null;
+			
+		} finally {
+			
+			if(rs != null) {
+				DBConnection_data_source.close(rs);
+			}
+			
+			if(rs != null) {
+				DBConnection_data_source.close(ps);
+			}
+		}			
+	}
+	
+
+	public int deleteMember(String id) {
+		String sql = "DELETE FROM MEMBER2 WHERE ID = ?";
+		PreparedStatement ps = null;
+		int result_state = 0;
+		
+		try {
+			ps = con.prepareStatement(sql);
+			ps.setString(1, id);
+			result_state = ps.executeUpdate();
+			
+		} catch(Exception e) {
+			System.out.println("삭제 에러 : " + e.getMessage());
+		}
+		
+		return result_state;
+	}
+	
+	
 	public void close(){
 		try{
 			if(con!=null)
