@@ -1,4 +1,6 @@
 -- MONSTER HUNTER WEAPONS DATABASE
+-- DB id : monster_hunter
+-- DB pw : tiger
 
 -- 무기DB
 CREATE TABLE WEAPONS(
@@ -29,6 +31,12 @@ DESC WEAPONS;
 
 DROP TABLE WEAPONS;
 
+CREATE TABLE MH_TEST(
+    NAME    VARCHAR2(20),
+    NO      NUMBER(3)
+);
+
+SELECT * FROM MH_TEST;
 
 -- 테스트 (지울것)
 CREATE TABLE DEFAULT_TEST(
