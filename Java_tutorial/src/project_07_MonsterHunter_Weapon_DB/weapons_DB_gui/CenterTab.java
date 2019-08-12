@@ -9,18 +9,25 @@ import javax.swing.JTabbedPane;
 public class CenterTab extends JTabbedPane {
 	private Dimension dim_window;
 	
+// 생성자
 	public CenterTab(Dimension size) {
-		initTab(size);
+		this.dim_window = size;
+		initTab();
 	}
 	
-	
-	private void initTab(Dimension size) {
-		dim_window = size;
+// 텝 초기화
+	private void initTab() {
 		
 		JPanel searchMainPanel = new JPanel();
-		this.addTab("Search", null, searchMainPanel, "무기검색");
+		this.addTab("무기검색", null, searchMainPanel, "무기검색");
 		
 		JPanel insertMainPanel = new JPanel();
-		this.addTab("Insert", null, insertMainPanel, "무기 데이터 추가");
+		this.addTab("데이터 입력", null, insertMainPanel, "무기 데이터 추가");
 	}
+	
+	
+	
+	
+	
+
 }

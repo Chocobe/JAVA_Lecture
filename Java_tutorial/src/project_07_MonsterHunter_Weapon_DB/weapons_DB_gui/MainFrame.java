@@ -3,6 +3,7 @@ package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 
@@ -17,8 +18,8 @@ public class MainFrame extends JFrame {
 	private static Dimension dim_window;
 	
 	static {
-		SIZE_X = 600;
-		SIZE_Y = 800;
+		SIZE_X = 500;
+		SIZE_Y = 600;
 		initFrameSize();
 	}
 	
@@ -34,6 +35,12 @@ public class MainFrame extends JFrame {
 	}
 	
 	
+// dim_window getter
+	public Dimension getDimWindow() {
+		return dim_window;
+	}
+
+	
 // 화면 크기 초기화
 	private static void initFrameSize() {
 		Toolkit kit = Toolkit.getDefaultToolkit();
@@ -42,7 +49,6 @@ public class MainFrame extends JFrame {
 		
 		location_x = ((int)dim_screen.getSize().getWidth() / 2) - (SIZE_X / 2);
 		location_y = ((int)dim_screen.getSize().getHeight() / 2) - (SIZE_Y / 2);
-		
 	}
 
 	
@@ -51,13 +57,16 @@ public class MainFrame extends JFrame {
 		this.setTitle("Monster Hunter Weapons DB");
 		this.setBounds(location_x, location_y, SIZE_X, SIZE_Y);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		getContentPane().setLayout(new BorderLayout(10, 10));
+		this.setResizable(false);
+		this.getContentPane().setLayout(new BorderLayout(10, 10));
+		
+		this.setBackground(Color.BLACK);
 	}
 	
 	
 // North panel 초기화
 	private void initNorthFrame() {
-		this.northPanel = new NorthPanel(dim_window);
+		this.northPanel = new NorthPanel(this);
 		this.getContentPane().add(this.northPanel, BorderLayout.NORTH);
 	}
 	

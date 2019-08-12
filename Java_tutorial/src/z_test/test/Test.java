@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JTabbedPane;
 import java.awt.BorderLayout;
@@ -14,6 +15,9 @@ import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 import javax.swing.JToggleButton;
 import javax.swing.JRadioButton;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import javax.swing.JMenu;
 
 public class Test {
 
@@ -64,18 +68,50 @@ public class Test {
 		top_1.setLayout(new FlowLayout(FlowLayout.LEFT, 30, 10));
 		first.add(top_1);
 		
-		JRadioButton rdbtnNewRadioButton = new JRadioButton("대검");
-		top_1.add(rdbtnNewRadioButton);
+		ButtonGroup weapons_group = new ButtonGroup();
 		
-		JToggleButton tglbtnNewToggleButton = new JToggleButton("New toggle button");
-		top_1.add(tglbtnNewToggleButton);
+		JRadioButton radio_1 = new JRadioButton("대검");
+		weapons_group.add(radio_1);
+		top_1.add(radio_1);
 		
-		JToggleButton tglbtnNewToggleButton_1 = new JToggleButton("New toggle button");
-		top_1.add(tglbtnNewToggleButton_1);
+		JRadioButton radio_2 = new JRadioButton("태도");
+		weapons_group.add(radio_2);
+		top_1.add(radio_2);
+		
+		JToggleButton button_1 = new JToggleButton("Button_1");
+		top_1.add(button_1);
+		weapons_group.add(button_1);
+		
+		JToggleButton button_2 = new JToggleButton("Button_2");
+		top_1.add(button_2);
+		weapons_group.add(button_2);
+
 		
 		
 		
 		JPanel Second = new JPanel();
 		tabbedPane.addTab("Second", null, Second, null);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.getContentPane().add(menuBar, BorderLayout.NORTH);
+		
+		JMenu mnMenu = new JMenu("Menu_1");
+		mnMenu.addSeparator();
+		menuBar.add(mnMenu);
+		
+		JMenuItem mntmSubmenu = new JMenuItem("Sub_Menu_1");
+		mnMenu.add(mntmSubmenu);
+		
+		JMenuItem mntmSubmenu_1 = new JMenuItem("Sub_Menu_2");
+		mnMenu.add(mntmSubmenu_1);
+		
+		JMenu mnMenu_1 = new JMenu("Menu_2");
+		menuBar.add(mnMenu_1);
+		
+		JMenuItem mntmSubmenu_2 = new JMenuItem("Sub_Menu_3");
+		mnMenu_1.add(mntmSubmenu_2);
+		
+		JMenuItem mntmSubmenu_3 = new JMenuItem("Sub_Menu_4");
+		mnMenu_1.add(mntmSubmenu_3);
 	}
 }
