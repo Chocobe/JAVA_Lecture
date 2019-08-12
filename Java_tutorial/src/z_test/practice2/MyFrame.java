@@ -12,6 +12,7 @@ import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 
+@SuppressWarnings("serial")
 public class MyFrame extends JFrame {
 	private JPanel panel_1;
 	private JTable table;

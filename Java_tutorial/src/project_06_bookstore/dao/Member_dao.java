@@ -1,5 +1,6 @@
 package project_06_bookstore.dao;
 
+@SuppressWarnings("unused")
 public class Member_dao implements I_dao {
 	private int mem_id;
 	private String mem_name;

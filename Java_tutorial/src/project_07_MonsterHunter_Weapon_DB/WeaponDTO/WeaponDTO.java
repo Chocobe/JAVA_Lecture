@@ -7,19 +7,21 @@ public class WeaponDTO implements IWeaponDTO {
 	private int critical;
 	private int grade;
 	private String attribute;
-	private int attributeVal;
+	private int attribute_val;
 	private int slot_1;
 	private int slot_2;
 	private int slot_3;
 	private String material;
 	private String tree;
-	private int curTreeNo;
+	private int tree_position;
 	private int sharpness_1;
 	private int sharpness_2;
 	private int sharpness_3;
 	private int sharpness_4;
 	private int sharpness_5;
 	private int sharpness_6;
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -56,11 +58,11 @@ public class WeaponDTO implements IWeaponDTO {
 	public void setAttribute(String attribute) {
 		this.attribute = attribute;
 	}
-	public int getAttributeVal() {
-		return attributeVal;
+	public int getAttribute_val() {
+		return attribute_val;
 	}
-	public void setAttributeVal(int attributVal) {
-		this.attributeVal = attributVal;
+	public void setAttribute_val(int attributVal) {
+		this.attribute_val = attributVal;
 	}
 	public int getSlot_1() {
 		return slot_1;
@@ -92,11 +94,11 @@ public class WeaponDTO implements IWeaponDTO {
 	public void setTree(String tree) {
 		this.tree = tree;
 	}
-	public int getCurTreeNo() {
-		return curTreeNo;
+	public int getTree_position() {
+		return tree_position;
 	}
-	public void setCurTreeNo(int curTreeNo) {
-		this.curTreeNo = curTreeNo;
+	public void setTree_psotion(int tree_position) {
+		this.tree_position = tree_position;
 	}
 	public int getSharpness_1() {
 		return sharpness_1;

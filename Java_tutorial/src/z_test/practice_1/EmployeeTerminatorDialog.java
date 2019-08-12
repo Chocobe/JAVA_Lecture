@@ -12,6 +12,7 @@ import javax.swing.JList;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
+@SuppressWarnings("unused")
 public class EmployeeTerminatorDialog 
 				implements EmployeeTerminatorView {
 	private JFrame frame;

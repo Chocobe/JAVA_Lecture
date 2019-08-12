@@ -2,25 +2,25 @@
 
 -- 무기DB
 CREATE TABLE WEAPONS(
-    이름          VARCHAR2(30)    CONSTRAINT WEAPONS_NAME_PK PRIMARY KEY,
-    종류          VARCHAR2(20)    NOT NULL,
-    공격력        NUMBER(4)       NOT NULL,
-    회심          NUMBER(3),      
-    등급          NUMBER(2)       NOT NULL,
-    속성          VARCHAR2(10),   
-    속성값         NUMBER(3),
-    슬롯_1        NUMBER(1)       CONSTRAINT WEAPONS_SLOT_1_CH CHECK(슬롯_1 BETWEEN 0 AND 3),
-    슬롯_2        NUMBER(1)       CONSTRAINT WEAPONS_SLOT_2_CH CHECK(슬롯_2 BETWEEN 0 AND 3),
-    슬롯_3        NUMBER(1)       CONSTRAINT WEAPONS_SLOT_3_CH CHECK(슬롯_3 BETWEEN 0 AND 3),
-    소재          VARCHAR(100)    NOT NULL,
-    트리종류       VARCHAR2(20)    CONSTRAINT TREE_SORT_FK REFERENCES WEAPON_TREE(종류),
-    현재트리값      NUMBER(1)      NOT NULL,
-    예리도_1       NUMBER(2),  -- 적
-    예리도_2       NUMBER(2),  -- 등
-    예리도_3       NUMBER(2),  -- 노
-    예리도_4       NUMBER(2),  -- 녹
-    예리도_5       NUMBER(2),  -- 청
-    예리도_6       NUMBER(2)   -- 백
+    NAME            VARCHAR2(30)    CONSTRAINT WEAPONS_NAME_PK PRIMARY KEY,
+    SORT            VARCHAR2(20)    NOT NULL,
+    DAMAGE          NUMBER(4)       NOT NULL,
+    CRITICAL        NUMBER(3)       DEFAULT 0,
+    GRADE           NUMBER(2)       NOT NULL,
+    ATTRIBUTE       VARCHAR2(10)    DEFAULT '무속성',
+    ATTRIBUTE_VAL   NUMBER(3)       DEFAULT 0,
+    SLOT_1          NUMBER(1)       DEFAULT 0   CONSTRAINT WEAPONS_SLOT_1_CH CHECK(SLOT_1 BETWEEN 0 AND 3),
+    SLOT_2          NUMBER(1)       DEFAULT 0   CONSTRAINT WEAPONS_SLOT_2_CH CHECK(SLOT_2 BETWEEN 0 AND 3),
+    SLOT_3          NUMBER(1)       DEFAULT 0   CONSTRAINT WEAPONS_SLOT_3_CH CHECK(SLOT_3 BETWEEN 0 AND 3),
+    MATERIAL        VARCHAR(100)    NOT NULL,
+    TREE            VARCHAR2(20)    NOT NULL,
+    TREE_POSITION   NUMBER(2)       NOT NULL,
+    SHARPNESS_1     NUMBER(2)       DEFAULT 0,  -- 적
+    SHARPNESS_2     NUMBER(2)       DEFAULT 0,  -- 등
+    SHARPNESS_3     NUMBER(2)       DEFAULT 0,  -- 노
+    SHARPNESS_4     NUMBER(2)       DEFAULT 0,  -- 녹
+    SHARPNESS_5     NUMBER(2)       DEFAULT 0,  -- 청
+    SHARPNESS_6     NUMBER(2)       DEFAULT 0   -- 백
 );
 
 SELECT * FROM WEAPONS;
@@ -28,17 +28,6 @@ SELECT * FROM WEAPONS;
 DESC WEAPONS;
 
 DROP TABLE WEAPONS;
-
--- 무기트리DB
-CREATE TABLE WEAPON_TREE(
-    종류      VARCHAR2(20) CONSTRAINT TREE_SORT_PK PRIMARY KEY,
-    최종단계   NUMBER(1)
-);
-
-SELECT * FROM WEAPON_TREE;
-
-DESC WEAPON_TREE;
-
 
 
 -- 테스트 (지울것)

@@ -1,5 +1,6 @@
 package project_06_bookstore.dao;
 
+@SuppressWarnings("unused")
 public class Book_dao implements I_dao {
 	private int book_number;
 	private String book_name;
