@@ -24,7 +24,6 @@ public class Center_Temp {
 	private static int location_y;
 	
 	private static Dimension dim_screen;
-	private static Dimension dim_window;
 	
 	private JFrame frame;
 	private JTabbedPane tabbedPane;
@@ -40,7 +39,6 @@ public class Center_Temp {
 		private static void initFrameSize() {
 			Toolkit kit = Toolkit.getDefaultToolkit();
 			dim_screen = kit.getScreenSize();
-			dim_window = new Dimension(SIZE_X, SIZE_Y);
 			
 			location_x = ((int)dim_screen.getSize().getWidth() / 2) - (SIZE_X / 2);
 			location_y = ((int)dim_screen.getSize().getHeight() / 2) - (SIZE_Y / 2);

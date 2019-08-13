@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 	
 	static {
 		SIZE_X = 500;
-		SIZE_Y = 600;
+		SIZE_Y = 1000;
 		initFrameSize();
 	}
 	
