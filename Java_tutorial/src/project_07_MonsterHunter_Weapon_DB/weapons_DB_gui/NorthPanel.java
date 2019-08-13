@@ -8,6 +8,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -59,7 +60,6 @@ public class NorthPanel extends JPanel implements ActionListener {
 		JMenuItem itemMenu_Exit = new JMenuItem("Exit");
 		itemMenu_Exit.addActionListener(this);
 		mainMenu_Menu.add(itemMenu_Exit);
-		
 		
 		JMenu mainMenu_Help = new JMenu("Help");
 		menu.add(mainMenu_Help);

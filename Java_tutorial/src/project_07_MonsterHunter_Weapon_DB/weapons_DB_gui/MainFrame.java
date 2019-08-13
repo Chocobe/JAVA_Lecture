@@ -39,6 +39,10 @@ public class MainFrame extends JFrame {
 	public Dimension getDimWindow() {
 		return dim_window;
 	}
+	
+	public int getSize_X() {
+		return SIZE_X;
+	}
 
 	
 // 화면 크기 초기화
@@ -73,7 +77,7 @@ public class MainFrame extends JFrame {
 	
 // Center tab 초기화
 	private void initCenterTab() {
-		this.centerTab = new CenterTab(dim_window);
+		this.centerTab = new CenterTab(this);
 		this.getContentPane().add(this.centerTab, BorderLayout.CENTER);
 	}
 
