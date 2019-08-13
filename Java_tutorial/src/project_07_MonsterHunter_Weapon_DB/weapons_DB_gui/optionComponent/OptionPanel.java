@@ -1,4 +1,4 @@
-package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionPanels;
+package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -22,9 +22,9 @@ public abstract class OptionPanel extends JPanel{
 						new LineBorder(Color.LIGHT_GRAY, 2), title);
 		this.setBorder(titledBorder);
 		
-		this.setPreferredSize(new Dimension(this.frame.getSize_X() - 20, height));
+		this.setPreferredSize(new Dimension(this.frame.getSize_x() - 20, height));
 		this.setBackground(Color.WHITE);
-		this.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 2));
+		this.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 2));
 	}
 
 	

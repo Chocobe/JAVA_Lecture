@@ -1,4 +1,4 @@
-package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionPanels;
+package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -39,6 +39,7 @@ public class SortPanel extends OptionPanel {
 		
 		JRadioButton bigSword = new JRadioButton("대검");
 		bigSword.setBackground(Color.WHITE);
+		bigSword.setSelected(true);
 		bigSword.addActionListener(listener);
 		group.add(bigSword);
 		this.add(bigSword);

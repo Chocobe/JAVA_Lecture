@@ -1,4 +1,4 @@
-package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionPanels;
+package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -35,6 +35,7 @@ public class AttributePanel extends OptionPanel {
 	// 버튼 생성
 		JRadioButton all = new JRadioButton("전체");
 		all.setBackground(Color.WHITE);
+		all.setSelected(true);
 		all.addActionListener(listener);
 		group.add(all);
 		this.add(all);

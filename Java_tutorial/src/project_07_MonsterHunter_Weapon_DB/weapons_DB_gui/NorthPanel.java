@@ -8,7 +8,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.GroupLayout.Alignment;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -18,11 +17,17 @@ import javax.swing.JPanel;
 
 @SuppressWarnings("serial")
 public class NorthPanel extends JPanel implements ActionListener {
+	private static final String SYS_AUTHENTICATION;
+	
+	static {
+		SYS_AUTHENTICATION = "chocobe";
+	}
 	
 	private MainFrame frame;
 	private Dimension size;
 	
 	public NorthPanel(MainFrame frame) {
+		this.frame = frame;
 		this.size = frame.getDimWindow();
 		this.setSize(size);
 		this.initNorthPanel();
@@ -56,6 +61,10 @@ public class NorthPanel extends JPanel implements ActionListener {
 		
 		JMenu mainMenu_Menu = new JMenu("Menu");
 		menu.add(mainMenu_Menu);
+		
+		JMenuItem itemMenu_System = new JMenuItem("System");
+		itemMenu_System.addActionListener(this);
+		mainMenu_Menu.add(itemMenu_System);
 		
 		JMenuItem itemMenu_Exit = new JMenuItem("Exit");
 		itemMenu_Exit.addActionListener(this);
@@ -111,7 +120,47 @@ public class NorthPanel extends JPanel implements ActionListener {
 							"About", JOptionPane.INFORMATION_MESSAGE);
 			
 			break;
+			
+		case "System":
+			String authentication = JOptionPane.showInputDialog("관리자 모드");
+			
+			if(authentication != null && authentication.equals(SYS_AUTHENTICATION)) {
+				System.out.println("인증 성공!");
+				SystemDialog systemDialog = new SystemDialog(frame);
+				systemDialog.setVisible(true);
+				// System Dialog 불러오기
+				
+			} else {
+				JOptionPane.showMessageDialog(frame, "인증 실패", "인증 에러", 
+								JOptionPane.WARNING_MESSAGE);
+			}
+			
 		}
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

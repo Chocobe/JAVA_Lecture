@@ -35,13 +35,26 @@ public class MainFrame extends JFrame {
 	}
 	
 	
-// dim_window getter
+// size getter
 	public Dimension getDimWindow() {
 		return dim_window;
 	}
 	
-	public int getSize_X() {
+	public int getSize_x() {
 		return SIZE_X;
+	}
+	
+	public int getSize_y() {
+		return SIZE_Y;
+	}
+	
+// location getter
+	public int getLocation_x() {
+		return location_x;
+	}
+	
+	public int getLocation_y() {
+		return location_y;
 	}
 
 	

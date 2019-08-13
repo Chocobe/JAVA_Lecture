@@ -1,4 +1,4 @@
-package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionPanels;
+package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
 
 import javax.swing.JPanel;
 
