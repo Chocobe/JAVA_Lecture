@@ -11,7 +11,6 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public class SortPanel extends OptionPanel {
-	
 	private String selectedOption;
 	
 	public SortPanel(MainFrame frame) {
