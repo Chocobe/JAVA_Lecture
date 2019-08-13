@@ -26,6 +26,7 @@ public class SystemDialog extends JDialog {
 	private void initDialog() {
 		this.setSize(frame.getSize());
 		this.setLocation(frame.getLocation_x(), frame.getLocation_y());
+		this.setModal(true);
 	}
 	
 	

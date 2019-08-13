@@ -2,7 +2,7 @@ package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.adminO
 
 import java.awt.Color;
 import java.awt.Dimension;
-
+import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,8 +16,9 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionP
 public class BaseInputPanel extends OptionPanel {
 	private String selectedOption;
 	
+	
 	public BaseInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "기본스펙", 55);
+		super.initItsPanel(frame, "기본스펙", 110);
 		initPanel();
 	}
 	
@@ -33,6 +34,7 @@ public class BaseInputPanel extends OptionPanel {
 			}
 		};
 		
+	// 무기종류
 		JPanel sortPanel = new JPanel();	
 		sortPanel.setBackground(Color.WHITE);
 		
@@ -41,17 +43,52 @@ public class BaseInputPanel extends OptionPanel {
 		sortPanel.add(sortLabel);
 		
 		JTextField sortText = new JTextField(34);
+		sortText.addActionListener(listener);
 		sortPanel.add(sortText);
-		
 		this.add(sortPanel);
 		
-		JPanel others = new JPanel();
+		JPanel others = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 5));
 		others.setBackground(Color.WHITE);
+		this.add(others);
 		
+	// 공격력
 		JPanel damagePanel = new JPanel();
 		damagePanel.setBackground(Color.WHITE);
 		
-		JLabel damageLabel = new JLabel("데미지");
+		JLabel damageLabel = new JLabel("공격력");
+		damageLabel.setBackground(Color.WHITE);
+		others.add(damageLabel);
+		
+		JTextField damageText = new JTextField(5);
+		damageText.addActionListener(listener);
+		damagePanel.add(damageText);
+		others.add(damagePanel);
+		
+	// 치명률
+		JPanel criticalPanel = new JPanel();
+		criticalPanel.setBackground(Color.WHITE);
+		
+		JLabel criticalLabel = new JLabel("치명률");
+		criticalLabel.setBackground(Color.WHITE);
+		criticalPanel.add(criticalLabel);
+		
+		JTextField criticalText = new JTextField(5);
+		criticalText.addActionListener(listener);
+		criticalPanel.add(criticalText);
+		others.add(criticalPanel);
+		
+	// 등급
+		JPanel gradePanel = new JPanel();
+		gradePanel.setBackground(Color.WHITE);
+		
+		JLabel gradeLabel = new JLabel("등급");
+		gradeLabel.setBackground(Color.WHITE);
+		gradePanel.add(gradeLabel);
+		
+		JTextField gradeText = new JTextField(5);
+		gradeText.addActionListener(listener);
+		gradePanel.add(gradeText);
+		others.add(gradePanel);
 	}
 	
 	
