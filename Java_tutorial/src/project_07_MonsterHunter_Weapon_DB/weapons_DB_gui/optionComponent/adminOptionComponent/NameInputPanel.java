@@ -1,19 +1,23 @@
-package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
+package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.adminOptionComponent;
 
+import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
+import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionPanel;
 
 @SuppressWarnings("serial")
 public class NameInputPanel extends OptionPanel {
-	private String name;	
+	private String selectedOption;	
 	
 	public NameInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "무기명", 60);
+		super.initItsPanel(frame, "무기명", 55);
 		this.initPanel();
 	}
 	
@@ -24,8 +28,8 @@ public class NameInputPanel extends OptionPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				String weaponsName = e.getActionCommand();
-				System.out.println("무기명 : " + weaponsName);
+				selectedOption = e.getActionCommand();
+				System.out.println("무기명 : " + selectedOption);
 				
 				//
 				// DAO Insert 호출
@@ -33,17 +37,23 @@ public class NameInputPanel extends OptionPanel {
 			}
 		};
 		
-		JLabel nameLabel = new JLabel("무기명");
-		this.add(nameLabel);
+		JPanel namePanel = new JPanel();
+		namePanel.setBackground(Color.WHITE);
 		
-		JTextField nameField = new JTextField(20);
+		JLabel nameLabel = new JLabel("무기명");
+		nameLabel.setPreferredSize(new Dimension(72, 15));
+		namePanel.add(nameLabel);
+		
+		JTextField nameField = new JTextField(34);
 		nameField.addActionListener(listener);
-		this.add(nameField);
+		namePanel.add(nameField);
+		
+		this.add(namePanel);
 	}
 	
 	
 	@Override
 	public String getSelectedOption() {
-		return this.name;
+		return this.selectedOption;
 	}
 }

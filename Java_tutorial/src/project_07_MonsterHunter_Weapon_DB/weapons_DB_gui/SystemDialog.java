@@ -8,8 +8,7 @@ import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.NameInputPanel;
-import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionGroupPanel;
+import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.adminOptionComponent.AdminOptionGroupPanel;
 
 @SuppressWarnings("serial")
 public class SystemDialog extends JDialog {
@@ -58,11 +57,8 @@ public class SystemDialog extends JDialog {
 	private void initMidPanel() {
 		JPanel midPanel = new JPanel(new BorderLayout());
 		
-		JPanel optionPanel = new OptionGroupPanel(this.frame);
+		JPanel optionPanel = new AdminOptionGroupPanel(this.frame);
 		midPanel.add(optionPanel, BorderLayout.CENTER);
-		
-		JPanel namePanel = new NameInputPanel(this.frame);
-		optionPanel.add(namePanel, BorderLayout.SOUTH);
 		
 		this.add(midPanel);
 	}
