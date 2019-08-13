@@ -30,18 +30,6 @@ public class SystemDialog extends JDialog {
 	}
 	
 	
-//	private void initPanel() {		
-//		JPanel titleInnerPanel = new JPanel();
-//		titleInnerPanel.add(nameLabel);
-//		
-//		outerPanel.add(titleInnerPanel, BorderLayout.NORTH);
-//		
-//		JPanel optionPanel = new OptionGroupPanel(this.frame);
-//		outerPanel.add(optionPanel, BorderLayout.CENTER);
-//		
-//		this.add(outerPanel);
-//	}
-	
 	private void initTopPanel() {
 		JPanel topPanel = new JPanel();
 		topPanel.setBackground(new Color(0, 153, 0));

@@ -13,6 +13,7 @@ import javax.swing.JTextField;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionPanel;
 
+@SuppressWarnings("serial")
 public class BaseInputPanel extends OptionPanel {
 	private String selectedOption;
 	

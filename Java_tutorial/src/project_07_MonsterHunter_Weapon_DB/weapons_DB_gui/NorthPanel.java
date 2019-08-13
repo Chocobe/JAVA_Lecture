@@ -20,7 +20,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 	private static final String SYS_AUTHENTICATION;
 	
 	static {
-		SYS_AUTHENTICATION = "chocobe";
+		SYS_AUTHENTICATION = "a";
 	}
 	
 	private MainFrame frame;
@@ -122,7 +122,9 @@ public class NorthPanel extends JPanel implements ActionListener {
 			break;
 			
 		case "System":
-			String authentication = JOptionPane.showInputDialog("관리자 모드");
+			String authentication = JOptionPane.showInputDialog(
+							"관리자 모드\n" +
+							"(코드값 : chocobe)");
 			
 			if(authentication != null && authentication.equals(SYS_AUTHENTICATION)) {
 				System.out.println("인증 성공!");
