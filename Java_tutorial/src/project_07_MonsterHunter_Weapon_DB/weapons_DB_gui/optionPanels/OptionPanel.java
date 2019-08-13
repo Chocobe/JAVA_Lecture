@@ -12,13 +12,7 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public abstract class OptionPanel extends JPanel{
-
-	private String selectedOption;
 	private MainFrame frame;
-	
-	public String getOption() {
-		return this.selectedOption;
-	}
 	
 // 하위클래스 생성자에서 호출할 것
 	protected void initItsPanel(MainFrame frame, String title, int height) {
@@ -28,7 +22,7 @@ public abstract class OptionPanel extends JPanel{
 						new LineBorder(Color.LIGHT_GRAY, 2), title);
 		this.setBorder(titledBorder);
 		
-		this.setPreferredSize(new Dimension(frame.getSize_X() - 20, height));
+		this.setPreferredSize(new Dimension(this.frame.getSize_X() - 20, height));
 		this.setBackground(Color.WHITE);
 		this.setLayout(new FlowLayout(FlowLayout.LEFT, 5, 2));
 	}
