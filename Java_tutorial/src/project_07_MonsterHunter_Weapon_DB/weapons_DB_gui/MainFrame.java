@@ -2,6 +2,9 @@ package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -26,12 +29,15 @@ public class MainFrame extends JFrame {
 	private JPanel northPanel;
 	private CenterTab centerTab;
 
+	private WeaponsDTO weaponsDTO;
 
 // 생성자
-	public MainFrame() {
+	public MainFrame(WeaponsDTO dto) {
 		initFrame();
+		this.weaponsDTO = dto;
+		
 		initNorthFrame();
-		initCenterTab();
+		initCenterTab(this.weaponsDTO);
 	}
 	
 	
@@ -89,8 +95,8 @@ public class MainFrame extends JFrame {
 	
 	
 // Center tab 초기화
-	private void initCenterTab() {
-		this.centerTab = new CenterTab(this);
+	private void initCenterTab(WeaponsDTO dto) {
+		this.centerTab = new CenterTab(this, dto);
 		this.getContentPane().add(this.centerTab, BorderLayout.CENTER);
 	}
 

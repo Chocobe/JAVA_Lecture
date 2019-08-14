@@ -7,14 +7,18 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public class AttributePanel extends OptionPanel {
 	private String selectedOption;
 	
-	public AttributePanel(MainFrame frame) {
+	private WeaponsDTO weaponsDTO;
+	
+	public AttributePanel(MainFrame frame, WeaponsDTO dto) {
 		super.initItsPanel(frame, "속성", frame.getSize_x(), 80);
+		this.weaponsDTO = dto;
 		initPanel();
 	}
 	

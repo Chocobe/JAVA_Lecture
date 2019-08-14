@@ -7,14 +7,18 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public class SortPanel extends OptionPanel {
 	private String selectedOption;
 	
-	public SortPanel(MainFrame frame) {
+	private WeaponsDTO weaponsDTO;
+	
+	public SortPanel(MainFrame frame, WeaponsDTO dto) {
 		super.initItsPanel(frame, "무기", frame.getSize_x(), 110);
+		this.weaponsDTO = dto;
 		initPanel();
 	}
 	

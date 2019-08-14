@@ -5,7 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDB_Connection;
+import project_07_MonsterHunter_Weapon_DB.weaponsDAO.WeaponsDAO;
+import project_07_MonsterHunter_Weapon_DB.weaponsDAO.WeaponsDBConnector;
 
 @SuppressWarnings("unused")
 public class WeaponsDB_connectionTestUnit {
@@ -14,20 +15,23 @@ public class WeaponsDB_connectionTestUnit {
 	private static ResultSet rs;
 	
 	public static void main(String[] args) {
-		conn = WeaponsDB_Connection.getConnection();
+		conn = WeaponsDBConnector.getConnection();
 		
 		String sql_insert = "INSERT INTO MH_TEST VALUES(?, ?)";
 		String sql_select = "SELECT * FROM MH_TEST";
 		String sql_delete = "DELETE FROM MH_TEST WHERE NAME = ?";
 		
+		System.out.println("SELECT test before");
 		selectTest(sql_select);
 		insertTest(sql_insert, "네르기간테", 1);
 //		deleteTest(sql_delete, "네르기간테");
 		
 		System.out.println();
+		
+		System.out.println("SELECT Test after");
 		selectTest(sql_select);
 		
-		WeaponsDB_Connection.close(conn);
+		WeaponsDBConnector.close(conn);
 	}
 	
 	
@@ -47,7 +51,7 @@ public class WeaponsDB_connectionTestUnit {
 			
 		} finally {
 			if(ps != null) {
-				WeaponsDB_Connection.close(ps);
+				WeaponsDBConnector.close(ps);
 			}
 		}
 	}
@@ -68,11 +72,11 @@ public class WeaponsDB_connectionTestUnit {
 			
 		} finally {
 			if(rs != null) {
-				WeaponsDB_Connection.close(rs);
+				WeaponsDBConnector.close(rs);
 			}
 			
 			if(ps != null) {
-				WeaponsDB_Connection.close(ps);
+				WeaponsDBConnector.close(ps);
 			}
 		}
 	}
@@ -90,7 +94,7 @@ public class WeaponsDB_connectionTestUnit {
 			System.out.println("delete 에러 : " + e.getMessage());
 			
 		} finally {
-			WeaponsDB_Connection.close(ps);
+			WeaponsDBConnector.close(ps);
 		}
 	}
 }

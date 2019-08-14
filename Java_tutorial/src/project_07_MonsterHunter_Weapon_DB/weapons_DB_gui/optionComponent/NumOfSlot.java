@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
@@ -14,9 +15,11 @@ public class NumOfSlot extends OptionPanel {
 	
 	private String selectedOption;
 	
+	private WeaponsDTO weaponsDTO;
 	
-	public NumOfSlot(MainFrame frame) {
+	public NumOfSlot(MainFrame frame, WeaponsDTO dto) {
 		super.initItsPanel(frame, "슬롯 수", frame.getSize_x(), 60);
+		this.weaponsDTO = dto;
 		initPanel();
 	}
 	

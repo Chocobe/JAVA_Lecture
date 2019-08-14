@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
@@ -14,8 +15,11 @@ public class TreePanel extends OptionPanel {
 	
 	private String selectedOption;
 	
-	public TreePanel(MainFrame frame) {
+	private WeaponsDTO weaponsDTO;
+	
+	public TreePanel(MainFrame frame, WeaponsDTO dto) {
 		super.initItsPanel(frame, "최종트리", frame.getSize_x(), 60);
+		this.weaponsDTO = dto;
 		this.initPanel();
 	}
 	
