@@ -30,12 +30,12 @@ public class NumOfSlot extends OptionPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				selectedOption = e.getActionCommand();
+				selectedOption = e.getActionCommand();		
 				System.out.println("NumOfSlot : " + selectedOption);
 			}
 		};
 		
-		// 라디오 버튼
+	// 라디오 버튼
 		ButtonGroup group = new ButtonGroup();
 		
 		JRadioButton all = new JRadioButton("전체");

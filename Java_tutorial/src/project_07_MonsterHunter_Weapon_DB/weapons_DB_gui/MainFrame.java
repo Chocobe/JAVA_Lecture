@@ -1,5 +1,6 @@
 package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -9,6 +10,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
@@ -38,6 +41,34 @@ public class MainFrame extends JFrame {
 		
 		initNorthFrame();
 		initCenterTab(this.weaponsDTO);
+		
+		
+		
+		
+		
+		
+		
+		
+		// 테스트용
+		JButton testButton = new JButton("DTO 출력");
+		testButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				System.out.println(dto.getAttribute());
+				System.out.println();
+			}
+		});
+		
+		this.getContentPane().add(testButton, BorderLayout.SOUTH);
+		//
+		
+		
+		
+		
+		
+		
 	}
 	
 	

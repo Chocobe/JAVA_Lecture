@@ -12,7 +12,7 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public class AttributePanel extends OptionPanel {
-	private String selectedOption;
+	private String selectedOption = "전체";
 	
 	private WeaponsDTO weaponsDTO;
 	
@@ -29,6 +29,8 @@ public class AttributePanel extends OptionPanel {
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
 				selectedOption = e.getActionCommand();
+				weaponsDTO.setAttribute(selectedOption);
+				
 				System.out.println("Attribute Category : " + selectedOption);
 			}
 		};
@@ -39,8 +41,8 @@ public class AttributePanel extends OptionPanel {
 	// 버튼 생성
 		JRadioButton all = new JRadioButton("전체");
 		all.setBackground(Color.WHITE);
-		all.setSelected(true);
 		all.addActionListener(listener);
+		all.setSelected(true);
 		group.add(all);
 		this.add(all);
 		
@@ -103,6 +105,8 @@ public class AttributePanel extends OptionPanel {
 		explosion.addActionListener(listener);
 		group.add(explosion);
 		this.add(explosion);
+		
+		this.weaponsDTO.setAttribute(selectedOption);
 	}
 	
 	public String getSelectedOption() {
