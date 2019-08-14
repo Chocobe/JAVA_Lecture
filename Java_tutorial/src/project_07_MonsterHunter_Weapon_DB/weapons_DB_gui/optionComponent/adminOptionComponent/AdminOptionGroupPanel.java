@@ -11,8 +11,8 @@ public class AdminOptionGroupPanel extends JPanel {
 	private JPanel attributePanel;
 	private JPanel slotPanel;
 	private JPanel materialPanel;
+	private JPanel sharpnessPanel;
 //	private JPanel treePanel;
-//	private JPanel sharpnessPanel;
 //	
 	private MainFrame frame;
 	
@@ -36,5 +36,8 @@ public class AdminOptionGroupPanel extends JPanel {
 		
 		materialPanel = new MaterialInputPanel(this.frame);
 		this.add(materialPanel);
+		
+		sharpnessPanel = new SharpnessInputPanel(this.frame);
+		this.add(sharpnessPanel);
 	}
 }
