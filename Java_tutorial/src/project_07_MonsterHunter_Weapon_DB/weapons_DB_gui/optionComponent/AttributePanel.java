@@ -46,13 +46,13 @@ public class AttributePanel extends OptionPanel {
 		group.add(none);
 		this.add(none);
 		
-		JRadioButton fire = new JRadioButton("불속성");
+		JRadioButton fire = new JRadioButton("화속성");
 		fire.setBackground(Color.WHITE);
 		fire.addActionListener(listener);
 		group.add(fire);
 		this.add(fire);
 		
-		JRadioButton water = new JRadioButton("물속성");
+		JRadioButton water = new JRadioButton("수속성");
 		water.setBackground(Color.WHITE);
 		water.addActionListener(listener);
 		group.add(water);

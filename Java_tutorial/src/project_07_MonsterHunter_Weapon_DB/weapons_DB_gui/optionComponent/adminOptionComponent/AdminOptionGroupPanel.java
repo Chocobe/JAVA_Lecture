@@ -8,9 +8,9 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 public class AdminOptionGroupPanel extends JPanel {
 	private JPanel namePanel;
 	private JPanel basePanel;
-//	private JPanel attributePanel;
+	private JPanel attributePanel;
 	private JPanel slotPanel;
-//	private JPanel materialPanel;
+	private JPanel materialPanel;
 //	private JPanel treePanel;
 //	private JPanel sharpnessPanel;
 //	
@@ -28,7 +28,13 @@ public class AdminOptionGroupPanel extends JPanel {
 		basePanel = new BaseInputPanel(this.frame);
 		this.add(basePanel);
 		
-		slotPanel = new SlotInputPanel(frame);
+		attributePanel = new AttributeInputPanel(this.frame);
+		this.add(attributePanel);
+		
+		slotPanel = new SlotInputPanel(this.frame);
 		this.add(slotPanel);
+		
+		materialPanel = new MaterialInputPanel(this.frame);
+		this.add(materialPanel);
 	}
 }
