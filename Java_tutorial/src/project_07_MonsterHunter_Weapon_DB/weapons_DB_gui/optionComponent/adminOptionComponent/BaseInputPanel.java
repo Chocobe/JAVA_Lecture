@@ -19,7 +19,7 @@ public class BaseInputPanel extends OptionPanel {
 	
 	
 	public BaseInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "기본스펙", 110);
+		super.initItsPanel(frame, "기본스펙", frame.getSize_x() - 15, 110);
 		initPanel();
 	}
 	
@@ -40,7 +40,7 @@ public class BaseInputPanel extends OptionPanel {
 		sortPanel.setBackground(Color.WHITE);
 		
 		JLabel sortLabel = new JLabel("무기종류");
-		sortLabel.setPreferredSize(new Dimension(72, 15));
+		sortLabel.setPreferredSize(new Dimension(55, 15));
 		sortPanel.add(sortLabel);
 		
 		JTextField sortText = new JTextField(34);

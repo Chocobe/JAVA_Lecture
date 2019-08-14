@@ -14,7 +14,7 @@ public class AttributePanel extends OptionPanel {
 	private String selectedOption;
 	
 	public AttributePanel(MainFrame frame) {
-		super.initItsPanel(frame, "속성", 80);
+		super.initItsPanel(frame, "속성", frame.getSize_x(), 80);
 		initPanel();
 	}
 	

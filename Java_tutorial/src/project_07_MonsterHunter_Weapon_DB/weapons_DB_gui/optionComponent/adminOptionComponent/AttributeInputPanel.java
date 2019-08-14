@@ -27,7 +27,7 @@ public class AttributeInputPanel extends OptionPanel{
 	
 	public AttributeInputPanel(MainFrame frame) {
 		this.frame = frame;
-		super.initItsPanel(this.frame, "속성", 60);
+		super.initItsPanel(this.frame, "속성", frame.getSize_x() - 15, 60);
 		
 		this.setLayout(new BorderLayout());		
 		this.initPanel();

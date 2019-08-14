@@ -17,7 +17,7 @@ public class MaterialInputPanel extends OptionPanel {
 	private String selectedOption;
 	
 	public MaterialInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "재료", 60);
+		super.initItsPanel(frame, "재료", frame.getSize_x() - 15, 60);
 		initPanels();
 	}
 	
@@ -38,7 +38,7 @@ public class MaterialInputPanel extends OptionPanel {
 		JLabel materialLabel = new JLabel("재료");
 		outerPanel.add(materialLabel);
 		
-		JTextField materialText = new JTextField(36);
+		JTextField materialText = new JTextField(35);
 		materialText.addActionListener(listener);
 		outerPanel.add(materialText);
 		

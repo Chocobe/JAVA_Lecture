@@ -7,6 +7,7 @@ import java.awt.Font;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.adminOptionComponent.AdminOptionGroupPanel;
 
@@ -44,11 +45,11 @@ public class SystemDialog extends JDialog {
 	
 	
 	private void initMidPanel() {
-		JPanel midPanel = new JPanel(new BorderLayout());
+		JScrollPane midScroll = new JScrollPane();
 		
 		JPanel optionPanel = new AdminOptionGroupPanel(this.frame);
-		midPanel.add(optionPanel, BorderLayout.CENTER);
+		midScroll.setViewportView(optionPanel);
 		
-		this.add(midPanel);
+		this.add(midScroll, BorderLayout.CENTER);
 	}
 }

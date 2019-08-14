@@ -15,7 +15,7 @@ public class SlotLevelPanel extends OptionPanel {
 	private String selectedOption;
 	
 	public SlotLevelPanel(MainFrame frame) {
-		super.initItsPanel(frame, "슬롯레벨", 60);
+		super.initItsPanel(frame, "슬롯레벨", frame.getSize_x(), 60);
 		this.initPanel();
 	}
 	

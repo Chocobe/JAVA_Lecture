@@ -16,7 +16,7 @@ public class NumOfSlot extends OptionPanel {
 	
 	
 	public NumOfSlot(MainFrame frame) {
-		super.initItsPanel(frame, "슬롯 수", 60);
+		super.initItsPanel(frame, "슬롯 수", frame.getSize_x(), 60);
 		initPanel();
 	}
 	

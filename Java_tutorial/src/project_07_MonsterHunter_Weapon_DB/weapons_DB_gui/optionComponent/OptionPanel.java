@@ -15,14 +15,14 @@ public abstract class OptionPanel extends JPanel{
 	private MainFrame frame;
 	
 // 하위클래스 생성자에서 호출할 것
-	protected void initItsPanel(MainFrame frame, String title, int height) {
+	protected void initItsPanel(MainFrame frame, String title, int width, int height) {
 		this.frame = frame;
 		
 		TitledBorder titledBorder = new TitledBorder(
 						new LineBorder(Color.LIGHT_GRAY, 2), title);
 		this.setBorder(titledBorder);
 		
-		this.setPreferredSize(new Dimension(this.frame.getSize_x() - 20, height));
+		this.setPreferredSize(new Dimension(width - 20, height));
 		this.setBackground(Color.WHITE);
 		this.setLayout(new FlowLayout(FlowLayout.LEFT, 2, 2));
 	}

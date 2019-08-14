@@ -17,7 +17,7 @@ public class NameInputPanel extends OptionPanel {
 	private String selectedOption;	
 	
 	public NameInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "무기명", 55);
+		super.initItsPanel(frame, "무기명", frame.getSize_x() - 15, 55);
 		this.initPanel();
 	}
 	
@@ -41,7 +41,7 @@ public class NameInputPanel extends OptionPanel {
 		namePanel.setBackground(Color.WHITE);
 		
 		JLabel nameLabel = new JLabel("무기명");
-		nameLabel.setPreferredSize(new Dimension(72, 15));
+		nameLabel.setPreferredSize(new Dimension(55, 15));
 		namePanel.add(nameLabel);
 		
 		JTextField nameField = new JTextField(34);

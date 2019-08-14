@@ -26,7 +26,7 @@ public class SharpnessInputPanel extends OptionPanel {
 	
 	
 	public SharpnessInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "예리도", 95);
+		super.initItsPanel(frame, "예리도", frame.getSize_x() - 15, 95);
 		this.initPanel();
 	}
 	

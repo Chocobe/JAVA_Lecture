@@ -22,7 +22,7 @@ public class SlotInputPanel extends OptionPanel {
 	private JComboBox<String> slot_3ComboBox;
 	
 	public SlotInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "슬롯", 65);
+		super.initItsPanel(frame, "슬롯", frame.getSize_x() - 15, 65);
 		initPanel();
 	}
 	
