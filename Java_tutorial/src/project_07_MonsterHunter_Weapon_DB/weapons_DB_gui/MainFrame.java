@@ -3,6 +3,7 @@ package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 
@@ -25,7 +26,7 @@ public class MainFrame extends JFrame {
 	
 	static {
 		SIZE_X = 500;
-		SIZE_Y = 600;
+		SIZE_Y = 1000;
 		initFrameSize();
 	}
 	
@@ -40,31 +41,30 @@ public class MainFrame extends JFrame {
 		this.weaponsDTO = dto;
 		
 		initNorthFrame();
-		initCenterTab(this.weaponsDTO);
+		initCenterTab();
 		
 		
 		
 		
 		
-		
-		
-		
-		// 테스트용
-		JButton testButton = new JButton("DTO 출력");
-		testButton.addActionListener(new ActionListener() {
-			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				System.out.println(dto.getAttribute());
-				System.out.println();
-			}
-		});
-		
-		this.getContentPane().add(testButton, BorderLayout.SOUTH);
-		//
-		
-		
+//		
+//		
+//		
+//		// 테스트용
+//		JButton testButton = new JButton("DTO 출력");
+//		testButton.addActionListener(new ActionListener() {
+//			
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				// TODO Auto-generated method stub
+//				System.out.println(centerTab.getSelectedOption());				
+//			}
+//		});
+//		
+//		this.getContentPane().add(testButton, BorderLayout.SOUTH);
+//		//
+//		
+//		
 		
 		
 		
@@ -126,9 +126,13 @@ public class MainFrame extends JFrame {
 	
 	
 // Center tab 초기화
-	private void initCenterTab(WeaponsDTO dto) {
-		this.centerTab = new CenterTab(this, dto);
+	private void initCenterTab() {
+		this.centerTab = new CenterTab(this);
 		this.getContentPane().add(this.centerTab, BorderLayout.CENTER);
+		
+		JScrollPane centerScroll = new JScrollPane(centerTab);
+		
+		this.getContentPane().add(centerScroll);
 	}
 
 }

@@ -3,6 +3,7 @@ package project_07_MonsterHunter_Weapon_DB.weaponsDAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.IWeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
@@ -12,15 +13,27 @@ public class WeaponsDAO implements IWeaponsDAO {
 	private PreparedStatement preparedStatement;
 	private ResultSet resultSet;
 	
-	private WeaponsDTO weaponsDTO;
-	
-	public WeaponsDAO(WeaponsDTO dto) {
-		this.weaponsDTO = dto;
+	public WeaponsDAO() {
+		initConnection();
 	}
 	
+	
+	private void initConnection() {
+		this.conn = WeaponsDBConnector.getConnection();
+	}
+	
+	
 	@Override
-	public IWeaponsDTO selectData(IWeaponsDTO dto) {
+	public IWeaponsDTO selectData(String sql) {
 		// TODO Auto-generated method stub
+		try {
+			preparedStatement = conn.prepareStatement(sql);
+			resultSet = preparedStatement.executeQuery();
+			
+		} catch(SQLException e) {
+			System.out.println("SELECT 에러 : " + e.getMessage());
+		}
+		
 		return null;
 	}
 	@Override

@@ -7,19 +7,15 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
-import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public class NumOfSlot extends OptionPanel {
+	private final String CATEGORY = "NUM_OF_SLOT = ";
+	private String selectedOption = "전체";
 	
-	private String selectedOption;
-	
-	private WeaponsDTO weaponsDTO;
-	
-	public NumOfSlot(MainFrame frame, WeaponsDTO dto) {
+	public NumOfSlot(MainFrame frame) {
 		super.initItsPanel(frame, "슬롯 수", frame.getSize_x(), 60);
-		this.weaponsDTO = dto;
 		initPanel();
 	}
 	
@@ -67,6 +63,19 @@ public class NumOfSlot extends OptionPanel {
 	
 	@Override
 	public String getSelectedOption() {
-		return this.selectedOption;
+		if(selectedOption.equals("전체")) {
+			return "";
+		}
+		
+		if(selectedOption.equals("1 개")) {
+			return this.CATEGORY + "1";
+			
+		} else if(selectedOption.equals("2 개")) {
+			return this.CATEGORY + "2";
+			
+		} else {
+			return this.CATEGORY + "3";
+		}
 	}
+	
 }

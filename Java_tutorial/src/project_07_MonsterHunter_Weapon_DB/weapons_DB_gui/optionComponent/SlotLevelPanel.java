@@ -7,19 +7,15 @@ import java.awt.event.ActionListener;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
 
-import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public class SlotLevelPanel extends OptionPanel {
+	private final String CATEGORY = "SLOT_1 = ";
+	private String selectedOption = "전체";
 	
-	private String selectedOption;
-	
-	private WeaponsDTO weaponsDTO;
-	
-	public SlotLevelPanel(MainFrame frame, WeaponsDTO dto) {
+	public SlotLevelPanel(MainFrame frame) {
 		super.initItsPanel(frame, "슬롯레벨", frame.getSize_x(), 60);
-		this.weaponsDTO = dto;
 		this.initPanel();
 	}
 	
@@ -66,6 +62,18 @@ public class SlotLevelPanel extends OptionPanel {
 	
 	@Override
 	public String getSelectedOption() {
-		return this.selectedOption;
+		if(selectedOption.equals("전체")) {
+			return "";
+		}
+		
+		if(selectedOption.equals("Lv 1")) {
+			return this.CATEGORY + "1";
+			
+		} else if(selectedOption.equals("Lv 2")) {
+			return this.CATEGORY + "2";
+			
+		} else {
+			return this.CATEGORY + "3";
+		}
 	}
 }
