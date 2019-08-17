@@ -15,7 +15,7 @@ public class TreePanel extends OptionPanel {
 	private String selectedOption = "전체";
 	
 	public TreePanel(MainFrame frame) {
-		super.initItsPanel(frame, "트리", frame.getSize_x(), 60);
+		super.initItsPanel(frame, "트리", frame.getSize_x() - 16, 60);
 		this.initPanel();
 	}
 	

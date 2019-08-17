@@ -27,10 +27,14 @@ CREATE TABLE WEAPONS(
     SHARPNESS_3     NUMBER(2)       DEFAULT 0,  -- 노
     SHARPNESS_4     NUMBER(2)       DEFAULT 0,  -- 녹
     SHARPNESS_5     NUMBER(2)       DEFAULT 0,  -- 청
-    SHARPNESS_6     NUMBER(2)       DEFAULT 0   -- 백
+    SHARPNESS_6     NUMBER(2)       DEFAULT 0,  -- 백
+    FAVORITE        VARCHAR2(5)     DEFAULT 'FALSE'
 );
 
-SELECT * FROM WEAPONS;
+UPDATE WEAPONS SET FAVORITE = 'true' WHERE NAME = '멸혼의 흉기';
+UPDATE WEAPONS SET FAVORITE = 'false' WHERE NAME = '멸혼의 흉기';
+
+SELECT * FROM WEAPONS WHERE NAME = '멸혼의 흉기';
 
 INSERT INTO WEAPONS
        VALUES('멸혼의 흉기', '대검', 1008, 0,
@@ -38,7 +42,28 @@ INSERT INTO WEAPONS
               1, 0, 0, 1,
               '명등룡의 유각 x 2, 멸진룡의 큰뿔 x 5, 멸진룡의 첨예발톱 x 5, 멸진룡의 보옥 x 1',
               '네르기간테', 9,
-              15, 15, 5, 8, 10, 0); 
+              15, 15, 5, 8, 10, 0,
+              'false');
+
+INSERT INTO WEAPONS
+       VALUES('네르갈저지', '대검', 912, 0,
+              7, '용속성', 150,
+              1, 0, 0, 1,
+              '멸진룡의 첨예발톱 x 3, 멸진룡의 재생각 x 4, 멸진룡의 꼬리 x 2, 멸진룡의 견갑각 x 2',
+              '네르기간테', 8,
+              15, 15, 5, 10, 10, 0,
+              'false');
+              
+INSERT INTO WEAPONS
+       VALUES('크롬레이지 1', '대검', 720, 0,
+              6, '독속성', 330,
+              1, 0, 0, 1,
+             '유니언광석 x 8, 카브레라이트광석 x 5, 드래그라이트광석 x 10, 용맥의 결정 x 3',
+             '네르기간테', 7,
+             15, 5, 5, 10, 5, 0,
+             'false');
+              
+              
               
 INSERT INTO WEAPONS
        VALUES('황검 리오레우스', '대검', 912, 15,
@@ -46,7 +71,8 @@ INSERT INTO WEAPONS
               1, 0, 0, 1,
               '염왕룡의 첨예뿔 x 2, 창화룡의 비늘+ x 8, 창화룡의 꼬리 x 3, 화룡의 홍옥 x 1',
               '리오레우스', 9,
-              15, 8, 8, 15, 5, 0); 
+              15, 8, 8, 15, 5, 0,
+              'false'); 
 
 DESC WEAPONS;
 

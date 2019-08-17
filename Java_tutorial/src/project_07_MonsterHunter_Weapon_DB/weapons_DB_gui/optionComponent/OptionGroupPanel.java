@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -13,7 +15,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
 
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weaponsDAO.WeaponsDAO;
@@ -31,17 +32,21 @@ public class OptionGroupPanel extends JPanel {
 	private JPanel tablePanel;
 	private JTable dataTable;
 	
-	private String[] tupleName = { "이름", "예리도", "공격력", "회심", "슬롯" };
+	private String[] tupleName = { "이름", "공격력", "회심", "슬롯" };
+	private ArrayList<WeaponsDTO> resultData;
 	
 	private MainFrame frame;
 	
-	private WeaponsDAO dao;	
+	private WeaponsDAO dao;
+	private WeaponsDTO dto;
+	private InfoDialog infoDialog;
 	
 	public OptionGroupPanel(MainFrame frame) {
 		this.frame = frame;
 		initOptionPanels();
 		initTable();
-		this.dao = new WeaponsDAO();
+		this.dao = new WeaponsDAO(frame);
+		infoDialog = new InfoDialog(frame, "추가");
 	}
 	
 	
@@ -68,9 +73,10 @@ public class OptionGroupPanel extends JPanel {
 	
 	private void initSearchButton() {
 		this.searchPanel = new JPanel();
-		LineBorder border = new LineBorder(Color.GRAY);
+		LineBorder border = new LineBorder(Color.LIGHT_GRAY, 2);
 		searchPanel.setBorder(border);
-		searchPanel.setPreferredSize(new Dimension(frame.getSize_x() - 20, 38));
+		searchPanel.setPreferredSize(new Dimension(frame.getSize_x() - 40, 38));
+		searchPanel.setBackground(Color.WHITE);
 		
 		JButton searchButton = new JButton("검색");
 		searchButton.addActionListener(new ActionListener() {
@@ -81,10 +87,10 @@ public class OptionGroupPanel extends JPanel {
 				String sql = "SELECT * FROM WEAPONS WHERE \t\n";
 				sql += getSelectedOption();
 				
-				ArrayList<WeaponsDTO> data = dao.selectData(sql);
+				resultData = dao.selectData(sql);
 				
-				for(int i = 0; i < data.size(); i++) {
-					WeaponsDTO dto = data.get(i);
+				for(int i = 0; i < resultData.size(); i++) {
+					WeaponsDTO dto = resultData.get(i);
 					System.out.println("--------------------------");
 					System.out.println("NAME : " + dto.getName());
 					System.out.println("SORT : " + dto.getSort());
@@ -106,6 +112,8 @@ public class OptionGroupPanel extends JPanel {
 				System.out.println("--------------------------");
 				System.out.println("SQL : " + sql);
 				System.out.println("--------------------------");
+				
+				setTableModel();
 			}
 		});
 		
@@ -145,12 +153,15 @@ public class OptionGroupPanel extends JPanel {
 	
 	private void initTable() {
 		this.tablePanel = new JPanel(new BorderLayout());
-		tablePanel.setPreferredSize(new Dimension(frame.getSize_x() - 20, 100));
+		tablePanel.setPreferredSize(new Dimension(frame.getSize_x() - 40, 120));
 		
 		DefaultTableModel model = new DefaultTableModel();
 		model.setColumnIdentifiers(this.tupleName);
 		
 		this.dataTable = new JTable();
+		this.dataTable.getTableHeader().setReorderingAllowed(false);
+		this.dataTable.getTableHeader().setResizingAllowed(false);
+		this.dataTable.setFocusable(false);
 		this.dataTable.setModel(model);
 		
 		JScrollPane scroll = new JScrollPane();
@@ -158,26 +169,42 @@ public class OptionGroupPanel extends JPanel {
 		
 		tablePanel.add(scroll);
 		
+		this.dataTable.addMouseListener(new MouseAdapter() {
+
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				// TODO Auto-generated method stub
+				super.mouseClicked(e);
+				
+				System.out.println(dataTable.getSelectedRow() + "번 행 선택됨");
+				
+				infoDialog.showInfo(dto);
+			}			
+		});
+		
 		this.add(tablePanel);
 	}
+	
+	
+	private void setTableModel() {
+		String[][] searchedData = new String[this.resultData.size()][4];
+		this.dto = null;
+
+		for(int i = 0; i < this.resultData.size(); i++) {
+			dto = this.resultData.get(i);
+			
+			searchedData[i][0] = dto.getName();
+			searchedData[i][1] = String.valueOf(dto.getDamage());
+			searchedData[i][2] = String.valueOf(dto.getCritical());
+			searchedData[i][3] = String.valueOf(dto.getNumOfSlot());
+		}
+		
+		DefaultTableModel model = 
+						new DefaultTableModel(searchedData, this.tupleName);
+		
+		this.dataTable.setModel(model);
+	}
+	
+	
+	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

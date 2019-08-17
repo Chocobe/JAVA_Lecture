@@ -15,7 +15,7 @@ public class SortPanel extends OptionPanel {
 	private String selectedOption = "'대검'";
 	
 	public SortPanel(MainFrame frame) {
-		super.initItsPanel(frame, "무기", frame.getSize_x(), 110);
+		super.initItsPanel(frame, "무기", frame.getSize_x() - 18, 110);
 		initPanel();
 	}
 	

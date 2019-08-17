@@ -6,15 +6,21 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.IWeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
+import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 public class WeaponsDAO implements IWeaponsDAO {
 	private Connection conn;
 	private PreparedStatement preparedStatement;
 	private ResultSet resultSet;
 	
-	public WeaponsDAO() {
+	private MainFrame frame;
+	
+	public WeaponsDAO(MainFrame frame) {
+		this.frame = frame;
 		initConnection();
 	}
 	
@@ -61,16 +67,53 @@ public class WeaponsDAO implements IWeaponsDAO {
 		} catch(SQLException e) {
 			System.out.println("SELECT 에러 : " + e.getMessage());
 			
-		} 
+		} finally {
+			WeaponsDBConnector.close(resultSet);
+			WeaponsDBConnector.close(preparedStatement);
+		}
 		
 		return dtoArray;
 	}
 	
+	
 	@Override
-	public boolean updateData(IWeaponsDTO dto) {
+	public void updateFavorite(String name) {
 		// TODO Auto-generated method stub
-		return false;
+		String sql = "SELECT FAVORITE " +
+					 "FROM WEAPONS " +
+					 "WHERE NAME = ?";				 
+		
+		try {
+			this.preparedStatement = this.conn.prepareStatement(sql);
+			this.preparedStatement.setString(1, name);
+			this.resultSet = this.preparedStatement.executeQuery();
+			
+			
+			if(resultSet.next()) {
+				if(resultSet.getString("FAVORITE").equals("true")) {
+					JOptionPane.showMessageDialog(frame, "이미 추가된 항목입니다");
+					
+				} else {
+					sql = "UPDATE WEAPONS SET " +
+						  "FAVORITE = 'true'";
+					this.preparedStatement = conn.prepareStatement(sql);
+					this.preparedStatement.executeUpdate();
+					
+					JOptionPane.showMessageDialog(frame, 
+									"즐겨찾기에 " + name + "이(가) 추가되었습니다");
+				}				
+			}
+			
+		} catch(SQLException e) {
+			System.out.println("업데이트 에러 : " + e.getMessage());
+			
+		} finally {
+			WeaponsDBConnector.close(this.resultSet);
+			WeaponsDBConnector.close(this.preparedStatement);
+		}
 	}
+	
+	
 	@Override
 	public boolean insertData(IWeaponsDTO dto) {
 		// TODO Auto-generated method stub
