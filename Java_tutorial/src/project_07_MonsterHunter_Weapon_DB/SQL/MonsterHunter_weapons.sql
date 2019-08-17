@@ -1,6 +1,10 @@
 -- MONSTER HUNTER WEAPONS DATABASE
--- DB id : monster_hunter
+-- DB id : MONSTER_HUNTER
 -- DB pw : tiger
+
+CREATE USER MONSTER_HUNTER IDENTIFIED BY tiger;
+
+GRANT CONNECT, RESOURCE TO MONSTER_HUNTER;
 
 -- 무기DB
 CREATE TABLE WEAPONS(
@@ -28,16 +32,40 @@ CREATE TABLE WEAPONS(
 
 SELECT * FROM WEAPONS;
 
+INSERT INTO WEAPONS
+       VALUES('멸혼의 흉기', '대검', 1008, 0,
+              8, '용속성', 150, 
+              1, 0, 0, 1,
+              '명등룡의 유각 x 2, 멸진룡의 큰뿔 x 5, 멸진룡의 첨예발톱 x 5, 멸진룡의 보옥 x 1',
+              '네르기간테', 9,
+              15, 15, 5, 8, 10, 0); 
+              
+INSERT INTO WEAPONS
+       VALUES('황검 리오레우스', '대검', 912, 15,
+              8, '화속성', 240, 
+              1, 0, 0, 1,
+              '염왕룡의 첨예뿔 x 2, 창화룡의 비늘+ x 8, 창화룡의 꼬리 x 3, 화룡의 홍옥 x 1',
+              '리오레우스', 9,
+              15, 8, 8, 15, 5, 0); 
+
 DESC WEAPONS;
 
 DROP TABLE WEAPONS;
 
+COMMIT;
+
+-- 테스트 테이블
+
 CREATE TABLE MH_TEST(
-    NAME    VARCHAR2(20),
+    SORT    VARCHAR2(20),
     NO      NUMBER(3)
 );
 
-SELECT * FROM MH_TEST;
+SELECT * FROM MH_TEST WHERE SORT = '대검';
+
+DROP TABLE MH_TEST;
+
+INSERT INTO MH_TEST VALUES('대검', 2);
 
 -- 테스트 (지울것)
 CREATE TABLE DEFAULT_TEST(

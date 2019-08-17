@@ -31,9 +31,9 @@ public class CenterTab extends JTabbedPane {
 	// 즐겨찾기 패널 초기화
 		// 즐겨찾기 테이블 검색 결과만 출력할것
 		this.favoritePanel= new JPanel();
-		this.addTab("즐겨찾기", null, this.favoritePanel, "즐겨찾기");	
+		this.addTab("즐겨찾기", null, this.favoritePanel, "즐겨찾기");
 		
-		this.setPreferredSize(new Dimension(frame.getSize_x() - 200, 460));
+		this.setPreferredSize(new Dimension(frame.getSize_x() - 200, 600));
 	}
 
 }

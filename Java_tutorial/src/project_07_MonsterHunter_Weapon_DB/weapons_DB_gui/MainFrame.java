@@ -1,18 +1,13 @@
 package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui;
 
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-
-import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
@@ -26,19 +21,16 @@ public class MainFrame extends JFrame {
 	
 	static {
 		SIZE_X = 500;
-		SIZE_Y = 1000;
+		SIZE_Y = 600;
 		initFrameSize();
 	}
 	
 	private JPanel northPanel;
 	private CenterTab centerTab;
 
-	private WeaponsDTO weaponsDTO;
-
 // 생성자
-	public MainFrame(WeaponsDTO dto) {
+	public MainFrame() {
 		initFrame();
-		this.weaponsDTO = dto;
 		
 		initNorthFrame();
 		initCenterTab();

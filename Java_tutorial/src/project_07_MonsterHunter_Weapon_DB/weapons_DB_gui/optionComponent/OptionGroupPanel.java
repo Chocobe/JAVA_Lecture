@@ -1,9 +1,11 @@
 package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
@@ -11,7 +13,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weaponsDAO.WeaponsDAO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
@@ -24,7 +28,9 @@ public class OptionGroupPanel extends JPanel {
 	private OptionPanel numOfSlotPanel;
 	private OptionPanel treePanel;
 	private JPanel searchPanel;
+	private JPanel tablePanel;
 	private JTable dataTable;
+	
 	private String[] tupleName = { "이름", "예리도", "공격력", "회심", "슬롯" };
 	
 	private MainFrame frame;
@@ -34,6 +40,7 @@ public class OptionGroupPanel extends JPanel {
 	public OptionGroupPanel(MainFrame frame) {
 		this.frame = frame;
 		initOptionPanels();
+		initTable();
 		this.dao = new WeaponsDAO();
 	}
 	
@@ -56,8 +63,6 @@ public class OptionGroupPanel extends JPanel {
 		
 		this.initSearchButton();
 		this.add(searchPanel);
-		
-		
 	}
 	
 	
@@ -73,33 +78,38 @@ public class OptionGroupPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				String sql = "SELECT * FROM WEAPONS WHERE \n\t ";
-				sql += getSelectedOption();				
-				System.out.println(sql);
+				String sql = "SELECT * FROM WEAPONS WHERE \t\n";
+				sql += getSelectedOption();
 				
+				ArrayList<WeaponsDTO> data = dao.selectData(sql);
 				
+				for(int i = 0; i < data.size(); i++) {
+					WeaponsDTO dto = data.get(i);
+					System.out.println("--------------------------");
+					System.out.println("NAME : " + dto.getName());
+					System.out.println("SORT : " + dto.getSort());
+					System.out.println("DAMAGE : " + dto.getDamage());
+					System.out.println("CRITICAL : " + dto.getCritical());
+					System.out.println("GRADE : " + dto.getGrade());
+					System.out.println("ATTRIBUTE : " + dto.getAttribute());
+					System.out.println("ATTRIBUTE_VAL : " + dto.getAttribute_val());
+					System.out.println("SLOT_1 : " + dto.getSlot_1());
+					System.out.println("SLOT_2 : " + dto.getSlot_2());
+					System.out.println("SLOT_3 : " + dto.getSlot_3());
+					System.out.println("NumOfSlot : " + dto.getNumOfSlot());
+					System.out.println("MATERIAL : " + dto.getMaterial());
+					System.out.println("TREE : " + dto.getTree());
+					System.out.println("TreePosition : " + dto.getTree_position());
+					System.out.println("--------------------------");
+				}
 				
+				System.out.println("--------------------------");
+				System.out.println("SQL : " + sql);
+				System.out.println("--------------------------");
 			}
 		});
 		
 		this.searchPanel.add(searchButton);
-	}
-	
-	
-	private void initTable() {
-		this.dataTable = new JTable();
-		this.dataTable.getTableHeader().setReorderingAllowed(false);
-		this.dataTable.getTableHeader().setRow
-		
-		DefaultTableModel model = new DefaultTableModel();
-		model.setColumnIdentifiers(this.tupleName);
-		model.setRowCount(10);
-//		model.setColumnIdentifiers(this.tupleName);
-		model.addColumn("헬로");
-		this.dataTable.setModel(model);
-		
-		JScrollPane scroll = new JScrollPane(this.dataTable);
-		this.add(scroll);
 	}
 	
 	
@@ -130,6 +140,25 @@ public class OptionGroupPanel extends JPanel {
 		}
 		
 		return sql;
+	}
+	
+	
+	private void initTable() {
+		this.tablePanel = new JPanel(new BorderLayout());
+		tablePanel.setPreferredSize(new Dimension(frame.getSize_x() - 20, 100));
+		
+		DefaultTableModel model = new DefaultTableModel();
+		model.setColumnIdentifiers(this.tupleName);
+		
+		this.dataTable = new JTable();
+		this.dataTable.setModel(model);
+		
+		JScrollPane scroll = new JScrollPane();
+		scroll.setViewportView(this.dataTable);
+		
+		tablePanel.add(scroll);
+		
+		this.add(tablePanel);
 	}
 }
 

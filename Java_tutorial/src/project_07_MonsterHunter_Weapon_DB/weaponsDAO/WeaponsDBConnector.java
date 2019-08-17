@@ -16,7 +16,7 @@ public class WeaponsDBConnector {
 	
 	static {
 		URL = "jdbc:oracle:thin:@localhost:1521:orcl";
-		USER = "monster_hunter";
+		USER = "MONSTER_HUNTER";
 		PW = "tiger";
 		
 		initConnection();

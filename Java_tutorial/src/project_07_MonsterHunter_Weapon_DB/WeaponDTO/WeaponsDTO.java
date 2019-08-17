@@ -11,6 +11,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	private int slot_1;
 	private int slot_2;
 	private int slot_3;
+	private int num_of_slot;
 	private String material;
 	private String tree;
 	private int tree_position;
@@ -25,7 +26,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setAllData(
 					String name, String sort, int damage, int critical, int grade, 
 					String attribute, int attribute_val, 
-					int slot_1, int slot_2, int slot_3, 
+					int slot_1, int slot_2, int slot_3, int num_of_slot,
 					String material, 
 					String tree, int tree_position,
 					int sharpness_1, int sharpness_2, int sharpness_3, 
@@ -42,6 +43,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		setSlot_1(slot_1);
 		setSlot_2(slot_2);
 		setSlot_3(slot_3);
+		setNumOfSlot(num_of_slot);
 		
 		setMaterial(material);
 		
@@ -134,6 +136,15 @@ public class WeaponsDTO implements IWeaponsDTO {
 	}
 	public void setSlot_3(int slot_3) {
 		this.slot_3 = slot_3;
+	}
+	
+// num_of_slot getter/setter
+	public int getNumOfSlot() {
+		return this.num_of_slot;
+	}
+	
+	public void setNumOfSlot(int num) {
+		this.num_of_slot = num;
 	}
 	
 // material getter/setter
