@@ -175,10 +175,9 @@ public class OptionGroupPanel extends JPanel {
 			public void mouseReleased(MouseEvent e) {
 				// TODO Auto-generated method stub
 				super.mouseClicked(e);
-				
-				System.out.println(dataTable.getSelectedRow() + "번 행 선택됨");
-				
-				infoDialog.showInfo(dto);
+
+				infoDialog = new InfoDialog(frame, "추가");
+				infoDialog.showInfo(resultData.get(dataTable.getSelectedRow()));
 			}			
 		});
 		

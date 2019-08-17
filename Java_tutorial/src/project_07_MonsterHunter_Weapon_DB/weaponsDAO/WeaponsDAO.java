@@ -77,15 +77,17 @@ public class WeaponsDAO implements IWeaponsDAO {
 	
 	
 	@Override
-	public void updateFavorite(String name) {
+	public void updateFavorite(WeaponsDTO dto) {
 		// TODO Auto-generated method stub
 		String sql = "SELECT FAVORITE " +
 					 "FROM WEAPONS " +
-					 "WHERE NAME = ?";				 
+					 "WHERE NAME = ?";	
+		
+		System.out.println("즐겨찾기 추가할 무기 : " + dto.getName());
 		
 		try {
 			this.preparedStatement = this.conn.prepareStatement(sql);
-			this.preparedStatement.setString(1, name);
+			this.preparedStatement.setString(1, dto.getName());
 			this.resultSet = this.preparedStatement.executeQuery();
 			
 			
@@ -95,12 +97,14 @@ public class WeaponsDAO implements IWeaponsDAO {
 					
 				} else {
 					sql = "UPDATE WEAPONS SET " +
-						  "FAVORITE = 'true'";
+						  "FAVORITE = 'true' " +
+						  "WHERE NAME = ?";
 					this.preparedStatement = conn.prepareStatement(sql);
+					this.preparedStatement.setString(1, dto.getName());
 					this.preparedStatement.executeUpdate();
 					
-					JOptionPane.showMessageDialog(frame, 
-									"즐겨찾기에 " + name + "이(가) 추가되었습니다");
+					JOptionPane.showMessageDialog(frame, "즐겨찾기에 <" + 
+									dto.getName() + "> 이(가) 추가되었습니다");
 				}				
 			}
 			

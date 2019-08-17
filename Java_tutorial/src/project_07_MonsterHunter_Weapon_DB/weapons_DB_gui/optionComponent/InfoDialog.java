@@ -3,9 +3,9 @@ package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.sql.PreparedStatement;
 
 import javax.swing.JButton;
 import javax.swing.JDialog;
@@ -27,6 +27,8 @@ public class InfoDialog extends JDialog {
 	
 	private int dialog_size_x;
 	private int dialog_size_y;
+	private int dialog_location_x;
+	private int dialog_location_y;
 	
 	private String buttonName;
 	
@@ -39,11 +41,21 @@ public class InfoDialog extends JDialog {
 	
 	private void initDialog() {
 		this.dialog_size_x = frame.getSize_x() - 200;
-		this.dialog_size_y = 330;
+		this.dialog_size_y = 360;
 		this.setSize(dialog_size_x, dialog_size_y);
-		this.setLocation(frame.getLocation());
+		
+		Toolkit kit = Toolkit.getDefaultToolkit();
+		this.dialog_location_x = 
+						(int)kit.getScreenSize().getWidth() / 2
+						- (int)this.getSize().getWidth() / 2;
+		this.dialog_location_y =
+						(int)kit.getScreenSize().getHeight() / 2
+						- (int)this.getSize().getHeight() / 2;
+		this.setLocation(this.dialog_location_x, this.dialog_location_y);		
+		
 		this.setModal(true);		
 	}
+	
 	
 	public void showInfo(WeaponsDTO dto) {
 		this.setTitle("세부정보(" + dto.getName() + ")");
@@ -60,7 +72,7 @@ public class InfoDialog extends JDialog {
 		namePanel.setBorder(border);
 		namePanel.setPreferredSize(new Dimension(dialog_size_x - 20, 40));
 		
-		JLabel nameLabel = new JLabel("- " + this.dto.getName() + " -");
+		JLabel nameLabel = new JLabel("- " + dto.getName() + " -");
 		namePanel.add(nameLabel);
 
 		outerPanel.add(namePanel);
@@ -68,7 +80,7 @@ public class InfoDialog extends JDialog {
 	// 세부정보 패널
 		JPanel infoPanel = new JPanel();
 		infoPanel.setBorder(border);
-		infoPanel.setPreferredSize(new Dimension(dialog_size_x - 20, 240));
+		infoPanel.setPreferredSize(new Dimension(dialog_size_x - 20, 270));
 		infoPanel.setBackground(Color.WHITE);
 		outerPanel.add(infoPanel);
 		
@@ -150,7 +162,7 @@ public class InfoDialog extends JDialog {
 		TitledBorder materialBorder = new TitledBorder(
 						new LineBorder(Color.LIGHT_GRAY, 2), "재료");
 		materialPanel.setBorder(materialBorder);
-		materialPanel.setPreferredSize(new Dimension(dialog_size_x - 38, 80));
+		materialPanel.setPreferredSize(new Dimension(dialog_size_x - 38, 110));
 		
 		String materialData = dto.getMaterial();
 		int beginIdx = 0;
@@ -184,7 +196,7 @@ public class InfoDialog extends JDialog {
 				
 				if(answer == JOptionPane.YES_OPTION) {
 					// 즐겨찾기 추가 로직
-					dao.updateFavorite(dto.getName());
+					dao.updateFavorite(dto);
 				}
 			}
 		});
@@ -193,7 +205,7 @@ public class InfoDialog extends JDialog {
 		
 		
 		
-		JButton deleteButton = new JButton(this.buttonName);
+//		JButton deleteButton = new JButton(this.buttonName);
 		
 		// deleteButton addActionListener 작성할 것
 		
