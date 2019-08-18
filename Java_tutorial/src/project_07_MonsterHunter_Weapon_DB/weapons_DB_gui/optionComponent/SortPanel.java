@@ -87,7 +87,7 @@ public class SortPanel extends OptionPanel {
 		group.add(gunLance);
 		this.add(gunLance);
 		
-		JRadioButton slashAxe = new JRadioButton("슬래시액시");
+		JRadioButton slashAxe = new JRadioButton("슬래시액스");
 		slashAxe.setBackground(Color.WHITE);
 		slashAxe.addActionListener(listener);
 		group.add(slashAxe);
