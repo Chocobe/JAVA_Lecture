@@ -31,11 +31,7 @@ CREATE TABLE WEAPONS(
     FAVORITE        VARCHAR2(5)     DEFAULT 'FALSE'
 );
 
-UPDATE WEAPONS SET FAVORITE = 'true' WHERE NAME = '멸혼의 흉기';
-UPDATE WEAPONS SET FAVORITE = 'false';
-
-SELECT * FROM WEAPONS;
-
+-- DB 데이터 삽입
 INSERT INTO WEAPONS
        VALUES('멸혼의 흉기', '대검', 1008, 0,
               8, '용속성', 150, 
@@ -62,9 +58,7 @@ INSERT INTO WEAPONS
              '네르기간테', 7,
              15, 5, 5, 10, 5, 0,
              'false');
-              
-              
-              
+
 INSERT INTO WEAPONS
        VALUES('황검 리오레우스', '대검', 912, 15,
               8, '화속성', 240, 
@@ -72,46 +66,9 @@ INSERT INTO WEAPONS
               '염왕룡의 첨예뿔 x 2, 창화룡의 비늘+ x 8, 창화룡의 꼬리 x 3, 화룡의 홍옥 x 1',
               '리오레우스', 9,
               15, 8, 8, 15, 5, 0,
-              'false'); 
-
-DESC WEAPONS;
-
-DROP TABLE WEAPONS;
-
-COMMIT;
+              'false');
 
 -- 테스트 테이블
+SELECT * FROM WEAPONS;
 
-CREATE TABLE MH_TEST(
-    SORT    VARCHAR2(20),
-    NO      NUMBER(3)
-);
-
-SELECT * FROM MH_TEST WHERE SORT = '대검';
-
-DROP TABLE MH_TEST;
-
-INSERT INTO MH_TEST VALUES('대검', 2);
-
--- 테스트 (지울것)
-CREATE TABLE DEFAULT_TEST(
-    SEX     CHAR(2)         DEFAULT '남'
-    CONSTRAINT DEFAULT_TEST_SEX_CH CHECK(SEX IN('남', '여')),
-    NAME    VARCHAR2(20)
-);
-
-SELECT * FROM MH_TEST;
-
-DELETE FROM MH_TEST;
-
-commit;
-
-CREATE TABLE DEFAULT_TABLE(
-    NO      NUMBER(2),
-    SEX     CHAR(2) DEFAULT '남'
-    CONSTRAINT DEFAULT_TABLE_SEX_CH CHECK(SEX IN('남', '여'))
-);
-
-SELECT SEARCH_CONDITION FROM USER_CONSTRAINTS
-WHERE CONSTRAINT_NAME = 'DEFAULT_TABLE_SEX_CH'
-ORDER BY CONSTRAINT_NAME;
+DELETE FROM WEAPONS WHERE NAME = '네르갈저지';

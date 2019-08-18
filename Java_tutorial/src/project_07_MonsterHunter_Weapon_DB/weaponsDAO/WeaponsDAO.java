@@ -130,7 +130,8 @@ public class WeaponsDAO implements IWeaponsDAO {
 			int updateState = this.preparedStatement.executeUpdate();
 			
 			if(updateState != 0) {
-				JOptionPane.showConfirmDialog(frame, "즐겨찾기에서 삭제 되었습니다");
+				JOptionPane.showMessageDialog(frame, "즐겨찾기에서 삭제 되었습니다");
+				
 			}
 			
 		} catch(SQLException e) {
@@ -157,7 +158,8 @@ public class WeaponsDAO implements IWeaponsDAO {
 			
 			while(resultSet.next()) {
 				WeaponsDTO dto = new WeaponsDTO();
-				dto.setAllData(resultSet.getString("NAME"), 
+				dto.setAllData(
+						   resultSet.getString("NAME"), 
 						   resultSet.getString("SORT"), 
 						   resultSet.getInt("DAMAGE"), 
 						   resultSet.getInt("CRITICAL"), 
@@ -189,10 +191,79 @@ public class WeaponsDAO implements IWeaponsDAO {
 	
 	
 	@Override
-	public boolean insertData(IWeaponsDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+	public void insertData(WeaponsDTO dto) {
+		String sql = "INSERT INTO WEAPONS(" +
+					 "NAME, SORT, DAMAGE, CRITICAL, GRADE, " +
+					 "ATTRIBUTE, ATTRIBUTE_VAL, " +
+					 "SLOT_1, SLOT_2, SLOT_3, " +
+					 "NUM_OF_SLOT, " +
+					 "MATERIAL, " +
+					 "TREE, TREE_POSITION, " +
+					 "SHARPNESS_1, SHARPNESS_2, SHARPNESS_3, " +
+					 "SHARPNESS_4, SHARPNESS_5, SHARPNESS_6)" +
+					 "VALUES(?, ?, ?, ?, ?," +
+					 "?, ?, " +
+					 "?, ?, ?, " +
+					 "?, " +
+					 "?, " +
+					 "?, ?, " +
+					 "?, ?, ?, " +
+					 "?, ?, ?)";
+		
+//		String sql = "INSERT INTO WEAPONS VALUES(" +
+//					 "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " +
+//					 "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		
+		try {
+			this.preparedStatement = this.conn.prepareStatement(sql);
+			this.preparedStatement.setString(1, dto.getName());
+			this.preparedStatement.setString(2, dto.getSort());
+			this.preparedStatement.setInt(3, dto.getDamage());
+			this.preparedStatement.setInt(4, dto.getCritical());
+			this.preparedStatement.setInt(5, dto.getGrade());
+			this.preparedStatement.setString(6, dto.getAttribute());
+			this.preparedStatement.setInt(7, dto.getAttribute_val());
+			this.preparedStatement.setInt(8, dto.getSlot_1());
+			this.preparedStatement.setInt(9, dto.getSlot_2());
+			this.preparedStatement.setInt(10, dto.getSlot_3());
+			this.preparedStatement.setInt(11, dto.getNumOfSlot());
+			this.preparedStatement.setString(12, dto.getMaterial());
+			this.preparedStatement.setString(13, dto.getTree());
+			this.preparedStatement.setInt(14, dto.getTree_position());
+			this.preparedStatement.setInt(15, dto.getSharpness_1());
+			this.preparedStatement.setInt(16, dto.getSharpness_2());
+			this.preparedStatement.setInt(17, dto.getSharpness_3());
+			this.preparedStatement.setInt(18, dto.getSharpness_4());
+			this.preparedStatement.setInt(19, dto.getSharpness_5());
+			this.preparedStatement.setInt(20, dto.getSharpness_6());
+			
+			this.preparedStatement.executeUpdate();
+			
+//			if(insertResult != 0) {
+//				JOptionPane.showMessageDialog(frame, 
+//								dto.getName() + " 데이터가 추가 되었습니다", "데이터 추가", 
+//								JOptionPane.INFORMATION_MESSAGE);
+//				// 각 입력창 초기화
+//				// insertPanel.initPanel();
+//				
+//			} else {
+//				JOptionPane.showMessageDialog(frame, "데이터 추가 에러", 
+//								"데이터 추가 에러", JOptionPane.ERROR_MESSAGE);
+//				// 각 입력창 초기화
+//				// insertPanel.initPanel();
+//			}
+			JOptionPane.showMessageDialog(frame, 
+					dto.getName() + " 데이터가 추가 되었습니다", "데이터 추가", 
+					JOptionPane.INFORMATION_MESSAGE);
+			
+		} catch(SQLException e) {
+			System.out.println("입력 에러 : " + e.getMessage());
+			JOptionPane.showMessageDialog(frame, "데이터 추가 에러", 
+					"데이터 추가 에러", JOptionPane.ERROR_MESSAGE);
+		}
 	}
+	
+
 	@Override
 	public boolean deleteData(IWeaponsDTO dto) {
 		// TODO Auto-generated method stub

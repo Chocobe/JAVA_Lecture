@@ -17,7 +17,7 @@ public class NameInputPanel extends OptionPanel {
 	private String selectedOption;	
 	
 	public NameInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "무기명", frame.getSize_x() - 15, 55);
+		super.initItsPanel("무기명", frame.getSize_x() - 15, 55);
 		this.initPanel();
 	}
 	

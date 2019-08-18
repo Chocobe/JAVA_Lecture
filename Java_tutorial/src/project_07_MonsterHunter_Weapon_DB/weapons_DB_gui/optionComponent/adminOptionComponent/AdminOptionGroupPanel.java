@@ -5,26 +5,31 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
+import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.SystemDialog;
+import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionPanel;
 
 @SuppressWarnings("serial")
 public class AdminOptionGroupPanel extends JPanel {
-	private JPanel namePanel;
-	private JPanel basePanel;
-	private JPanel attributePanel;
-	private JPanel slotPanel;
-	private JPanel materialPanel;
-	private JPanel sharpnessPanel;
-	private JPanel treePanel;
+	private OptionPanel namePanel;
+	private BaseInputPanel basePanel;
+	private OptionPanel attributePanel;
+	private OptionPanel slotPanel;
+	private OptionPanel materialPanel;
+	private SharpnessInputPanel sharpnessPanel;
+	private OptionPanel treePanel;
+	private JPanel insertPanel;
 	
 	private MainFrame frame;
+	private SystemDialog systemDialog;
 	
-	public AdminOptionGroupPanel(MainFrame frame) {
+	public AdminOptionGroupPanel(MainFrame frame, SystemDialog systemDialog) {
 		this.frame = frame;
-		this.setPreferredSize(new Dimension(1, 550));		
+		this.systemDialog = systemDialog;
+		this.setPreferredSize(new Dimension(1, 550));
 		initInputOptionPanels();
 	}
 	
-	private void initInputOptionPanels() {		
+	public void initInputOptionPanels() {		
 		this.namePanel = new NameInputPanel(this.frame);
 		this.add(namePanel);
 		
@@ -45,5 +50,38 @@ public class AdminOptionGroupPanel extends JPanel {
 		
 		this.treePanel = new TreeInputPanel(this.frame);
 		this.add(treePanel);
+		
+		this.insertPanel = new DataInsertPanel(this.frame, this, this.systemDialog);
+		this.add(insertPanel);
 	}
+	
+	
+	public OptionPanel getNamePanel() {
+		return this.namePanel;
+	}
+	
+	public BaseInputPanel getBasePanel() {
+		return this.basePanel;
+	}
+	
+	public OptionPanel getAttributePanel() {
+		return this.attributePanel;
+	}
+	
+	public OptionPanel getSlotPanel() {
+		return this.slotPanel;
+	}
+	
+	public OptionPanel getMaterialPanel() {
+		return this.materialPanel;
+	}
+	
+	public SharpnessInputPanel getSharpnessPanel() {
+		return this.sharpnessPanel;
+	}
+	
+	public OptionPanel getTreePanel() {
+		return this.treePanel;
+	}
+	
 }

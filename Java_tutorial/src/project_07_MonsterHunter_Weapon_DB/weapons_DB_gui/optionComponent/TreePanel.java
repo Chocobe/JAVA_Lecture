@@ -12,10 +12,10 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 @SuppressWarnings("serial")
 public class TreePanel extends OptionPanel {
 	private final String CATEGORY = "TREE = ";
-	private String selectedOption = "전체";
+	private String selectedOption = "'전체'";
 	
 	public TreePanel(MainFrame frame) {
-		super.initItsPanel(frame, "트리", frame.getSize_x() - 16, 60);
+		super.initItsPanel("트리", frame.getSize_x() - 16, 60);
 		this.initPanel();
 	}
 	
@@ -26,7 +26,7 @@ public class TreePanel extends OptionPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				selectedOption = e.getActionCommand();
+				selectedOption = "'" + e.getActionCommand() + "'";
 				System.out.println("TreePanel : " + selectedOption);
 			}
 		};
@@ -41,19 +41,19 @@ public class TreePanel extends OptionPanel {
 		group.add(all);
 		this.add(all);
 		
-		JRadioButton finalTree = new JRadioButton("'최종트리'");
+		JRadioButton finalTree = new JRadioButton("일반");
 		finalTree.setBackground(Color.WHITE);
 		finalTree.addActionListener(listener);
 		group.add(finalTree);
 		this.add(finalTree);
 		
-		JRadioButton normalMamta = new JRadioButton("'맘타로트'");
+		JRadioButton normalMamta = new JRadioButton("맘타로트");
 		normalMamta.setBackground(Color.WHITE);
 		normalMamta.addActionListener(listener);
 		group.add(normalMamta);
 		this.add(normalMamta);
 		
-		JRadioButton overPowerMamta = new JRadioButton("'역전 맘타로트'");
+		JRadioButton overPowerMamta = new JRadioButton("역전 맘타로트");
 		overPowerMamta.setBackground(Color.WHITE);
 		overPowerMamta.addActionListener(listener);
 		group.add(overPowerMamta);
@@ -63,7 +63,7 @@ public class TreePanel extends OptionPanel {
 	
 	@Override
 	public String getSelectedOption() {
-		if(selectedOption.equals("전체")) {
+		if(selectedOption.equals("'전체'")) {
 			return "";
 		}
 		

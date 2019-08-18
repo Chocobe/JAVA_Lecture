@@ -15,14 +15,14 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionP
 
 @SuppressWarnings("serial")
 public class SlotInputPanel extends OptionPanel {
-	private String selectedOption = "000";
+	private String selectedOption = "0000";
 	
 	private JComboBox<String> slot_1ComboBox;
 	private JComboBox<String> slot_2ComboBox;
 	private JComboBox<String> slot_3ComboBox;
 	
 	public SlotInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "슬롯", frame.getSize_x() - 15, 65);
+		super.initItsPanel("슬롯", frame.getSize_x() - 15, 65);
 		initPanel();
 	}
 	
@@ -51,11 +51,25 @@ public class SlotInputPanel extends OptionPanel {
 						slot_3ComboBox.setEnabled(true);
 					}
 					
-					// 테스트 출력
+					int numOfSlot = 0;
+					if(!slot_1ComboBox.getSelectedItem().equals("0")) {
+						numOfSlot++;
+					}
+					
+					if(!slot_2ComboBox.getSelectedItem().equals("0")) {
+						numOfSlot++;
+					}
+					
+					if(!slot_3ComboBox.getSelectedItem().equals("0")) {
+						numOfSlot++;
+					}
+					
 					selectedOption = 
 							(String)slot_1ComboBox.getSelectedItem() +
 							(String)slot_2ComboBox.getSelectedItem() +
-							(String)slot_3ComboBox.getSelectedItem();
+							(String)slot_3ComboBox.getSelectedItem() +
+							String.valueOf(numOfSlot);
+					
 					System.out.println("selectedOption : " + selectedOption);
 				}
 			}

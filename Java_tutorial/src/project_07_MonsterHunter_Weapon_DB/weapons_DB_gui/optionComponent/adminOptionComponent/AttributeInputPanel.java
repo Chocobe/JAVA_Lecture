@@ -20,14 +20,12 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionP
 @SuppressWarnings("serial")
 public class AttributeInputPanel extends OptionPanel{
 	private String selectedOption;
-	private MainFrame frame;
 	
 	private JComboBox<String> attributeComboBox;
 	private JTextField valueText;
 	
 	public AttributeInputPanel(MainFrame frame) {
-		this.frame = frame;
-		super.initItsPanel(this.frame, "속성", frame.getSize_x() - 15, 60);
+		super.initItsPanel("속성", frame.getSize_x() - 15, 60);
 		
 		this.setLayout(new BorderLayout());		
 		this.initPanel();
@@ -42,7 +40,7 @@ public class AttributeInputPanel extends OptionPanel{
 				// TODO Auto-generated method stub
 				if(e.getStateChange() == ItemEvent.SELECTED) {					
 					if(e.getItem().equals("무속성")) {
-						valueText.setText("");
+						valueText.setText("0");
 						valueText.setEnabled(false);
 						
 					} else {
@@ -61,7 +59,7 @@ public class AttributeInputPanel extends OptionPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				selectedOption = attributeComboBox.getSelectedItem() + " " +e.getActionCommand();
+				selectedOption = attributeComboBox.getSelectedItem() + ", " +e.getActionCommand();
 				System.out.println(selectedOption);
 			}
 		};
@@ -90,6 +88,7 @@ public class AttributeInputPanel extends OptionPanel{
 		
 		outerPanel.add(sortPanel);
 		
+		this.selectedOption = attributeComboBox.getItemAt(0);
 		
 	// 속성수치
 		JPanel valuePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
@@ -101,6 +100,7 @@ public class AttributeInputPanel extends OptionPanel{
 		
 		valueText = new JTextField(5);
 		valueText.addActionListener(actionListener);
+		valueText.setText("0");
 		valueText.setEnabled(false);
 		valuePanel.add(valueText);
 		

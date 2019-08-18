@@ -15,6 +15,7 @@ import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weaponsDAO.WeaponsDAO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
+@SuppressWarnings("serial")
 public class FavoriteGroupPanel extends JPanel {
 	private MainFrame frame;
 
@@ -25,7 +26,6 @@ public class FavoriteGroupPanel extends JPanel {
 	
 	private InfoDialog infoDialog;
 	private WeaponsDAO dao;
-	private WeaponsDTO dto;
 	
 	public FavoriteGroupPanel(MainFrame frame) {
 		this.frame = frame;

@@ -15,8 +15,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
-
 @SuppressWarnings("serial")
 public class NorthPanel extends JPanel implements ActionListener {
 	private static final String SYS_AUTHENTICATION;

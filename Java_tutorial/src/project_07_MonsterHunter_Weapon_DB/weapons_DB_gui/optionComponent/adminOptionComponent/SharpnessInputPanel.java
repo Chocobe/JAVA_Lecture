@@ -26,7 +26,7 @@ public class SharpnessInputPanel extends OptionPanel {
 	
 	
 	public SharpnessInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "예리도", frame.getSize_x() - 15, 95);
+		super.initItsPanel("예리도", frame.getSize_x() - 15, 95);
 		this.initPanel();
 	}
 	
@@ -39,10 +39,9 @@ public class SharpnessInputPanel extends OptionPanel {
 				// TODO Auto-generated method stub
 				if(sharpness_1Text.getText().equals("") ||
 								sharpness_1Text.getText().equals("0")) {
+					sharpness_1Text.setText("0");
 					sharpness_2Text.setText("");
 					sharpness_2Text.setEnabled(false);
-					
-					
 					
 				} else {
 					sharpness_2Text.setEnabled(true);
@@ -52,6 +51,7 @@ public class SharpnessInputPanel extends OptionPanel {
 				
 				if(sharpness_2Text.getText().equals("") ||
 								sharpness_2Text.getText().equals("0")) {
+					sharpness_2Text.setText("0");
 					sharpness_3Text.setText("");
 					sharpness_3Text.setEnabled(false);
 					
@@ -63,6 +63,7 @@ public class SharpnessInputPanel extends OptionPanel {
 				
 				if(sharpness_3Text.getText().equals("") ||
 								sharpness_3Text.getText().equals("0")) {
+					sharpness_3Text.setText("0");
 					sharpness_4Text.setText("");
 					sharpness_4Text.setEnabled(false);
 					
@@ -74,6 +75,7 @@ public class SharpnessInputPanel extends OptionPanel {
 				
 				if(sharpness_4Text.getText().equals("") ||
 								sharpness_4Text.getText().equals("0")) {
+					sharpness_4Text.setText("0");
 					sharpness_5Text.setText("");
 					sharpness_5Text.setEnabled(false);
 					
@@ -85,6 +87,7 @@ public class SharpnessInputPanel extends OptionPanel {
 				
 				if(sharpness_5Text.getText().equals("") ||
 								sharpness_5Text.getText().equals("0")) {
+					sharpness_5Text.setText("0");
 					sharpness_6Text.setText("");
 					sharpness_6Text.setEnabled(false);
 					
@@ -92,10 +95,14 @@ public class SharpnessInputPanel extends OptionPanel {
 					sharpness_6Text.setEnabled(true);
 					
 					selectedOption += " " + sharpness_5Text.getText();
-				}
+				}// end if~else
 				
-				if(!sharpness_6Text.getText().equals("") ||
+				if(sharpness_6Text.getText().equals("") ||
 								sharpness_6Text.getText().equals("0")) {
+					sharpness_6Text.setText("0");
+					selectedOption += " " + sharpness_6Text.getText();
+					
+				} else {
 					selectedOption += " " + sharpness_6Text.getText();
 				}
 //				
@@ -116,6 +123,7 @@ public class SharpnessInputPanel extends OptionPanel {
 		this.sharpness_1Text = new JTextField(5);
 		this.sharpness_1Text.addActionListener(listener);
 		sharpness_1Panel.add(this.sharpness_1Text);
+		sharpness_1Text.setText("0");
 		this.add(sharpness_1Panel);
 		
 	// sharpness_2
@@ -129,6 +137,7 @@ public class SharpnessInputPanel extends OptionPanel {
 		this.sharpness_2Text.addActionListener(listener);
 		this.sharpness_2Text.setEnabled(false);
 		sharpness_2Panel.add(this.sharpness_2Text);
+		sharpness_2Text.setText("0");
 		this.add(sharpness_2Panel);
 		
 	// sharpness_3
@@ -142,6 +151,7 @@ public class SharpnessInputPanel extends OptionPanel {
 		this.sharpness_3Text.addActionListener(listener);
 		this.sharpness_3Text.setEnabled(false);
 		sharpness_3Panel.add(this.sharpness_3Text);
+		sharpness_3Text.setText("0");
 		this.add(sharpness_3Panel);
 		
 	// sharpness_4
@@ -155,6 +165,7 @@ public class SharpnessInputPanel extends OptionPanel {
 		this.sharpness_4Text.addActionListener(listener);
 		this.sharpness_4Text.setEnabled(false);
 		sharpness_4Panel.add(this.sharpness_4Text);
+		sharpness_4Text.setText("0");
 		this.add(sharpness_4Panel);
 		
 	// sharpness_5
@@ -168,6 +179,7 @@ public class SharpnessInputPanel extends OptionPanel {
 		this.sharpness_5Text.addActionListener(listener);
 		this.sharpness_5Text.setEnabled(false);
 		sharpness_5Panel.add(this.sharpness_5Text);
+		sharpness_5Text.setText("0");
 		this.add(sharpness_5Panel);
 		
 	// sharpness_6
@@ -175,13 +187,40 @@ public class SharpnessInputPanel extends OptionPanel {
 		sharpness_6Panel.setBackground(Color.WHITE);
 		
 		JLabel sharpness_6Label = new JLabel("예리도 6");
+		
 		sharpness_6Panel.add(sharpness_6Label);
 		
 		this.sharpness_6Text = new JTextField(5);
 		this.sharpness_6Text.addActionListener(listener);
 		this.sharpness_6Text.setEnabled(false);
 		sharpness_6Panel.add(this.sharpness_6Text);
+		sharpness_6Text.setText("0");
 		this.add(sharpness_6Panel);				
+	}
+	
+	
+	public String getSharpness_1() {
+		return this.sharpness_1Text.getText();
+	}
+	
+	public String getSharpness_2() {
+		return this.sharpness_2Text.getText();
+	}
+	
+	public String getSharpness_3() {
+		return this.sharpness_3Text.getText();
+	}
+	
+	public String getSharpness_4() {
+		return this.sharpness_4Text.getText();
+	}
+	
+	public String getSharpness_5() {
+		return this.sharpness_5Text.getText();
+	}
+	
+	public String getSharpness_6() {
+		return this.sharpness_6Text.getText();
 	}
 	
 	

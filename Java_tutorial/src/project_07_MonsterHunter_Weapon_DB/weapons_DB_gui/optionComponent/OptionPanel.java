@@ -8,16 +8,11 @@ import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.border.TitledBorder;
 
-import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
-
 @SuppressWarnings("serial")
 public abstract class OptionPanel extends JPanel{
-	private MainFrame frame;
 	
 // 하위클래스 생성자에서 호출할 것
-	protected void initItsPanel(MainFrame frame, String title, int width, int height) {
-		this.frame = frame;
-		
+	protected void initItsPanel(String title, int width, int height) {		
 		TitledBorder titledBorder = new TitledBorder(
 						new LineBorder(Color.LIGHT_GRAY, 2), title);
 		this.setBorder(titledBorder);

@@ -20,7 +20,7 @@ public class TreeInputPanel extends OptionPanel {
 	private JTextField treePositionText;
 	
 	public TreeInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "트리", frame.getSize_x() - 15,  60);
+		super.initItsPanel("트리", frame.getSize_x() - 15,  60);
 		this.initPanel();
 	}
 	
@@ -31,7 +31,7 @@ public class TreeInputPanel extends OptionPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				selectedOption = treeNameText.getText() + " " + treePositionText.getText();
+				selectedOption = treeNameText.getText() + ", " + treePositionText.getText();
 				System.out.println(selectedOption);
 			}
 		};
@@ -40,7 +40,7 @@ public class TreeInputPanel extends OptionPanel {
 		JPanel treeNamePanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 10, 5));
 		treeNamePanel.setBackground(Color.WHITE);
 		
-		JLabel treeNameLabel = new JLabel("트리명");
+		JLabel treeNameLabel = new JLabel("트리");
 		treeNamePanel.add(treeNameLabel);
 		
 		this.treeNameText = new JTextField(15);

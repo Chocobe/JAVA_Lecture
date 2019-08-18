@@ -147,6 +147,8 @@ public class OptionGroupPanel extends JPanel {
 			sql += " AND " + tree;
 		}
 		
+		System.out.println("sql : " + sql);
+		
 		return sql;
 	}
 	
@@ -203,7 +205,5 @@ public class OptionGroupPanel extends JPanel {
 		
 		this.dataTable.setModel(model);
 	}
-	
-	
 	
 }

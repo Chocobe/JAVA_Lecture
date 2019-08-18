@@ -2,6 +2,7 @@ package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 
 import javax.swing.JDialog;
@@ -25,8 +26,8 @@ public class SystemDialog extends JDialog {
 	
 	
 	private void initDialog() {
-		this.setSize(frame.getSize());
-		this.setLocation(frame.getLocation_x(), frame.getLocation_y());
+		this.setSize(new Dimension(frame.getSize_x(), frame.getSize_y() + 25));
+		this.setLocation(frame.getLocation_x(), frame.getLocation_y() - 25);
 		this.setModal(true);
 	}
 	
@@ -44,10 +45,10 @@ public class SystemDialog extends JDialog {
 	}
 	
 	
-	private void initMidPanel() {
+	private void initMidPanel(/* this */) {
 		JScrollPane midScroll = new JScrollPane();
 		
-		JPanel optionPanel = new AdminOptionGroupPanel(this.frame);
+		JPanel optionPanel = new AdminOptionGroupPanel(this.frame, this);
 		midScroll.setViewportView(optionPanel);
 		
 		this.add(midScroll, BorderLayout.CENTER);

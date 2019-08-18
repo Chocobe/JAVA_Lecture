@@ -10,6 +10,6 @@ public interface IWeaponsDAO {
 	public void updateFavorite(WeaponsDTO dto);
 	public void deleteFavorite(WeaponsDTO dto);
 	public ArrayList<WeaponsDTO> selectFavorite();
-	public boolean insertData(IWeaponsDTO dto);
+	public void insertData(WeaponsDTO dto);
 	public boolean deleteData(IWeaponsDTO dto);
 }

@@ -17,23 +17,82 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionP
 public class BaseInputPanel extends OptionPanel {
 	private String selectedOption;
 	
+	private String sortOption;
+	private String damageOption;
+	private String criticalOption;
+	private String gradeOption;
+	
 	
 	public BaseInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "기본스펙", frame.getSize_x() - 15, 110);
+		super.initItsPanel("기본스펙", frame.getSize_x() - 15, 110);
 		initPanel();
 	}
 	
 	
 	private void initPanel() {
-		ActionListener listener = new ActionListener() {
+		ActionListener sortListener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				// TODO Auto-generated method stub
-				selectedOption = e.getActionCommand();
-				System.out.println("기본스펙 입력값 : " + selectedOption);
+				sortOption = e.getActionCommand();
+				selectedOption = sortOption + ", " +
+								 damageOption + ", " +
+								 criticalOption + ", " +
+								 gradeOption;
+				
+				System.out.println("무기 입력값 : " + sortOption);
 			}
 		};
+		
+		ActionListener damageListener = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				damageOption = e.getActionCommand();
+				selectedOption = sortOption + ", " +
+						 damageOption + ", " +
+						 criticalOption + ", " +
+						 gradeOption;
+				
+				System.out.println("공격력 입력값 : " + damageOption);
+			}
+		};
+		
+		ActionListener criticalListener = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				criticalOption = e.getActionCommand();
+				selectedOption = sortOption + ", " +
+						 damageOption + ", " +
+						 criticalOption + ", " +
+						 gradeOption;
+				
+				System.out.println("치명률 입력값 : " + criticalOption);
+			}
+		};
+		
+		ActionListener gradeListener = new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				gradeOption = e.getActionCommand();
+				selectedOption = sortOption + ", " +
+						 damageOption + ", " +
+						 criticalOption + ", " +
+						 gradeOption;
+				
+				System.out.println("등급 입력값 : " + gradeOption);
+			}
+		};
+		
+		JPanel others = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 5));
+		others.setBackground(Color.WHITE);
+		this.add(others);
 		
 	// 무기종류
 		JPanel sortPanel = new JPanel();	
@@ -44,13 +103,11 @@ public class BaseInputPanel extends OptionPanel {
 		sortPanel.add(sortLabel);
 		
 		JTextField sortText = new JTextField(34);
-		sortText.addActionListener(listener);
+		sortText.addActionListener(sortListener);
+		sortText.setText("대검");
+		sortOption = "대검";
 		sortPanel.add(sortText);
 		this.add(sortPanel);
-		
-		JPanel others = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 5));
-		others.setBackground(Color.WHITE);
-		this.add(others);
 		
 	// 공격력
 		JPanel damagePanel = new JPanel();
@@ -61,7 +118,9 @@ public class BaseInputPanel extends OptionPanel {
 		others.add(damageLabel);
 		
 		JTextField damageText = new JTextField(5);
-		damageText.addActionListener(listener);
+		damageText.addActionListener(damageListener);
+		damageText.setText("0");
+		damageOption = "0";
 		damagePanel.add(damageText);
 		others.add(damagePanel);
 		
@@ -74,7 +133,9 @@ public class BaseInputPanel extends OptionPanel {
 		criticalPanel.add(criticalLabel);
 		
 		JTextField criticalText = new JTextField(5);
-		criticalText.addActionListener(listener);
+		criticalText.addActionListener(criticalListener);
+		criticalText.setText("0");
+		criticalOption = "0";
 		criticalPanel.add(criticalText);
 		others.add(criticalPanel);
 		
@@ -87,9 +148,28 @@ public class BaseInputPanel extends OptionPanel {
 		gradePanel.add(gradeLabel);
 		
 		JTextField gradeText = new JTextField(5);
-		gradeText.addActionListener(listener);
+		gradeText.addActionListener(gradeListener);
+		gradeText.setText("0");
+		gradeOption = "0";
 		gradePanel.add(gradeText);
 		others.add(gradePanel);
+	}
+	
+	
+	public String getSortOption() {
+		return this.sortOption;
+	}
+	
+	public String getDamageOption() {
+		return this.damageOption;
+	}
+	
+	public String getCriticalOption() {
+		return this.criticalOption;
+	}
+	
+	public String getGradeOption() {
+		return this.gradeOption;
 	}
 	
 	

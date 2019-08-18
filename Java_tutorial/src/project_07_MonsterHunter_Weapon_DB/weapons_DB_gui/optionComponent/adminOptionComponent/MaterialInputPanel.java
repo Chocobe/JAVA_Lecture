@@ -17,7 +17,7 @@ public class MaterialInputPanel extends OptionPanel {
 	private String selectedOption;
 	
 	public MaterialInputPanel(MainFrame frame) {
-		super.initItsPanel(frame, "재료", frame.getSize_x() - 15, 60);
+		super.initItsPanel("재료", frame.getSize_x() - 15, 60);
 		initPanels();
 	}
 	
