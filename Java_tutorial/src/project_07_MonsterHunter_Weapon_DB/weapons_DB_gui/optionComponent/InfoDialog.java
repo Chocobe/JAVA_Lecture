@@ -182,43 +182,45 @@ public class InfoDialog extends JDialog {
 
 		infoPanel.add(materialPanel);
 		
-		
 
 		JButton favoriteButton = new JButton(this.buttonName);
 		
 		favoriteButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				int answer = JOptionPane.showConfirmDialog(frame,
 								"즐겨찾기에 추가 하시겠습니까?", "즐겨찾기 추가",
 								JOptionPane.YES_NO_OPTION);
 				
 				if(answer == JOptionPane.YES_OPTION) {
-					// 즐겨찾기 추가 로직
 					dao.updateFavorite(dto);
 				}
 			}
 		});
 		
+		JButton deleteButton = new JButton(this.buttonName);
 		
-		
-		
-		
-//		JButton deleteButton = new JButton(this.buttonName);
-		
-		// deleteButton addActionListener 작성할 것
-		
-		
-		
-		
+		deleteButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+				int answer = JOptionPane.showConfirmDialog(frame,
+								"즐겨찾기에서 삭제 하시겠습니까?", "즐겨찾기 삭제", 
+								JOptionPane.YES_OPTION);
+				
+				if(answer == JOptionPane.YES_OPTION) {
+					dao.deleteFavorite(dto);
+				}
+			}
+		});
 		
 		if(this.buttonName.equals("추가")) {
 			infoPanel.add(favoriteButton);
 		}
 		
 		if(this.buttonName.equals("삭제")) {
-			
+			infoPanel.add(deleteButton);
 		}
 		
 		this.setVisible(true);

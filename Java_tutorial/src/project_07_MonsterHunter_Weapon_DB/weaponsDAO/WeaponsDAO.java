@@ -119,6 +119,76 @@ public class WeaponsDAO implements IWeaponsDAO {
 	
 	
 	@Override
+	public void deleteFavorite(WeaponsDTO dto) {
+		String sql = "UPDATE WEAPONS SET " +
+					 "FAVORITE = 'false' " +
+					 "WHERE NAME = ?";
+		
+		try {
+			this.preparedStatement = this.conn.prepareStatement(sql);
+			this.preparedStatement.setString(1, dto.getName());
+			int updateState = this.preparedStatement.executeUpdate();
+			
+			if(updateState != 0) {
+				JOptionPane.showConfirmDialog(frame, "즐겨찾기에서 삭제 되었습니다");
+			}
+			
+		} catch(SQLException e) {
+			System.out.println("즐겨찾기 삭제 에러 : " + e.getMessage());
+			
+		} finally {
+			WeaponsDBConnector.close(this.preparedStatement);
+		}
+	}
+	
+	
+	@Override
+	public ArrayList<WeaponsDTO> selectFavorite() {
+		ArrayList<WeaponsDTO> dtoArray = new ArrayList<WeaponsDTO>();
+		
+		String sql = "SELECT * FROM WEAPONS " +
+					 "WHERE FAVORITE = 'true'";
+		
+		try {
+			this.preparedStatement = this.conn.prepareStatement(sql);
+			this.resultSet = this.preparedStatement.executeQuery();
+			
+//			System.out.println("Favorite 테스트 : " + resultSet.getString("NAME"));
+			
+			while(resultSet.next()) {
+				WeaponsDTO dto = new WeaponsDTO();
+				dto.setAllData(resultSet.getString("NAME"), 
+						   resultSet.getString("SORT"), 
+						   resultSet.getInt("DAMAGE"), 
+						   resultSet.getInt("CRITICAL"), 
+						   resultSet.getInt("GRADE"), 
+						   resultSet.getString("ATTRIBUTE"), 
+						   resultSet.getInt("ATTRIBUTE_VAL"), 
+						   resultSet.getInt("SLOT_1"), 
+						   resultSet.getInt("SLOT_2"), 
+						   resultSet.getInt("SLOT_3"), 
+						   resultSet.getInt("NUM_OF_SLOT"),
+						   resultSet.getString("MATERIAL"), 
+						   resultSet.getString("TREE"), 
+						   resultSet.getInt("TREE_POSITION"), 
+						   resultSet.getInt("SHARPNESS_1"), 
+						   resultSet.getInt("SHARPNESS_2"), 
+						   resultSet.getInt("SHARPNESS_3"), 
+						   resultSet.getInt("SHARPNESS_4"), 
+						   resultSet.getInt("SHARPNESS_5"), 
+						   resultSet.getInt("SHARPNESS_6"));
+				dtoArray.add(dto);
+			}
+			
+		} catch(SQLException e) {
+			System.out.println("즐겨찾기 검색 에러 : " + e.getMessage());
+		}
+		
+		return dtoArray;
+	}
+	
+	
+	@Override
 	public boolean insertData(IWeaponsDTO dto) {
 		// TODO Auto-generated method stub
 		return false;
