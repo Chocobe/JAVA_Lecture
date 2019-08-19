@@ -16,18 +16,20 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.SystemDialog;
 
 @SuppressWarnings("serial")
 public class DataInsertPanel extends JPanel {
-	private MainFrame frame;
 	private AdminOptionGroupPanel adminPanel;
 	private WeaponsDAO dao;
-	private SystemDialog systemDialog;
 	
 	private JButton insertButton;
 	
-	public DataInsertPanel(MainFrame frame, AdminOptionGroupPanel adminPanel, SystemDialog systemDialog) {
-		this.frame = frame;
+	private int parentSize_x;
+	
+	public DataInsertPanel(MainFrame frame, 
+					AdminOptionGroupPanel adminPanel) {
+		
 		this.adminPanel = adminPanel;
 		this.dao = new WeaponsDAO(frame);
-		this.systemDialog = systemDialog;
+
+		this.parentSize_x = frame.getSize_x();
 		
 		initPanel();
 		initButton();
@@ -37,7 +39,7 @@ public class DataInsertPanel extends JPanel {
 		LineBorder border = new LineBorder(Color.LIGHT_GRAY, 2);
 		this.setBorder(border);
 		
-		this.setPreferredSize(new Dimension(this.frame.getSize_x() - 38, 40));
+		this.setPreferredSize(new Dimension(this.parentSize_x - 38, 40));
 		this.setBackground(Color.WHITE);
 	}
 	
@@ -156,9 +158,7 @@ public class DataInsertPanel extends JPanel {
 					
 				}
 				
-				dao.insertData(tempDTO);
-				
-				systemDialog.dispose();				
+				dao.insertData(tempDTO);			
 			}
 		});
 		

@@ -1,5 +1,6 @@
 package project_07_MonsterHunter_Weapon_DB.weaponsDAO;
 
+import java.awt.Container;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -10,17 +11,16 @@ import javax.swing.JOptionPane;
 
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.IWeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
-import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 public class WeaponsDAO implements IWeaponsDAO {
 	private Connection conn;
 	private PreparedStatement preparedStatement;
 	private ResultSet resultSet;
 	
-	private MainFrame frame;
+	private Container parentContainer;
 	
-	public WeaponsDAO(MainFrame frame) {
-		this.frame = frame;
+	public WeaponsDAO(Container parentContainer) {
+		this.parentContainer = parentContainer;
 		initConnection();
 	}
 	
@@ -32,7 +32,6 @@ public class WeaponsDAO implements IWeaponsDAO {
 	
 	@Override
 	public ArrayList<WeaponsDTO> selectData(String sql) {
-		// TODO Auto-generated method stub
 		ArrayList<WeaponsDTO> dtoArray = new ArrayList<WeaponsDTO>();
 		
 		try {			
@@ -93,7 +92,7 @@ public class WeaponsDAO implements IWeaponsDAO {
 			
 			if(resultSet.next()) {
 				if(resultSet.getString("FAVORITE").equals("true")) {
-					JOptionPane.showMessageDialog(frame, "이미 추가된 항목입니다");
+					JOptionPane.showMessageDialog(parentContainer, "이미 추가된 항목입니다");
 					
 				} else {
 					sql = "UPDATE WEAPONS SET " +
@@ -103,7 +102,7 @@ public class WeaponsDAO implements IWeaponsDAO {
 					this.preparedStatement.setString(1, dto.getName());
 					this.preparedStatement.executeUpdate();
 					
-					JOptionPane.showMessageDialog(frame, "즐겨찾기에 <" + 
+					JOptionPane.showMessageDialog(parentContainer, "즐겨찾기에 <" + 
 									dto.getName() + "> 이(가) 추가되었습니다");
 				}				
 			}
@@ -130,7 +129,7 @@ public class WeaponsDAO implements IWeaponsDAO {
 			int updateState = this.preparedStatement.executeUpdate();
 			
 			if(updateState != 0) {
-				JOptionPane.showMessageDialog(frame, "즐겨찾기에서 삭제 되었습니다");
+				JOptionPane.showMessageDialog(parentContainer, "즐겨찾기에서 삭제 되었습니다");
 				
 			}
 			
@@ -252,13 +251,13 @@ public class WeaponsDAO implements IWeaponsDAO {
 //				// 각 입력창 초기화
 //				// insertPanel.initPanel();
 //			}
-			JOptionPane.showMessageDialog(frame, 
+			JOptionPane.showMessageDialog(parentContainer, 
 					dto.getName() + " 데이터가 추가 되었습니다", "데이터 추가", 
 					JOptionPane.INFORMATION_MESSAGE);
 			
 		} catch(SQLException e) {
 			System.out.println("입력 에러 : " + e.getMessage());
-			JOptionPane.showMessageDialog(frame, "데이터 추가 에러", 
+			JOptionPane.showMessageDialog(parentContainer, "데이터 추가 에러", 
 					"데이터 추가 에러", JOptionPane.ERROR_MESSAGE);
 		}
 	}

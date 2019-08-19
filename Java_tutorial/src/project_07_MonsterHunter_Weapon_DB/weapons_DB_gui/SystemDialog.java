@@ -6,7 +6,6 @@ import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 
 import javax.swing.JDialog;
 import javax.swing.JLabel;
@@ -62,7 +61,7 @@ public class SystemDialog extends JDialog {
 	private void initMidPanel() {
 		JScrollPane midScroll = new JScrollPane();
 		
-		JPanel optionPanel = new AdminOptionGroupPanel(this.frame, this);
+		JPanel optionPanel = new AdminOptionGroupPanel(this.frame);
 		midScroll.setViewportView(optionPanel);
 		
 		this.add(midScroll, BorderLayout.CENTER);
@@ -84,8 +83,5 @@ public class SystemDialog extends JDialog {
 		// 테이블 Dialog 생성할 것
 		infoDialog = new AdminTableDialog(this);
 	}
-	
-	
-	
 	
 }

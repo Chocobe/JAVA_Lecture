@@ -20,11 +20,9 @@ public class AdminOptionGroupPanel extends JPanel {
 	private JPanel insertPanel;
 	
 	private MainFrame frame;
-	private SystemDialog systemDialog;
 	
-	public AdminOptionGroupPanel(MainFrame frame, SystemDialog systemDialog) {
+	public AdminOptionGroupPanel(MainFrame frame) {
 		this.frame = frame;
-		this.systemDialog = systemDialog;
 		this.setPreferredSize(new Dimension(1, 550));
 		initInputOptionPanels();
 	}
@@ -51,7 +49,7 @@ public class AdminOptionGroupPanel extends JPanel {
 		this.treePanel = new TreeInputPanel(this.frame);
 		this.add(treePanel);
 		
-		this.insertPanel = new DataInsertPanel(this.frame, this, this.systemDialog);
+		this.insertPanel = new DataInsertPanel(this.frame, this);
 		this.add(insertPanel);
 	}
 	
