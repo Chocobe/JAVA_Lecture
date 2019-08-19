@@ -1,6 +1,7 @@
 package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent;
 
 import java.awt.Color;
+import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Toolkit;
@@ -17,11 +18,10 @@ import javax.swing.border.TitledBorder;
 
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weaponsDAO.WeaponsDAO;
-import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
 
 @SuppressWarnings("serial")
 public class InfoDialog extends JDialog {
-	private MainFrame frame;
+	private Container parentContainer;
 	private WeaponsDAO dao;
 	private WeaponsDTO dto;
 	
@@ -32,15 +32,16 @@ public class InfoDialog extends JDialog {
 	
 	private String buttonName;
 	
-	public InfoDialog(MainFrame frame, String buttonName) {
-		this.frame = frame;
+	public InfoDialog(Container parentContainer, String buttonName) {
+		this.parentContainer = parentContainer;
 		this.buttonName = buttonName;
-		this.dao = new WeaponsDAO(frame);
+		this.dao = new WeaponsDAO(parentContainer);
 		initDialog();
 	}
+
 	
 	private void initDialog() {
-		this.dialog_size_x = frame.getSize_x() - 200;
+		this.dialog_size_x = (int)parentContainer.getSize().getWidth() - 200;
 		this.dialog_size_y = 360;
 		this.setSize(dialog_size_x, dialog_size_y);
 		
@@ -188,7 +189,8 @@ public class InfoDialog extends JDialog {
 		favoriteButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				int answer = JOptionPane.showConfirmDialog(frame,
+				int answer = JOptionPane.showConfirmDialog(
+								parentContainer,
 								"즐겨찾기에 추가 하시겠습니까?", "즐겨찾기 추가",
 								JOptionPane.YES_NO_OPTION);
 				
@@ -198,15 +200,15 @@ public class InfoDialog extends JDialog {
 			}
 		});
 		
-		JButton deleteButton = new JButton(this.buttonName);
+		JButton deleteFavoriteButton = new JButton(this.buttonName);
 		
-		deleteButton.addActionListener(new ActionListener() {
+		deleteFavoriteButton.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-				int answer = JOptionPane.showConfirmDialog(frame,
-								"즐겨찾기에서 삭제 하시겠습니까?", "즐겨찾기 삭제", 
+				int answer = JOptionPane.showConfirmDialog(
+								parentContainer,
+								"즐겨찾기에서 제거 하시겠습니까?", "즐겨찾기 제거", 
 								JOptionPane.YES_OPTION);
 				
 				if(answer == JOptionPane.YES_OPTION) {
@@ -215,13 +217,34 @@ public class InfoDialog extends JDialog {
 			}
 		});
 		
+		
+		JButton deleteDataButton = new JButton(this.buttonName);
+		
+		deleteDataButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				int answer = JOptionPane.showConfirmDialog(
+						parentContainer,
+						"DB에서 삭제 하시겠습니까?", "DB데이터 삭제",
+						JOptionPane.YES_NO_OPTION);
+		
+				if(answer == JOptionPane.YES_OPTION) {
+					dao.deleteData(dto);
+				}
+			}
+		});
+		
 		if(this.buttonName.equals("추가")) {
 			infoPanel.add(favoriteButton);
+			
+		} else if(this.buttonName.equals("제거")) {
+			infoPanel.add(deleteFavoriteButton);
+			
+		} else if(this.buttonName.equals("삭제")) {
+			infoPanel.add(deleteDataButton);
 		}
 		
-		if(this.buttonName.equals("삭제")) {
-			infoPanel.add(deleteButton);
-		}
 		
 		this.setVisible(true);
 	}

@@ -2,7 +2,6 @@ package project_07_MonsterHunter_Weapon_DB.weaponsDAO;
 
 import java.util.ArrayList;
 
-import project_07_MonsterHunter_Weapon_DB.WeaponDTO.IWeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 
 public interface IWeaponsDAO {
@@ -11,5 +10,5 @@ public interface IWeaponsDAO {
 	public void deleteFavorite(WeaponsDTO dto);
 	public ArrayList<WeaponsDTO> selectFavorite();
 	public void insertData(WeaponsDTO dto);
-	public boolean deleteData(IWeaponsDTO dto);
+	public void deleteData(WeaponsDTO dto);
 }

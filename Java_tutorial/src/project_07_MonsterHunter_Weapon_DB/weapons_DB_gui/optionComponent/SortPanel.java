@@ -99,8 +99,7 @@ public class SortPanel extends OptionPanel {
 				model.setDataVector(resultData, adminDialog.getTupleName());				
 				
 				adminDialog.setModel(model);
-				
-				System.out.println("오토모드 적용 테스트");
+				adminDialog.setResultData(list);
 			}
 		};
 	}

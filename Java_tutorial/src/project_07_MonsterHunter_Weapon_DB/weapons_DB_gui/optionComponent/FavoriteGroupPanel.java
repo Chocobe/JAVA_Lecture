@@ -59,7 +59,7 @@ public class FavoriteGroupPanel extends JPanel {
 				// TODO Auto-generated method stub
 				super.mouseReleased(e);
 				
-				infoDialog = new InfoDialog(frame, "삭제");
+				infoDialog = new InfoDialog(frame, "제거");
 				infoDialog.showInfo(resultData.get(dataTable.getSelectedRow()));
 			}
 		});

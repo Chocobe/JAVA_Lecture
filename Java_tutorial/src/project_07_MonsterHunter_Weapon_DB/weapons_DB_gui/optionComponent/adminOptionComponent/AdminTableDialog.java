@@ -2,8 +2,11 @@ package project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.adminO
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.util.ArrayList;
 
 import javax.swing.JDialog;
 import javax.swing.JPanel;
@@ -11,7 +14,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
+import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.SystemDialog;
+import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.InfoDialog;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.SortPanel;
 
 public class AdminTableDialog extends JDialog{
@@ -21,9 +26,11 @@ public class AdminTableDialog extends JDialog{
 	private JTable infoTable;
 	
 	private String[] tupleName = { "무기", "이름", "공격력", "회심", "슬롯" };
+	private ArrayList<WeaponsDTO> resultData;
 	
 	public AdminTableDialog(SystemDialog parent) {
 		this.parentDialog = parent;
+		
 		this.initDialog();
 		this.initTopPanel();
 		
@@ -56,11 +63,25 @@ public class AdminTableDialog extends JDialog{
 	private void initOptionPanel() {
 		this.sortPanel = new SortPanel(this);
 		this.outerPanel.add(this.sortPanel);
-		// SortPanel ActionListener 추가할 것
 	}
 		
 	
+	private AdminTableDialog getMe() {
+		return this;
+	}
+	
 	private void initTablePanel() {
+		MouseAdapter listener = new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+				super.mouseReleased(e);
+				
+				InfoDialog infoDialog = new InfoDialog(getMe(), "삭제");
+				infoDialog.showInfo(resultData.get(infoTable.getSelectedRow()));
+			}
+		};
+		
+		
 		JPanel tablePanel = new JPanel(new BorderLayout());
 		tablePanel.setPreferredSize(
 						new Dimension((int)this.getSize().getWidth() - 30,
@@ -70,13 +91,16 @@ public class AdminTableDialog extends JDialog{
 		model.setColumnIdentifiers(this.tupleName);
 		
 		this.infoTable = new JTable(model);
+		this.infoTable.getTableHeader().setReorderingAllowed(false);
+		this.infoTable.getTableHeader().setResizingAllowed(false);
+		this.infoTable.setColumnSelectionAllowed(false);
+		this.infoTable.addMouseListener(listener);
+		
 		
 		JScrollPane scroll = new JScrollPane(this.infoTable);
 		tablePanel.add(scroll, BorderLayout.CENTER);
 		
 		this.outerPanel.add(tablePanel);
-		
-		// 테스트
 	}
 	
 	
@@ -98,5 +122,10 @@ public class AdminTableDialog extends JDialog{
 	
 	public String[] getTupleName() {
 		return this.tupleName;
+	}
+	
+	
+	public void setResultData(ArrayList<WeaponsDTO> resultData) {
+		this.resultData = resultData;
 	}
 }

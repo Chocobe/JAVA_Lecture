@@ -46,7 +46,6 @@ public class OptionGroupPanel extends JPanel {
 		initOptionPanels();
 		initTable();
 		this.dao = new WeaponsDAO(frame);
-		infoDialog = new InfoDialog(frame, "추가");
 	}
 	
 	
@@ -175,7 +174,6 @@ public class OptionGroupPanel extends JPanel {
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 				super.mouseClicked(e);
 
 				infoDialog = new InfoDialog(frame, "추가");

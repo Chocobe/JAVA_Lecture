@@ -9,7 +9,6 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
-import project_07_MonsterHunter_Weapon_DB.WeaponDTO.IWeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 
 public class WeaponsDAO implements IWeaponsDAO {
@@ -130,7 +129,6 @@ public class WeaponsDAO implements IWeaponsDAO {
 			
 			if(updateState != 0) {
 				JOptionPane.showMessageDialog(parentContainer, "즐겨찾기에서 삭제 되었습니다");
-				
 			}
 			
 		} catch(SQLException e) {
@@ -152,8 +150,6 @@ public class WeaponsDAO implements IWeaponsDAO {
 		try {
 			this.preparedStatement = this.conn.prepareStatement(sql);
 			this.resultSet = this.preparedStatement.executeQuery();
-			
-//			System.out.println("Favorite 테스트 : " + resultSet.getString("NAME"));
 			
 			while(resultSet.next()) {
 				WeaponsDTO dto = new WeaponsDTO();
@@ -209,10 +205,6 @@ public class WeaponsDAO implements IWeaponsDAO {
 					 "?, ?, ?, " +
 					 "?, ?, ?)";
 		
-//		String sql = "INSERT INTO WEAPONS VALUES(" +
-//					 "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, " +
-//					 "?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		
 		try {
 			this.preparedStatement = this.conn.prepareStatement(sql);
 			this.preparedStatement.setString(1, dto.getName());
@@ -238,19 +230,6 @@ public class WeaponsDAO implements IWeaponsDAO {
 			
 			this.preparedStatement.executeUpdate();
 			
-//			if(insertResult != 0) {
-//				JOptionPane.showMessageDialog(frame, 
-//								dto.getName() + " 데이터가 추가 되었습니다", "데이터 추가", 
-//								JOptionPane.INFORMATION_MESSAGE);
-//				// 각 입력창 초기화
-//				// insertPanel.initPanel();
-//				
-//			} else {
-//				JOptionPane.showMessageDialog(frame, "데이터 추가 에러", 
-//								"데이터 추가 에러", JOptionPane.ERROR_MESSAGE);
-//				// 각 입력창 초기화
-//				// insertPanel.initPanel();
-//			}
 			JOptionPane.showMessageDialog(parentContainer, 
 					dto.getName() + " 데이터가 추가 되었습니다", "데이터 추가", 
 					JOptionPane.INFORMATION_MESSAGE);
@@ -258,17 +237,27 @@ public class WeaponsDAO implements IWeaponsDAO {
 		} catch(SQLException e) {
 			System.out.println("입력 에러 : " + e.getMessage());
 			JOptionPane.showMessageDialog(parentContainer, "데이터 추가 에러", 
-					"데이터 추가 에러", JOptionPane.ERROR_MESSAGE);
+							"데이터 추가 에러", JOptionPane.ERROR_MESSAGE);
 		}
 	}
 	
 
 	@Override
-	public boolean deleteData(IWeaponsDTO dto) {
-		// TODO Auto-generated method stub
-		return false;
+	public void deleteData(WeaponsDTO dto) {
+		String sql = "DELETE FROM WEAPONS WHERE NAME = ?";
+		
+		try {
+			this.preparedStatement = this.conn.prepareStatement(sql);
+			this.preparedStatement.setString(1, dto.getName());
+			int resultState = this.preparedStatement.executeUpdate();
+			
+			if(resultState != 0) {
+				JOptionPane.showMessageDialog(parentContainer, "DB에서 삭제 되었습니다");
+			}
+		
+		} catch(SQLException e) {
+			JOptionPane.showMessageDialog(parentContainer, "데이터 삭제 에러",
+							"데이터 삭제 에러", JOptionPane.ERROR_MESSAGE);
+		}
 	}
-
-
-	
 }
