@@ -45,6 +45,7 @@ public class AdminTableDialog extends JDialog{
 	
 	
 	private void initDialog() {
+		this.setTitle("전체 데이터");
 		this.setBounds(this.parentDialog.getLocation().x +
 					   			(int)this.parentDialog.getSize().getWidth(),
 					   this.parentDialog.getLocation().y,
