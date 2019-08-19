@@ -20,7 +20,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 	private static final String SYS_AUTHENTICATION;
 	
 	static {
-		SYS_AUTHENTICATION = "a";
+		SYS_AUTHENTICATION = "chocobe";
 	}
 	
 	private MainFrame frame;
@@ -115,7 +115,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 			
 		case "About":
 			String aboutMessage = 
-					"Released 2019.08.12 for Portfolio\n" +
+					"Released 2019.08.19 for Portfolio\n" +
 					"Thank you for using\n" +
 					"Copyright ⓒ YoungWoo Kim";
 			

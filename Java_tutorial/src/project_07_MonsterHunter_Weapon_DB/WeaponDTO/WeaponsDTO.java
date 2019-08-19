@@ -31,31 +31,31 @@ public class WeaponsDTO implements IWeaponsDTO {
 					String tree, int tree_position,
 					int sharpness_1, int sharpness_2, int sharpness_3, 
 					int sharpness_4, int sharpness_5, int sharpness_6) {
-		setName(name);
-		setSort(sort);
-		setDamage(damage);
-		setCritical(critical);
-		setGrade(grade);
+		this.setName(name);
+		this.setSort(sort);
+		this.setDamage(damage);
+		this.setCritical(critical);
+		this.setGrade(grade);
 		
-		setAttribute(attribute);
-		setAttribute_val(attribute_val);
+		this.setAttribute(attribute);
+		this.setAttribute_val(attribute_val);
 		
-		setSlot_1(slot_1);
-		setSlot_2(slot_2);
-		setSlot_3(slot_3);
-		setNumOfSlot(num_of_slot);
+		this.setSlot_1(slot_1);
+		this.setSlot_2(slot_2);
+		this.setSlot_3(slot_3);
+		this.setNumOfSlot(num_of_slot);
 		
-		setMaterial(material);
+		this.setMaterial(material);
 		
-		setTree(tree);
-		setTree_position(tree_position);
+		this.setTree(tree);
+		this.setTree_position(tree_position);
 		
-		setSharpness_1(sharpness_1);
-		setSharpness_2(sharpness_2);
-		setSharpness_3(sharpness_3);
-		setSharpness_4(sharpness_4);
-		setSharpness_5(sharpness_5);
-		setSharpness_6(sharpness_6);
+		this.setSharpness_1(sharpness_1);
+		this.setSharpness_2(sharpness_2);
+		this.setSharpness_3(sharpness_3);
+		this.setSharpness_4(sharpness_4);
+		this.setSharpness_5(sharpness_5);
+		this.setSharpness_6(sharpness_6);
 	}
 	
 // name getter/setter

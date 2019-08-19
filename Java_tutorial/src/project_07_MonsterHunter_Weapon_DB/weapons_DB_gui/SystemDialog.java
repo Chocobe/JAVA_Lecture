@@ -26,8 +26,9 @@ public class SystemDialog extends JDialog {
 	
 	
 	private void initDialog() {
-		this.setSize(new Dimension(frame.getSize_x(), frame.getSize_y() + 25));
-		this.setLocation(frame.getLocation_x(), frame.getLocation_y() - 25);
+		this.setTitle("관리자 모드");
+		this.setSize(new Dimension(frame.getSize_x(), frame.getSize_y() - 70));
+		this.setLocation(frame.getLocation_x(), frame.getLocation_y());
 		this.setModal(true);
 	}
 	
