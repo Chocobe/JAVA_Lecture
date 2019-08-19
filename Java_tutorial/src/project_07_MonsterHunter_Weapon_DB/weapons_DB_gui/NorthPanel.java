@@ -20,7 +20,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 	private static final String SYS_AUTHENTICATION;
 	
 	static {
-		SYS_AUTHENTICATION = "chocobe";
+		SYS_AUTHENTICATION = "a";
 	}
 	
 	private MainFrame frame;
