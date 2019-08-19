@@ -14,25 +14,32 @@ public class WeaponsDB_connectionTestUnit {
 	private static PreparedStatement ps;
 	private static ResultSet rs;
 	
-//	public static void main(String[] args) {
-//		conn = WeaponsDBConnector.getConnection();
-//		
-//		String sql_insert = "INSERT INTO MH_TEST VALUES(?, ?)";
-//		String sql_select = "SELECT * FROM MH_TEST";
-//		String sql_delete = "DELETE FROM MH_TEST WHERE NAME = ?";
-//		
-//		System.out.println("SELECT test before");
-//		selectTest(sql_select);
-//		insertTest(sql_insert, "네르기간테", 1);
-//		deleteTest(sql_delete, "네르기간테");
-//		
-//		System.out.println();
-//		
-//		System.out.println("SELECT Test after");
-//		selectTest(sql_select);
-//		
-//		WeaponsDBConnector.close(conn);
-//	}
+	public static void main(String[] args) {
+		conn = WeaponsDBConnector.getConnection();
+		
+		String sql_insert = "INSERT INTO MH_TEST VALUES(?, ?)";
+		String sql_select = "SELECT * FROM MH_TEST";
+		String sql_delete = "DELETE FROM MH_TEST WHERE NAME = ?";
+		
+		System.out.println("SELECT test before INSERT");
+		selectTest(sql_select);
+		
+		System.out.println();
+		System.out.println("SELECT test after INSERT");
+		insertTest(sql_insert, "네르기간테", 1);
+		selectTest(sql_select);
+		
+		System.out.println();
+		System.out.println("SELECT test after DELETE");
+		deleteTest(sql_delete, "네르기간테");
+		
+		System.out.println();
+		
+		System.out.println("SELECT Test after DELETE");
+		selectTest(sql_select);
+		
+		WeaponsDBConnector.close(conn);
+	}
 	
 	
 	public static void insertTest(String sql, String name, int no) {
