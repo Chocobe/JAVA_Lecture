@@ -19,18 +19,20 @@ public class TreeInputPanel extends OptionPanel {
 	private JTextField treeNameText;
 	private JTextField treePositionText;
 	
+	
+// 생성자
 	public TreeInputPanel(MainFrame frame) {
 		super.initItsPanel("트리", frame.getSize_x() - 15,  60);
 		this.initPanel();
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
 		ActionListener listener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				selectedOption = treeNameText.getText() + ", " + treePositionText.getText();
 				System.out.println(selectedOption);
 			}

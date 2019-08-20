@@ -22,18 +22,20 @@ public class SlotInputPanel extends OptionPanel {
 	private JComboBox<String> slot_3ComboBox;
 	private int numOfSlot;
 	
+	
+// 생성자
 	public SlotInputPanel(MainFrame frame) {
 		super.initItsPanel("슬롯", frame.getSize_x() - 15, 65);
 		initPanel();
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
 		ItemListener listener = new ItemListener() {
 			
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				if(e.getStateChange() == ItemEvent.SELECTED) {					
 					if(slot_1ComboBox.getSelectedItem().equals("0")) {
 						slot_2ComboBox.setSelectedIndex(0);

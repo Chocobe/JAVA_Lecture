@@ -14,24 +14,26 @@ public class SlotLevelPanel extends OptionPanel {
 	private final String CATEGORY = "SLOT_1 = ";
 	private String selectedOption = "전체";
 	
+	
+// 생성자
 	public SlotLevelPanel(MainFrame frame) {
 		super.initItsPanel("슬롯레벨", frame.getSize_x() - 18, 60);
 		this.initPanel();
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
 		ActionListener listener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				selectedOption = e.getActionCommand();
 				System.out.println("Slot Level : " + selectedOption);
 			}
 		};
 		
-		// 라디오 버튼
+	// 라디오 버튼
 		ButtonGroup group = new ButtonGroup();
 		
 		JRadioButton all = new JRadioButton("전체");
@@ -59,6 +61,7 @@ public class SlotLevelPanel extends OptionPanel {
 		group.add(lv_3);
 		this.add(lv_3);
 	}
+	
 	
 	@Override
 	public String getSelectedOption() {

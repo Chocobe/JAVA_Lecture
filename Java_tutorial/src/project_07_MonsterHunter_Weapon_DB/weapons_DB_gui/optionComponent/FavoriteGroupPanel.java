@@ -27,6 +27,8 @@ public class FavoriteGroupPanel extends JPanel {
 	private InfoDialog infoDialog;
 	private WeaponsDAO dao;
 	
+	
+// 생성자
 	public FavoriteGroupPanel(MainFrame frame) {
 		this.frame = frame;
 		this.dao = new WeaponsDAO(frame);	
@@ -36,12 +38,14 @@ public class FavoriteGroupPanel extends JPanel {
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
 		this.setLayout(new BorderLayout());
 		this.setBackground(Color.GRAY);
 	}
 	
 	
+// Table 초기화
 	private void initTable() {
 		DefaultTableModel model = new DefaultTableModel();
 		model.setColumnIdentifiers(this.tupleName);
@@ -56,7 +60,6 @@ public class FavoriteGroupPanel extends JPanel {
 
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO Auto-generated method stub
 				super.mouseReleased(e);
 				
 				infoDialog = new InfoDialog(frame, "제거");
@@ -71,6 +74,7 @@ public class FavoriteGroupPanel extends JPanel {
 	}
 	
 	
+// Table의 Model 설정
 	public void setTableModel() {
 		this.resultData = this.dao.selectFavorite();
 		WeaponsDTO dto = new WeaponsDTO();

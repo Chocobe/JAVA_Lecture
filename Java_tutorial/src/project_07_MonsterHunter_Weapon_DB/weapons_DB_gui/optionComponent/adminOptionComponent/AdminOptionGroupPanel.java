@@ -20,12 +20,16 @@ public class AdminOptionGroupPanel extends JPanel {
 	
 	private MainFrame frame;
 	
+	
+// 생성자
 	public AdminOptionGroupPanel(MainFrame frame) {
 		this.frame = frame;
 		this.setPreferredSize(new Dimension(1, 550));
 		initInputOptionPanels();
 	}
 	
+	
+// InputOptionPanel 초기화
 	public void initInputOptionPanels() {		
 		this.namePanel = new NameInputPanel(this.frame);
 		this.add(namePanel);
@@ -53,6 +57,7 @@ public class AdminOptionGroupPanel extends JPanel {
 	}
 	
 	
+// 입력창 초기화
 	public void clearInputedData() {
 		this.namePanel.clearInputedData();
 		this.basePanel.clearInputedData();
@@ -64,6 +69,7 @@ public class AdminOptionGroupPanel extends JPanel {
 	}
 	
 	
+// getter
 	public OptionPanel getNamePanel() {
 		return this.namePanel;
 	}

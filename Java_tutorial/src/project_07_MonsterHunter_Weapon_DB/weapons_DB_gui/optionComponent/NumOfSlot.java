@@ -14,18 +14,20 @@ public class NumOfSlot extends OptionPanel {
 	private final String CATEGORY = "NUM_OF_SLOT = ";
 	private String selectedOption = "전체";
 	
+	
+// 초기화
 	public NumOfSlot(MainFrame frame) {
 		super.initItsPanel("슬롯 수", frame.getSize_x() - 18, 60);
 		initPanel();
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
 		ActionListener listener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				selectedOption = e.getActionCommand();		
 				System.out.println("NumOfSlot : " + selectedOption);
 			}

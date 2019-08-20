@@ -11,7 +11,9 @@ import javax.swing.border.TitledBorder;
 @SuppressWarnings("serial")
 public abstract class OptionPanel extends JPanel{
 	
+	
 // 하위클래스 생성자에서 호출할 것
+	// 자식 클래스의 속성에 따른 설정
 	protected void initItsPanel(String title, int width, int height) {		
 		TitledBorder titledBorder = new TitledBorder(
 						new LineBorder(Color.LIGHT_GRAY, 2), title);
@@ -25,5 +27,6 @@ public abstract class OptionPanel extends JPanel{
 	
 // selectedOption getter
 	public abstract String getSelectedOption();
+// clearInputData
 	public abstract void clearInputedData();
 }

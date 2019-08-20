@@ -41,6 +41,8 @@ public class OptionGroupPanel extends JPanel {
 	private WeaponsDTO dto;
 	private InfoDialog infoDialog;
 	
+	
+// 생성자
 	public OptionGroupPanel(MainFrame frame) {
 		this.frame = frame;
 		initOptionPanels();
@@ -49,6 +51,7 @@ public class OptionGroupPanel extends JPanel {
 	}
 	
 	
+// OptionPanel 초기화
 	private void initOptionPanels() {
 		this.sortPanel = new SortPanel(this.frame);
 		this.add(sortPanel);
@@ -70,6 +73,7 @@ public class OptionGroupPanel extends JPanel {
 	}
 	
 	
+// 검색버튼 초기화
 	private void initSearchButton() {
 		this.searchPanel = new JPanel();
 		LineBorder border = new LineBorder(Color.LIGHT_GRAY, 2);
@@ -82,7 +86,6 @@ public class OptionGroupPanel extends JPanel {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				String sql = "SELECT * FROM WEAPONS WHERE \t\n";
 				sql += getSelectedOption();
 				
@@ -120,6 +123,7 @@ public class OptionGroupPanel extends JPanel {
 	}
 	
 	
+// 검색 옵션에 따른 SQL 작성 메소드
 	public String getSelectedOption() {
 		String sql = "";
 		String sort = this.sortPanel.getSelectedOption();
@@ -152,6 +156,7 @@ public class OptionGroupPanel extends JPanel {
 	}
 	
 	
+// Table 초기화
 	private void initTable() {
 		this.tablePanel = new JPanel(new BorderLayout());
 		tablePanel.setPreferredSize(new Dimension(frame.getSize_x() - 40, 120));
@@ -185,6 +190,7 @@ public class OptionGroupPanel extends JPanel {
 	}
 	
 	
+// Table의 Model 설정
 	private void setTableModel() {
 		String[][] searchedData = new String[this.resultData.size()][4];
 		this.dto = null;
@@ -202,6 +208,5 @@ public class OptionGroupPanel extends JPanel {
 						new DefaultTableModel(searchedData, this.tupleName);
 		
 		this.dataTable.setModel(model);
-	}
-	
+	}	
 }

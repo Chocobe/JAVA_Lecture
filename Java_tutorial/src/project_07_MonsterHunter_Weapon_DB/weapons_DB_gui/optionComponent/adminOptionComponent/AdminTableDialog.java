@@ -29,6 +29,8 @@ public class AdminTableDialog extends JDialog{
 	private String[] tupleName = { "무기", "이름", "공격력", "회심", "슬롯" };
 	private ArrayList<WeaponsDTO> resultData;
 	
+	
+// 초기화
 	public AdminTableDialog(SystemDialog parent) {
 		this.parentDialog = parent;
 		
@@ -45,6 +47,7 @@ public class AdminTableDialog extends JDialog{
 	}
 	
 	
+// Dialog 초기화
 	private void initDialog() {
 		this.setTitle("전체 데이터");
 		this.setBounds(this.parentDialog.getLocation().x +
@@ -58,20 +61,25 @@ public class AdminTableDialog extends JDialog{
 	}
 	
 	
+// TopPanel 초기화
 	private void initTopPanel() {
 		parentDialog.initTopPanel(this, "Stored Weapon Data");
 	}
-	
+
+// OptionPanel 초기화
 	private void initOptionPanel() {
 		this.sortPanel = new SortPanel(this);
 		this.outerPanel.add(this.sortPanel);
 	}
 		
 	
+// 자신 반환 메소드
 	private AdminTableDialog getMe() {
 		return this;
 	}
 	
+	
+// TablePanel 초기화
 	private void initTablePanel() {
 		MouseAdapter listener = new MouseAdapter() {
 			@Override
@@ -106,11 +114,13 @@ public class AdminTableDialog extends JDialog{
 	}
 	
 	
+// DefaultTableModel setter
 	public void setModel(DefaultTableModel model) {
 		this.infoTable.setModel(model);
 	}
 	
 	
+// 창닫기 동작 초기화
 	private void initCloseOperation() {
 		this.addWindowListener(new WindowAdapter() {
 			@Override
@@ -122,11 +132,13 @@ public class AdminTableDialog extends JDialog{
 	}
 	
 	
+// 테이블 필드명 getter
 	public String[] getTupleName() {
 		return this.tupleName;
 	}
 	
 	
+// Model에 입력된 데이터 setter
 	public void setResultData(ArrayList<WeaponsDTO> resultData) {
 		this.resultData = resultData;
 	}

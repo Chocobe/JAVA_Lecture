@@ -18,17 +18,20 @@ public class MaterialInputPanel extends OptionPanel {
 
 	private JTextField materialText;
 	
+	
+// 생성자
 	public MaterialInputPanel(MainFrame frame) {
 		super.initItsPanel("재료", frame.getSize_x() - 15, 60);
 		initPanels();
 	}
 	
+	
+// Panel 초기화
 	private void initPanels() {
 		ActionListener listener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				selectedOption = e.getActionCommand();
 				System.out.println(selectedOption);
 			}

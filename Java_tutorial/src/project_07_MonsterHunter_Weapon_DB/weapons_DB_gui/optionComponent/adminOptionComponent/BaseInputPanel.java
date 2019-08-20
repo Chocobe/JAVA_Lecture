@@ -27,18 +27,21 @@ public class BaseInputPanel extends OptionPanel {
 	private JTextField criticalText;
 	private JTextField gradeText;
 	
+	
+// 생성자
 	public BaseInputPanel(MainFrame frame) {
 		super.initItsPanel("기본스펙", frame.getSize_x() - 15, 110);
 		initPanel();
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
+	// sort Listener
 		ActionListener sortListener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				sortOption = e.getActionCommand();
 				selectedOption = sortOption + ", " +
 								 damageOption + ", " +
@@ -49,11 +52,11 @@ public class BaseInputPanel extends OptionPanel {
 			}
 		};
 		
+	// damage Listener
 		ActionListener damageListener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				damageOption = e.getActionCommand();
 				selectedOption = sortOption + ", " +
 						 damageOption + ", " +
@@ -64,11 +67,11 @@ public class BaseInputPanel extends OptionPanel {
 			}
 		};
 		
+	// critical Listener
 		ActionListener criticalListener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				criticalOption = e.getActionCommand();
 				selectedOption = sortOption + ", " +
 						 damageOption + ", " +
@@ -79,11 +82,11 @@ public class BaseInputPanel extends OptionPanel {
 			}
 		};
 		
+	// grade Listener
 		ActionListener gradeListener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				gradeOption = e.getActionCommand();
 				selectedOption = sortOption + ", " +
 						 damageOption + ", " +
@@ -160,6 +163,7 @@ public class BaseInputPanel extends OptionPanel {
 	}
 	
 	
+// getter
 	public String getSortOption() {
 		return this.sortOption;
 	}

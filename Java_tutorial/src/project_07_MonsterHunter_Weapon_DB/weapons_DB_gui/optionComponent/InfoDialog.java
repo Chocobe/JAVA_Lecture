@@ -32,6 +32,8 @@ public class InfoDialog extends JDialog {
 	
 	private String buttonName;
 	
+	
+// 생성자
 	public InfoDialog(Container parentContainer, String buttonName) {
 		this.parentContainer = parentContainer;
 		this.buttonName = buttonName;
@@ -40,6 +42,7 @@ public class InfoDialog extends JDialog {
 	}
 
 	
+// Dialog 초기화
 	private void initDialog() {
 		this.dialog_size_x = (int)parentContainer.getSize().getWidth() - 200;
 		this.dialog_size_y = 360;
@@ -58,6 +61,7 @@ public class InfoDialog extends JDialog {
 	}
 	
 	
+// 세부정보창 출력
 	public void showInfo(WeaponsDTO dto) {
 		this.setTitle("세부정보(" + dto.getName() + ")");
 		this.dto = dto;
@@ -125,21 +129,21 @@ public class InfoDialog extends JDialog {
 			
 		} else {
 			slotData += String.valueOf(this.dto.getSlot_1()) + " ";
-		}
+		}// end if~else
 		
 		if(dto.getSlot_2() == 0) {
 			slotData += "- ";
 			
 		} else {
 			slotData += String.valueOf(this.dto.getSlot_2()) + " "; 
-		}
+		}// end if~else
 		
 		if(dto.getSlot_3() == 0) {
 			slotData += "-";
 			
 		} else {
 			slotData += String.valueOf(this.dto.getSlot_3());
-		}
+		}// end if~else
 		
 		JLabel slotLabel = new JLabel(slotData);
 		slotPanel.add(slotLabel);
@@ -177,15 +181,16 @@ public class InfoDialog extends JDialog {
 				
 				beginIdx = i + 1;
 			}
-		}
+		}// end for(;;)
+		
 		materialPanel.add(new JLabel(materialData.substring(
 						beginIdx, materialData.length())));
 
 		infoPanel.add(materialPanel);
 		
 
+	// 즐겨찾기 추가 버튼
 		JButton favoriteButton = new JButton(this.buttonName);
-		
 		favoriteButton.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -200,8 +205,8 @@ public class InfoDialog extends JDialog {
 			}
 		});
 		
+	// 즐겨찾기 제거 버튼
 		JButton deleteFavoriteButton = new JButton(this.buttonName);
-		
 		deleteFavoriteButton.addActionListener(new ActionListener() {
 			
 			@Override
@@ -217,9 +222,8 @@ public class InfoDialog extends JDialog {
 			}
 		});
 		
-		
+	// DB에서 데이터 삭제 버튼
 		JButton deleteDataButton = new JButton(this.buttonName);
-		
 		deleteDataButton.addActionListener(new ActionListener() {
 			
 			@Override
@@ -235,6 +239,7 @@ public class InfoDialog extends JDialog {
 			}
 		});
 		
+	// 생성자의 버튼종류 인자값에 따른 버튼 설정
 		if(this.buttonName.equals("추가")) {
 			infoPanel.add(favoriteButton);
 			
@@ -243,7 +248,7 @@ public class InfoDialog extends JDialog {
 			
 		} else if(this.buttonName.equals("삭제")) {
 			infoPanel.add(deleteDataButton);
-		}
+		}// end if~else
 		
 		
 		this.setVisible(true);

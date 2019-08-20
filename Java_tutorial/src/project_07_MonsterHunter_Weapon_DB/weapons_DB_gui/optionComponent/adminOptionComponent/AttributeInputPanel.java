@@ -32,12 +32,13 @@ public class AttributeInputPanel extends OptionPanel{
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
+	// ComboBox 리스너
 		ItemListener itemListener = new ItemListener() {
 			
 			@Override
 			public void itemStateChanged(ItemEvent e) {
-				// TODO Auto-generated method stub
 				if(e.getStateChange() == ItemEvent.SELECTED) {					
 					if(e.getItem().equals("무속성")) {
 						valueText.setText("0");
@@ -54,6 +55,7 @@ public class AttributeInputPanel extends OptionPanel{
 		};
 		
 		
+	// TextField 리스너
 		ActionListener actionListener = new ActionListener() {
 			
 			@Override

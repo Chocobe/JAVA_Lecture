@@ -18,24 +18,22 @@ public class NameInputPanel extends OptionPanel {
 
 	private JTextField nameField;
 	
+	
+// 생성자
 	public NameInputPanel(MainFrame frame) {
 		super.initItsPanel("무기명", frame.getSize_x() - 15, 55);
 		this.initPanel();
 	}
 	
 	
+// Panel 초기화
 	public void initPanel() {
 		ActionListener listener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				selectedOption = e.getActionCommand();
 				System.out.println("무기명 : " + selectedOption);
-				
-				//
-				// DAO Insert 호출
-				//
 			}
 		};
 		

@@ -25,18 +25,19 @@ public class SharpnessInputPanel extends OptionPanel {
 	private JTextField sharpness_6Text;
 	
 	
+// 생성자
 	public SharpnessInputPanel(MainFrame frame) {
 		super.initItsPanel("예리도", frame.getSize_x() - 15, 95);
 		this.initPanel();
 	}
 	
 	
+// Panel 초기화
 	private void initPanel() {
 		ActionListener listener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if(sharpness_1Text.getText().equals("") ||
 								sharpness_1Text.getText().equals("0")) {
 					sharpness_1Text.setText("0");
@@ -104,8 +105,8 @@ public class SharpnessInputPanel extends OptionPanel {
 					
 				} else {
 					selectedOption += " " + sharpness_6Text.getText();
-				}
-//				
+				}// end if~else
+				
 				System.out.println("예리도 : " + selectedOption);
 			}
 		};
@@ -199,6 +200,7 @@ public class SharpnessInputPanel extends OptionPanel {
 	}
 	
 	
+// getter
 	public String getSharpness_1() {
 		return this.sharpness_1Text.getText();
 	}

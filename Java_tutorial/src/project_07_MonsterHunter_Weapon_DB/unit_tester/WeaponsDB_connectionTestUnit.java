@@ -13,35 +13,38 @@ public class WeaponsDB_connectionTestUnit {
 	private static Connection conn;
 	private static PreparedStatement ps;
 	private static ResultSet rs;
+
 	
-	public static void main(String[] args) {
-		conn = WeaponsDBConnector.getConnection();
-		
-		String sql_insert = "INSERT INTO MH_TEST VALUES(?, ?)";
-		String sql_select = "SELECT * FROM MH_TEST";
-		String sql_delete = "DELETE FROM MH_TEST WHERE NAME = ?";
-		
-		System.out.println("SELECT test before INSERT");
-		selectTest(sql_select);
-		
-		System.out.println();
-		System.out.println("SELECT test after INSERT");
-		insertTest(sql_insert, "네르기간테", 1);
-		selectTest(sql_select);
-		
-		System.out.println();
-		System.out.println("SELECT test after DELETE");
-		deleteTest(sql_delete, "네르기간테");
-		
-		System.out.println();
-		
-		System.out.println("SELECT Test after DELETE");
-		selectTest(sql_select);
-		
-		WeaponsDBConnector.close(conn);
-	}
+// 테스트 메인 메소드
+//	public static void main(String[] args) {
+//		conn = WeaponsDBConnector.getConnection();
+//		
+//		String sql_insert = "INSERT INTO MH_TEST VALUES(?, ?)";
+//		String sql_select = "SELECT * FROM MH_TEST";
+//		String sql_delete = "DELETE FROM MH_TEST WHERE NAME = ?";
+//		
+//		System.out.println("SELECT test before INSERT");
+//		selectTest(sql_select);
+//		
+//		System.out.println();
+//		System.out.println("SELECT test after INSERT");
+//		insertTest(sql_insert, "네르기간테", 1);
+//		selectTest(sql_select);
+//		
+//		System.out.println();
+//		System.out.println("SELECT test after DELETE");
+//		deleteTest(sql_delete, "네르기간테");
+//		
+//		System.out.println();
+//		
+//		System.out.println("SELECT Test after DELETE");
+//		selectTest(sql_select);
+//		
+//		WeaponsDBConnector.close(conn);
+//	}
 	
 	
+// INSERT 검사
 	public static void insertTest(String sql, String name, int no) {
 		ps = null;
 		
@@ -64,6 +67,7 @@ public class WeaponsDB_connectionTestUnit {
 	}
 	
 	
+// SELECT 검사
 	public static void selectTest(String sql) {
 		ResultSet rs = null;
 		try {
@@ -89,6 +93,7 @@ public class WeaponsDB_connectionTestUnit {
 	}
 	
 	
+// DELETE 검사
 	public static void deleteTest(String sql, String name) {
 		try {
 			ps = conn.prepareStatement(sql);

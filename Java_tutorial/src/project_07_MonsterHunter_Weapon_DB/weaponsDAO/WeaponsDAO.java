@@ -18,17 +18,21 @@ public class WeaponsDAO implements IWeaponsDAO {
 	
 	private Container parentContainer;
 	
+	
+// 생성자
 	public WeaponsDAO(Container parentContainer) {
 		this.parentContainer = parentContainer;
 		initConnection();
 	}
 	
 	
+// Connection 객체 생성
 	private void initConnection() {
 		this.conn = WeaponsDBConnector.getConnection();
 	}
 	
 	
+// SELECT sql
 	@Override
 	public ArrayList<WeaponsDTO> selectData(String sql) {
 		ArrayList<WeaponsDTO> dtoArray = new ArrayList<WeaponsDTO>();
@@ -74,9 +78,9 @@ public class WeaponsDAO implements IWeaponsDAO {
 	}
 	
 	
+// UPDATE Favorite sql
 	@Override
 	public void updateFavorite(WeaponsDTO dto) {
-		// TODO Auto-generated method stub
 		String sql = "SELECT FAVORITE " +
 					 "FROM WEAPONS " +
 					 "WHERE NAME = ?";	
@@ -116,6 +120,7 @@ public class WeaponsDAO implements IWeaponsDAO {
 	}
 	
 	
+// DELETE Favorite sql
 	@Override
 	public void deleteFavorite(WeaponsDTO dto) {
 		String sql = "UPDATE WEAPONS SET " +
@@ -136,10 +141,11 @@ public class WeaponsDAO implements IWeaponsDAO {
 			
 		} finally {
 			WeaponsDBConnector.close(this.preparedStatement);
-		}
+		}// end try~catch
 	}
 	
 	
+// SELECT Favorite sql
 	@Override
 	public ArrayList<WeaponsDTO> selectFavorite() {
 		ArrayList<WeaponsDTO> dtoArray = new ArrayList<WeaponsDTO>();
@@ -175,59 +181,79 @@ public class WeaponsDAO implements IWeaponsDAO {
 						   resultSet.getInt("SHARPNESS_5"), 
 						   resultSet.getInt("SHARPNESS_6"));
 				dtoArray.add(dto);
-			}
+			}// end while()
 			
 		} catch(SQLException e) {
 			System.out.println("즐겨찾기 검색 에러 : " + e.getMessage());
-		}
+		}// end try~catch
 		
 		return dtoArray;
 	}
 	
 	
+// INSERT Data sql
 	@Override
 	public void insertData(WeaponsDTO dto) {
 		String sql = "INSERT INTO WEAPONS(" +
-					 "NAME, SORT, DAMAGE, CRITICAL, GRADE, " +
-					 "ATTRIBUTE, ATTRIBUTE_VAL, " +
-					 "SLOT_1, SLOT_2, SLOT_3, " +
-					 "NUM_OF_SLOT, " +
-					 "MATERIAL, " +
-					 "TREE, TREE_POSITION, " +
-					 "SHARPNESS_1, SHARPNESS_2, SHARPNESS_3, " +
-					 "SHARPNESS_4, SHARPNESS_5, SHARPNESS_6)" +
-					 "VALUES(?, ?, ?, ?, ?," +
-					 "?, ?, " +
-					 "?, ?, ?, " +
-					 "?, " +
-					 "?, " +
-					 "?, ?, " +
-					 "?, ?, ?, " +
-					 "?, ?, ?)";
+	
+					 "NAME, SORT, DAMAGE, CRITICAL, GRADE, " +		// 1행
+					 "ATTRIBUTE, ATTRIBUTE_VAL, " +					// 2행
+					 "SLOT_1, SLOT_2, SLOT_3, " +					// 3행
+					 "NUM_OF_SLOT, " +								// 4행
+					 "MATERIAL, " +									// 5행
+					 "TREE, TREE_POSITION, " +						// 6행
+					 "SHARPNESS_1, SHARPNESS_2, SHARPNESS_3, " +	// 7행
+					 "SHARPNESS_4, SHARPNESS_5, SHARPNESS_6)" +		// 8행
+					 
+					 "VALUES(?, ?, ?, ?, ?," +						// 1행 입력
+					 "?, ?, " +										// 2행 입력
+					 "?, ?, ?, " +									// 3행 입력
+					 "?, " +										// 4행 입력
+					 "?, " +										// 5행 입력
+					 "?, ?, " +										// 6행 입력
+					 "?, ?, ?, " +									// 7행 입력
+					 "?, ?, ?)";									// 8행 입력
 		
 		try {
 			this.preparedStatement = this.conn.prepareStatement(sql);
+			
+		// 1행 입력
 			this.preparedStatement.setString(1, dto.getName());
 			this.preparedStatement.setString(2, dto.getSort());
 			this.preparedStatement.setInt(3, dto.getDamage());
 			this.preparedStatement.setInt(4, dto.getCritical());
 			this.preparedStatement.setInt(5, dto.getGrade());
+			
+		// 2행 입력
 			this.preparedStatement.setString(6, dto.getAttribute());
 			this.preparedStatement.setInt(7, dto.getAttribute_val());
+			
+		// 3행 입력
 			this.preparedStatement.setInt(8, dto.getSlot_1());
 			this.preparedStatement.setInt(9, dto.getSlot_2());
 			this.preparedStatement.setInt(10, dto.getSlot_3());
+			
+		// 4행 입력
 			this.preparedStatement.setInt(11, dto.getNumOfSlot());
+			
+		// 5행 입력
 			this.preparedStatement.setString(12, dto.getMaterial());
+			
+		// 6행 입력
 			this.preparedStatement.setString(13, dto.getTree());
 			this.preparedStatement.setInt(14, dto.getTree_position());
+			
+		// 7행 입력
 			this.preparedStatement.setInt(15, dto.getSharpness_1());
 			this.preparedStatement.setInt(16, dto.getSharpness_2());
 			this.preparedStatement.setInt(17, dto.getSharpness_3());
+			
+		// 8행 입력
 			this.preparedStatement.setInt(18, dto.getSharpness_4());
 			this.preparedStatement.setInt(19, dto.getSharpness_5());
 			this.preparedStatement.setInt(20, dto.getSharpness_6());
 			
+		// sql 실행
 			this.preparedStatement.executeUpdate();
 			
 			JOptionPane.showMessageDialog(parentContainer, 
@@ -238,10 +264,11 @@ public class WeaponsDAO implements IWeaponsDAO {
 			System.out.println("입력 에러 : " + e.getMessage());
 			JOptionPane.showMessageDialog(parentContainer, "데이터 추가 에러", 
 							"데이터 추가 에러", JOptionPane.ERROR_MESSAGE);
-		}
+		}// end try~catch
 	}
 	
 
+// DELETE Data sql
 	@Override
 	public void deleteData(WeaponsDTO dto) {
 		String sql = "DELETE FROM WEAPONS WHERE NAME = ?";

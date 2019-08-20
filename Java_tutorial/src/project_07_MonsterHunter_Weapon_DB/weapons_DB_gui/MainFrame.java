@@ -28,39 +28,13 @@ public class MainFrame extends JFrame {
 	private JPanel northPanel;
 	private CenterTab centerTab;
 
+	
 // 생성자
 	public MainFrame() {
 		initFrame();
 		
 		initNorthFrame();
-		initCenterTab();
-		
-		
-		
-		
-		
-//		
-//		
-//		
-//		// 테스트용
-//		JButton testButton = new JButton("DTO 출력");
-//		testButton.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				// TODO Auto-generated method stub
-//				System.out.println(centerTab.getSelectedOption());				
-//			}
-//		});
-//		
-//		this.getContentPane().add(testButton, BorderLayout.SOUTH);
-//		//
-//		
-//		
-		
-		
-		
-		
+		initCenterTab();		
 	}
 	
 	
@@ -76,6 +50,7 @@ public class MainFrame extends JFrame {
 	public int getSize_y() {
 		return SIZE_Y;
 	}
+	
 	
 // location getter
 	public int getLocation_x() {
@@ -126,5 +101,4 @@ public class MainFrame extends JFrame {
 		
 		this.getContentPane().add(centerScroll);
 	}
-
 }

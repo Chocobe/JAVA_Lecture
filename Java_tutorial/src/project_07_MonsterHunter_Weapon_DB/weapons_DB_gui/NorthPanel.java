@@ -26,12 +26,12 @@ public class NorthPanel extends JPanel implements ActionListener {
 	private MainFrame frame;
 	private Dimension size;
 	
+	
+// 생성자
 	public NorthPanel(MainFrame frame) {
 		this.frame = frame;
 		this.size = frame.getDimWindow();
 		this.setSize(size);
-		
-		
 		
 		this.initNorthPanel();
 	}
@@ -62,6 +62,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 		JMenuBar menu = new JMenuBar();
 		this.add(menu, BorderLayout.NORTH);
 		
+	// Menu 메뉴
 		JMenu mainMenu_Menu = new JMenu("Menu");
 		menu.add(mainMenu_Menu);
 		
@@ -73,6 +74,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 		itemMenu_Exit.addActionListener(this);
 		mainMenu_Menu.add(itemMenu_Exit);
 		
+	// Help 메뉴
 		JMenu mainMenu_Help = new JMenu("Help");
 		menu.add(mainMenu_Help);
 		
@@ -112,6 +114,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 			}
 			
 			break;
+		// end case "Exit"
 			
 		case "About":
 			String aboutMessage = 
@@ -123,6 +126,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 							"About", JOptionPane.INFORMATION_MESSAGE);
 			
 			break;
+		// end case : "About"
 			
 		case "System":
 			String authentication = JOptionPane.showInputDialog(
@@ -133,14 +137,13 @@ public class NorthPanel extends JPanel implements ActionListener {
 				System.out.println("인증 성공!");
 				SystemDialog systemDialog = new SystemDialog(frame);
 				systemDialog.setVisible(true);
-				// System Dialog 불러오기
 				
 			} else {
 				JOptionPane.showMessageDialog(frame, "인증 실패", "인증 에러", 
 								JOptionPane.WARNING_MESSAGE);
-			}
+			}// end if~else
 			
-		}
+			break;			
+		}// end switch()
 	}
-	
 }

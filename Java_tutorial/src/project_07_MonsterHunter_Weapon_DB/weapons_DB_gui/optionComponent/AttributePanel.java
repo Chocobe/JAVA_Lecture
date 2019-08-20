@@ -14,19 +14,21 @@ public class AttributePanel extends OptionPanel {
 	private final String CATEGORY = "ATTRIBUTE = ";
 	private String selectedOption = "'전체'";
 	
+	
+// 생성자
 	public AttributePanel(MainFrame frame) {
 		super.initItsPanel("속성", frame.getSize_x() - 18, 80);
 		initPanel();
 	}
 	
+	
+// Panel 초기화
 	public void initPanel() {
 		ActionListener listener = new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				selectedOption = "'" + e.getActionCommand() + "'";
-				
 				System.out.println("Attribute Category : " + selectedOption);
 			}
 		};
@@ -103,6 +105,8 @@ public class AttributePanel extends OptionPanel {
 		this.add(explosion);
 	}
 	
+	
+
 	public String getSelectedOption() {
 		if(selectedOption.equals("'전체'")) {
 			return "";
@@ -111,5 +115,7 @@ public class AttributePanel extends OptionPanel {
 		return this.CATEGORY + selectedOption;
 	}
 	
+	
+	@Override
 	public void clearInputedData() { }
 }

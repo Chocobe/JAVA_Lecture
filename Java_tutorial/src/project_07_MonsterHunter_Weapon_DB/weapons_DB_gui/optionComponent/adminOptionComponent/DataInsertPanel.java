@@ -22,6 +22,8 @@ public class DataInsertPanel extends JPanel {
 	
 	private int parentSize_x;
 	
+
+// 생성자
 	public DataInsertPanel(MainFrame frame, 
 					AdminOptionGroupPanel adminPanel) {
 		
@@ -34,6 +36,8 @@ public class DataInsertPanel extends JPanel {
 		initButton();
 	}
 	
+	
+// Panel 초기화
 	private void initPanel() {
 		LineBorder border = new LineBorder(Color.LIGHT_GRAY, 2);
 		this.setBorder(border);
@@ -42,6 +46,8 @@ public class DataInsertPanel extends JPanel {
 		this.setBackground(Color.WHITE);
 	}
 	
+	
+// Button 초기화
 	private void initButton() {
 		this.insertButton = new JButton("추가");
 		
@@ -158,7 +164,6 @@ public class DataInsertPanel extends JPanel {
 				}
 				
 				dao.insertData(tempDTO);
-				
 				adminPanel.clearInputedData();
 			}
 		});

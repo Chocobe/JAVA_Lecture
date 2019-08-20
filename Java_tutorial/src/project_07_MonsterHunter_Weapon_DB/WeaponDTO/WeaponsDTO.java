@@ -22,6 +22,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	private int sharpness_5;
 	private int sharpness_6;
 	
+	
 	@Override
 	public void setAllData(
 					String name, String sort, int damage, int critical, int grade, 
@@ -58,6 +59,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.setSharpness_6(sharpness_6);
 	}
 	
+	
 // name getter/setter
 	public String getName() {
 		return name;
@@ -65,6 +67,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
 	
 // sort getter/setter
 	public String getSort() {
@@ -74,6 +77,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.sort = sort;
 	}
 	
+	
 // damage getter/setter
 	public int getDamage() {
 		return damage;
@@ -81,6 +85,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setDamage(int damage) {
 		this.damage = damage;
 	}
+	
 	
 // critical getter/setter
 	public int getCritical() {
@@ -90,6 +95,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.critical = critical;
 	}
 	
+	
 // grade getter/setter
 	public int getGrade() {
 		return grade;
@@ -97,6 +103,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setGrade(int grade) {
 		this.grade = grade;
 	}
+	
 	
 // attribute getter/setter
 	public String getAttribute() {
@@ -106,6 +113,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.attribute = attribute;
 	}
 	
+	
 // attribute_val getter/setter
 	public int getAttribute_val() {
 		return attribute_val;
@@ -113,6 +121,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setAttribute_val(int attributVal) {
 		this.attribute_val = attributVal;
 	}
+	
 	
 // slot_1 getter/setter
 	public int getSlot_1() {
@@ -122,6 +131,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.slot_1 = slot_1;
 	}
 	
+	
 // slot_2 getter/setter
 	public int getSlot_2() {
 		return slot_2;
@@ -130,6 +140,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.slot_2 = slot_2;
 	}
 	
+	
 // slot_3 getter/setter
 	public int getSlot_3() {
 		return slot_3;
@@ -137,6 +148,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setSlot_3(int slot_3) {
 		this.slot_3 = slot_3;
 	}
+	
 	
 // num_of_slot getter/setter
 	public int getNumOfSlot() {
@@ -147,6 +159,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.num_of_slot = num;
 	}
 	
+	
 // material getter/setter
 	public String getMaterial() {
 		return material;
@@ -154,6 +167,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setMaterial(String material) {
 		this.material = material;
 	}
+	
 	
 // tree getter/setter
 	public String getTree() {
@@ -163,6 +177,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.tree = tree;
 	}
 	
+	
 // tree_position getter/setter
 	public int getTree_position() {
 		return tree_position;
@@ -170,6 +185,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setTree_position(int tree_position) {
 		this.tree_position = tree_position;
 	}
+	
 	
 // sharpness_1 getter/setter
 	public int getSharpness_1() {
@@ -179,6 +195,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.sharpness_1 = sharpness_1;
 	}
 	
+	
 // sharpness_2 getter/setter
 	public int getSharpness_2() {
 		return sharpness_2;
@@ -186,6 +203,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setSharpness_2(int sharpness_2) {
 		this.sharpness_2 = sharpness_2;
 	}
+	
 	
 // sharpness_3 getter/setter
 	public int getSharpness_3() {
@@ -195,6 +213,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.sharpness_3 = sharpness_3;
 	}
 	
+	
 // sharpness_4 getter/setter
 	public int getSharpness_4() {
 		return sharpness_4;
@@ -203,6 +222,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 		this.sharpness_4 = sharpness_4;
 	}
 	
+	
 // sharpness_5 getter/setter
 	public int getSharpness_5() {
 		return sharpness_5;
@@ -210,6 +230,7 @@ public class WeaponsDTO implements IWeaponsDTO {
 	public void setSharpness_5(int sharpness_5) {
 		this.sharpness_5 = sharpness_5;
 	}
+	
 	
 // sharpness_6 getter/setter
 	public int getSharpness_6() {

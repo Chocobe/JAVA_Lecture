@@ -21,24 +21,24 @@ public class SystemDialog extends JDialog {
 	private MainFrame frame;
 	private AdminTableDialog infoDialog;
 	
+	
+// 생성자
 	public SystemDialog(MainFrame frame) {
 		this.frame = frame;
 		this.initDialog();
 		this.initTopPanel();
 		this.initMidPanel();
 		this.initCloseOperation();
-		// 데이터 출력 테이블  Dialog 초기화 할 것
 		this.initTableDialog();
 	}
 	
 	
+// Dialog 초기화
 	private void initDialog() {
 		this.setTitle("관리자 모드");
 		this.setSize(new Dimension(frame.getSize_x(), frame.getSize_y() - 70));
 		this.setLocation(frame.getLocation_x() - (int)(this.getSize().getWidth() / 2), 
 						frame.getLocation_y());
-		
-//		this.setModal(true);
 	}
 	
 	
@@ -71,6 +71,7 @@ public class SystemDialog extends JDialog {
 	}
 	
 	
+// CloseOperation 초기화
 	private void initCloseOperation() {
 		this.addWindowListener(new WindowAdapter() {
 			@Override
@@ -82,8 +83,8 @@ public class SystemDialog extends JDialog {
 	}
 	
 	
+// TableDialog 초기화
 	private void initTableDialog() {
-		// 테이블 Dialog 생성할 것
 		infoDialog = new AdminTableDialog(this);
 	}	
 }
