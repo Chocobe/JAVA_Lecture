@@ -15,6 +15,8 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionP
 @SuppressWarnings("serial")
 public class NameInputPanel extends OptionPanel {
 	private String selectedOption;	
+
+	private JTextField nameField;
 	
 	public NameInputPanel(MainFrame frame) {
 		super.initItsPanel("무기명", frame.getSize_x() - 15, 55);
@@ -44,7 +46,7 @@ public class NameInputPanel extends OptionPanel {
 		nameLabel.setPreferredSize(new Dimension(55, 15));
 		namePanel.add(nameLabel);
 		
-		JTextField nameField = new JTextField(34);
+		this.nameField = new JTextField(34);
 		nameField.addActionListener(listener);
 		namePanel.add(nameField);
 		
@@ -55,5 +57,11 @@ public class NameInputPanel extends OptionPanel {
 	@Override
 	public String getSelectedOption() {
 		return this.selectedOption;
+	}
+	
+	
+	@Override
+	public void clearInputedData() {
+		this.nameField.setText("");
 	}
 }

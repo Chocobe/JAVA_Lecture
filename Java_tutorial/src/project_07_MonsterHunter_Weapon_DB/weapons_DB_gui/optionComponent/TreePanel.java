@@ -69,44 +69,8 @@ public class TreePanel extends OptionPanel {
 		
 		return this.CATEGORY + this.selectedOption;
 	}
+	
+	
+	@Override
+	public void clearInputedData() { }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

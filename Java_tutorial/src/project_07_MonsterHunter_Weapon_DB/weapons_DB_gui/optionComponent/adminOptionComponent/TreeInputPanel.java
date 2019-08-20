@@ -66,4 +66,11 @@ public class TreeInputPanel extends OptionPanel {
 	public String getSelectedOption() {
 		return this.selectedOption;
 	}
+	
+	
+	@Override
+	public void clearInputedData() { 
+		this.treeNameText.setText("");
+		this.treePositionText.setText("");
+	}
 }

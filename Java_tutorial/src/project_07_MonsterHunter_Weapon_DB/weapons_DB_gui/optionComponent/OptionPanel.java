@@ -25,4 +25,5 @@ public abstract class OptionPanel extends JPanel{
 	
 // selectedOption getter
 	public abstract String getSelectedOption();
+	public abstract void clearInputedData();
 }

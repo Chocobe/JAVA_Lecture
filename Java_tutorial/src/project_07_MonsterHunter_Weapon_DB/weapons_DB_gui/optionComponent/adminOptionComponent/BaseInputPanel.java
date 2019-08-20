@@ -22,6 +22,10 @@ public class BaseInputPanel extends OptionPanel {
 	private String criticalOption;
 	private String gradeOption;
 	
+	private JTextField sortText;
+	private JTextField damageText;
+	private JTextField criticalText;
+	private JTextField gradeText;
 	
 	public BaseInputPanel(MainFrame frame) {
 		super.initItsPanel("기본스펙", frame.getSize_x() - 15, 110);
@@ -102,7 +106,7 @@ public class BaseInputPanel extends OptionPanel {
 		sortLabel.setPreferredSize(new Dimension(55, 15));
 		sortPanel.add(sortLabel);
 		
-		JTextField sortText = new JTextField(34);
+		this.sortText = new JTextField(34);
 		sortText.addActionListener(sortListener);
 		sortText.setText("대검");
 		sortOption = "대검";
@@ -117,7 +121,7 @@ public class BaseInputPanel extends OptionPanel {
 		damageLabel.setBackground(Color.WHITE);
 		others.add(damageLabel);
 		
-		JTextField damageText = new JTextField(5);
+		this.damageText = new JTextField(5);
 		damageText.addActionListener(damageListener);
 		damageText.setText("0");
 		damageOption = "0";
@@ -132,7 +136,7 @@ public class BaseInputPanel extends OptionPanel {
 		criticalLabel.setBackground(Color.WHITE);
 		criticalPanel.add(criticalLabel);
 		
-		JTextField criticalText = new JTextField(5);
+		this.criticalText = new JTextField(5);
 		criticalText.addActionListener(criticalListener);
 		criticalText.setText("0");
 		criticalOption = "0";
@@ -147,7 +151,7 @@ public class BaseInputPanel extends OptionPanel {
 		gradeLabel.setBackground(Color.WHITE);
 		gradePanel.add(gradeLabel);
 		
-		JTextField gradeText = new JTextField(5);
+		this.gradeText = new JTextField(5);
 		gradeText.addActionListener(gradeListener);
 		gradeText.setText("0");
 		gradeOption = "0";
@@ -176,5 +180,14 @@ public class BaseInputPanel extends OptionPanel {
 	@Override
 	public String getSelectedOption() {
 		return this.selectedOption;
+	}
+	
+	
+	@Override
+	public void clearInputedData() {
+		this.sortText.setText("대검");
+		this.damageText.setText("0");
+		this.criticalText.setText("0");
+		this.gradeText.setText("0");
 	}
 }

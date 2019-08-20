@@ -78,4 +78,7 @@ public class NumOfSlot extends OptionPanel {
 		}
 	}
 	
+	
+	@Override
+	public void clearInputedData() { }
 }

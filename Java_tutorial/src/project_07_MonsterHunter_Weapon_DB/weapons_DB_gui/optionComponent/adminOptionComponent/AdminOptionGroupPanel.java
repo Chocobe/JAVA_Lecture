@@ -5,7 +5,6 @@ import java.awt.Dimension;
 import javax.swing.JPanel;
 
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
-import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.SystemDialog;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionPanel;
 
 @SuppressWarnings("serial")
@@ -54,6 +53,17 @@ public class AdminOptionGroupPanel extends JPanel {
 	}
 	
 	
+	public void clearInputedData() {
+		this.namePanel.clearInputedData();
+		this.basePanel.clearInputedData();
+		this.attributePanel.clearInputedData();
+		this.slotPanel.clearInputedData();
+		this.materialPanel.clearInputedData();
+		this.sharpnessPanel.clearInputedData();
+		this.treePanel.clearInputedData();
+	}
+	
+	
 	public OptionPanel getNamePanel() {
 		return this.namePanel;
 	}
@@ -80,6 +90,5 @@ public class AdminOptionGroupPanel extends JPanel {
 	
 	public OptionPanel getTreePanel() {
 		return this.treePanel;
-	}
-	
+	}	
 }

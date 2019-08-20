@@ -20,6 +20,7 @@ public class SlotInputPanel extends OptionPanel {
 	private JComboBox<String> slot_1ComboBox;
 	private JComboBox<String> slot_2ComboBox;
 	private JComboBox<String> slot_3ComboBox;
+	private int numOfSlot;
 	
 	public SlotInputPanel(MainFrame frame) {
 		super.initItsPanel("슬롯", frame.getSize_x() - 15, 65);
@@ -51,7 +52,7 @@ public class SlotInputPanel extends OptionPanel {
 						slot_3ComboBox.setEnabled(true);
 					}
 					
-					int numOfSlot = 0;
+					numOfSlot = 0;
 					if(!slot_1ComboBox.getSelectedItem().equals("0")) {
 						numOfSlot++;
 					}
@@ -127,5 +128,13 @@ public class SlotInputPanel extends OptionPanel {
 	@Override
 	public String getSelectedOption() {
 		return this.selectedOption;
+	}
+	
+	
+	@Override
+	public void clearInputedData() {
+		this.slot_1ComboBox.setSelectedIndex(0);
+		this.slot_2ComboBox.setSelectedIndex(0);
+		this.slot_3ComboBox.setSelectedIndex(0);
 	}
 }

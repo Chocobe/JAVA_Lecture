@@ -15,6 +15,8 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.OptionP
 @SuppressWarnings("serial")
 public class MaterialInputPanel extends OptionPanel {
 	private String selectedOption;
+
+	private JTextField materialText;
 	
 	public MaterialInputPanel(MainFrame frame) {
 		super.initItsPanel("재료", frame.getSize_x() - 15, 60);
@@ -38,7 +40,7 @@ public class MaterialInputPanel extends OptionPanel {
 		JLabel materialLabel = new JLabel("재료");
 		outerPanel.add(materialLabel);
 		
-		JTextField materialText = new JTextField(35);
+		this.materialText = new JTextField(35);
 		materialText.addActionListener(listener);
 		outerPanel.add(materialText);
 		
@@ -49,5 +51,10 @@ public class MaterialInputPanel extends OptionPanel {
 	@Override
 	public String getSelectedOption() {
 		return this.selectedOption;
+	}
+	
+	@Override
+	public void clearInputedData() {
+		this.materialText.setText("");
 	}
 }

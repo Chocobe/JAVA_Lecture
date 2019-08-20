@@ -200,4 +200,8 @@ public class SortPanel extends OptionPanel {
 	public String getSelectedOption() {
 		return this.CARTEGORY + this.selectedOption;
 	}
+	
+	
+	@Override
+	public void clearInputedData() { }
 }

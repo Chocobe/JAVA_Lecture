@@ -228,4 +228,15 @@ public class SharpnessInputPanel extends OptionPanel {
 	public String getSelectedOption() {
 		return this.selectedOption;
 	}
+	
+	
+	@Override
+	public void clearInputedData() {
+		this.sharpness_1Text.setText("0");
+		this.sharpness_2Text.setText("0");
+		this.sharpness_3Text.setText("0");
+		this.sharpness_4Text.setText("0");
+		this.sharpness_5Text.setText("0");
+		this.sharpness_6Text.setText("0");
+	}
 }

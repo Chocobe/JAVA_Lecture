@@ -20,7 +20,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 	private static final String SYS_AUTHENTICATION;
 	
 	static {
-		SYS_AUTHENTICATION = "a";
+		SYS_AUTHENTICATION = "chocobe";
 	}
 	
 	private MainFrame frame;
@@ -92,7 +92,7 @@ public class NorthPanel extends JPanel implements ActionListener {
 		devPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
 		innerPanel.add(devPanel, BorderLayout.SOUTH);
 		
-		JLabel devLabel = new JLabel("Dev : 김영우      (ver 1.0)");
+		JLabel devLabel = new JLabel("Dev : 김영우      (ver 1.2)");
 		devPanel.add(devLabel);
 	}
 

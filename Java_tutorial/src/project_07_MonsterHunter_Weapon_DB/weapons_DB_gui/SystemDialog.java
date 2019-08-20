@@ -42,6 +42,7 @@ public class SystemDialog extends JDialog {
 	}
 	
 	
+// 상단부 페널 초기화
 	public void initTopPanel(JDialog target, String title) {
 		JPanel topPanel = new JPanel();
 		topPanel.setBackground(new Color(0, 153, 0));
@@ -58,6 +59,8 @@ public class SystemDialog extends JDialog {
 		initTopPanel(this, "Admin Mode : Update Weapons Data");
 	}
 	
+	
+// 옵션 페널 초기화
 	private void initMidPanel() {
 		JScrollPane midScroll = new JScrollPane();
 		
@@ -82,6 +85,5 @@ public class SystemDialog extends JDialog {
 	private void initTableDialog() {
 		// 테이블 Dialog 생성할 것
 		infoDialog = new AdminTableDialog(this);
-	}
-	
+	}	
 }

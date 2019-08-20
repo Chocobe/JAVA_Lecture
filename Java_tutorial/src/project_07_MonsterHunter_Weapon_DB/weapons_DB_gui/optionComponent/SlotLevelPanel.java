@@ -76,4 +76,8 @@ public class SlotLevelPanel extends OptionPanel {
 			return this.CATEGORY + "3";
 		}
 	}
+	
+	
+	@Override
+	public void clearInputedData() { }
 }

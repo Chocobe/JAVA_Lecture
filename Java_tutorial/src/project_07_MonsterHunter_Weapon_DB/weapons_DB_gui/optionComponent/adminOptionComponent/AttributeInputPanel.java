@@ -114,4 +114,11 @@ public class AttributeInputPanel extends OptionPanel{
 	public String getSelectedOption() {
 		return this.selectedOption;
 	}
+	
+	
+	@Override
+	public void clearInputedData() {
+		this.attributeComboBox.setSelectedIndex(0);
+		this.valueText.setText("0");
+	}
 }

@@ -12,7 +12,6 @@ import javax.swing.border.LineBorder;
 import project_07_MonsterHunter_Weapon_DB.WeaponDTO.WeaponsDTO;
 import project_07_MonsterHunter_Weapon_DB.weaponsDAO.WeaponsDAO;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.MainFrame;
-import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.SystemDialog;
 
 @SuppressWarnings("serial")
 public class DataInsertPanel extends JPanel {
@@ -158,14 +157,12 @@ public class DataInsertPanel extends JPanel {
 					
 				}
 				
-				dao.insertData(tempDTO);			
+				dao.insertData(tempDTO);
+				
+				adminPanel.clearInputedData();
 			}
 		});
 		
 		this.add(this.insertButton);
-	}
-	
-	public void initInputArea() {
-		
 	}
 }

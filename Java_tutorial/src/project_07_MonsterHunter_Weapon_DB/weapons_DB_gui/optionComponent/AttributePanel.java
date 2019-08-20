@@ -110,4 +110,6 @@ public class AttributePanel extends OptionPanel {
 		
 		return this.CATEGORY + selectedOption;
 	}
+	
+	public void clearInputedData() { }
 }

@@ -19,6 +19,7 @@ import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.SystemDialog;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.InfoDialog;
 import project_07_MonsterHunter_Weapon_DB.weapons_DB_gui.optionComponent.SortPanel;
 
+@SuppressWarnings("serial")
 public class AdminTableDialog extends JDialog{
 	private SystemDialog parentDialog;
 	private JPanel outerPanel;
