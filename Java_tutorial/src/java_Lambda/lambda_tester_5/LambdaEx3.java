@@ -1,4 +1,4 @@
-package java_Lambda.lambda_texter_5;
+package java_Lambda.lambda_tester_5;
 
 @FunctionalInterface
 interface MyFunction {
