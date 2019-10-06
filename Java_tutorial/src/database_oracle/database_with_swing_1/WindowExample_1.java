@@ -18,9 +18,9 @@ public class WindowExample_1 {
 		Container contentPane = frame.getContentPane();
 		
 		String colNames[] = {"이름", "나이", "성별"};
-		Object data[][] = { {"김철수", 24, '남'},
-							{"이순희", 21, '여'},
-							{"박지영", 26, '여'} };
+		Object data[][] = { {"김철수", 24, "남"},
+							{"이순희", 21, "여"},
+							{"박지영", 26, "여"} };
 		
 		JTable table = new JTable(data, colNames);
 		JScrollPane scrollPane = new JScrollPane(table);
